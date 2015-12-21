@@ -1,0 +1,163 @@
+Funds Modifier [danmc]
+1C39AD90 3B9AC9FF
+
+Miranium Modifier [danmc]
+1C39AD94 000F423F
+
+Reward Tickets Modifier [danmc]
+1C39AD98 0000270F
+
+
+
+#Protagonist Lv Exp [danmc] [UNTESTED]
+#1C38E647 3B9AC9FF
+
+#Protagonist Rank Exp [danmc] [UNTESTED]
+#1C38E6F5 05000000
+
+#Protagonist Blade Lv Exp [danmc] [UNTESTED]
+#1C3C76E7 3B9AC9FF
+
+Protagonist BP [danmc]
+1C38E93C 000F423F
+
+
+
+#Elma Lv Exp [danmc] [UNTESTED]
+#1C39229B 3B9AC9FF
+
+#Elma Rank Exp [danmc] [UNTESTED] [Can bug the Arts!]
+#1C392348 05000000
+
+Elma BP [danmc]
+1C392590 000F423F
+
+
+
+#Lin Lv Exp [danmc] [UNTESTED]
+#1C392814 3B9AC9FF
+
+#Lin Rank Exp [danmc] [UNTESTED]
+#1C3928C4 05000000
+
+Lin BP [danmc]
+1C392B0C 000F423F
+
+
+
+#Lao Lv Exp [danmc] [UNTESTED]
+#1C38F6B8 3B9AC9FF
+
+#Lao Rank Exp [danmc] [UNTESTED]
+#1C38F6E8 05000000
+
+#Lin BP [danmc] [UNTESTED]
+#1C38f9B0 000F423F
+
+
+
+#Erina Lv Exp [danmc] [UNTESTED]
+#1C39330C 3B9AC9FF
+
+#Erina Rank Exp [danmc] [UNTESTED]
+#1C3933BC 05000000
+
+#Erina BP [danmc] [UNTESTED]
+#1C393604 000F423F
+
+
+
+#Gwin Lv Exp [danmc] [UNTESTED]
+#1C3901B3 3B9AC9FF
+
+#Gwin Rank Exp [danmc] [UNTESTED]
+#1C390260 05000000
+
+#Gwin BP [danmc] [UNTESTED]
+#1C3904A8 000F423F
+
+
+
+#Doug Lv Exp [danmc] [UNTESTED]
+#1C390CA8 3B9AC9FF
+
+#Doug Rank Exp [danmc] [UNTESTED]
+#1C390D58 05000000
+
+#Doug BP [danmc] [UNTESTED]
+#1C390FA0 000F423F
+
+
+
+#Yelv Lv Exp [danmc] [UNTESTED]
+#1C391226 3B9AC9FF
+
+#Yelv Rank Exp [danmc] [UNTESTED]
+#1C3912D4 05000000
+
+#Yelv BP [danmc] [UNTESTED]
+#1C39151E 000F423F
+
+
+
+#H.B. Lv Exp [danmc] [UNTESTED]
+#1C38FC37 3B9AC9FF
+
+#H.B. Rank Exp [danmc] [UNTESTED]
+#1C38fCE4 05000000
+
+#H.B. BP [danmc] [UNTESTED]
+#1C38FF2E 000F423F
+
+
+
+#Nagi Lv Exp [danmc] [UNTESTED]
+#1C38EBC3 3B9AC9FF
+
+#Nagi Rank Exp [danmc] [UNTESTED]
+#1C38EC70 05000000
+
+#Nagi BP [danmc] [UNTESTED]
+#1C38EEBA 000F423F
+
+
+
+Celica Lv Exp [MiMiC]
+1C392D90 3B9AC9FF
+
+# TODO: Celica Rank Exp
+#Celica Rank Exp [danmc] [UNTESTED]
+#1C392E40 05000000
+
+Celica BP [MiMiC]
+1C393088 000F423F
+
+
+
+# TODO: Phog Lv Exp
+
+# TODO: Phog Rank Exp
+
+Phog BP [MiMiC]
+1C392014 000F423F
+
+
+
+Fyre Lv Exp [MiMiC]
+1C39072C 3B9AC9FF
+
+Fyre Rank Exp [MiMiC]
+1C3907DC 7FFF
+
+Fyre BP [MiMiC]
+1C390A24 000F423F
+
+
+
+Boze Lv Exp [MiMiC]
+1C3917A0 3B9AC9FF
+
+# TODO: Boze Rank Exp
+
+Boze BP [MiMiC]
+1C391A98 000F423F
