@@ -10,128 +10,151 @@ Reward Tickets Modifier [danmc]
 
 
 #Protagonist Lv Exp [danmc] [UNTESTED]
-#1C38E647 3B9AC9FF
+#1C38E647 000F423F
 
 #Protagonist Rank Exp [danmc] [UNTESTED]
-#1C38E6F5 05000000
+#1C38E6F5 7FFF
 
 #Protagonist Blade Lv Exp [danmc] [UNTESTED]
 #1C3C76E7 3B9AC9FF
 
 Protagonist BP [danmc]
-1C38E93C 000F423F
-
+1C38E93C 0000270F
 
 
 #Elma Lv Exp [danmc] [UNTESTED]
-#1C39229B 3B9AC9FF
+#1C39229B 000F423F
 
-#Elma Rank Exp [danmc] [UNTESTED] [Can bug the Arts!]
-#1C392348 05000000
+#Elma Rank Exp [danmc] [UNTESTED]
+#1C392348 7FFF
 
 Elma BP [danmc]
-1C392590 000F423F
-
+1C392590 0000270F
 
 
 #Lin Lv Exp [danmc] [UNTESTED]
-#1C392814 3B9AC9FF
+#1C392814 000F423F
 
 #Lin Rank Exp [danmc] [UNTESTED]
-#1C3928C4 05000000
+#1C3928C4 7FFF
 
 Lin BP [danmc]
-1C392B0C 000F423F
+1C392B0C 0000270F
 
 
+Alexa Lv Exp [MiMiC]
+1C393E04 000F423F
 
-#Lao Lv Exp [danmc] [UNTESTED]
-#1C38F6B8 3B9AC9FF
+# TODO: Alexa Rank Exp
 
-#Lao Rank Exp [danmc] [UNTESTED]
-#1C38F6E8 05000000
-
-#Lin BP [danmc] [UNTESTED]
-#1C38f9B0 000F423F
+Alexa BP [MiMiC]
+1C3940FC 0000270F
 
 
+Boze Lv Exp [MiMiC]
+1C3917A0 000F423F
 
-#Erina Lv Exp [danmc] [UNTESTED]
-#1C39330C 3B9AC9FF
+# TODO: Boze Rank Exp
 
-#Erina Rank Exp [danmc] [UNTESTED]
-#1C3933BC 05000000
-
-#Erina BP [danmc] [UNTESTED]
-#1C393604 000F423F
-
-
-
-#Gwin Lv Exp [danmc] [UNTESTED]
-#1C3901B3 3B9AC9FF
-
-#Gwin Rank Exp [danmc] [UNTESTED]
-#1C390260 05000000
-
-#Gwin BP [danmc] [UNTESTED]
-#1C3904A8 000F423F
-
-
-
-#Doug Lv Exp [danmc] [UNTESTED]
-#1C390CA8 3B9AC9FF
-
-#Doug Rank Exp [danmc] [UNTESTED]
-#1C390D58 05000000
-
-#Doug BP [danmc] [UNTESTED]
-#1C390FA0 000F423F
-
-
-
-#Yelv Lv Exp [danmc] [UNTESTED]
-#1C391226 3B9AC9FF
-
-#Yelv Rank Exp [danmc] [UNTESTED]
-#1C3912D4 05000000
-
-#Yelv BP [danmc] [UNTESTED]
-#1C39151E 000F423F
-
-
-
-#H.B. Lv Exp [danmc] [UNTESTED]
-#1C38FC37 3B9AC9FF
-
-#H.B. Rank Exp [danmc] [UNTESTED]
-#1C38fCE4 05000000
-
-#H.B. BP [danmc] [UNTESTED]
-#1C38FF2E 000F423F
-
-
-
-#Nagi Lv Exp [danmc] [UNTESTED]
-#1C38EBC3 3B9AC9FF
-
-#Nagi Rank Exp [danmc] [UNTESTED]
-#1C38EC70 05000000
-
-#Nagi BP [danmc] [UNTESTED]
-#1C38EEBA 000F423F
-
+Boze BP [MiMiC]
+1C391A98 0000270F
 
 
 Celica Lv Exp [MiMiC]
-1C392D90 3B9AC9FF
+1C392D90 000F423F
 
-# TODO: Celica Rank Exp
 #Celica Rank Exp [danmc] [UNTESTED]
-#1C392E40 05000000
+#1C392E40 7FFF
 
 Celica BP [MiMiC]
-1C393088 000F423F
+1C393088 0000270F
 
+
+Doug Lv Exp [danmc]
+1C390CA8 000F423F
+
+Doug Rank Exp [danmc]
+1C390D58 7FFF
+
+Doug BP [danmc]
+1C390FA0 0000270F
+
+
+Fyre Lv Exp [MiMiC]
+1C39072C 000F423F
+
+Fyre Rank Exp [MiMiC]
+1C3907DC 7FFF
+
+Fyre BP [MiMiC]
+1C390A24 0000270F
+
+
+#Gwin Lv Exp [danmc] [UNTESTED]
+#1C3901B3 000F423F
+
+#Gwin Rank Exp [danmc] [UNTESTED]
+#1C390260 7FFF
+
+#Gwin BP [danmc] [UNTESTED]
+#1C3904A8 0000270F
+
+
+#H.B. Lv Exp [danmc] [UNTESTED]
+#1C38FC37 000F423F
+
+#H.B. Rank Exp [danmc] [UNTESTED]
+#1C38FCE4 7FFF
+
+H.B. BP [danmc]
+1C38FF2C 0000270F
+
+
+# TODO: Hope Lv+Rank+BP
+
+
+#Irina Lv Exp [danmc] [UNTESTED]
+#1C39330C 000F423F
+
+#Irina Rank Exp [danmc] [UNTESTED]
+#1C3933BC 7FFF
+
+Irina BP [danmc]
+1C393604 0000270F
+
+
+# TODO: L Lv Exp
+
+# TODO: L Rank Exp
+
+L BP [MiMiC]
+1C38F434 0000270F
+
+
+#Lao Lv Exp [danmc] [UNTESTED]
+#1C38F6B8 000F423F
+
+#Lao Rank Exp [danmc] [UNTESTED]
+#1C38F6E8 7FFF
+
+#Lao BP [danmc] [UNTESTED]
+#1C38f9B0 0000270F
+
+
+# TODO: Mia Lv+Rank+BP
+
+
+# TODO: Murderess Lv+Rank+BP
+
+
+Nagi Lv Exp [danmc]
+1C38EBC0 000F423F
+
+Nagi Rank Exp [danmc]
+1C38EC70 7FFF
+
+Nagi BP [danmc]
+1C38EEB8 0000270F
 
 
 # TODO: Phog Lv Exp
@@ -139,25 +162,61 @@ Celica BP [MiMiC]
 # TODO: Phog Rank Exp
 
 Phog BP [MiMiC]
-1C392014 000F423F
+1C392014 0000270F
+
+
+#Yelv Lv Exp [danmc] [UNTESTED]
+#1C391226 000F423F
+
+#Yelv Rank Exp [danmc] [UNTESTED]
+#1C3912D4 7FFF
+
+#Yelv BP [danmc] [UNTESTED]
+#1C39151E 0000270F
 
 
 
-Fyre Lv Exp [MiMiC]
-1C39072C 3B9AC9FF
+Precious Resources: Arc Sand Ore [MiMiC]
+1C3C054C 63 >>21
 
-Fyre Rank Exp [MiMiC]
-1C3907DC 7FFF
+Precious Resources: Aurorite [MiMiC]
+1C3C0558 63 >>21
 
-Fyre BP [MiMiC]
-1C390A24 000F423F
+Precious Resources: Boiled-Egg Ore [MiMiC]
+1C3C05B8 63 >>21
 
+Precious Resources: Bonjelium [MiMiC]
+1C3C05E8 63 >>21
 
+Precious Resources: Cimmerian Cinnabar [MiMiC]
+1C3C0570 63 >>21
 
-Boze Lv Exp [MiMiC]
-1C3917A0 3B9AC9FF
+Precious Resources: Downstone [MiMiC]
+1C3C0588 63 >>21
 
-# TODO: Boze Rank Exp
+Precious Resources: Enduron Lead [MiMiC]
+1C3C0594 63 >>21
 
-Boze BP [MiMiC]
-1C391A98 000F423F
+Precious Resources: Everfreeze Ore [MiMiC]
+1C3C05AC 63 >>21
+
+Precious Resources: Faucaultium [MiMiC]
+1C3C05A0 63 >>21
+
+Precious Resources: Infernium [MiMiC]
+1C3C0564 63 >>21
+
+Precious Resources: Marine Rutile [MiMiC]
+1C3C05D0 63 >>21
+
+Precious Resources: Ouroboros Crystal [MiMiC]
+1C3C05C4 63 >>21
+
+Precious Resources: Parhelion Platinum [MiMiC]
+1C3C05DC 63 >>21
+
+Precious Resources: White Cometite [MiMiC]
+1C3C0540 63 >>21
+
+Precious Resources: Lionbone Bort [MiMiC]
+1C3C057C 63 >>21

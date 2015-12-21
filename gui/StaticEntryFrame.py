@@ -39,7 +39,7 @@ class StaticEntryFrame(QFrame):
     self.lbl_label = QLabel(label, self)
     self.lbl_label.setToolTip(self.code.txt_addr)
 
-    self.btn_curval = QPushButton(str(self.cur_val), self)
+    self.btn_curval = QPushButton('Fetch value', self)
     self.btn_curval.setToolTip('Read value from memory')
     self.btn_curval.clicked.connect(self.updateCurVal)
     self.btn_curval.setFixedWidth(100)

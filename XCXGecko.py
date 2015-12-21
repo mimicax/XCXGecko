@@ -41,6 +41,8 @@ class StatusWidget(QDockWidget):
 
 
 class XCXGeckoMainWindow(QMainWindow):
+  read = pyqtSignal(str) # code_label
+  poke = pyqtSignal(str, int) # code_label, new_val
   word_read = pyqtSignal(str, int) # txt_addr, word_val
   log = pyqtSignal(str, str) # msg, color
 
@@ -89,14 +91,14 @@ class XCXGeckoMainWindow(QMainWindow):
 
     # Setup tabbed widgets
     self.wdg_xcx = XCXWidget(self.codes, self)
-    self.wdg_xcx.read.connect(self.onRead)
-    self.wdg_xcx.poke.connect(self.onPoke)
+    self.wdg_xcx.read.connect(self.read)
+    self.wdg_xcx.poke.connect(self.poke)
     self.word_read.connect(self.wdg_xcx.word_read)
     self.wdg_xcx.log.connect(self.log)
 
     self.wdg_custom = CustomGeckoWidget(self.codes, None)
-    self.wdg_custom.read.connect(self.onRead)
-    self.wdg_custom.poke.connect(self.onPoke)
+    self.wdg_custom.read.connect(self.read)
+    self.wdg_custom.poke.connect(self.poke)
     self.word_read.connect(self.wdg_custom.word_read)
     self.wdg_custom.log.connect(self.log)
     self.scr_custom = QScrollArea(self)
@@ -114,6 +116,9 @@ class XCXGeckoMainWindow(QMainWindow):
     if parse_error is not None:
       self.log.emit('Initialization failed: %s' % parse_error, 'red')
 
+    self.read.connect(self.onRead)
+    self.poke.connect(self.onPoke)
+
     self.show()
 
   def closeEvent(self, event):
@@ -130,6 +135,12 @@ class XCXGeckoMainWindow(QMainWindow):
         self.log.emit('Connecting to Wii U on %s...' % self.ip, 'black')
         self.conn = TCPGecko(self.ip)
         self.log.emit('Connected to Wii U on %s' % self.ip, 'green')
+
+        # Auto-read all code addrs # DISABLED FOR NOW SINCE IT TAKES SOME TIME AND BLOCKS
+        # self.log.emit('Reading memory for %d code entries' % len(self.codes), 'black')
+        # for code_label in self.codes:
+        #   self.read.emit(code_label)
+
       except socket.timeout:
         self.log.emit('Timed out while connecting to Wii U on %s' % self.ip, 'red')
       except socket.error:
@@ -214,7 +225,3 @@ if __name__ == '__main__':
   app = QApplication(sys.argv)
   gui = XCXGeckoMainWindow()
   sys.exit(app.exec_())
-
-
-  # TODO: more BP than 9999?
-  # TODO: set lvl exp max to 999999 and see if that's enough to bring from lvl 1 to 60
