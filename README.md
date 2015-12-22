@@ -3,6 +3,8 @@ Trainer for XCX using [pyGecko](https://github.com/wiiudev/pyGecko). Requires ke
 
 ![Screenshot](https://raw.githubusercontent.com/mimicax/XCXGecko/master/screenshot.png "Screenshot of XCXGecko")
 
+![Modified Character Geometries](https://raw.githubusercontent.com/mimicax/XCXGecko/master/sample.jpg "Modified character geometries")
+
 ## Dependencies
 
 * [Python 2.7+](https://www.python.org/downloads/release/python-2711/)

@@ -7,145 +7,39 @@ Miranium Modifier [danmc]
 Reward Tickets Modifier [danmc]
 1C39AD98 0000270F
 
-
-
-#Protagonist Lv Exp [danmc] [UNTESTED]
-#1C38E647 000F423F
-
-#Protagonist Rank Exp [danmc] [UNTESTED]
-#1C38E6F5 7FFF
-
-#Protagonist Blade Lv Exp [danmc] [UNTESTED]
+#Blade Lv Exp [danmc] UNTESTED TODO
 #1C3C76E7 3B9AC9FF
+
+
+
+Protagonist Name [MiMiC]
+1C38B624 ASCII(10)
+
+#Protagonist Lv Exp [danmc] UNTESTED TODO
+#1C38E644 000F423F
+
+#Protagonist Rank Exp [danmc] UNTESTED TODO
+#1C38E6F5 7FFF
 
 Protagonist BP [danmc]
 1C38E93C 0000270F
 
+Protagonist Height (float) [Intropy]
+1C38B68C 3F8020C4
 
-#Elma Lv Exp [danmc] [UNTESTED]
-#1C39229B 000F423F
+Protagonist Chest Depth (float) [Intropy]
+1C38B690 3F8020C4
 
-#Elma Rank Exp [danmc] [UNTESTED]
-#1C392348 7FFF
+Protagonist Chest Height (float) [Intropy]
+1C38B694 3F8020C4
 
-Elma BP [danmc]
-1C392590 0000270F
-
-
-#Lin Lv Exp [danmc] [UNTESTED]
-#1C392814 000F423F
-
-#Lin Rank Exp [danmc] [UNTESTED]
-#1C3928C4 7FFF
-
-Lin BP [danmc]
-1C392B0C 0000270F
+Protagonist Chest Width (float) [Intropy]
+1C38B698 3F8020C4
 
 
-Alexa Lv Exp [MiMiC]
-1C393E04 000F423F
 
-# TODO: Alexa Rank Exp
-
-Alexa BP [MiMiC]
-1C3940FC 0000270F
-
-
-Boze Lv Exp [MiMiC]
-1C3917A0 000F423F
-
-# TODO: Boze Rank Exp
-
-Boze BP [MiMiC]
-1C391A98 0000270F
-
-
-Celica Lv Exp [MiMiC]
-1C392D90 000F423F
-
-#Celica Rank Exp [danmc] [UNTESTED]
-#1C392E40 7FFF
-
-Celica BP [MiMiC]
-1C393088 0000270F
-
-
-Doug Lv Exp [danmc]
-1C390CA8 000F423F
-
-Doug Rank Exp [danmc]
-1C390D58 7FFF
-
-Doug BP [danmc]
-1C390FA0 0000270F
-
-
-Fyre Lv Exp [MiMiC]
-1C39072C 000F423F
-
-Fyre Rank Exp [MiMiC]
-1C3907DC 7FFF
-
-Fyre BP [MiMiC]
-1C390A24 0000270F
-
-
-#Gwin Lv Exp [danmc] [UNTESTED]
-#1C3901B3 000F423F
-
-#Gwin Rank Exp [danmc] [UNTESTED]
-#1C390260 7FFF
-
-#Gwin BP [danmc] [UNTESTED]
-#1C3904A8 0000270F
-
-
-#H.B. Lv Exp [danmc] [UNTESTED]
-#1C38FC37 000F423F
-
-#H.B. Rank Exp [danmc] [UNTESTED]
-#1C38FCE4 7FFF
-
-H.B. BP [danmc]
-1C38FF2C 0000270F
-
-
-# TODO: Hope Lv+Rank+BP
-
-
-#Irina Lv Exp [danmc] [UNTESTED]
-#1C39330C 000F423F
-
-#Irina Rank Exp [danmc] [UNTESTED]
-#1C3933BC 7FFF
-
-Irina BP [danmc]
-1C393604 0000270F
-
-
-# TODO: L Lv Exp
-
-# TODO: L Rank Exp
-
-L BP [MiMiC]
-1C38F434 0000270F
-
-
-#Lao Lv Exp [danmc] [UNTESTED]
-#1C38F6B8 000F423F
-
-#Lao Rank Exp [danmc] [UNTESTED]
-#1C38F6E8 7FFF
-
-#Lao BP [danmc] [UNTESTED]
-#1C38f9B0 0000270F
-
-
-# TODO: Mia Lv+Rank+BP
-
-
-# TODO: Murderess Lv+Rank+BP
-
+Nagi Name [MiMiC]
+1C38EB44 ASCII(10)
 
 Nagi Lv Exp [danmc]
 1C38EBC0 000F423F
@@ -156,23 +50,459 @@ Nagi Rank Exp [danmc]
 Nagi BP [danmc]
 1C38EEB8 0000270F
 
+Nagi Height (float) [Intropy]
+1C38EBAC 3F8020C4
 
-# TODO: Phog Lv Exp
+Nagi Chest Depth (float) [Intropy]
+1C38EBB0 3F8020C4
 
-# TODO: Phog Rank Exp
+Nagi Chest Height (float) [Intropy]
+1C38EBB4 3F8020C4
+
+Nagi Chest Width (float) [Intropy]
+1C38EBB8 3F8020C4
+
+
+
+L Name [MiMiC]
+1C38F0C0 ASCII(10)
+
+L Lv Exp [MiMiC]
+1C38F13C 000F423F
+
+L Rank Exp [MiMiC]
+1C38F1EC 7FFF
+
+L BP [MiMiC]
+1C38F434 0000270F
+
+L Height (float) [Intropy]
+1C38F128 3F8020C4
+
+L Chest Depth (float) [Intropy]
+1C38F12C 3F8020C4
+
+L Chest Height (float) [Intropy]
+1C38F130 3F8020C4
+
+L Chest Width (float) [Intropy]
+1C38F134 3F8020C4
+
+
+
+Lao Name [MiMiC]
+1C38F63C ASCII(10)
+
+Lao Lv Exp [danmc]
+1C38F6B8 000F423F
+
+Lao Rank Exp [danmc]
+1C38F768 7FFF
+
+Lao BP [danmc]
+1C38F9B0 0000270F
+
+Lao Height (float) [Intropy]
+1C38F6A4 3F8020C4
+
+Lao Chest Depth (float) [Intropy]
+1C38F6A8 3F8020C4
+
+Lao Chest Height (float) [Intropy]
+1C38F6AC 3F8020C4
+
+Lao Chest Width (float) [Intropy]
+1C38F6B0 3F8020C4
+
+
+
+H.B. Name [MiMiC]
+1C38FBB8 ASCII(10)
+
+H.B. Lv Exp [danmc]
+1C38FC34 000F423F
+
+H.B. Rank Exp [danmc]
+1C38FCE4 7FFF
+
+H.B. BP [danmc]
+1C38FF2C 0000270F
+
+H.B. Height (float) [Intropy]
+1C38FC20 3F8020C4
+
+H.B. Chest Depth (float) [Intropy]
+1C38FC24 3F8020C4
+
+H.B. Chest Height (float) [Intropy]
+1C38FC28 3F8020C4
+
+H.B. Chest Width (float) [Intropy]
+1C38FC2C 3F8020C4
+
+
+
+Gwin Name [MiMiC]
+1C390134 ASCII(10)
+
+Gwin Lv Exp [danmc]
+1C3901B0 000F423F
+
+Gwin Rank Exp [danmc]
+1C390260 7FFF
+
+Gwin BP [danmc]
+1C3904A8 0000270F
+
+Gwin Height (float) [Intropy]
+1C39019C 3F8020C4
+
+Gwin Chest Depth (float) [Intropy]
+1C3901A0 3F8020C4
+
+Gwin Chest Height (float) [Intropy]
+1C3901A4 3F8020C4
+
+Gwin Chest Width (float) [Intropy]
+1C3901A8 3F8020C4
+
+
+
+Fyre Name [MiMiC]
+1C3906B0 ASCII(10)
+
+Fyre Lv Exp [MiMiC]
+1C39072C 000F423F
+
+Fyre Rank Exp [MiMiC]
+1C3907DC 7FFF
+
+Fyre BP [MiMiC]
+1C390A24 0000270F
+
+Fyre Height (float) [Intropy]
+1C390718 3F8020C4
+
+Fyre Chest Depth (float) [Intropy]
+1C39071C 3F8020C4
+
+Fyre Chest Height (float) [Intropy]
+1C390720 3F8020C4
+
+Fyre Chest Width (float) [Intropy]
+1C390724 3F8020C4
+
+
+
+Doug Name [MiMiC]
+1C390C2C ASCII(10)
+
+Doug Lv Exp [danmc]
+1C390CA8 000F423F
+
+Doug Rank Exp [danmc]
+1C390D58 7FFF
+
+Doug BP [danmc]
+1C390FA0 0000270F
+
+Doug Height (float) [Intropy]
+1C390C94 3F8020C4
+
+Doug Chest Depth (float) [Intropy]
+1C390C98 3F8020C4
+
+Doug Chest Height (float) [Intropy]
+1C390C9C 3F8020C4
+
+Doug Chest Width (float) [Intropy]
+1C390CA0 3F8020C4
+
+
+
+Yelv Name [MiMiC]
+1C3911A8 ASCII(10)
+
+Yelv Lv Exp [danmc]
+1C391224 000F423F
+
+Yelv Rank Exp [danmc]
+1C3912D4 7FFF
+
+Yelv BP [danmc]
+1C39151C 0000270F
+
+Yelv Height (float) [Intropy]
+1C391210 3F8020C4
+
+Yelv Chest Depth (float) [Intropy]
+1C391214 3F8020C4
+
+Yelv Chest Height (float) [Intropy]
+1C391218 3F8020C4
+
+Yelv Chest Width (float) [Intropy]
+1C39121C 3F8020C4
+
+
+
+Boze Name [MiMiC]
+1C391724 ASCII(10)
+
+Boze Lv Exp [MiMiC]
+1C3917A0 000F423F
+
+Boze Rank Exp [MiMiC]
+1C391850 7FFF
+
+Boze BP [MiMiC]
+1C391A98 0000270F
+
+Boze Height (float) [Intropy]
+1C39178C 3F8020C4
+
+Boze Chest Depth (float) [Intropy]
+1C391790 3F8020C4
+
+Boze Chest Height (float) [Intropy]
+1C391794 3F8020C4
+
+Boze Chest Width (float) [Intropy]
+1C391798 3F8020C4
+
+
+
+Phog Name [MiMiC]
+1C391CA0 ASCII(10)
+
+Phog Lv Exp [MiMiC]
+1C391D1C 000F423F
+
+Phog Rank Exp [MiMiC]
+1C391DCC 7FFF
 
 Phog BP [MiMiC]
 1C392014 0000270F
 
+Phog Height (float) [Intropy]
+1C391D08 3F8020C4
 
-#Yelv Lv Exp [danmc] [UNTESTED]
-#1C391226 000F423F
+Phog Chest Depth (float) [Intropy]
+1C391D0C 3F8020C4
 
-#Yelv Rank Exp [danmc] [UNTESTED]
-#1C3912D4 7FFF
+Phog Chest Height (float) [Intropy]
+1C391D10 3F8020C4
 
-#Yelv BP [danmc] [UNTESTED]
-#1C39151E 0000270F
+Phog Chest Width (float) [Intropy]
+1C391D14 3F8020C4
+
+
+
+Elma Name [MiMiC]
+1C39221C ASCII(10)
+
+Elma Lv Exp [danmc]
+1C392298 000F423F
+
+Elma Rank Exp [danmc]
+1C392348 7FFF
+
+Elma BP [danmc]
+1C392590 0000270F
+
+Elma Height (float) [Intropy]
+1C392284 3F8020C4
+
+Elma Chest Depth (float) [Intropy]
+1C392288 3F8020C4
+
+Elma Chest Height (float) [Intropy]
+1C39228C 3F8020C4
+
+Elma Chest Width (float) [Intropy]
+1C392290 3F8020C4
+
+
+
+Lin Name [MiMiC]
+1C392798 ASCII(10)
+
+Lin Lv Exp [danmc]
+1C392814 000F423F
+
+Lin Rank Exp [danmc]
+1C3928C4 7FFF
+
+Lin BP [danmc]
+1C392B0C 0000270F
+
+Lin Height (float) [Intropy]
+1C392800 3F8020C4
+
+Lin Chest Depth (float) [Intropy]
+1C392804 3F8020C4
+
+Lin Chest Height (float) [Intropy]
+1C392808 3F8020C4
+
+Lin Chest Width (float) [Intropy]
+1C39280C 3F8020C4
+
+
+
+Celica Name [MiMiC]
+1C392D14 ASCII(10)
+
+Celica Lv Exp [danmc]
+1C392D90 000F423F
+
+Celica Rank Exp [danmc]
+1C392E40 7FFF
+
+Celica BP [danmc]
+1C393088 0000270F
+
+Celica Height (float) [Intropy]
+1C392D7C 3F8020C4
+
+Celica Chest Depth (float) [Intropy]
+1C392D80 3F8020C4
+
+Celica Chest Height (float) [Intropy]
+1C392D84 3F8020C4
+
+Celica Chest Width (float) [Intropy]
+1C392D88 3F8020C4
+
+
+
+Irina Name [MiMiC]
+1C393290 ASCII(10)
+
+Irina Lv Exp [danmc]
+1C39330C 000F423F
+
+Irina Rank Exp [danmc]
+1C3933BC 7FFF
+
+Irina BP [danmc]
+1C393604 0000270F
+
+Irina Height (float) [Intropy]
+1C3932F8 3F8020C4
+
+Irina Chest Depth (float) [Intropy]
+1C3932FC 3F8020C4
+
+Irina Chest Height (float) [Intropy]
+1C393300 3F8020C4
+
+Irina Chest Width (float) [Intropy]
+1C393304 3F8020C4
+
+
+
+Murderess Name [MiMiC]
+1C39380C ASCII(10)
+
+Murderess Lv Exp [MiMiC]
+1C393888 000F423F
+
+Murderess Rank Exp [MiMiC]
+1C393938 7FFF
+
+Murderess BP [MiMiC]
+1C393B80 0000270F
+
+Murderess Height (float) [Intropy]
+1C393874 3F8020C4
+
+Murderess Chest Depth (float) [Intropy]
+1C393878 3F8020C4
+
+Murderess Chest Height (float) [Intropy]
+1C39387C 3F8020C4
+
+Murderess Chest Width (float) [Intropy]
+1C393880 3F8020C4
+
+
+
+Alexa Name [MiMiC]
+1C393D88 ASCII(10)
+
+Alexa Lv Exp [MiMiC]
+1C393E04 000F423F
+
+Alexa Rank Exp [MiMiC]
+1C393EB4 7FFF
+
+Alexa BP [MiMiC]
+1C3940FC 0000270F
+
+Alexa Height (float) [Intropy]
+1C393DF0 3F8020C4
+
+Alexa Chest Depth (float) [Intropy]
+1C393DF4 3F8020C4
+
+Alexa Chest Height (float) [Intropy]
+1C393DF8 3F8020C4
+
+Alexa Chest Width (float) [Intropy]
+1C393DFC 3F8020C4
+
+
+
+Hope Name [MiMiC]
+1C394304 ASCII(10)
+
+Hope Lv Exp [MiMiC]
+1C394380 000F423F
+
+Hope Rank Exp [MiMiC]
+1C394430 7FFF
+
+Hope BP [MiMiC]
+1C394678 0000270F
+
+Hope Height (float) [Intropy]
+1C39436C 3F8020C4
+
+Hope Chest Depth (float) [Intropy]
+1C394370 3F8020C4
+
+Hope Chest Height (float) [Intropy]
+1C394374 3F8020C4
+
+Hope Chest Width (float) [Intropy]
+1C394378 3F8020C4
+
+
+
+Mia Name [MiMiC]
+1C394880 ASCII(10)
+
+Mia Lv Exp [MiMiC]
+1C3948FC 000F423F
+
+Mia Rank Exp [MiMiC]
+1C3949AC 7FFF
+
+Mia BP [MiMiC]
+1C394BF4 0000270F
+
+Mia Height (float) [Intropy]
+1C3948E8 3F8020C4
+
+Mia Chest Depth (float) [Intropy]
+1C3948EC 3F8020C4
+
+Mia Chest Height (float) [Intropy]
+1C3948F0 3F8020C4
+
+Mia Chest Width (float) [Intropy]
+1C3948F4 3F8020C4
 
 
 
@@ -220,3 +550,13 @@ Precious Resources: White Cometite [MiMiC]
 
 Precious Resources: Lionbone Bort [MiMiC]
 1C3C057C 63 >>21
+
+# TODO: debug printouts for pokes and reads
+# TODO: Python config parser: debug printouts, code txt
+
+# TODO: combo codes for crafting resources (e.g. Potential Up XX)
+# TODO: mining probes
+# TODO: affinity
+
+# TODO: switchable code list (on toolbar)
+# TODO: ascii support in edit

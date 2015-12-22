@@ -37,5 +37,5 @@ class CustomGeckoWidget(QWidget):
       self.word_read.connect(entry.onWordRead)
       entry.log.connect(self.log)
 
-    self.setStyleSheet('CustomGeckoWidget {background-color: white}') # needed when within QScrollArea
+    self.setStyleSheet('CustomGeckoWidget {background-color: white}')
     self.show()

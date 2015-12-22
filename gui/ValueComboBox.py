@@ -34,6 +34,15 @@ class ValueComboBox(QComboBox):
     self.editTextChanged[str].connect(self.resetBGColor)
     self.activated.connect(self.resetBGColor)
     self.currentIndexChanged.connect(self.updateValue)
+    
+  def updateValues(self, new_dft_values=None, new_val_bytes=1):
+    self.resetBGColor()
+    self.val_bytes = new_val_bytes
+    self.val_cap = pow(256, self.val_bytes)
+    
+    self.clear()
+    for v in new_dft_values:
+      self.addItem(str(v))
 
   def onMenu(self):
     menu = QMenu(self)

@@ -5,6 +5,7 @@ import struct
 import sys
 import time
 import traceback
+import webbrowser
 
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QDockWidget
@@ -59,14 +60,14 @@ class XCXGeckoMainWindow(QMainWindow):
       self.codes = {}
 
     # Setup window
-    self.setGeometry(300, 300, 550, 500)
+    self.setGeometry(200, 200, 620, 700)
     self.setWindowTitle('XCXGecko')
     self.setWindowIcon(QIcon('img/logo.ico'))
 
-    # Create connection toolbar
+    # Create toolbars
     self.txt_ip = QLineEdit('192.168.0.133', self)
     self.txt_ip.setMaxLength(16)
-    self.txt_ip.setFixedWidth(100)
+    self.txt_ip.setFixedWidth(140)
     self.txt_ip.setPlaceholderText('Wii U IP')
     self.txt_ip.setToolTip('Wii U IP')
 
@@ -74,14 +75,24 @@ class XCXGeckoMainWindow(QMainWindow):
     self.act_conn.setShortcut('Ctrl-C')
     self.act_conn.triggered.connect(self.onConn)
 
-    self.act_disc = QAction(QIcon('img/flaticon/links13.png'), 'Disconnect from Wii U', self)
+    self.act_disc = QAction(QIcon('img/flaticon/delete85.png'), 'Disconnect from Wii U', self)
     self.act_disc.setShortcut('Ctrl-D')
     self.act_disc.triggered.connect(self.onDisc)
 
-    self.toolbar = self.addToolBar('Wii U Connection')
-    self.toolbar.addWidget(self.txt_ip)
-    self.toolbar.addAction(self.act_conn)
-    self.toolbar.addAction(self.act_disc)
+    self.act_home = QAction(QIcon('img/flaticon/home4.png'), 'Open Github project page', self)
+    self.act_home.triggered.connect(self.onHomeURL)
+
+    self.act_bugs = QAction(QIcon('img/flaticon/error2.png'), 'Open Github bugs page', self)
+    self.act_bugs.triggered.connect(self.onBugsURL)
+
+    self.tbr_conn = self.addToolBar('Wii U Connection')
+    self.tbr_conn.addWidget(self.txt_ip)
+    self.tbr_conn.addAction(self.act_conn)
+    self.tbr_conn.addAction(self.act_disc)
+
+    self.tbr_links = self.addToolBar('Links')
+    self.tbr_links.addAction(self.act_home)
+    self.tbr_links.addAction(self.act_bugs)
 
     # Setup status window
     self.wdg_status = StatusWidget(self)
@@ -90,31 +101,39 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_status.setAllowedAreas(Qt.TopDockWidgetArea | Qt.BottomDockWidgetArea)
 
     # Setup tabbed widgets
-    self.wdg_xcx = XCXWidget(self.codes, self)
+    self.wdg_xcx = XCXWidget(self.codes, None)
     self.wdg_xcx.read.connect(self.read)
     self.wdg_xcx.poke.connect(self.poke)
     self.word_read.connect(self.wdg_xcx.word_read)
     self.wdg_xcx.log.connect(self.log)
-
+    self.scr_xcx = QScrollArea(self)
+    self.scr_xcx.setWidget(self.wdg_xcx)
+    self.scr_xcx.setWidgetResizable(True)
+    self.scr_xcx.setMinimumWidth(self.wdg_xcx.minimumWidth())
+    self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+    self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+    
     self.wdg_custom = CustomGeckoWidget(self.codes, None)
     self.wdg_custom.read.connect(self.read)
     self.wdg_custom.poke.connect(self.poke)
     self.word_read.connect(self.wdg_custom.word_read)
     self.wdg_custom.log.connect(self.log)
     self.scr_custom = QScrollArea(self)
-    self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-    self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
     self.scr_custom.setWidget(self.wdg_custom)
     self.scr_custom.setWidgetResizable(True)
+    self.scr_custom.setMinimumWidth(self.wdg_custom.minimumWidth())
+    self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+    self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
     self.wdg_tabs = QTabWidget(self)
-    self.wdg_tabs.addTab(self.wdg_xcx, 'XCX')
+    self.wdg_tabs.addTab(self.scr_xcx, 'XCX')
     self.wdg_tabs.addTab(self.scr_custom, 'Custom Codes')
 
     self.setCentralWidget(self.wdg_tabs)
 
     if parse_error is not None:
       self.log.emit('Initialization failed: %s' % parse_error, 'red')
+      traceback.print_exc()
 
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
@@ -128,6 +147,15 @@ class XCXGeckoMainWindow(QMainWindow):
       self.ip = None
     event.accept()
 
+  @pyqtSlot()
+  def onHomeURL(self):
+    webbrowser.open('https://github.com/mimicax/XCXGecko')
+
+  @pyqtSlot()
+  def onBugsURL(self):
+    webbrowser.open('https://github.com/mimicax/XCXGecko/issues')
+
+  @pyqtSlot()
   def onConn(self):
     if self.conn is None:
       self.ip = self.txt_ip.text()
@@ -146,6 +174,7 @@ class XCXGeckoMainWindow(QMainWindow):
       except socket.error:
         self.log.emit('Failed to connect to Wii U on %s' % self.ip, 'red')
 
+  @pyqtSlot()
   def onDisc(self):
     if self.conn is not None:
       self.conn.s.close()
