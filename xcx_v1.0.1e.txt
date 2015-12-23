@@ -7,19 +7,19 @@ Miranium Modifier [danmc]
 Reward Tickets Modifier [danmc]
 1C39AD98 0000270F
 
-#Blade Lv Exp [danmc] UNTESTED TODO
-#1C3C76E7 3B9AC9FF
+Blade Lv Exp [danmc]
+1C3C76E7 3B9AC9FF
 
 
 
 Protagonist Name [MiMiC]
 1C38B624 ASCII(10)
 
-#Protagonist Lv Exp [danmc] UNTESTED TODO
-#1C38E644 000F423F
+Protagonist Lv Exp [danmc]
+1C38E644 000F423F
 
-#Protagonist Rank Exp [danmc] UNTESTED TODO
-#1C38E6F5 7FFF
+Protagonist Rank Exp [danmc]
+1C38E6F4 7FFF
 
 Protagonist BP [danmc]
 1C38E93C 0000270F
@@ -50,6 +50,9 @@ Nagi Rank Exp [danmc]
 Nagi BP [danmc]
 1C38EEB8 0000270F
 
+Nagi Affinity [MiMiC]
+1C38F0BE 32
+
 Nagi Height (float) [Intropy]
 1C38EBAC 3F8020C4
 
@@ -75,6 +78,9 @@ L Rank Exp [MiMiC]
 
 L BP [MiMiC]
 1C38F434 0000270F
+
+L Affinity [MiMiC]
+1C38F63A 32
 
 L Height (float) [Intropy]
 1C38F128 3F8020C4
@@ -102,6 +108,9 @@ Lao Rank Exp [danmc]
 Lao BP [danmc]
 1C38F9B0 0000270F
 
+Lao Affinity [MiMiC]
+1C38FBB6 32
+
 Lao Height (float) [Intropy]
 1C38F6A4 3F8020C4
 
@@ -127,6 +136,9 @@ H.B. Rank Exp [danmc]
 
 H.B. BP [danmc]
 1C38FF2C 0000270F
+
+H.B. Affinity [MiMiC]
+1C390132 32
 
 H.B. Height (float) [Intropy]
 1C38FC20 3F8020C4
@@ -154,6 +166,9 @@ Gwin Rank Exp [danmc]
 Gwin BP [danmc]
 1C3904A8 0000270F
 
+Gwin Affinity [MiMiC]
+1C3906AE 32
+
 Gwin Height (float) [Intropy]
 1C39019C 3F8020C4
 
@@ -179,6 +194,9 @@ Fyre Rank Exp [MiMiC]
 
 Fyre BP [MiMiC]
 1C390A24 0000270F
+
+Fyre Affinity [MiMiC]
+1C390C2A 32
 
 Fyre Height (float) [Intropy]
 1C390718 3F8020C4
@@ -206,6 +224,9 @@ Doug Rank Exp [danmc]
 Doug BP [danmc]
 1C390FA0 0000270F
 
+Doug Affinity [MiMiC]
+1C3911A6 32
+
 Doug Height (float) [Intropy]
 1C390C94 3F8020C4
 
@@ -231,6 +252,9 @@ Yelv Rank Exp [danmc]
 
 Yelv BP [danmc]
 1C39151C 0000270F
+
+Yelv Affinity [MiMiC]
+1C391722 32
 
 Yelv Height (float) [Intropy]
 1C391210 3F8020C4
@@ -258,6 +282,9 @@ Boze Rank Exp [MiMiC]
 Boze BP [MiMiC]
 1C391A98 0000270F
 
+Boze Affinity [MiMiC]
+1C391C9E 32
+
 Boze Height (float) [Intropy]
 1C39178C 3F8020C4
 
@@ -283,6 +310,9 @@ Phog Rank Exp [MiMiC]
 
 Phog BP [MiMiC]
 1C392014 0000270F
+
+Phog Affinity [MiMiC]
+1C39221A 32
 
 Phog Height (float) [Intropy]
 1C391D08 3F8020C4
@@ -310,6 +340,9 @@ Elma Rank Exp [danmc]
 Elma BP [danmc]
 1C392590 0000270F
 
+Elma Affinity [MiMiC]
+1C392796 32
+
 Elma Height (float) [Intropy]
 1C392284 3F8020C4
 
@@ -335,6 +368,9 @@ Lin Rank Exp [danmc]
 
 Lin BP [danmc]
 1C392B0C 0000270F
+
+Lin Affinity [MiMiC]
+1C392D12 32
 
 Lin Height (float) [Intropy]
 1C392800 3F8020C4
@@ -362,6 +398,9 @@ Celica Rank Exp [danmc]
 Celica BP [danmc]
 1C393088 0000270F
 
+Celica Affinity [MiMiC]
+1C39328E 32
+
 Celica Height (float) [Intropy]
 1C392D7C 3F8020C4
 
@@ -387,6 +426,9 @@ Irina Rank Exp [danmc]
 
 Irina BP [danmc]
 1C393604 0000270F
+
+Irina Affinity [MiMiC]
+1C39380A 32
 
 Irina Height (float) [Intropy]
 1C3932F8 3F8020C4
@@ -414,6 +456,9 @@ Murderess Rank Exp [MiMiC]
 Murderess BP [MiMiC]
 1C393B80 0000270F
 
+Murderess Affinity [MiMiC]
+1C393D86 32
+
 Murderess Height (float) [Intropy]
 1C393874 3F8020C4
 
@@ -439,6 +484,9 @@ Alexa Rank Exp [MiMiC]
 
 Alexa BP [MiMiC]
 1C3940FC 0000270F
+
+Alexa Affinity [MiMiC]
+1C394302 32
 
 Alexa Height (float) [Intropy]
 1C393DF0 3F8020C4
@@ -466,6 +514,9 @@ Hope Rank Exp [MiMiC]
 Hope BP [MiMiC]
 1C394678 0000270F
 
+Hope Affinity [MiMiC]
+1C39487E 32
+
 Hope Height (float) [Intropy]
 1C39436C 3F8020C4
 
@@ -492,6 +543,9 @@ Mia Rank Exp [MiMiC]
 Mia BP [MiMiC]
 1C394BF4 0000270F
 
+Mia Affinity [MiMiC]
+1C394DFA 32
+
 Mia Height (float) [Intropy]
 1C3948E8 3F8020C4
 
@@ -503,6 +557,46 @@ Mia Chest Height (float) [Intropy]
 
 Mia Chest Width (float) [Intropy]
 1C3948F4 3F8020C4
+
+
+# Materials: Slot 001 [MiMiC] # TODO: confirm (type = XXXb 34 XXX), also store on every 3rd word
+# 1C3BB0DC 63 >>21
+
+Materials: Fleecy Fur [MiMiC]
+1C3BB130 63 >>21
+
+Materials: Infinite Telethia Pen [MiMiC]
+1C3BB220 63 >>21
+
+Materials: Lucky Rainbow Whisker [MiMiC]
+1C3BB25C 63 >>21
+
+Materials: Metal Xeno Chain [MiMiC]
+1C3BB238 63 >>21
+
+Materials: Muscled Suid Bulge [MiMiC]
+1C3BB13C 63 >>21
+
+Materials: Telethia Emerald [MiMiC]
+1C3BB208 63 >>21
+
+Materials: Telethia Mirror [MiMiC]
+1C3BB214 63 >>21
+
+Materials: Telethia Ring [MiMiC]
+1C3BB1FC 63 >>21
+
+Materials: Telethia Stem Cell [MiMiC]
+1C3BB1F0 63 >>21
+
+Materials: Ryyz's Silver Piercings [MiMiC]
+1C3BB250 63 >>21
+
+Materials: Levitath Sun Bead [MiMiC]
+1C3BB22C 63 >>21
+
+Materials: Warrior Race's Seal [MiMiC]
+1C3BB244 63 >>21
 
 
 
@@ -551,12 +645,38 @@ Precious Resources: White Cometite [MiMiC]
 Precious Resources: Lionbone Bort [MiMiC]
 1C3C057C 63 >>21
 
+
+Data Probes: Slot 01 [MiMiC] # TODO: confirm (type = XXXb 38 XXX), also store on every 3rd word
+1C3BD65C 63 >>21
+
+Data Probes: Slot 02 [MiMiC]
+1C3BD668 63 >>21
+
+Data Probes: Slot 03 [MiMiC]
+1C3BD674 63 >>21
+
+Data Probes: Slot 04 [MiMiC]
+1C3BD680 63 >>21
+
+Data Probes: Slot 05 [MiMiC]
+1C3BD68C 63 >>21
+
+Data Probes: Slot 06 [MiMiC]
+1C3BD698 63 >>21
+
+Data Probes: Slot 07 [MiMiC]
+1C3BD6A4 63 >>21
+
+# TODO Protagonist Face Type ID? 1C38B071
+
+# TODO: items note: must have at least 1 of // items need IDs; require UI re-design
+# TODO: dec2hex and hex2dec
 # TODO: debug printouts for pokes and reads
 # TODO: Python config parser: debug printouts, code txt
 
+# TODO: add mining probe codes
+
 # TODO: combo codes for crafting resources (e.g. Potential Up XX)
-# TODO: mining probes
-# TODO: affinity
 
 # TODO: switchable code list (on toolbar)
 # TODO: ascii support in edit

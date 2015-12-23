@@ -7,7 +7,7 @@ from ComboEntriesFrame import *
 
 class XCXWidget(QWidget):
   CHARACTERS = ['Protagonist', 'Elma', 'Lin', 'Alexa', 'Boze', 'Celica', 'Doug', 'Fyre', 'Gwin', 'H.B.', 'Hope', 'Irina', 'L', 'Lao', 'Mia', 'Murderess', 'Nagi', 'Phog', 'Yelv']
-  TRAIT_LABELS = ['Lv Exp', 'Rank Exp', 'BP', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
+  TRAIT_LABELS = ['Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
   
   read = pyqtSignal(str) # code_label
   poke = pyqtSignal(str, int) # code_label, new_val
@@ -79,6 +79,9 @@ class XCXWidget(QWidget):
     self.wdg_char_bp = StaticEntryFrame(None, 'BP', self)
     self.entries.append(self.wdg_char_bp)
     
+    self.wdg_char_affinity = StaticEntryFrame(None, 'Affinity', self)
+    self.entries.append(self.wdg_char_affinity)
+
     self.wdg_char_height = StaticEntryFrame(None, 'Height (float)', self)
     self.entries.append(self.wdg_char_height)
 
@@ -94,24 +97,30 @@ class XCXWidget(QWidget):
     self.entries.append(None) # horizontal divider
     
     # Add entries for items
-    self.entries.append('<b>ITEMS:</b><br>to see updated value, switch "Inventory Category" or exit out of menu')
-    
-    precious_resources_codes = {}
-    for key in self.codes:
-      if key[:19] == 'Precious Resources:':
-        code = self.codes[key]
-        code.hidden = True
-        label = key[20:]
-        bracket_idx = label.find('[')
-        if bracket_idx >= 0:
-          label = label[:bracket_idx]
-        label = label.strip()
-        precious_resources_codes[label] = code
-    if len(precious_resources_codes) <= 0:
-      self.entries.append('No codes available')
-    else:
-      self.entries.append(ComboEntriesFrame(precious_resources_codes, 'Precious Resources', self))
-    
+    self.entries.append('''<b>ITEMS: [USE AT OWN RISK!]</b><br><ul>
+      <li><b>each item slot has a specific item ID (not shown currently)</b></li>
+      <li><b>if an item slot has a value of 0, DO NOT CHANGE IT or it may mess up your save!</b></li>
+      <li>to see updated value, switch "Inventory Category" or exit out of menu</li>
+      </ul>''')
+
+    item_types = ['Materials', 'Precious Resources', 'Data Probes']
+    for item_type in item_types:
+      codes = {}
+      for key in self.codes:
+        if key.find(item_type) == 0:
+          code = self.codes[key]
+          code.hidden = True
+          label = key[len(item_type)+2:]
+          bracket_idx = label.find('[')
+          if bracket_idx >= 0:
+            label = label[:bracket_idx]
+          label = label.strip()
+          codes[label] = code
+      if len(codes) <= 0:
+        self.entries.append(ComboEntriesFrame([], item_type, self))
+      else:
+        self.entries.append(ComboEntriesFrame(codes, item_type, self))
+
     # Set layout
     self.layout = QVBoxLayout(self)
     even = True
@@ -164,6 +173,12 @@ class XCXWidget(QWidget):
     else:
       self.wdg_char_bp.changeCode(None)
   
+    key = [key for key in code_keys if key.find('%s Affinity' % char) == 0]
+    if key:
+      self.wdg_char_affinity.changeCode(self.codes[key[0]])
+    else:
+      self.wdg_char_affinity.changeCode(None)
+
     key = [key for key in code_keys if key.find('%s Height' % char) == 0]
     if key:
       self.wdg_char_height.changeCode(self.codes[key[0]])

@@ -21,3 +21,4 @@ class ComboEntriesFrame(StaticEntryFrame):
   @pyqtSlot(str)
   def onChooseEntry(self, entry):
     self.changeCode(self.codes[str(entry)])
+    self.read.emit(self.code.label)

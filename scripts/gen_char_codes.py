@@ -22,6 +22,7 @@ Mia 1C394880
 traits_raw = '''Lv Exp [MiMiC]: 7C 000F423F
 Rank Exp [MiMiC]: 12C 7FFF
 BP [MiMiC]: 374 0000270F
+Affinity [MiMiC]: 57A 32
 Height (float) [Intropy]: 68 3F8020C4
 Chest Depth (float) [Intropy]: 6C 3F8020C4
 Chest Height (float) [Intropy]: 70 3F8020C4
