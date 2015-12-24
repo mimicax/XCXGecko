@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import socket
-import struct
 import sys
 import time
 import traceback
@@ -9,7 +8,6 @@ import webbrowser
 
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QDockWidget
-from PyQt4.QtGui import QLineEdit
 from PyQt4.QtGui import QMainWindow
 from PyQt4.QtGui import QScrollArea
 from PyQt4.QtGui import QTabWidget
@@ -17,6 +15,7 @@ from PyQt4.QtGui import QTextEdit
 
 from gui.CodeParser import *
 from gui.CustomGeckoWidget import *
+from gui.ItemIDWidget import *
 from gui.XCXWidget import *
 from pygecko.tcpgecko import TCPGecko
 
@@ -54,7 +53,7 @@ class XCXGeckoMainWindow(QMainWindow):
 
     parse_error = None
     try:
-      self.codes = parse_codes('xcx_v1.0.1e.txt')
+      self.codes = parse_codes('./codes/xcx_v1.0.1e.txt')
     except BaseException, e:
       parse_error = str(e)
       self.codes = {}
@@ -101,7 +100,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_status.setAllowedAreas(Qt.TopDockWidgetArea | Qt.BottomDockWidgetArea)
 
     # Setup tabbed widgets
-    self.wdg_xcx = XCXWidget(self.codes, None)
+    self.wdg_xcx = XCXWidget(self.codes)
     self.wdg_xcx.read.connect(self.read)
     self.wdg_xcx.poke.connect(self.poke)
     self.word_read.connect(self.wdg_xcx.word_read)
@@ -113,7 +112,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
     
-    self.wdg_custom = CustomGeckoWidget(self.codes, None)
+    self.wdg_custom = CustomGeckoWidget(self.codes)
     self.wdg_custom.read.connect(self.read)
     self.wdg_custom.poke.connect(self.poke)
     self.word_read.connect(self.wdg_custom.word_read)
@@ -125,9 +124,16 @@ class XCXGeckoMainWindow(QMainWindow):
     self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
+    self.wdg_item_id = ItemIDWidget()
+    self.wdg_item_id.read.connect(self.read)
+    self.wdg_item_id.poke.connect(self.poke)
+    self.word_read.connect(self.wdg_item_id.onWordRead)
+    self.wdg_item_id.log.connect(self.log)
+
     self.wdg_tabs = QTabWidget(self)
     self.wdg_tabs.addTab(self.scr_xcx, 'XCX')
     self.wdg_tabs.addTab(self.scr_custom, 'Custom Codes')
+    self.wdg_tabs.addTab(self.wdg_item_id, 'Item ID')
 
     self.setCentralWidget(self.wdg_tabs)
 
@@ -188,23 +194,30 @@ class XCXGeckoMainWindow(QMainWindow):
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
-      code = self.codes[str(code_label)]
-      if code.num_mem_words != 1:
-        raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
-      if code.is_ptr:
-        ptr_val = self.conn.readmem(code.base_addr, 4)
-        ptr_val = struct.unpack('>I', ptr_val)[0]
-        mem_addr = ptr_val+code.ptr_offset
-      else:
-        mem_addr = code.base_addr
+      code_label = str(code_label)
+      if self.codes is not None and code_label in self.codes:
+        code = self.codes[code_label]
+        if code.num_mem_words != 1:
+          raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
+        if code.is_ptr:
+          ptr_val = self.conn.readmem(code.base_addr, 4)
+          ptr_val = struct.unpack('>I', ptr_val)[0]
+          mem_addr = ptr_val+code.ptr_offset
+        else:
+          mem_addr = code.base_addr
 
-      # Read from one or more 32-bit memory addresses
-      val_mem_chr = self.conn.readmem(mem_addr, code.num_mem_words*4)
-      val_words = struct.unpack('>' + ('I' * code.num_mem_words), val_mem_chr)
+        # Read from one or more 32-bit memory addresses
+        val_mem_chr = self.conn.readmem(mem_addr, code.num_mem_words*4)
+        val_words = struct.unpack('>' + ('I' * code.num_mem_words), val_mem_chr)
 
-      for val_word in val_words:
-        self.word_read.emit(code.txt_addr, val_word)
-        break # Currently only support reading 1 word per request
+        for val_word in val_words:
+          self.word_read.emit(code.txt_addr, val_word)
+          break # Currently only support reading 1 word per request
+      else: # read raw address
+        mem_addr = int(code_label, 16)
+        val_mem_chr = self.conn.readmem(mem_addr, 4)
+        val_words = struct.unpack('>I', val_mem_chr)
+        self.word_read.emit(code_label, val_words[0])
 
     except BaseException, e:
       self.log.emit('Memory read failed: %s' % str(e), 'red')
@@ -216,34 +229,43 @@ class XCXGeckoMainWindow(QMainWindow):
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
-      code = self.codes[str(code_label)]
-      if code.num_mem_words != 1:
-        raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
-      if code.is_ptr:
-        ptr_val = self.conn.readmem(code.base_addr, 4)
-        ptr_val = struct.unpack('>I', ptr_val)[0]
-        mem_addr = ptr_val+code.ptr_offset
-      else:
-        mem_addr = code.base_addr
+      code_label = str(code_label)
+      if self.codes is not None and code_label in self.codes:
+        code = self.codes[code_label]
+        if code.num_mem_words != 1:
+          raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
+        if code.is_ptr:
+          ptr_val = self.conn.readmem(code.base_addr, 4)
+          ptr_val = struct.unpack('>I', ptr_val)[0]
+          mem_addr = ptr_val+code.ptr_offset
+        else:
+          mem_addr = code.base_addr
 
-      # Determine bit shift (needed if bit_offset != 0 and/or num_bytes < 4)
-      lshift_bits = (32 - code.num_bytes * 8 - code.bit_rshift)
-      if lshift_bits < 0:
-        raise BaseException('improper code (negative lshift_bits)')  # either num_bytes > 4, or bit_rshift is wrong
+        # Determine bit shift (needed if bit_offset != 0 and/or num_bytes < 4)
+        lshift_bits = (32 - code.num_bytes * 8 - code.bit_rshift)
+        if lshift_bits < 0:
+          raise BaseException('improper code (negative lshift_bits)')  # either num_bytes > 4, or bit_rshift is wrong
 
-      # Compute updated 32-bit value to addr
-      if code.num_bytes == 4 and code.bit_rshift == 0:
+        # Compute updated 32-bit value to addr
+        if code.num_bytes == 4 and code.bit_rshift == 0:
+          new_word = new_val
+          # print 'Poke(0x%08X, 0x%08X)' % (mem_addr, new_word)
+        else:
+          old_word = self.conn.readmem(mem_addr, 4)
+          old_word = struct.unpack('>I', old_word)[0]
+          word_mask = ((256**code.num_bytes) - 1) << lshift_bits
+          new_word = (old_word & ~word_mask) | (new_val << lshift_bits)
+          # print ('Poke(0x%08X, bytes=%d, bit_offset=%d, 0x%%0%dX) == Poke(0x%08X, from=0x%08X, to=0x%08X)' %
+          #   (mem_addr, code.num_bytes, code.bit_rshift, code.num_bytes*2, mem_addr, old_word, new_word)) % new_val
+
+        self.conn.pokemem(mem_addr, new_word)
+
+      else: # poke raw address
+        mem_addr = int(code_label, 16)
         new_word = new_val
-        # print 'Poke(0x%08X, 0x%08X)' % (mem_addr, new_word)
-      else:
-        old_word = self.conn.readmem(mem_addr, 4)
-        old_word = struct.unpack('>I', old_word)[0]
-        word_mask = ((256**code.num_bytes) - 1) << lshift_bits
-        new_word = (old_word & ~word_mask) | (new_val << lshift_bits)
-        # print ('Poke(0x%08X, bytes=%d, bit_offset=%d, 0x%%0%dX) == Poke(0x%08X, from=0x%08X, to=0x%08X)' %
-        #   (mem_addr, code.num_bytes, code.bit_rshift, code.num_bytes*2, mem_addr, old_word, new_word)) % new_val
+        # print 'RawPoke(0x%08X, 0x%08X)' % (mem_addr, new_word)
 
-      self.conn.pokemem(mem_addr, new_word)
+        self.conn.pokemem(mem_addr, new_word)
 
     except BaseException, e:
       self.log.emit('Memory poke failed: %s' % str(e), 'red')

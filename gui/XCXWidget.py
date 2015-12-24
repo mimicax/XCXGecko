@@ -1,4 +1,3 @@
-from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QVBoxLayout
 from PyQt4.QtGui import QWidget
 

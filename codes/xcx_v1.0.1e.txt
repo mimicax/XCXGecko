@@ -559,124 +559,79 @@ Mia Chest Width (float) [Intropy]
 1C3948F4 3F8020C4
 
 
-# Materials: Slot 001 [MiMiC] # TODO: confirm (type = XXXb 34 XXX), also store on every 3rd word
-# 1C3BB0DC 63 >>21
 
-Materials: Fleecy Fur [MiMiC]
-1C3BB130 63 >>21
+Materials: Slot 001 [MiMiC]
+1C3BB0DC 63 >>21
 
-Materials: Infinite Telethia Pen [MiMiC]
-1C3BB220 63 >>21
+Materials: Slot 493 [MiMiC]
+1C3BC7EC 63 >>21
 
-Materials: Lucky Rainbow Whisker [MiMiC]
-1C3BB25C 63 >>21
-
-Materials: Metal Xeno Chain [MiMiC]
-1C3BB238 63 >>21
-
-Materials: Muscled Suid Bulge [MiMiC]
-1C3BB13C 63 >>21
-
-Materials: Telethia Emerald [MiMiC]
-1C3BB208 63 >>21
-
-Materials: Telethia Mirror [MiMiC]
-1C3BB214 63 >>21
-
-Materials: Telethia Ring [MiMiC]
-1C3BB1FC 63 >>21
-
-Materials: Telethia Stem Cell [MiMiC]
-1C3BB1F0 63 >>21
-
-Materials: Ryyz's Silver Piercings [MiMiC]
-1C3BB250 63 >>21
-
-Materials: Levitath Sun Bead [MiMiC]
-1C3BB22C 63 >>21
-
-Materials: Warrior Race's Seal [MiMiC]
-1C3BB244 63 >>21
+Materials: Slot 800 [MiMiC]
+1C3BD650 63 >>21
 
 
 
-Precious Resources: Arc Sand Ore [MiMiC]
-1C3C054C 63 >>21
-
-Precious Resources: Aurorite [MiMiC]
-1C3C0558 63 >>21
-
-Precious Resources: Boiled-Egg Ore [MiMiC]
-1C3C05B8 63 >>21
-
-Precious Resources: Bonjelium [MiMiC]
-1C3C05E8 63 >>21
-
-Precious Resources: Cimmerian Cinnabar [MiMiC]
-1C3C0570 63 >>21
-
-Precious Resources: Downstone [MiMiC]
-1C3C0588 63 >>21
-
-Precious Resources: Enduron Lead [MiMiC]
-1C3C0594 63 >>21
-
-Precious Resources: Everfreeze Ore [MiMiC]
-1C3C05AC 63 >>21
-
-Precious Resources: Faucaultium [MiMiC]
-1C3C05A0 63 >>21
-
-Precious Resources: Infernium [MiMiC]
-1C3C0564 63 >>21
-
-Precious Resources: Marine Rutile [MiMiC]
-1C3C05D0 63 >>21
-
-Precious Resources: Ouroboros Crystal [MiMiC]
-1C3C05C4 63 >>21
-
-Precious Resources: Parhelion Platinum [MiMiC]
-1C3C05DC 63 >>21
-
-Precious Resources: White Cometite [MiMiC]
+Precious Resources: Slot 001 [MiMiC]
 1C3C0540 63 >>21
 
-Precious Resources: Lionbone Bort [MiMiC]
-1C3C057C 63 >>21
+# 1C3C0540 type=64 id=03
+
+Precious Resources: Slot 015 [MiMiC]
+1C3C05E8 63 >>21
+
+Precious Resources: Slot 100 [MiMiC]
+1C3C09E4 63 >>21
 
 
-Data Probes: Slot 01 [MiMiC] # TODO: confirm (type = XXXb 38 XXX), also store on every 3rd word
+
+Data Probes: Slot 001 [MiMiC]
 1C3BD65C 63 >>21
 
-Data Probes: Slot 02 [MiMiC]
-1C3BD668 63 >>21
+Data Probes: Slot 024 [MiMiC]
+1C3BD770 63 >>21
 
-Data Probes: Slot 03 [MiMiC]
-1C3BD674 63 >>21
+Data Probes: Slot 100 [MiMiC]
+1C3BDB00 63 >>21
 
-Data Probes: Slot 04 [MiMiC]
-1C3BD680 63 >>21
 
-Data Probes: Slot 05 [MiMiC]
-1C3BD68C 63 >>21
 
-Data Probes: Slot 06 [MiMiC]
-1C3BD698 63 >>21
+Collectibles: Slot 001 [MiMiC]
+1C3BDB0C 63 >>21
 
-Data Probes: Slot 07 [MiMiC]
-1C3BD6A4 63 >>21
+Collectibles: Slot 251 [MiMiC]
+1C3BE6C4 63 >>21
 
-# TODO Protagonist Face Type ID? 1C38B071
+Collectibles: Slot 300 [MiMiC]
+1C3BE910 63 >>21
 
-# TODO: items note: must have at least 1 of // items need IDs; require UI re-design
-# TODO: dec2hex and hex2dec
+
+
+Important Items: Slot 001 [MiMiC]
+1C3BE91C 63 >>21
+
+Important Items: Slot 009 [MiMiC]
+1C3BE97C 63 >>21
+
+Important Items: Slot 500 [MiMiC]
+1C3C0080 63 >>21
+
+
+
 # TODO: debug printouts for pokes and reads
-# TODO: Python config parser: debug printouts, code txt
+# TODO: Python config parser: debug printouts, code txt, item txt
 
-# TODO: add mining probe codes
+# TODO: re-designed item interface
+# Type          | Slot (LineEdit)    |                   | Read (PushButton icon)
+# ID (LineEdit) | Name / [NOT IN DB] | Amount (LineEdit) | Poke (PushButton icon)
+# max slot
+# if read zero, do not allow edit
 
-# TODO: combo codes for crafting resources (e.g. Potential Up XX)
-
-# TODO: switchable code list (on toolbar)
 # TODO: ascii support in edit
+
+# TODO: get names for materials (on new game)
+
+# TODO: toolbar shows code and item filenames / or version
+
+# TODO: re-write read and poke interfaces: takes raw addr int + num_bytes [+val], or code label str [+val]
+
+# TODO: Protagonist Face Type ID? 1C38B071

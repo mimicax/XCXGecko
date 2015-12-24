@@ -1,0 +1,44 @@
+# Precious Resources
+64 01 Arc Sand Ore
+64 02 Aurorite
+64 03 White Cometite
+64 04 Enduron Lead
+64 05 Everfreeze Ore
+64 06 Foucaultium
+64 07 Lionbone Bort
+64 08 Infernium
+64 09 Boiled-Egg Ore
+64 0A Marine Rutile
+64 0B Downstone
+64 0C Cimmerian Cinnabar
+64 0D Ouroboros Crystal
+64 0E Parhelion Platinum
+64 0F Bonjelium
+
+# Data Probes
+70 01 Basic Probe
+70 02 Mining Probe G1
+70 03 Mining Probe G2
+70 04 Mining Probe G3
+70 05 Mining Probe G4
+70 06 Mining Probe G5
+70 07 Mining Probe G6
+70 08 Mining Probe G7
+70 09 Mining Probe G8
+70 0A Mining Probe G9
+70 0B Mining Probe G10
+70 0E Research Probe G1
+70 0F Research Probe G2
+70 10 Research Probe G3
+70 11 Research Probe G4
+70 12 Research Probe G5
+70 13 Research Probe G6
+70 16 Booster Probe G1
+70 17 Booster Probe G2
+70 1A Storage Probe
+70 1D Duplicator Probe
+70 1E Fuel Recovery Probe
+70 1F Melee Attack Probe
+70 20 Ranged Attack Probe
+70 21 EZ Debuff Probe
+70 22 Attribute Resistance Probe
