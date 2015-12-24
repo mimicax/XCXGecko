@@ -31,7 +31,7 @@ def find_data_files(source, target, patterns):
 
 setup(windows=[{"script": "XCXGecko.py",
                 "icon_resources": [(0, "img/logo.ico")]}],
-      data_files=find_data_files('', '', ['xcx_v1.0.1e.txt', 'img/*', 'img/flaticon/*']),
+      data_files=find_data_files('', '', ['codes/*', 'img/*', 'img/flaticon/*']),
       options={"py2exe": {
         "includes": ["sip"],
         "dll_excludes": ["MSVCP90.dll"]}}, requires=['PyQt4'])
