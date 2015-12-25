@@ -615,12 +615,6 @@ Important Items: Slot 500 [MiMiC]
 
 
 
-# TODO: re-designed item interface
-# Type          | Slot (LineEdit)               | Search (PushButton) | Read (PushButton icon)
-# ID (LineEdit) | Name / [NOT IN DB] + dropdown | Amount (LineEdit)   | Poke (PushButton icon)
-# max slot
-# if read zero, do not allow edit
-
 # TODO: debug printouts for pokes and reads
 # TODO: Python config parser: debug printouts, code txt, item txt
 

@@ -16,7 +16,7 @@ Extra dependencies:
 * [Python 2.7+](https://www.python.org/downloads/release/python-2711/)
 * [PyQt4 for Python 2.7+](https://www.riverbankcomputing.com/software/pyqt/download)
 
-python XCXGecko.py
+Run "python XCXGecko.py"
 
 ## Build standalone
 
@@ -24,4 +24,4 @@ Extra dependencies:
 
 * [py2exe for Python 2.7+](http://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/)
 
-Run build.bat
+Run "build.bat"

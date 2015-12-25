@@ -12,12 +12,12 @@ class CustomGeckoWidget(QWidget):
   word_read = pyqtSignal(str, int) # txt_addr, word_val
   log = pyqtSignal(str, str) # msg, color
 
-  def __init__(self, codes, parent=None):
+  def __init__(self, data_store, parent=None):
     super(CustomGeckoWidget, self).__init__(parent)
-    self.codes = codes
+    self.d = data_store
     self.entries = []
 
-    for code in (sorted(codes.values(), key=operator.attrgetter('idx'))):
+    for code in (sorted(self.d.codes.values(), key=operator.attrgetter('idx'))):
       if not code.hidden:
         self.entries.append(StaticEntryFrame(code, None, self))
 

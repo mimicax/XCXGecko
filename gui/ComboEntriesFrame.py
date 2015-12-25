@@ -3,6 +3,7 @@ from PyQt4.QtGui import QComboBox
 from StaticEntryFrame import *
 
 
+# TODO: pbly can remove ComboEntriesFrame
 class ComboEntriesFrame(StaticEntryFrame):
   def __init__(self, codes, label=None, parent=None):
     keys = sorted(codes.keys())

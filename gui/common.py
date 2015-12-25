@@ -2,6 +2,16 @@ import string
 import traceback
 
 
+class DataStore:
+  def __init__(self):
+    self.settings = None
+    self.ip = '192.168.0.133' # TODO: parse from settings file
+    self.connected = False
+    self.codes = dict()
+    self.item_ids = dict()
+    self.item_lines = []
+
+
 class Item:
   MAX_ID_VAL = 0x3FF
 

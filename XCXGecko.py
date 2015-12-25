@@ -48,15 +48,18 @@ class XCXGeckoMainWindow(QMainWindow):
 
   def __init__(self):
     super(XCXGeckoMainWindow, self).__init__()
-    self.ip = None
+    self.d = DataStore()
     self.conn = None
 
-    parse_error = None
+    init_errors = []
     try:
-      self.codes = parse_codes('./codes/xcx_v1.0.1e.txt')
+      self.d.codes = parse_codes('./codes/xcx_v1.0.1e.txt') # TODO: use path from setting
+      with open('./codes/item_id_v1.0.1e.txt') as f: # TODO: use path from setting
+        (self.d.item_ids, self.d.item_lines) = parse_item_db(f.read())
     except BaseException, e:
-      parse_error = str(e)
-      self.codes = {}
+      init_errors.append(str(e))
+      self.d.codes = {}
+      self.d.item_ids = []
 
     # Setup window
     self.setGeometry(200, 200, 620, 700)
@@ -64,7 +67,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.setWindowIcon(QIcon('img/logo.ico'))
 
     # Create toolbars
-    self.txt_ip = QLineEdit('192.168.0.133', self)
+    self.txt_ip = QLineEdit(self.d.ip, self)
     self.txt_ip.setMaxLength(16)
     self.txt_ip.setFixedWidth(140)
     self.txt_ip.setPlaceholderText('Wii U IP')
@@ -100,7 +103,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_status.setAllowedAreas(Qt.TopDockWidgetArea | Qt.BottomDockWidgetArea)
 
     # Setup tabbed widgets
-    self.wdg_xcx = XCXWidget(self.codes)
+    self.wdg_xcx = XCXWidget(self.d)
     self.wdg_xcx.read.connect(self.read)
     self.wdg_xcx.poke.connect(self.poke)
     self.word_read.connect(self.wdg_xcx.word_read)
@@ -112,7 +115,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
     
-    self.wdg_custom = CustomGeckoWidget(self.codes)
+    self.wdg_custom = CustomGeckoWidget(self.d)
     self.wdg_custom.read.connect(self.read)
     self.wdg_custom.poke.connect(self.poke)
     self.word_read.connect(self.wdg_custom.word_read)
@@ -137,9 +140,10 @@ class XCXGeckoMainWindow(QMainWindow):
 
     self.setCentralWidget(self.wdg_tabs)
 
-    if parse_error is not None:
-      self.log.emit('Initialization failed: %s' % parse_error, 'red')
-      traceback.print_exc()
+    if len(init_errors) > 0:
+      self.log.emit('Initialization failed...', 'red')
+      for init_error in init_errors:
+        self.log.emit('... ' + init_error, 'red')
 
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
@@ -150,7 +154,7 @@ class XCXGeckoMainWindow(QMainWindow):
     if self.conn is not None:
       self.conn.s.close()
       self.conn = None
-      self.ip = None
+      self.d.connected = False
     event.accept()
 
   @pyqtSlot()
@@ -164,29 +168,27 @@ class XCXGeckoMainWindow(QMainWindow):
   @pyqtSlot()
   def onConn(self):
     if self.conn is None:
-      self.ip = self.txt_ip.text()
+      self.d.ip = self.txt_ip.text()
       try:
-        self.log.emit('Connecting to Wii U on %s...' % self.ip, 'black')
-        self.conn = TCPGecko(self.ip)
-        self.log.emit('Connected to Wii U on %s' % self.ip, 'green')
-
-        # Auto-read all code addrs # DISABLED FOR NOW SINCE IT TAKES SOME TIME AND BLOCKS
-        # self.log.emit('Reading memory for %d code entries' % len(self.codes), 'black')
-        # for code_label in self.codes:
-        #   self.read.emit(code_label)
+        self.log.emit('Connecting to Wii U on %s...' % self.d.ip, 'black')
+        self.conn = TCPGecko(self.d.ip)
+        self.d.connected = True
+        self.log.emit('Connected to Wii U on %s' % self.d.ip, 'green')
 
       except socket.timeout:
-        self.log.emit('Timed out while connecting to Wii U on %s' % self.ip, 'red')
+        self.log.emit('Timed out while connecting to Wii U on %s' % self.d.ip, 'red')
+        self.d.connected = False
       except socket.error:
-        self.log.emit('Failed to connect to Wii U on %s' % self.ip, 'red')
+        self.log.emit('Failed to connect to Wii U on %s' % self.d.ip, 'red')
+        self.d.connected = False
 
   @pyqtSlot()
   def onDisc(self):
     if self.conn is not None:
       self.conn.s.close()
-      self.log.emit('Disconnected from Wii U on %s' % self.ip, 'green')
+      self.log.emit('Disconnected from Wii U on %s' % self.d.ip, 'green')
     self.conn = None
-    self.ip = None
+    self.d.connected = False
 
   @pyqtSlot(str)
   def onRead(self, code_label):
@@ -195,8 +197,8 @@ class XCXGeckoMainWindow(QMainWindow):
         raise BaseException('not connected to Wii U')
 
       code_label = str(code_label)
-      if self.codes is not None and code_label in self.codes:
-        code = self.codes[code_label]
+      if self.d.codes is not None and code_label in self.d.codes:
+        code = self.d.codes[code_label]
         if code.num_mem_words != 1:
           raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
         if code.is_ptr:
@@ -230,8 +232,8 @@ class XCXGeckoMainWindow(QMainWindow):
         raise BaseException('not connected to Wii U')
 
       code_label = str(code_label)
-      if self.codes is not None and code_label in self.codes:
-        code = self.codes[code_label]
+      if self.d.codes is not None and code_label in self.d.codes:
+        code = self.d.codes[code_label]
         if code.num_mem_words != 1:
           raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
         if code.is_ptr:

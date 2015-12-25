@@ -115,7 +115,7 @@ class StaticEntryFrame(QFrame):
   def setAlternateBGColor(self):
     self.setStyleSheet('StaticEntryFrame { background-color:rgb(248,248,248) }')
 
-  @pyqtSlot(str, str)
+  @pyqtSlot(str, int)
   def onWordRead(self, txt_addr, word_val):
     if self.code is None:
       return
