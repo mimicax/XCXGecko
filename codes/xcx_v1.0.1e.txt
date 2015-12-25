@@ -574,8 +574,6 @@ Materials: Slot 800 [MiMiC]
 Precious Resources: Slot 001 [MiMiC]
 1C3C0540 63 >>21
 
-# 1C3C0540 type=64 id=03
-
 Precious Resources: Slot 015 [MiMiC]
 1C3C05E8 63 >>21
 
@@ -617,21 +615,30 @@ Important Items: Slot 500 [MiMiC]
 
 
 
-# TODO: debug printouts for pokes and reads
-# TODO: Python config parser: debug printouts, code txt, item txt
-
 # TODO: re-designed item interface
-# Type          | Slot (LineEdit)    |                   | Read (PushButton icon)
-# ID (LineEdit) | Name / [NOT IN DB] | Amount (LineEdit) | Poke (PushButton icon)
+# Type          | Slot (LineEdit)               | Search (PushButton) | Read (PushButton icon)
+# ID (LineEdit) | Name / [NOT IN DB] + dropdown | Amount (LineEdit)   | Poke (PushButton icon)
 # max slot
 # if read zero, do not allow edit
 
-# TODO: ascii support in edit
+# TODO: debug printouts for pokes and reads
+# TODO: Python config parser: debug printouts, code txt, item txt
 
-# TODO: get names for materials (on new game)
+# TODO: ascii support in edit
 
 # TODO: toolbar shows code and item filenames / or version
 
-# TODO: re-write read and poke interfaces: takes raw addr int + num_bytes [+val], or code label str [+val]
+# TODO: add more Material IDs
+# - Materials 1C3BB1D8
+# - Collectibles 1C3BDC80
 
 # TODO: Protagonist Face Type ID? 1C38B071
+
+# TODO: re-write read and poke interfaces: takes raw addr int + num_bytes [+val], or code label str [+val]
+
+# TODO item search feature:
+# - text field to type in name (with auto-complete dropdown) + check to make sure have ID in DB
+# - read_block (between slot 001 and max slot in code.txt), identified by start and end addresses
+# - on_block_read + scan for type+id signature
+# - if found, add temp code to StaticEntryFrame
+# - if not found, print in log

@@ -33,21 +33,26 @@ class StaticEntryFrame(QFrame):
     if self.code is not None:
       self.lbl_label.setToolTip(self.code.txt_addr)
 
-    self.btn_curval = QLMRPushButton('Fetch value', self)
+    self.val_newval = ValueComboBox([], 4, self)
+    self.val_newval.setToolTip('New value')
+    self.val_newval.setFixedWidth(120)
+
+    self.icon_size = QSize(self.val_newval.height(), self.val_newval.height())
+    self.read_icon = QIcon('img/flaticon/open135.png')
+    self.poke_icon = QIcon('img/flaticon/draw39.png')
+
+    self.btn_curval = QLMRPushButton(' Fetch Value', self)
+    self.btn_curval.setIcon(self.read_icon)
+    self.btn_curval.setIconSize(self.icon_size)
     self.btn_curval.setToolTip('Read value from memory')
     self.btn_curval.clicked.connect(self.updateCurVal)
     self.btn_curval.right_clicked.connect(self.toggleCurValMode)
     self.btn_curval.setFixedWidth(120)
 
-    self.val_newval = ValueComboBox([], 4, self)
-    self.val_newval.setToolTip('New value')
-    self.val_newval.setFixedWidth(120)
-
-    icon_size = QSize(self.val_newval.height(), self.val_newval.height())
     self.btn_poke = QPushButton(self)
-    self.btn_poke.setIcon(QIcon('img/flaticon/draw39.png'))
-    self.btn_poke.setIconSize(icon_size)
-    self.btn_poke.setFixedSize(icon_size)
+    self.btn_poke.setIcon(self.poke_icon)
+    self.btn_poke.setIconSize(self.icon_size)
+    self.btn_poke.setFixedSize(self.icon_size)
     self.btn_poke.setAutoFillBackground(True)
     self.btn_poke.setStyleSheet('background-color: white')
     self.btn_poke.setToolTip('Poke new value into memory')
@@ -80,10 +85,13 @@ class StaticEntryFrame(QFrame):
         dft_values.append(self.code.dft_value)
     
     if self.cur_val is None:
-      self.btn_curval.setText('Fetch value')
+      self.btn_curval.setText(' Fetch Value')
+      self.btn_curval.setIcon(self.read_icon)
+      self.btn_curval.setIconSize(self.icon_size)
     else:
       cur_val_dec = str(self.cur_val)
       self.btn_curval.setText(cur_val_dec)
+      self.btn_curval.setIcon(QIcon())
       self.val_newval.lineEdit().setText(cur_val_dec)
       
     self.val_newval.updateValues(dft_values, num_bytes)
@@ -130,6 +138,7 @@ class StaticEntryFrame(QFrame):
         val_str = str(self.cur_val)
         self.cur_val_mode = 0
       self.btn_curval.setText(val_str)
+      self.btn_curval.setIcon(QIcon())
       self.val_newval.lineEdit().setText(val_str)
 
   def toggleCurValMode(self):

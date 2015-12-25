@@ -1,44 +1,63 @@
+# Materials
+68 003 Gold Fir Tree
+68 004 Golden Medal
+68 005 Golden Chalice
+68 006 Gold Ingot
+68 007 Golden Cedar
+# TODO: scan from 03B to 150
+68 151 Energy Tube
+68 152 Upgraded Sensor Port
+68 153 Hi-Spec Sensor Module
+68 154 Advanced Jet
+# TODO: scan from 155 to max
+
 # Precious Resources
-64 01 Arc Sand Ore
-64 02 Aurorite
-64 03 White Cometite
-64 04 Enduron Lead
-64 05 Everfreeze Ore
-64 06 Foucaultium
-64 07 Lionbone Bort
-64 08 Infernium
-64 09 Boiled-Egg Ore
-64 0A Marine Rutile
-64 0B Downstone
-64 0C Cimmerian Cinnabar
-64 0D Ouroboros Crystal
-64 0E Parhelion Platinum
-64 0F Bonjelium
+64 001 Arc Sand Ore
+64 002 Aurorite
+64 003 White Cometite
+64 004 Enduron Lead
+64 005 Everfreeze Ore
+64 006 Foucaultium
+64 007 Lionbone Bort
+64 008 Infernium
+64 009 Boiled-Egg Ore
+64 00A Marine Rutile
+64 00B Downstone
+64 00C Cimmerian Cinnabar
+64 00D Ouroboros Crystal
+64 00E Parhelion Platinum
+64 00F Bonjelium
 
 # Data Probes
-70 01 Basic Probe
-70 02 Mining Probe G1
-70 03 Mining Probe G2
-70 04 Mining Probe G3
-70 05 Mining Probe G4
-70 06 Mining Probe G5
-70 07 Mining Probe G6
-70 08 Mining Probe G7
-70 09 Mining Probe G8
-70 0A Mining Probe G9
-70 0B Mining Probe G10
-70 0E Research Probe G1
-70 0F Research Probe G2
-70 10 Research Probe G3
-70 11 Research Probe G4
-70 12 Research Probe G5
-70 13 Research Probe G6
-70 16 Booster Probe G1
-70 17 Booster Probe G2
-70 1A Storage Probe
-70 1D Duplicator Probe
-70 1E Fuel Recovery Probe
-70 1F Melee Attack Probe
-70 20 Ranged Attack Probe
-70 21 EZ Debuff Probe
-70 22 Attribute Resistance Probe
+70 001 Basic Probe
+70 002 Mining Probe G1
+70 003 Mining Probe G2
+70 004 Mining Probe G3
+70 005 Mining Probe G4
+70 006 Mining Probe G5
+70 007 Mining Probe G6
+70 008 Mining Probe G7
+70 009 Mining Probe G8
+70 00A Mining Probe G9
+70 00B Mining Probe G10
+70 00E Research Probe G1
+70 00F Research Probe G2
+70 010 Research Probe G3
+70 011 Research Probe G4
+70 012 Research Probe G5
+70 013 Research Probe G6
+70 016 Booster Probe G1
+70 017 Booster Probe G2
+70 01A Storage Probe
+70 01D Duplicator Probe
+70 01E Fuel Recovery Probe
+70 01F Melee Attack Probe
+70 020 Ranged Attack Probe
+70 021 EZ Debuff Probe
+70 022 Attribute Resistance Probe
+
+# Collectibles
+# TODO: scan from 0 to max
+
+# Important Items
+# TODO: scan from 0 to max
