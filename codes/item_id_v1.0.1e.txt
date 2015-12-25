@@ -1,4 +1,4 @@
-# Materials
+### 68 Materials
 68 003 Gold Fir Tree
 68 004 Golden Medal
 68 005 Golden Chalice
@@ -9,9 +9,9 @@
 68 152 Upgraded Sensor Port
 68 153 Hi-Spec Sensor Module
 68 154 Advanced Jet
-# TODO: scan from 155 to max
+# TODO: scan from 155 to max (1023)
 
-# Precious Resources
+### 64 Precious Resources
 64 001 Arc Sand Ore
 64 002 Aurorite
 64 003 White Cometite
@@ -28,7 +28,7 @@
 64 00E Parhelion Platinum
 64 00F Bonjelium
 
-# Data Probes
+### 70 Data Probes
 70 001 Basic Probe
 70 002 Mining Probe G1
 70 003 Mining Probe G2
@@ -55,9 +55,208 @@
 70 020 Ranged Attack Probe
 70 021 EZ Debuff Probe
 70 022 Attribute Resistance Probe
+# 023+ are debug or bugged
 
-# Collectibles
-# TODO: scan from 0 to max
+### 6C Collectibles
+6C 001 Ajira Melon
+6C 002 Lacey Potato
+6C 003 Sadelona Lettuce
+6C 004 Mosa Cabbage
+6C 005 Keppo Carrot
+6C 006 Amidrasian Tomato
+6C 007 Caseras Mushroom
+6C 008 Zandemo Eggplant
+6C 009 Flowering Morrow Fern
+6C 00A Fodornallow Greens
+6C 00B Sibercaseras Mushroom
+6C 00C Gubura Cabbage Leaf
+6C 00D Shinuyuni Garlic
+6C 00E Cosse Bean
+6C 00F Beagflea Squash
+6C 010 Will Pepper
+6C 011 Charupa Leaves
+6C 012 Dobobora Broccoli
+6C 013 Ruge Daikon
+6C 014 Dosoram Bean
+6C 015 Yaya Sesame
+6C 016 Pale Maize
+6C 017 Mizaria Celery
+6C 018 Kyatara Onion
+6C 019 Charged Cayenne
+6C 01A Brambloo Shoot
+6C 01B Belzadozebu Scallions
+6C 01C Cranjelly
+6C 01D Rock-Orange
+6C 01E Strawlenny
+6C 01F Starlight Apple
+6C 020 Mondcherry
+6C 021 Sonar Lemon
+6C 022 Socha Guava
+6C 023 Prapaya
+6C 024 Babaco Leaf
+6C 025 Amana Durian
+6C 026 Lava Mango
+6C 027 Sour Plum
+6C 028 Bananaleaf
+6C 029 Godmelon
+6C 02A Suna Watermelon
+6C 02B Royal Grape
+6C 02C Kiwegg
+6C 02D Spiked Pomegranate
+6C 02E Shido Persimmon
+6C 02F Coldberry
+6C 030 White Cassis
+6C 031 Emerald Grape
+6C 032 Cluster Papaya
+6C 033 Gyulali
+6C 034 Lava Chestnut
+6C 035 Iron Akebi Fruit
+6C 036 Mottled Mums
+# TODO: scan from 037 to max
 
-# Important Items
-# TODO: scan from 0 to max
+### 74 Important Items
+74 001 Conner's Comm Device
+74 002 Windshield Glass
+74 003 Bobby's Watch
+74 004 Gnarlbranch Sap
+74 005 Legen-dar
+74 006 Smelly Legen-dar
+74 007 Slice of Bread
+74 008 Deep Blue Gem
+74 009 Large Stuffed Lobster
+74 00A Stuffed Lobster
+74 00B Meal Ticket
+74 00C Suid Bones
+74 00D Ma-non Hunting Kit
+74 00E Bronze Blatta Card
+74 00F Bronze Cinicula Card
+74 010 Bronze Petramand Card
+74 011 Silver Simius Card
+74 012 Silver Evello Card
+74 013 Silver Xiphias Card
+74 014 Silver Mortifole Card
+74 015 Silver Nopopotomus Card
+74 017 Natural Pearl
+74 020 White Gold Ore
+74 021 Briggs's Key
+74 022 Fosdyke's Key
+74 023 Moorehouse's Key
+74 027 Quegga's Note
+74 02A Keycard
+74 02B ID Card
+# TODO: confirm duplicate 74 02C ID Card
+# TODO: confirm duplicate 74 02D ID Card
+74 02F Ajoa's ID card
+74 033 Ice Cream Cake
+74 034 Malyteth's Bottle
+74 037 Nopon Contract
+74 039 Nopon Gemstone
+74 03D Vi Sezha's Bracelet
+74 03E Ge Jewhe's Dagger
+74 041 Ringstone
+74 044 Zazazon's Package
+74 045 Hazardous Container
+74 046 Hazardous Fuel Cell
+74 047 Nio's IOU
+74 048 Sapphire Ring
+74 052 Lumenoa Leaf
+74 053 Gorkwa
+74 054 Run'tonam's Right Arm
+74 057 Traylan's Gorkwa
+74 05A White Whale Parts
+74 05E Ian's ID Card
+74 05F Nalu's Present
+74 060 Dadapon's Sunglasses
+74 061 Dodonga Treaty
+74 062 Dorian Treaty
+74 063 Wrathian Part
+74 064 Med Kit
+74 065 Internment Camp Key
+74 067 Skell License
+# TODO: confirm duplicate name 74 06B White Whale Parts
+74 06C L-002 Power Cable
+74 06D Skell License Certificate
+74 072 Tissue Sample
+74 073 Mia's Comm Device
+74 074 Phosphorus-Tree Seed
+74 075 Container Key
+74 079 Grenade Pizza
+74 07A Frozen Pizza
+74 07B Ajiba's Key
+74 07C Mujiba's Key
+74 07D Dancer's Clothes
+74 07E Crimson Tear
+74 087 New Weapon Blueprint
+74 089 Summoning Goggles
+74 08A Senirapa Water
+74 08C Zirtodiamond
+74 08D Golbogga's Disk
+74 08F Tykki Sap
+74 091 Gray Keycard
+74 092 Rectangular Chest
+74 099 Kula's Cargo
+74 09B Aerozium
+74 09C Guardian Etherscale
+74 0A3 Hilal Stronghold Key
+74 0A4 Mimeosome Left Arm
+74 0A5 L-002 Experimental Plant
+74 0A6 Reverend's Journal
+74 0A7 Flemtide
+74 0A8 Floatstone Shard
+74 0A9 Blood-Soaked Beast Fur
+74 0AA Law's Pendant
+74 0AB Three Swords
+74 0AC Pearl Necklace
+74 0AD Data Unit FN093
+74 0AE Repair Kit
+74 0AF Aganeba Alloy
+74 0B0 Cockpit Wreckage
+74 0B1 Engine Wreckage
+74 0B2 Zu Pharg Wreckage
+74 0B3 Junk
+74 0B4 Data Unit FN094
+74 0B5 Mimeosome Head
+74 0B6 Mimeosome Torso
+74 0B7 Mimeosome Left Leg
+74 0B8 Mimeosome Right Leg
+74 0B9 First Barrier Key
+74 0BB Cleansing Moss
+74 0BC Locket
+74 0BD Star Sand
+74 0BE Violet Crystal
+74 0BF Emerian Relic
+74 0C0 Missing Drive
+74 0C1 Broken Data Probe
+74 0C2 Heart Stone
+74 0C5 Mount M'gando Stone
+74 0C6 Jelly Weeds
+74 0C7 New-Weapon Remains
+74 0CB Sampling Bottle
+74 0CC Solar Starship Map
+74 0CD Hamburger
+74 0CE Hot Dog
+74 0CF Data Unit FN095
+74 0D0 Data Unit FN096
+74 0D1 Data Unit FN097
+74 0D2 Practice Data Probe
+74 0D3 Toxic Chemical Bomb
+# TODO: confirm duplicate name 74 0D4 Med Kit
+74 0D5 Noble Silk
+74 0D6 Data Unit FN098
+74 0D7 Sword of Legendaryness
+74 0D8 Unbreakable Sword
+74 0D9 Voltant
+# TODO: confirm duplicate 74 0DA Keycard
+# TODO: confirm spelling and possible duplicate 74 0DB Troylan's Gorkwa
+74 0DC Traditional Orphean Drug
+74 0DD Weapon Test Data
+74 0DE Second Barrier Key
+74 0DF Third Barrier Key
+74 0E0 Phogrium
+74 0E1 Massive Ring Fragment
+74 0E2 Butte Ruin Fragments
+74 0E3 North Coast Riddle Rock
+74 0E4 Communication Data
+74 0E5 Medical Data
+#74 0E6 Gubura Cabbage Leaf (crash on description)
+#From here to 74 FF = Gubura Cabbage Leaf (crash on description)

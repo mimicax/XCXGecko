@@ -10,6 +10,7 @@ class DataStore:
     self.codes = dict()
     self.item_ids = dict()
     self.item_lines = []
+    self.item_types = []
 
 
 class Item:
@@ -54,32 +55,53 @@ def parse_item_word(val_word):
 
 
 def parse_item_db(db_txt):
+  item_types = []
   db = dict()
   db_lines = db_txt.split('\n')
+
   line_count = 0
   try:
     for line in db_lines:
       line_count += 1
-      if len(line) <= 0 or line[0] == '#':
+
+      if len(line) <= 0: # Skip empty lines
         continue
-      tokens = string.split(line, maxsplit=2)
-      if len(tokens) != 3:
-        raise BaseException('invalid line format, expecting TYPE_VAL ID_VAL NAME')
-      type_val = int(tokens[0], 16)
-      id_val = int(tokens[1], 16)
-      if type_val < 0 or type_val > 0xFF:
-        raise BaseException('TYPE_VAL out of [%d, %d] range' % (0, 0xFF))
-      if id_val < 0 or id_val > Item.MAX_ID_VAL:
-        raise BaseException('ID_VAL out of [%d, %d] range' % (0, Item.MAX_ID_VAL))
-      name = tokens[2]
-      item = Item(type_val, id_val, name, line_count-1)
-      if item.val_word in db:
-        raise BaseException('duplicate entry for TYPE=%02X ID=%03X' % (type_val, id_val))
-      db[item.val_word] = item
-      # print 'Parsed %08X (type=%02X id=%02X): %s' % (item.val_word, item.type_val, item.id_val, item.name)
+
+      elif len(line) > 4 and line[:4] == '### ': # Parse TYPE_VAL and TYPE_NAME
+        type_tokens = string.split(line, maxsplit=2)
+        if len(type_tokens) != 3:
+          continue
+        try:
+          type_val = int(type_tokens[1], 16)
+          if type_val < 0 or type_val > 0xFF:
+            continue
+          type_name = type_tokens[2]
+          item_types.append((type_val, type_name))
+        except BaseException, e:
+          continue
+
+      elif line[0] == '#': # Skip commented lines
+        continue
+
+      else: # Parse TYPE_VAL ID_VAL NAME
+        tokens = string.split(line, maxsplit=2)
+        if len(tokens) != 3:
+          raise BaseException('invalid line format, expecting TYPE_VAL ID_VAL NAME')
+        type_val = int(tokens[0], 16)
+        id_val = int(tokens[1], 16)
+        if type_val < 0 or type_val > 0xFF:
+          raise BaseException('TYPE_VAL out of [%d, %d] range' % (0, 0xFF))
+        if id_val < 0 or id_val > Item.MAX_ID_VAL:
+          raise BaseException('ID_VAL out of [%d, %d] range' % (0, Item.MAX_ID_VAL))
+        name = tokens[2]
+        item = Item(type_val, id_val, name, line_count-1)
+        if item.val_word in db:
+          raise BaseException('duplicate entry for TYPE=%02X ID=%03X' % (type_val, id_val))
+        db[item.val_word] = item
+        # print 'Parsed %08X (type=%02X id=%02X): %s' % (item.val_word, item.type_val, item.id_val, item.name)
 
   except BaseException, e:
     traceback.print_exc()
     raise BaseException('Failed to parse Item ID DB on line %d: %s' % (line_count, str(e)))
 
-  return db, db_lines
+  return db, db_lines, item_types

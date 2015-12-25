@@ -55,7 +55,7 @@ class XCXGeckoMainWindow(QMainWindow):
     try:
       self.d.codes = parse_codes('./codes/xcx_v1.0.1e.txt') # TODO: use path from setting
       with open('./codes/item_id_v1.0.1e.txt') as f: # TODO: use path from setting
-        (self.d.item_ids, self.d.item_lines) = parse_item_db(f.read())
+        (self.d.item_ids, self.d.item_lines, self.d.item_types) = parse_item_db(f.read())
     except BaseException, e:
       init_errors.append(str(e))
       self.d.codes = {}

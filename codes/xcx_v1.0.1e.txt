@@ -615,8 +615,8 @@ Important Items: Slot 500 [MiMiC]
 
 
 
-# TODO: debug printouts for pokes and reads
 # TODO: Python config parser: debug printouts, code txt, item txt
+# TODO: debug printouts for pokes and reads
 
 # TODO: ascii support in edit
 
@@ -631,8 +631,8 @@ Important Items: Slot 500 [MiMiC]
 # TODO: re-write read and poke interfaces: takes raw addr int + num_bytes [+val], or code label str [+val]
 
 # TODO item search feature:
-# - text field to type in name (with auto-complete dropdown) + check to make sure have ID in DB
+# - check to make sure have ID in DB
 # - read_block (between slot 001 and max slot in code.txt), identified by start and end addresses
 # - on_block_read + scan for type+id signature
-# - if found, add temp code to StaticEntryFrame
-# - if not found, print in log
+# - if found, update slot combobox, and then manually call onWordRead to update other fields
+# - if not found, print in log (but include # of items found/searched)

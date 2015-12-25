@@ -23,6 +23,7 @@ class ItemIDWidget(QWidget):
     super(ItemIDWidget, self).__init__(parent)
     self.custom_db = dict()
     self.custom_db_lines = []
+    self.item_types = []
 
     self.layout = QGridLayout(self)
 
@@ -100,7 +101,7 @@ class ItemIDWidget(QWidget):
       with open(str(path), 'r') as f:
         db_txt = f.read()
         try:
-          self.custom_db, self.custom_db_lines = parse_item_db(db_txt)
+          self.custom_db, self.custom_db_lines, self.item_types = parse_item_db(db_txt)
         except BaseException, e:
           self.log.emit(str(e), 'red')
       self.txt_db.setPlainText('\n'.join(self.custom_db_lines))

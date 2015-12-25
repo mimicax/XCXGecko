@@ -9,8 +9,6 @@ class XCXWidget(QWidget):
   CHARACTERS = ['Protagonist', 'Elma', 'Lin', 'Alexa', 'Boze', 'Celica', 'Doug', 'Fyre', 'Gwin', 'H.B.', 'Hope',
                 'Irina', 'L', 'Lao', 'Mia', 'Murderess', 'Nagi', 'Phog', 'Yelv']
   TRAIT_LABELS = ['Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
-  ITEM_TYPES = [('Materials', '68'), ('Precious Resources', '64'),
-                ('Data Probes', '70')]  # TODO: get item type from txt
 
   read = pyqtSignal(str)  # code_label
   poke = pyqtSignal(str, int)  # code_label, new_val
@@ -105,7 +103,7 @@ class XCXWidget(QWidget):
       <li>to see updated value, switch Item Category or exit out of menu</li>
       </ul>''')
 
-    for type_str, type_val_str in self.ITEM_TYPES:
+    for type_val, type_str in self.d.item_types:
       first_slot = None
       last_slot = None
       last_slot_id = None
@@ -129,7 +127,6 @@ class XCXWidget(QWidget):
       if first_slot is None or last_slot is None:
         self.entries.append('Missing slot 001/max codes for %s' % type_str)
       else:
-        type_val = int(type_val_str, 16)
         for key, item in self.d.item_ids.iteritems():
           if item.type_val == type_val:
             slot_names[item.id_val] = item.name
