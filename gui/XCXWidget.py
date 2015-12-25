@@ -10,10 +10,12 @@ class XCXWidget(QWidget):
                 'Irina', 'L', 'Lao', 'Mia', 'Murderess', 'Nagi', 'Phog', 'Yelv']
   TRAIT_LABELS = ['Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
 
-  read = pyqtSignal(str)  # code_label
-  poke = pyqtSignal(str, int)  # code_label, new_val
-  word_read = pyqtSignal(str, int)  # txt_addr, word_val
-  log = pyqtSignal(str, str)  # msg, color
+  read = pyqtSignal(str) # code_label
+  poke = pyqtSignal(str, int) # code_label, new_val
+  word_read = pyqtSignal(str, int) # txt_addr, word_val
+  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
+  log = pyqtSignal(str, str) # msg, color
 
   def __init__(self, data_store, parent=None):
     super(XCXWidget, self).__init__(parent)
@@ -104,35 +106,30 @@ class XCXWidget(QWidget):
       </ul>''')
 
     for type_val, type_str in self.d.item_types:
+      # Find codes for first and last slot
       first_slot = None
       last_slot = None
-      last_slot_id = None
-      slot_names = dict()
-      slot_ids = dict()
       for key in self.d.codes:
-        slot_idx = key.find(': Slot ')
-        if key.find(type_str) == 0 and slot_idx > 0:
+        if key.find(type_str) == 0:
           code = self.d.codes[key]
           code.hidden = True
-          slot = key[slot_idx + len(': Slot '):]
-          bracket_idx = slot.find('[')
-          if bracket_idx >= 0:
-            slot = slot[:bracket_idx]
-          slot = int(slot)
-          if slot == 1:
+          if first_slot is None or first_slot.base_addr > code.base_addr:
             first_slot = code
-          elif last_slot_id is None or last_slot_id < slot:
-            last_slot_id = slot
+          if last_slot is None or last_slot.base_addr < code.base_addr:
             last_slot = code
       if first_slot is None or last_slot is None:
-        self.entries.append('Missing slot 001/max codes for %s' % type_str)
-      else:
-        for key, item in self.d.item_ids.iteritems():
-          if item.type_val == type_val:
-            slot_names[item.id_val] = item.name
-            slot_ids[item.name] = item.id_val
-        self.entries.append(ItemEntriesFrame(type_val, first_slot.base_addr, type_str,
-                                             last_slot_id, slot_names, slot_ids, self))
+        self.entries.append('Need 2+ codes for %s type' % type_str)
+        continue
+
+      # Construct ID<->name mappings
+      slot_names = dict()
+      slot_ids = dict()
+      for key, item in self.d.item_ids.iteritems():
+        if item.type_val == type_val:
+          slot_names[item.id_val] = item.name
+          slot_ids[item.name] = item.id_val
+      self.entries.append(ItemEntriesFrame(type_val, first_slot.base_addr, last_slot.base_addr,
+                                           type_str, slot_names, slot_ids, self))
 
     # Set layout
     self.layout = QVBoxLayout(self)
@@ -155,10 +152,17 @@ class XCXWidget(QWidget):
     self.layout.setSpacing(0)
 
     for entry in self.entries:
-      if isinstance(entry, StaticEntryFrame) or isinstance(entry, ItemEntriesFrame):
+      if isinstance(entry, StaticEntryFrame):
         entry.read.connect(self.read)
         entry.poke.connect(self.poke)
         self.word_read.connect(entry.onWordRead)
+        entry.log.connect(self.log)
+      elif isinstance(entry, ItemEntriesFrame):
+        entry.read.connect(self.read)
+        entry.poke.connect(self.poke)
+        self.word_read.connect(entry.onWordRead)
+        entry.readmem.connect(self.readmem)
+        self.block_read.connect(entry.onBlockRead)
         entry.log.connect(self.log)
 
     self.setStyleSheet('XCXWidget { background-color: white; }')

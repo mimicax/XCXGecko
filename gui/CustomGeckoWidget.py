@@ -1,5 +1,6 @@
 import operator
 
+from PyQt4.QtCore import QByteArray
 from PyQt4.QtGui import QVBoxLayout
 from PyQt4.QtGui import QWidget
 
@@ -10,6 +11,8 @@ class CustomGeckoWidget(QWidget):
   read = pyqtSignal(str) # code_label
   poke = pyqtSignal(str, int) # code_label, new_val
   word_read = pyqtSignal(str, int) # txt_addr, word_val
+  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self, data_store, parent=None):

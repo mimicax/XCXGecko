@@ -6,6 +6,7 @@ import time
 import traceback
 import webbrowser
 
+from PyQt4.QtCore import QByteArray
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QDockWidget
 from PyQt4.QtGui import QMainWindow
@@ -44,6 +45,8 @@ class XCXGeckoMainWindow(QMainWindow):
   read = pyqtSignal(str) # code_label
   poke = pyqtSignal(str, int) # code_label, new_val
   word_read = pyqtSignal(str, int) # txt_addr, word_val
+  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self):
@@ -107,6 +110,8 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_xcx.read.connect(self.read)
     self.wdg_xcx.poke.connect(self.poke)
     self.word_read.connect(self.wdg_xcx.word_read)
+    self.wdg_xcx.readmem.connect(self.readmem)
+    self.block_read.connect(self.wdg_xcx.block_read)
     self.wdg_xcx.log.connect(self.log)
     self.scr_xcx = QScrollArea(self)
     self.scr_xcx.setWidget(self.wdg_xcx)
@@ -119,6 +124,8 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_custom.read.connect(self.read)
     self.wdg_custom.poke.connect(self.poke)
     self.word_read.connect(self.wdg_custom.word_read)
+    self.wdg_custom.readmem.connect(self.readmem)
+    self.block_read.connect(self.wdg_custom.block_read)
     self.wdg_custom.log.connect(self.log)
     self.scr_custom = QScrollArea(self)
     self.scr_custom.setWidget(self.wdg_custom)
@@ -147,6 +154,7 @@ class XCXGeckoMainWindow(QMainWindow):
 
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
+    self.readmem.connect(self.onReadMem)
 
     self.show()
 
@@ -223,6 +231,20 @@ class XCXGeckoMainWindow(QMainWindow):
 
     except BaseException, e:
       self.log.emit('Memory read failed: %s' % str(e), 'red')
+      traceback.print_exc()
+
+  @pyqtSlot(int, int)
+  def onReadMem(self, start_addr, num_bytes):
+    try:
+      if self.conn is None:
+        raise BaseException('not connected to Wii U')
+
+      raw_bytes = self.conn.readmem(start_addr, num_bytes)
+      qt_bytes = QByteArray(raw_bytes)
+      self.block_read.emit(start_addr, num_bytes, qt_bytes)
+
+    except BaseException, e:
+      self.log.emit('Block memory read failed: %s' % str(e), 'red')
       traceback.print_exc()
 
   @pyqtSlot(str, int)

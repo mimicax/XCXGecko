@@ -37,7 +37,8 @@ class StaticEntryFrame(QFrame):
     self.val_newval.setToolTip('New value')
     self.val_newval.setFixedWidth(120)
 
-    self.icon_size = QSize(self.val_newval.height(), self.val_newval.height())
+    icon_height = self.val_newval.height()*5/6
+    self.icon_size = QSize(icon_height, icon_height)
     self.read_icon = QIcon('img/flaticon/open135.png')
     self.poke_icon = QIcon('img/flaticon/draw39.png')
 
@@ -52,7 +53,7 @@ class StaticEntryFrame(QFrame):
     self.btn_poke = QPushButton(self)
     self.btn_poke.setIcon(self.poke_icon)
     self.btn_poke.setIconSize(self.icon_size)
-    self.btn_poke.setFixedSize(self.icon_size)
+    self.btn_poke.setFixedSize(QSize(icon_height*1.5, icon_height*1.5))
     self.btn_poke.setAutoFillBackground(True)
     self.btn_poke.setStyleSheet('background-color: white')
     self.btn_poke.setToolTip('Poke new value into memory')
@@ -120,7 +121,10 @@ class StaticEntryFrame(QFrame):
     if self.code is None:
       return
     if txt_addr == self.code.txt_addr:
-      self.cur_val = word_val
+      if word_val < 0:
+        self.cur_val = 0x100000000 - word_val
+      else:
+        self.cur_val = word_val
       if self.code.num_bytes < 4 or self.code.bit_rshift != 0:
         lshift_bits = (32 - self.code.num_bytes * 8 - self.code.bit_rshift)
         if lshift_bits < 0:
@@ -145,14 +149,18 @@ class StaticEntryFrame(QFrame):
     if self.code is None or self.cur_val is None:
       return
     self.cur_val_mode += 1
-    if self.cur_val_mode == 1: # hex
-      fmt = '0x%%0%dX' % self.code.num_bytes
-      val_str = fmt % self.cur_val
-    elif self.cur_val_mode == 2: # float
-      val_str = str(struct.unpack('>f', struct.pack('>I', self.cur_val))[0])
-    elif self.cur_val_mode == 3: # ascii
-      val_str = struct.pack('>I', self.cur_val)
-    else: # assume mode 0 by default
+    try:
+      if self.cur_val_mode == 1: # hex
+        fmt = '0x%%0%dX' % self.code.num_bytes
+        val_str = fmt % self.cur_val
+      elif self.cur_val_mode == 2: # float
+        val_str = str(struct.unpack('>f', struct.pack('>I', self.cur_val))[0])
+      elif self.cur_val_mode == 3: # ascii
+        val_str = struct.pack('>I', self.cur_val)
+      else: # assume mode 0 by default
+        self.cur_val_mode = 0
+        val_str = str(self.cur_val)
+    except struct.error, e:
       self.cur_val_mode = 0
       val_str = str(self.cur_val)
     self.btn_curval.setText(val_str)

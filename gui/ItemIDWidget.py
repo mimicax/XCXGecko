@@ -29,10 +29,10 @@ class ItemIDWidget(QWidget):
 
     self.lbl_path_db = QLabel('DB not loaded', self)
     self.layout.addWidget(self.lbl_path_db, 0, 0, 1, 2)
-    self.btn_load_db = QPushButton('Load DB', self)
+    self.btn_load_db = QPushButton('Load Custom DB', self)
     self.btn_load_db.clicked.connect(self.loadDB)
     self.layout.addWidget(self.btn_load_db, 0, 2)
-    self.btn_save_db = QPushButton('Save DB', self)
+    self.btn_save_db = QPushButton('Save Custom DB', self)
     self.btn_save_db.clicked.connect(self.saveDB)
     self.layout.addWidget(self.btn_save_db, 0, 3)
 
@@ -82,6 +82,8 @@ class ItemIDWidget(QWidget):
     self.layout.setColumnStretch(1, 1)
     self.layout.setColumnStretch(2, 1)
     self.layout.setColumnStretch(3, 1)
+    self.layout.setSpacing(5)
+    #self.layout.setContentsMargins(2, 2, 2, 2)
 
     self.setStyleSheet('ItemIDWidget { background-color: white; }')
     self.show()
@@ -89,7 +91,7 @@ class ItemIDWidget(QWidget):
   @pyqtSlot()
   def loadDB(self):
     # Get DB path
-    path = QFileDialog.getOpenFileName(self, 'Load DB', QDir.currentPath() + '/codes', '*.txt')
+    path = QFileDialog.getOpenFileName(self, 'Load Custom DB', QDir.currentPath() + '/codes', '*.txt')
     if len(path) <= 0:
       return
     pwd = QDir(QDir.currentPath())
@@ -106,7 +108,7 @@ class ItemIDWidget(QWidget):
           self.log.emit(str(e), 'red')
       self.txt_db.setPlainText('\n'.join(self.custom_db_lines))
       self.lbl_path_db.setText(path)
-      self.log.emit('Loaded Item ID DB', 'black')
+      self.log.emit('Loaded custom Item ID DB', 'black')
     except BaseException, e:
       self.log.emit('Failed to load Item ID DB: ' + str(e), 'red')
       traceback.print_exc()
@@ -116,12 +118,12 @@ class ItemIDWidget(QWidget):
     path = self.lbl_path_db.text()
     if path == 'DB not loaded':
       path = QDir.currentPath() + '/codes/item_id.txt'
-    path = QFileDialog.getSaveFileName(self, 'Save DB', path, '*.txt')
+    path = QFileDialog.getSaveFileName(self, 'Save Custom DB', path, '*.txt')
     if len(path) > 0:
       try:
         with open(str(path), 'w') as f:
           f.write('\n'.join(self.custom_db_lines))
-        self.log.emit('Saved Item ID DB', 'black')
+        self.log.emit('Saved custom Item ID DB', 'black')
       except BaseException, e:
         self.log.emit('Failed to save Item ID DB: ' + str(e), 'red')
         traceback.print_exc()
