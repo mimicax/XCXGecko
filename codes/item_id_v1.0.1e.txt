@@ -185,7 +185,315 @@
 68 1B9 Pristine Pincer
 68 1BA Red Forfex Shell
 68 1BB White Forfex Shell
-# TODO: scan from 1BC to max (1023)
+68 1BC Blue Forfex Shell
+68 1BD Scirpo Sulfuric Acid Sac
+68 1BE Giant Cinicula Jaw
+68 1BF Thick Cinicula Horn
+68 1C0 Cinicula Shell
+68 1C1 Giant Falsaxum Jaw
+68 1C2 Thick Falsaxum Horn
+68 1C3 Falsaxum Shell
+68 1C4 Vivohast Crescent Hook
+68 1C5 Sharp Vivohast Jaw
+68 1C6 Thallus Crescent Hook
+68 1C7 Luminescent Antenna
+68 1C8 Tectinsula Back Moss
+68 1C9 Orange Tequila
+68 1CA Topaz Wine
+68 1CB Tectinsula Shell
+68 1CC Emerald Whiskey
+68 1CD Red Brandy
+68 1CE Arenatect Shell
+68 1CF Eternal Arenatect Moss
+68 1D0 Black Blatta Wing
+68 1D1 Green Blatta Wing
+68 1D2 Red Blatta Wing
+68 1D3 Golden Blatta Wing
+68 1D4 Silver Blatta Wing
+68 1D5 Poisonous Needle
+68 1D6 Turba Straw
+68 1D7 Adsecula Straw
+68 1D8 Papil Straw
+68 1D9 Flowering Germivore Scales
+68 1DA Shed Germivore Scales
+68 1DB Ictus Shell
+68 1DC Aeviter Membrane
+68 1DD Stout Purgovent Extract
+68 1DE Purgovent Jaw Meat
+68 1DF Smooth Tail Fin
+68 1E0 Blue Electrical Tentacle
+68 1E1 Black Electrical Tentacle
+68 1E2 Fine Duoguill Fishmeal
+68 1E3 Red Scintimure Tentacle
+68 1E4 Scintimure Fat
+68 1E5 Black Scintimure Tentacle
+68 1E6 White Scintimure Tentacle
+68 1E7 Amber Aetrygon Horn
+68 1E8 Beryl Aetrygon Horn
+68 1E9 Sapphire Horn
+68 1EA Emerald Horn
+68 1EB Jagged Grex Tail
+68 1EC White Mirrorglass
+68 1ED Opaque Mirror
+68 1EE Caro Tail Light
+68 1EF Shiny Copper Caro Plate
+68 1F0 Shiny Silver Caro Plate
+68 1F1 Shiny Black Caro Plate
+68 1F2 Gold Monoceros Horn
+68 1F3 Green Monoceros Horn
+68 1F4 Brown Monoceros Horn
+68 1F5 Monoceros Wing
+68 1F6 Ornate Progen Horn
+68 1F7 Golden Progen Wing
+68 1F8 Silver Progen Wing
+68 1F9 Supple Tail
+68 1FA Muscled Simius Bulge
+68 1FB Red Simius Mane
+68 1FC Green Simius Mane
+68 1FD Silver Cantor Tooth
+68 1FE Golden Cantor Tooth
+68 1FF Luminescent Tail
+68 200 Muscled Cantor Bulge
+68 201 Aprica Back Moss
+68 202 Evergreen Aprica Antlers
+68 203 Redwood Aprica Antlers
+68 204 Muscled Suid Bulge
+68 205 Appetizing Suid Tail
+68 206 Tough Humpsteak
+68 207 Ovis Polishing Stone
+68 208 Lovely Pom Pom
+68 209 Hard Pom Pom
+68 20A Cimmerian Pom Pom
+68 20B Robust Evello Horn
+68 20C Bone-In Thigh Meat
+68 20D Caecus Crest
+68 20E Insidia Mohawk
+68 20F Odorous Tentacle
+68 210 Gerrid Navel
+68 211 Gerrid Shell
+68 212 Lepyx Jaw Meat
+68 213 Lepyx Sunstone
+68 214 Lepyx Moonstone
+68 215 Lepyx Elastic Cell
+68 216 Spicy Sacrifole Pollen
+68 217 Golden Mortifole Feather
+68 218 Mortifole Pollen
+68 219 Azure Sacrifole Feather
+68 21A Silver Sacrifole Feather
+68 21B Crimson Sacrifole Feather
+68 21C Green Mortifole Feather
+68 21D Red Mortifole Feather
+68 21E White Mortifole Feather
+68 21F Auravis Courtship Feather
+68 220 Auravis Laughing Bag
+68 221 Auravis Croaking Bag
+68 222 Auravis Horn
+68 223 Blue Jacul Wing
+68 224 Green Jacul Wing
+68 225 Jacul Horn
+68 226 Jacul Waterfall Orb
+68 227 Steel Unafulge Cell
+68 228 Brilliant Visigel Liquid
+68 229 Vesper Fang
+68 22A Vesper Hair Clip
+68 22B Brilliant Murra Liquid
+68 22C Sharp Ear
+68 22D Terebra Water Grease
+68 22E Terebra Oil Grease
+68 22F Green Puff
+68 230 Black Puff
+68 231 Golden Puff
+68 232 Mephite Ear Hair
+68 233 Golden Jewel
+68 234 Glossy Saltat Fan
+68 235 Giant Blue Pearl
+68 236 Giant Jade Pearl
+68 237 Liceor Sun Bead
+68 238 Demonic Jewel
+68 239 Sky Jewel
+68 23A Galaxial Jewel
+68 23B Murky Potamus water
+68 23C Hot Potamus Juice
+68 23D Hulking Incisor
+68 23E Cloudy Eyeball
+68 23F Pristine Dorsal Fin
+68 240 Moving Dilus Tail
+68 241 Tersqual Eel Kebab
+68 242 Brilliant Tersqual Liquid
+68 243 Genuine Chamber
+68 244 Advanced Chamber
+68 245 Advanced Crank
+68 246 Damask Metal
+68 247 Oricholcum Metal
+68 248 Amethyst Metal
+68 249 Turquoise Metal
+68 24A Seidr Control Device
+68 24B Ancient Armor
+68 24C Advanced Core
+68 24D Xe-dom Hand
+68 24E Quality Giant Cells
+68 24F Blue Sylooth Brace
+68 250 White Sylooth Brace
+68 251 Black Sylooth Brace
+68 252 Gularthion Flint
+68 253 Scorching Giant Cells
+68 254 Alluring Laphid Extract
+68 255 Blinding Laphid Extract
+68 256 Laphid Jaw Meat
+68 257 Spiked Tail Fin
+68 258 Strong Purgovent Extract
+68 259 Purple Scintimure Tentacle
+68 25A Big Balaena Water Bag
+68 25B Big Balaena Sand Bag
+68 25C Lucky Rainbow Whisker
+68 25D Giant Cavity
+68 25E Pink Ceto Membrane
+68 25F Gold Ceto Membrane
+68 260 Large Saw Tooth
+68 261 Unlucky Black Whisker
+68 262 Vigent Blood
+68 263 Quality Vigent Claw
+68 264 Red Vigent Rock Scalp
+68 265 Blue Vigent Rock Scalp
+68 266 Black Vigent Rock Scalp
+68 267 Virago Alloy Plate
+68 268 Purple Virago Alloy Plate
+68 269 Virago Blood Sweat
+68 26A Ingrown Virago Claw
+68 26B Amber Cervus Antlers
+68 26C Purple Cervus Antlers
+68 26D Longevity Bough
+68 26E Millesaur Dung
+68 26F Millesaur Larynx
+68 270 Thick Millesaur Hide
+68 271 Obsidian Cluster
+68 272 Tough Tendon
+68 273 Coronid Dung
+68 274 Coronid Larynx
+68 275 Thick Coronid Hide
+68 276 Levitath Sun Bead
+68 277 Levitath Feather
+68 278 Colubrim Eel Kebab
+68 279 Reverse Colubrim Fin
+68 27A Black Colubrim Tail
+68 27B Brown Colubrim Tail
+68 27C Decrepit Wing
+68 27D Reverse Millepod Fin
+68 27E Yellow Millepod Rock
+68 27F Millepod Ice Rock
+68 280 Giant Protein
+68 281 Red Filiavent Tentacle
+68 282 Black Filiavent Tentacle
+68 283 Silver Vita Core
+68 284 Rexoskell Sucker
+68 285 Vosara War Medal
+68 286 Deva Caladar's Red Ear
+68 287 Crude Neilhail Mask
+68 288 Goetia's Black Heel
+68 289 Dagahn's Adamant Bond
+68 28A Ryyz's Silver Piercings
+68 28B Imperial Sphinx Fang
+68 28C Yggralith Recovery Horn
+68 28D Yggralith Horn
+68 28E Yggralith GOld
+68 28F Telethia Emerald
+68 290 Puge Counter
+68 291 Puge Self-Destruct Mechanism
+68 292 Pugilith Lamp
+68 293 Upgraded Spindle Part
+68 294 Ziggian Long Antennae
+68 295 Fal-swo Solar Crest
+68 296 Combat Boost Meals
+68 297 Prone Coin Purse
+68 298 Rainbow Metal
+68 299 Scirpo Silk
+68 29A Melon Oil
+68 29B Maple Oil
+68 29C Honey Oil
+68 29D Coconut Oil
+68 29E Gremlin Stone
+68 29F Green Crystal
+68 2A0 Moving Vivohast Tail
+68 2A1 Moving Hallus Tail
+68 2A2 Black Thallus Antenna
+68 2A3 Red Thallus Antenna
+68 2A4 Medicinal Blatta Oil
+68 2A5 Turba Nectar
+68 2A6 Black Turba Nectar
+68 2A7 Adsecula Gold Nugget
+68 2A8 Adsecula Oil Drop
+68 2A9 Alluring Papil Scales
+68 2AA Flowering Papil Scales
+68 2AB Sharp Germivore Jaw
+68 2AC Lone White Ictus Stinger
+68 2AD Lone Purple Ictus Stinger
+68 2AE Lone Red Ictus Stinger
+68 2AF Aeviter Star Wing
+68 2B0 Aeviter Death Stone
+68 2B1 Large Purgovent Liver
+68 2B2 Duoguill Broth
+68 2B3 Rich Scintimure Meat
+68 2B4 Light-Speed Jet Fin
+68 2B5 Xiphias Mine Egg
+68 2B6 Grex Wisdom Tooth
+68 2B7 Pure White Caro Tusk
+68 2B8 Monoceros Hoof Hook
+68 2B9 Progen Hoof Seal
+68 2BA Simius Snack Stash
+68 2BB Hidden Cantor Hoard
+68 2BC Fine Aprica Wood
+68 2BD Suid Fillet
+68 2BE Marbled Suid Fillet
+68 2BF Tricolored Ovis Meat
+68 2C0 Meaty Evello Egg
+68 2C1 Ebony Evello Egg
+68 2C2 Black Meaty Caecus Liver
+68 2C3 White Meaty Caecus Liver
+68 2C4 Raw Meaty Caecus Liver
+68 2C5 Evolved Insidia Claw
+68 2C6 Omate Insidia Claw
+68 2C7 Sabula Backbone
+68 2C8 Clear Gerrid Soup
+68 2C9 Shiny Mortifole Seed
+68 2CA Diamond Seed
+68 2CB Unfertilized Auravis Egg
+68 2CC Fertilized Jacul Egg
+68 2CD Unafulge Death Toxin
+68 2CE Unafulge Numbing Toxin
+68 2CF Visigel Waterfall Orb
+68 2D0 Visigel Poison Orb
+68 2D1 Vesper Fry
+68 2D2 Multicolor Murra Wing
+68 2D3 Terebra Paw Stamp
+68 2D4 Mephite Stinkbag
+68 2D5 Saltat Horn
+68 2D6 Liceor Horn
+68 2D7 Patamus Life Lung
+68 2D8 Crimson Dilus Eye
+68 2D9 Amber Dilus Eye
+68 2DA Tersqual Fire Pouch
+68 2DB Electric Tersqual Tear
+68 2DC Xe-dom Crimson Crest
+68 2DD Xe-dom Jet-Black Crest
+68 2DE Xe-dom Golden Crest
+68 2DF Xe-dom Silver Crest
+68 2E0 Sylooth Tonic Water
+68 2E1 Gularthian Everflame
+68 2E2 Large Lophid Liver
+68 2E3 Developed Balaena Fat
+68 2E4 Ceto Roe
+68 2E5 Lucky Cervus Sapling
+68 2E6 Sparkling Blue Gem
+68 2E7 Sparkling Purple Gem
+68 2E8 Sparkling Red Gem
+68 2E9 Filiavent Intestine
+68 2EA Oc-serv Northern Crest
+68 2EB Oc-serv Southern Crest
+68 2EC Oc-serv Western Crest
+68 2ED Oc-serv Eastern Crest
+68 2EE Golden Yggralith Heart
+68 2EF Telethia Ring
+# 2F0-2F2, 300, 3FF crashes
 
 ### 64 Precious Resources
 64 001 Arc Sand Ore
@@ -489,7 +797,52 @@
 6C 0FD Horned Helmet
 6C 0FE Warbone
 6C 0FF Shimmering Skin
-# TODO: scan from 100 to max
+6C 100 Detilid Device
+6C 101 Missile Wiring
+6C 102 Berzerker Unit
+6C 103 Thunderbolt Emblem
+6C 104 Trying Crown
+6C 105 Intelligent Liquid Metal
+6C 106 Pan-analysis Chips
+6C 107 Savage Claw
+6C 108 Elemental Battery
+6C 109 Spatial Control Jointer
+6C 10A Dirthblade Fragment
+6C 10B Voltant Scanner
+6C 10C Meditation Powder
+6C 10D California Sunset
+6C 10E Mirage Scope
+6C 10F Ancient Allure
+6C 110 Goddess's Kiss
+6C 111 Gleaming Magnet
+6C 112 Fraudulent Mirror
+6C 113 Scales of Justice
+6C 114 Spherical EM Motor
+6C 115 Primitive Colossus Statue
+6C 116 Strong Iron
+6C 117 Chameleon Sand
+6C 118 Maiden's Guardian Star
+6C 119 Echo Rock
+6C 11A Illogical Etchings
+6C 11B Angel Stone
+6C 11C Lost Memory Synthesizer
+6C 11D Double Helical Salt
+6C 11E Brilliant Green Liquid
+6C 11F Flowering Egg
+6C 120 Queen's Rapture
+6C 121 Stone Screw
+6C 122 Starmaker
+6C 123 Hello Transmitter
+6C 124 Affinity Soulchain
+6C 125 Mega Muscle Builder
+6C 126 Rod of Brutality +10
+6C 127 Capricous Kettle
+6C 128 Megajolt Rattle
+6C 129 Superior Scepter
+6C 12A Doom Mask
+6C 12B Savage Sketch
+6C 12C Book of Death and Rebirth
+# 12D+ are debug or bugged
 
 ### 74 Important Items
 74 001 Conner's Comm Device
@@ -512,7 +865,7 @@
 74 012 Silver Evello Card
 74 013 Silver Xiphias Card
 74 014 Silver Mortifole Card
-74 015 Silver Nopopotomus Card
+74 015 Gold Nopopotamus Card
 74 017 Natural Pearl
 74 020 White Gold Ore
 74 021 Briggs's Key
@@ -521,8 +874,7 @@
 74 027 Quegga's Note
 74 02A Keycard
 74 02B ID Card
-# TODO: confirm duplicate 74 02C ID Card
-# TODO: confirm duplicate 74 02D ID Card
+# 02C-02E are test items
 74 02F Ajoa's ID card
 74 033 Ice Cream Cake
 74 034 Malyteth's Bottle
@@ -550,7 +902,7 @@
 74 064 Med Kit
 74 065 Internment Camp Key
 74 067 Skell License
-# TODO: confirm duplicate name 74 06B White Whale Parts
+74 06B White Whale Parts
 74 06C L-002 Power Cable
 74 06D Skell License Certificate
 74 072 Tissue Sample
@@ -617,14 +969,14 @@
 74 0D1 Data Unit FN097
 74 0D2 Practice Data Probe
 74 0D3 Toxic Chemical Bomb
-# TODO: confirm duplicate name 74 0D4 Med Kit
+74 0D4 Med Kit
 74 0D5 Noble Silk
 74 0D6 Data Unit FN098
 74 0D7 Sword of Legendaryness
 74 0D8 Unbreakable Sword
 74 0D9 Voltant
-# TODO: confirm duplicate 74 0DA Keycard
-# TODO: confirm spelling and possible duplicate 74 0DB Troylan's Gorkwa
+74 0DA Keycard
+74 0DB Troylan's Gorkwa
 74 0DC Traditional Orphean Drug
 74 0DD Weapon Test Data
 74 0DE Second Barrier Key
@@ -635,4 +987,4 @@
 74 0E3 North Coast Riddle Rock
 74 0E4 Communication Data
 74 0E5 Medical Data
-# 0E6+ are debug or bugged
+# 0E6-0E7 crashes
