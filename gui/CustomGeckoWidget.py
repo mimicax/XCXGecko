@@ -9,10 +9,11 @@ from StaticEntryFrame import *
 
 class CustomGeckoWidget(QWidget):
   read = pyqtSignal(str) # code_label
-  poke = pyqtSignal(str, int) # code_label, new_val
   word_read = pyqtSignal(str, int) # txt_addr, word_val
+  poke = pyqtSignal(str, int) # code_label, new_val
   readmem = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
+  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self, data_store, parent=None):
@@ -36,8 +37,11 @@ class CustomGeckoWidget(QWidget):
 
     for entry in self.entries:
       entry.read.connect(self.read)
-      entry.poke.connect(self.poke)
       self.word_read.connect(entry.onWordRead)
+      entry.poke.connect(self.poke)
+      entry.readmem.connect(self.readmem)
+      self.block_read.connect(entry.onBlockRead)
+      entry.writestr.connect(self.writestr)
       entry.log.connect(self.log)
 
     self.setStyleSheet('CustomGeckoWidget {background-color: white}')

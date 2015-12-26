@@ -1,5 +1,6 @@
 import struct
 
+from PyQt4.QtCore import QByteArray
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QFrame
@@ -14,6 +15,8 @@ from ValueComboBox import *
 class StaticEntryFrame(QFrame):
   read = pyqtSignal(str) # code_label
   poke = pyqtSignal(str, int) # code_label, new_val
+  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
   log = pyqtSignal(str, str) # msg, color
 
   CUR_VAL_MODES = ['dec', 'hex', 'float', 'ascii']
@@ -46,7 +49,7 @@ class StaticEntryFrame(QFrame):
     self.btn_curval.setIcon(self.read_icon)
     self.btn_curval.setIconSize(self.icon_size)
     self.btn_curval.setToolTip('Read value from memory')
-    self.btn_curval.clicked.connect(self.updateCurVal)
+    self.btn_curval.clicked.connect(self.readCurVal)
     self.btn_curval.right_clicked.connect(self.toggleCurValMode)
     self.btn_curval.setFixedWidth(120)
 
@@ -67,7 +70,7 @@ class StaticEntryFrame(QFrame):
     self.layout.setContentsMargins(0, 2, 0, 2)
 
     self.val_newval.log.connect(self.log)
-    
+
     self.updateUI()
     self.show()
 
@@ -84,7 +87,7 @@ class StaticEntryFrame(QFrame):
         dft_values += self.UINT32_VALUES
       if self.code.dft_value is not None:
         dft_values.append(self.code.dft_value)
-    
+
     if self.cur_val is None:
       self.btn_curval.setText(' Fetch Value')
       self.btn_curval.setIcon(self.read_icon)
@@ -94,9 +97,9 @@ class StaticEntryFrame(QFrame):
       self.btn_curval.setText(cur_val_dec)
       self.btn_curval.setIcon(QIcon())
       self.val_newval.lineEdit().setText(cur_val_dec)
-      
+
     self.val_newval.updateValues(dft_values, num_bytes)
-    
+
     if self.code is None:
       self.lbl_label.setToolTip('Code not available')
       self.btn_curval.setDisabled(True)
@@ -145,6 +148,24 @@ class StaticEntryFrame(QFrame):
       self.btn_curval.setIcon(QIcon())
       self.val_newval.lineEdit().setText(val_str)
 
+  @pyqtSlot(int, int, QByteArray)
+  def onBlockRead(self, addr_start, num_bytes, raw_bytes):
+    if (self.code is not None) and (self.code.is_ascii) and (not self.code.is_ptr) and \
+       (addr_start == self.code.base_addr) and (num_bytes == self.code.num_bytes+1):
+      val_str = raw_bytes.data()
+      eos_idx = val_str.find('\0')
+      if eos_idx >= 0:
+        val_str = val_str[:eos_idx]
+      try:
+        val_str = val_str.decode('utf-8')
+      except UnicodeDecodeError, e:
+        val_str = val_str[:-1].decode('utf-8')
+
+      self.cur_val_mode = 3
+      self.btn_curval.setText(val_str)
+      self.btn_curval.setIcon(QIcon())
+      self.val_newval.lineEdit().setText(val_str)
+
   def toggleCurValMode(self):
     if self.code is None or self.cur_val is None:
       return
@@ -165,23 +186,41 @@ class StaticEntryFrame(QFrame):
       val_str = str(self.cur_val)
     self.btn_curval.setText(val_str)
 
-  def updateCurVal(self):
+  def readCurVal(self):
     if self.code is None:
       return
-    if self.code.num_mem_words != 1:
-      self.log.emit('Missing support for codes straddling across multiple memory words', 'red')
-    else:
+    if self.code.is_ascii and not self.code.is_ptr:
+      self.readmem.emit(self.code.base_addr, self.code.num_bytes+1)
+    elif self.code.num_mem_words == 1:
       self.read.emit(self.code.label)
+    else:
+      self.log.emit('Missing support for codes straddling across multiple memory words', 'red')
 
   def onPoke(self):
     if self.code is None:
       return
-    if self.code.is_ascii:
-      self.log.emit('Missing support for ASCII codes', 'red')
-      return
-
-    # Transform val to decimal
     try:
+      # Process ASCII code
+      if self.code.is_ascii:
+        if self.code.is_ptr:
+          self.log.emit('Missing support for ASCII pointer codes', 'red')
+        else:
+          new_qbytes = self.val_newval.currentText().toUtf8()
+          if len(new_qbytes) > self.code.num_bytes:
+            new_qbytes = new_qbytes[:self.code.num_bytes]
+          try:
+            str(new_qbytes).decode('utf-8')
+          except UnicodeDecodeError, e:
+            new_qbytes = new_qbytes[:-1]
+          if new_qbytes[-1] != '\0':
+            new_qbytes.append('\0')
+
+          # Poke and update
+          self.writestr.emit(self.code.base_addr, new_qbytes)
+          self.readmem.emit(self.code.base_addr, self.code.num_bytes+1)
+        return
+
+      # Process decimal code: transform val to decimal
       new_val_str = self.val_newval.getValue()
       if self.code.is_float:
         if len(new_val_str) > 2 and new_val_str[:2] == '0x':
@@ -200,12 +239,14 @@ class StaticEntryFrame(QFrame):
           return
         if new_val_dec < 0:
           new_val_dec += val_cap
+
+        # Poke and update
+        if self.code.num_mem_words != 1:
+          self.log.emit('Missing support for codes straddling across multiple memory words', 'red')
+        else:
+          self.poke.emit(self.code.label, new_val_dec)
+          self.read.emit(self.code.label)
+
     except ValueError, e:
       self.log.emit('Memory poke failed: %s' % str(e), 'red')
       self.val_newval.setErrorBGColor()
-
-    if self.code.num_mem_words != 1:
-      self.log.emit('Missing support for codes straddling across multiple memory words', 'red')
-    else:
-      self.poke.emit(self.code.label, new_val_dec)
-      self.read.emit(self.code.label)

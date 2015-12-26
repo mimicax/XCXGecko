@@ -8,13 +8,14 @@ from StaticEntryFrame import *
 class XCXWidget(QWidget):
   CHARACTERS = ['Protagonist', 'Elma', 'Lin', 'Alexa', 'Boze', 'Celica', 'Doug', 'Fyre', 'Gwin', 'H.B.', 'Hope',
                 'Irina', 'L', 'Lao', 'Mia', 'Murderess', 'Nagi', 'Phog', 'Yelv']
-  TRAIT_LABELS = ['Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
+  TRAIT_LABELS = ['Name', 'Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
 
   read = pyqtSignal(str) # code_label
-  poke = pyqtSignal(str, int) # code_label, new_val
   word_read = pyqtSignal(str, int) # txt_addr, word_val
+  poke = pyqtSignal(str, int) # code_label, new_val
   readmem = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
+  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self, data_store, parent=None):
@@ -75,6 +76,9 @@ class XCXWidget(QWidget):
     self.entries.append(self.cmb_char)
     self.cmb_char.activated[str].connect(self.onChooseChar)
 
+    self.wdg_char_name = StaticEntryFrame(None, 'Name', self)
+    self.entries.append(self.wdg_char_name)
+
     self.wdg_char_lv_exp = StaticEntryFrame(None, 'Lv Exp', self)
     self.entries.append(self.wdg_char_lv_exp)
 
@@ -105,7 +109,6 @@ class XCXWidget(QWidget):
     self.entries.append('''<b>ITEMS:</b>
     <ul>
     <li>poking invalid ID will crash back to title screen</li>
-    <li>poking amount to 0 may cause glitches/crash</li>
     <li>poking duplicate items may cause glitches; use Search ID instead</li>
     <li>to see updated value, switch Item Category or exit out of menu</li>
     </ul>''')
@@ -164,17 +167,13 @@ class XCXWidget(QWidget):
     self.layout.setSpacing(0)
 
     for entry in self.entries:
-      if isinstance(entry, StaticEntryFrame):
+      if isinstance(entry, StaticEntryFrame) or isinstance(entry, ItemEntriesFrame):
         entry.read.connect(self.read)
-        entry.poke.connect(self.poke)
         self.word_read.connect(entry.onWordRead)
-        entry.log.connect(self.log)
-      elif isinstance(entry, ItemEntriesFrame):
-        entry.read.connect(self.read)
         entry.poke.connect(self.poke)
-        self.word_read.connect(entry.onWordRead)
         entry.readmem.connect(self.readmem)
         self.block_read.connect(entry.onBlockRead)
+        entry.writestr.connect(self.writestr)
         entry.log.connect(self.log)
 
     self.setStyleSheet('XCXWidget { background-color: white; }')
@@ -184,6 +183,14 @@ class XCXWidget(QWidget):
   @pyqtSlot(str)
   def onChooseChar(self, char):
     code_keys = self.d.codes.keys()
+
+    # TODO: convert to wdg_char_trait dict
+    key = [key for key in code_keys if key.find('%s Name' % char) == 0]
+    if key:
+      self.wdg_char_name.changeCode(self.d.codes[key[0]])
+    else:
+      self.wdg_char_name.changeCode(None)
+
     key = [key for key in code_keys if key.find('%s Lv Exp' % char) == 0]
     if key:
       self.wdg_char_lv_exp.changeCode(self.d.codes[key[0]])

@@ -19,6 +19,7 @@ class ItemEntriesFrame(QFrame):
   read = pyqtSignal(str) # code_label
   poke = pyqtSignal(str, int) # code_label, new_val
   readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
   log = pyqtSignal(str, str) # msg, color
 
   UINT8_VALUES = ['0', '0xFF']

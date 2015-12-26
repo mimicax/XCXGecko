@@ -42,10 +42,11 @@ class StatusWidget(QDockWidget):
 
 class XCXGeckoMainWindow(QMainWindow):
   read = pyqtSignal(str) # code_label
-  poke = pyqtSignal(str, int) # code_label, new_val
   word_read = pyqtSignal(str, int) # txt_addr, word_val
+  poke = pyqtSignal(str, int) # code_label, new_val
   readmem = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
+  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self):
@@ -116,10 +117,11 @@ class XCXGeckoMainWindow(QMainWindow):
     # Setup tabbed widgets
     self.wdg_xcx = XCXWidget(self.d)
     self.wdg_xcx.read.connect(self.read)
-    self.wdg_xcx.poke.connect(self.poke)
     self.word_read.connect(self.wdg_xcx.word_read)
+    self.wdg_xcx.poke.connect(self.poke)
     self.wdg_xcx.readmem.connect(self.readmem)
     self.block_read.connect(self.wdg_xcx.block_read)
+    self.wdg_xcx.writestr.connect(self.writestr)
     self.wdg_xcx.log.connect(self.log)
     self.scr_xcx = QScrollArea(self)
     self.scr_xcx.setWidget(self.wdg_xcx)
@@ -130,10 +132,11 @@ class XCXGeckoMainWindow(QMainWindow):
     
     self.wdg_custom = CustomGeckoWidget(self.d)
     self.wdg_custom.read.connect(self.read)
-    self.wdg_custom.poke.connect(self.poke)
     self.word_read.connect(self.wdg_custom.word_read)
+    self.wdg_custom.poke.connect(self.poke)
     self.wdg_custom.readmem.connect(self.readmem)
     self.block_read.connect(self.wdg_custom.block_read)
+    self.wdg_custom.writestr.connect(self.writestr)
     self.wdg_custom.log.connect(self.log)
     self.scr_custom = QScrollArea(self)
     self.scr_custom.setWidget(self.wdg_custom)
@@ -162,6 +165,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
     self.readmem.connect(self.onReadMem)
+    self.writestr.connect(self.onWriteStr)
 
     self.show()
 
@@ -218,7 +222,7 @@ class XCXGeckoMainWindow(QMainWindow):
           raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
         if code.is_ptr:
           if self.d.config['verbose_read']:
-            self.log.emit('   READ %08X %d' % (code.base_addr, 4), 'blue')
+            self.log.emit('READ %08X %d' % (code.base_addr, 4), 'blue')
           ptr_val = self.conn.readmem(code.base_addr, 4)
           ptr_val = struct.unpack('>I', ptr_val)[0]
           mem_addr = ptr_val+code.ptr_offset
@@ -228,7 +232,7 @@ class XCXGeckoMainWindow(QMainWindow):
         # Read from one or more 32-bit memory addresses
         num_bytes = code.num_mem_words*4
         if self.d.config['verbose_read']:
-          self.log.emit('   READ %08X %d' % (mem_addr, num_bytes), 'blue')
+          self.log.emit('READ %08X %d' % (mem_addr, num_bytes), 'blue')
         val_mem_chr = self.conn.readmem(mem_addr, num_bytes)
         val_words = struct.unpack('>' + ('I' * code.num_mem_words), val_mem_chr)
 
@@ -238,7 +242,7 @@ class XCXGeckoMainWindow(QMainWindow):
       else: # read raw address
         mem_addr = int(code_label, 16)
         if self.d.config['verbose_read']:
-          self.log.emit('   READ %08X %d' % (mem_addr, 4), 'blue')
+          self.log.emit('READ %08X %d' % (mem_addr, 4), 'blue')
         val_mem_chr = self.conn.readmem(mem_addr, 4)
         val_words = struct.unpack('>I', val_mem_chr)
         self.word_read.emit(code_label, val_words[0])
@@ -254,7 +258,7 @@ class XCXGeckoMainWindow(QMainWindow):
         raise BaseException('not connected to Wii U')
 
       if self.d.config['verbose_read']:
-        self.log.emit('   READ %08X %d' % (start_addr, num_bytes), 'blue')
+        self.log.emit('READ %08X %d' % (start_addr, num_bytes), 'blue')
       raw_bytes = self.conn.readmem(start_addr, num_bytes)
       qt_bytes = QByteArray(raw_bytes)
       self.block_read.emit(start_addr, num_bytes, qt_bytes)
@@ -276,7 +280,7 @@ class XCXGeckoMainWindow(QMainWindow):
           raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
         if code.is_ptr:
           if self.d.config['verbose_read']:
-            self.log.emit('   READ %08X %d' % (code.base_addr, 4), 'blue')
+            self.log.emit('READ %08X %d' % (code.base_addr, 4), 'blue')
           ptr_val = self.conn.readmem(code.base_addr, 4)
           ptr_val = struct.unpack('>I', ptr_val)[0]
           mem_addr = ptr_val+code.ptr_offset
@@ -294,7 +298,7 @@ class XCXGeckoMainWindow(QMainWindow):
           # print 'Poke(0x%08X, 0x%08X)' % (mem_addr, new_word)
         else:
           if self.d.config['verbose_read']:
-            self.log.emit('   READ %08X %d' % (mem_addr, 4), 'blue')
+            self.log.emit('READ %08X %d' % (mem_addr, 4), 'blue')
           old_word = self.conn.readmem(mem_addr, 4)
           old_word = struct.unpack('>I', old_word)[0]
           word_mask = ((256**code.num_bytes) - 1) << lshift_bits
@@ -303,7 +307,7 @@ class XCXGeckoMainWindow(QMainWindow):
           #   (mem_addr, code.num_bytes, code.bit_rshift, code.num_bytes*2, mem_addr, old_word, new_word)) % new_val
 
         if self.d.config['verbose_poke']:
-          self.log.emit('   POKE %08X %08X' % (mem_addr, new_word), 'blue')
+          self.log.emit('POKE %08X %08X' % (mem_addr, new_word), 'blue')
         self.conn.pokemem(mem_addr, new_word)
 
       else: # poke raw address
@@ -311,11 +315,27 @@ class XCXGeckoMainWindow(QMainWindow):
         new_word = new_val
 
         if self.d.config['verbose_poke']:
-          self.log.emit('   POKE %08X %08X' % (mem_addr, new_word), 'blue')
+          self.log.emit('POKE %08X %08X' % (mem_addr, new_word), 'blue')
         self.conn.pokemem(mem_addr, new_word)
 
     except BaseException, e:
       self.log.emit('Memory poke failed: %s' % str(e), 'red')
+      traceback.print_exc()
+
+  @pyqtSlot(int, QByteArray)
+  def onWriteStr(self, start_addr, raw_qbytes):
+    try:
+      if self.conn is None:
+        raise BaseException('not connected to Wii U')
+
+      raw_bytes = bytes(raw_qbytes)
+      if self.d.config['verbose_poke_str']:
+        msg = 'WRITESTR %08X %s' % (start_addr, bytes(raw_bytes))
+        self.log.emit(QString.fromUtf8(msg), 'blue')
+      self.conn.writestr(start_addr, raw_bytes)
+
+    except BaseException, e:
+      self.log.emit('Memory writestr failed: %s' % str(e), 'red')
       traceback.print_exc()
 
 

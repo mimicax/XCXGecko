@@ -43,6 +43,8 @@ class ValueComboBox(QComboBox):
     self.clear()
     for v in new_dft_values:
       self.addItem(str(v))
+    if len(new_dft_values) <= 0:
+      self.lineEdit().setText('')
 
   def onMenu(self):
     menu = QMenu(self)
