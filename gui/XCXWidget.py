@@ -58,9 +58,11 @@ class XCXWidget(QWidget):
     self.entries.append(None)  # horizontal divider
 
     # Add entries for character traits
-    self.entries.append('''<b>CHARACTER TRAITS:</b><ul>
+    self.entries.append('''<b>CHARACTER TRAITS:</b>
+    <ul>
     <li>for exp-related codes to take effect, win a battle</li>
-    <li>for body codes to take effect, enter "Active Members" menu and "Confirm Changes"</li></ul>''')
+    <li>for body codes to take effect, enter "Active Members" menu and "Confirm Changes"</li>
+    </ul>''')
 
     for char in self.CHARACTERS:
       for trait in self.TRAIT_LABELS:
@@ -100,10 +102,13 @@ class XCXWidget(QWidget):
     self.entries.append(None)  # horizontal divider
 
     # Add entries for items
-    self.entries.append('''<b>ITEMS:</b><br><ul>
-      <li><b>DO NOT POKE item slot with 0 amount</b></li>
-      <li>to see updated value, switch Item Category or exit out of menu</li>
-      </ul>''')
+    self.entries.append('''<b>ITEMS:</b>
+    <ul>
+    <li>poking invalid ID will crash back to title screen</li>
+    <li>poking amount to 0 may cause glitches/crash</li>
+    <li>poking duplicate items may cause glitches; use Search ID instead</li>
+    <li>to see updated value, switch Item Category or exit out of menu</li>
+    </ul>''')
 
     for type_val, type_str in self.d.item_types:
       # Find codes for first and last slot

@@ -24,17 +24,17 @@ Protagonist Rank Exp [danmc]
 Protagonist BP [danmc]
 1C38E93C 0000270F
 
-Protagonist Height (float) [Intropy]
-1C38B68C 3F8020C4
+Protagonist Height (float) [Ailuros27]
+1C38E630 3F8020C4
 
-Protagonist Chest Depth (float) [Intropy]
-1C38B690 3F8020C4
+Protagonist Chest Depth (float) [Ailuros27]
+1C38E634 3F8020C4
 
-Protagonist Chest Height (float) [Intropy]
-1C38B694 3F8020C4
+Protagonist Chest Height (float) [Ailuros27]
+1C38E638 3F8020C4
 
-Protagonist Chest Width (float) [Intropy]
-1C38B698 3F8020C4
+Protagonist Chest Width (float) [Ailuros27]
+1C38E63C 3F8020C4
 
 
 

@@ -298,8 +298,8 @@ class ItemEntriesFrame(QFrame):
         raise BaseException('amount not specified')
 
       new_amount = int(amount_txt)
-      if new_amount < 0 or new_amount > 0xFF:
-        raise BaseException('item amount not in [0, 255] range')
+      if new_amount <= 0 or new_amount > 0xFF:
+        raise BaseException('item amount not in [1, 255] range')
 
       val_word = form_item_word(self.type_val, id_val, new_amount)
       self.poke.emit(cur_addr_hex, val_word)
