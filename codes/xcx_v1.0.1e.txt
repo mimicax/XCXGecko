@@ -601,14 +601,15 @@ Important Items: Slot 500 [MiMiC]
 
 
 
-# TODO: Python config parser: debug printouts, code txt, item txt
-# TODO: debug printouts for pokes and reads
+# TODO: complete Materials ID mapping
 
-# TODO: ascii support in edit
+# TODO: check for name clashes in Materials, and if so then consider different data structure for ID<->name mapping
 
-# TODO: toolbar shows code and item filenames / or version
+# TODO: complete Collectibles ID mapping
 
-# TODO: complete item ID mapping
+# TODO: ascii support in edit + verbose_poke_str + name changes in XCXWidget
+
+# TODO: update screenshot
 
 # TODO: Protagonist Face Type ID? 1C38B071
 

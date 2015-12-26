@@ -14,7 +14,6 @@ from PyQt4.QtGui import QScrollArea
 from PyQt4.QtGui import QTabWidget
 from PyQt4.QtGui import QTextEdit
 
-from gui.CodeParser import *
 from gui.CustomGeckoWidget import *
 from gui.ItemIDWidget import *
 from gui.XCXWidget import *
@@ -56,9 +55,15 @@ class XCXGeckoMainWindow(QMainWindow):
 
     init_errors = []
     try:
-      self.d.codes = parse_codes('./codes/xcx_v1.0.1e.txt') # TODO: use path from setting
-      with open('./codes/item_id_v1.0.1e.txt') as f: # TODO: use path from setting
+      self.d.config = parse_cfg_file('config.ini')
+      self.d.ip = self.d.config['wiiu_ip']
+
+      with open(self.d.config['code_db']) as f:
+        self.d.codes = parse_codes(f.read())
+
+      with open(self.d.config['item_id_db']) as f:
         (self.d.item_ids, self.d.item_lines, self.d.item_types) = parse_item_db(f.read())
+
     except BaseException, e:
       init_errors.append(str(e))
       self.d.codes = {}
@@ -66,7 +71,10 @@ class XCXGeckoMainWindow(QMainWindow):
 
     # Setup window
     self.setGeometry(200, 200, 620, 700)
-    self.setWindowTitle('XCXGecko')
+    if self.d.config is not None:
+      self.setWindowTitle('XCXGecko (%s | %s)' % (self.d.config['code_db'], self.d.config['item_id_db']))
+    else:
+      self.setWindowTitle('XCXGecko')
     self.setWindowIcon(QIcon('img/logo.ico'))
 
     # Create toolbars
@@ -148,9 +156,8 @@ class XCXGeckoMainWindow(QMainWindow):
     self.setCentralWidget(self.wdg_tabs)
 
     if len(init_errors) > 0:
-      self.log.emit('Initialization failed...', 'red')
       for init_error in init_errors:
-        self.log.emit('... ' + init_error, 'red')
+        self.log.emit(init_error, 'red')
 
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
@@ -210,6 +217,8 @@ class XCXGeckoMainWindow(QMainWindow):
         if code.num_mem_words != 1:
           raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
         if code.is_ptr:
+          if self.d.config['verbose_read']:
+            self.log.emit('   READ %08X %d' % (code.base_addr, 4), 'blue')
           ptr_val = self.conn.readmem(code.base_addr, 4)
           ptr_val = struct.unpack('>I', ptr_val)[0]
           mem_addr = ptr_val+code.ptr_offset
@@ -217,7 +226,10 @@ class XCXGeckoMainWindow(QMainWindow):
           mem_addr = code.base_addr
 
         # Read from one or more 32-bit memory addresses
-        val_mem_chr = self.conn.readmem(mem_addr, code.num_mem_words*4)
+        num_bytes = code.num_mem_words*4
+        if self.d.config['verbose_read']:
+          self.log.emit('   READ %08X %d' % (mem_addr, num_bytes), 'blue')
+        val_mem_chr = self.conn.readmem(mem_addr, num_bytes)
         val_words = struct.unpack('>' + ('I' * code.num_mem_words), val_mem_chr)
 
         for val_word in val_words:
@@ -225,6 +237,8 @@ class XCXGeckoMainWindow(QMainWindow):
           break # Currently only support reading 1 word per request
       else: # read raw address
         mem_addr = int(code_label, 16)
+        if self.d.config['verbose_read']:
+          self.log.emit('   READ %08X %d' % (mem_addr, 4), 'blue')
         val_mem_chr = self.conn.readmem(mem_addr, 4)
         val_words = struct.unpack('>I', val_mem_chr)
         self.word_read.emit(code_label, val_words[0])
@@ -239,6 +253,8 @@ class XCXGeckoMainWindow(QMainWindow):
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
+      if self.d.config['verbose_read']:
+        self.log.emit('   READ %08X %d' % (start_addr, num_bytes), 'blue')
       raw_bytes = self.conn.readmem(start_addr, num_bytes)
       qt_bytes = QByteArray(raw_bytes)
       self.block_read.emit(start_addr, num_bytes, qt_bytes)
@@ -259,6 +275,8 @@ class XCXGeckoMainWindow(QMainWindow):
         if code.num_mem_words != 1:
           raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
         if code.is_ptr:
+          if self.d.config['verbose_read']:
+            self.log.emit('   READ %08X %d' % (code.base_addr, 4), 'blue')
           ptr_val = self.conn.readmem(code.base_addr, 4)
           ptr_val = struct.unpack('>I', ptr_val)[0]
           mem_addr = ptr_val+code.ptr_offset
@@ -275,6 +293,8 @@ class XCXGeckoMainWindow(QMainWindow):
           new_word = new_val
           # print 'Poke(0x%08X, 0x%08X)' % (mem_addr, new_word)
         else:
+          if self.d.config['verbose_read']:
+            self.log.emit('   READ %08X %d' % (mem_addr, 4), 'blue')
           old_word = self.conn.readmem(mem_addr, 4)
           old_word = struct.unpack('>I', old_word)[0]
           word_mask = ((256**code.num_bytes) - 1) << lshift_bits
@@ -282,13 +302,16 @@ class XCXGeckoMainWindow(QMainWindow):
           # print ('Poke(0x%08X, bytes=%d, bit_offset=%d, 0x%%0%dX) == Poke(0x%08X, from=0x%08X, to=0x%08X)' %
           #   (mem_addr, code.num_bytes, code.bit_rshift, code.num_bytes*2, mem_addr, old_word, new_word)) % new_val
 
+        if self.d.config['verbose_poke']:
+          self.log.emit('   POKE %08X %08X' % (mem_addr, new_word), 'blue')
         self.conn.pokemem(mem_addr, new_word)
 
       else: # poke raw address
         mem_addr = int(code_label, 16)
         new_word = new_val
-        # print 'RawPoke(0x%08X, 0x%08X)' % (mem_addr, new_word)
 
+        if self.d.config['verbose_poke']:
+          self.log.emit('   POKE %08X %08X' % (mem_addr, new_word), 'blue')
         self.conn.pokemem(mem_addr, new_word)
 
     except BaseException, e:
