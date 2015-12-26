@@ -127,14 +127,21 @@ class XCXWidget(QWidget):
         continue
 
       # Construct ID<->name mappings
-      slot_names = dict()
-      slot_ids = dict()
+      slot_id2name = dict()
+      slot_idx2id = []
+      slot_names = []
       for key, item in self.d.item_ids.iteritems():
         if item.type_val == type_val:
-          slot_names[item.id_val] = item.name
-          slot_ids[item.name] = item.id_val
+          if item.id_val in slot_id2name:
+            self.log.emit('Found multiple names for %s %03X' % (type_str, item.id_val), 'brown')
+            continue
+          slot_id2name[item.id_val] = item.name
+          slot_idx2id.append((item.name, '%03X' % item.id_val))
+      if len(slot_idx2id) > 0:
+        slot_idx2id.sort(key=lambda t: t[0])
+        (slot_names, slot_idx2id) = zip(*slot_idx2id)
       self.entries.append(ItemEntriesFrame(type_val, first_slot.base_addr, last_slot.base_addr,
-                                           type_str, slot_names, slot_ids, self))
+                                           type_str, slot_id2name, slot_idx2id, slot_names, self))
 
     # Set layout
     self.layout = QVBoxLayout(self)

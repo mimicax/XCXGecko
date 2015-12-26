@@ -600,16 +600,19 @@ Important Items: Slot 500 [MiMiC]
 1C3C0080 63 >>21
 
 
+# TODO: spell out features in README.md and update first post
 
-# TODO: complete Materials ID mapping
+# TODO: support for fetching latest DBs from github / web
 
-# TODO: check for name clashes in Materials, and if so then consider different data structure for ID<->name mapping
-
-# TODO: complete Collectibles ID mapping
+# TODO: random scan for salvage ticket?
 
 # TODO: ascii support in edit + verbose_poke_str + name changes in XCXWidget
 
 # TODO: update screenshot
+
+# TODO: complete Collectibles ID mapping
+
+# TODO: custom poke code(s) widget + add/remove instances + Other Codes vs Custom Codes tabs
 
 # TODO: Protagonist Face Type ID? 1C38B071
 

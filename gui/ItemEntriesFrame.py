@@ -27,16 +27,16 @@ class ItemEntriesFrame(QFrame):
 
   MISSING_ITEM_NAME = '[NOT IN DB]'
 
-  def __init__(self, type_val, addr_start, addr_end, label, names, ids, parent=None):
+  def __init__(self, type_val, addr_start, addr_end, label, id2name, idx2id, names, parent=None):
     super(ItemEntriesFrame, self).__init__(parent)
     self.type_val = type_val
     self.addr_start = addr_start
     self.addr_end = addr_end
     self.max_num_slots = (addr_end - addr_start)/3/4 + 1
     self.label = label
+    self.id2name = id2name
+    self.idx2id = idx2id
     self.names = names
-    self.ids = ids
-    self.name_list = []
 
     self.slots_cache = [] # tuple: (addr_hex, addr_val, slot_number, cur_val)
     self.cur_slot_idx = -1
@@ -68,10 +68,9 @@ class ItemEntriesFrame(QFrame):
 
     self.cmb_names = QComboBox(self)
     self.cmb_names.setEditable(True)
-    name_list = sorted(self.names.values())
-    self.cmb_names.addItems(name_list)
+    self.cmb_names.addItems(self.names)
     self.cmb_names.lineEdit().setText(self.MISSING_ITEM_NAME)
-    self.cmb_names.currentIndexChanged[str].connect(self.fetchID)
+    self.cmb_names.currentIndexChanged[int].connect(self.fetchID)
 
     self.txt_id = QLineEdit(self)
     self.txt_id.setPlaceholderText('ID (hex)')
@@ -248,17 +247,16 @@ class ItemEntriesFrame(QFrame):
     except ValueError, e:
       return
     name = self.MISSING_ITEM_NAME
-    if id_val in self.names:
-      name = self.names[id_val]
+    if id_val in self.id2name:
+      name = self.id2name[id_val]
     self.cmb_names.lineEdit().setText(name)
 
-  @pyqtSlot(str)
-  def fetchID(self, name):
-    name = str(name)
-    id_str = ''
-    if name in self.ids:
-      id_str = '%02X' % self.ids[name]
-    self.txt_id.setText(id_str)
+  @pyqtSlot(int)
+  def fetchID(self, cmb_idx):
+    if cmb_idx < 0 or cmb_idx >= len(self.idx2id):
+      self.txt_id.setText('')
+    else:
+      self.txt_id.setText(self.idx2id[cmb_idx])
 
   @pyqtSlot()
   def onReadVal(self):
