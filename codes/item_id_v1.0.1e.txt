@@ -112,7 +112,208 @@
 6C 034 Lava Chestnut
 6C 035 Iron Akebi Fruit
 6C 036 Mottled Mums
-# TODO: scan from 037 to max
+6C 037 Nightmare Pineapple
+6C 038 Zesian Fleawort
+6C 039 Noranlilly
+6C 03A Sweet Nerine
+6C 03B Kiran Catnip
+6C 03C Doga Dandelion
+6C 03D Sona Herb
+6C 03E Garudo Pellionia Minima
+6C 03F Nirvana Jonquil
+6C 040 Timid Sunflower
+6C 041 Lea Lily
+6C 042 Chameleon Creeping Plant
+6C 043 Muneria Flower
+6C 044 Sekka Cosmos
+6C 045 False Cedar
+6C 046 Sleeping Amaryllis
+6C 047 Jobo Primrose
+6C 048 Gudo Rocambole
+6C 049 Blast Chard
+6C 04A Mya Oats
+6C 04B Myuena Cactus
+6C 04C Kepha Holly
+6C 04D Bude Mugwort
+6C 04E Exploding Pansy
+6C 04F Sese Lily
+6C 050 Antorus Rose
+6C 051 Shia Cattleya
+6C 052 Poron Tulip
+6C 053 Jaharmum
+6C 054 Bogano Weed
+6C 055 Muranadium
+6C 056 Rizattice
+6C 057 Coaletri
+6C 058 Grinding Squirrel
+6C 059 Crawling Bat
+6C 05A Golden Sardine
+6C 05B Zizi Rabbit
+6C 05C Ashizel
+6C 05D Rock Armadillo
+6C 05E Morphing Flounder
+6C 05F Gluttonutan
+6C 060 Iguari
+6C 061 Mirrored Peacock
+6C 062 Continental Jellyfish
+6C 063 Doragaroo
+6C 064 Phantom Tanuki
+6C 065 Denemozumi Mouse
+6C 066 Octo-suka
+6C 067 Jet Turtle
+6C 068 Sand Cucumber
+6C 069 Gormless Monkey
+6C 06A Fleeting Baboon
+6C 06B Diresheep
+6C 06C Medusa Squid
+6C 06D Beaporge
+6C 06E Penginion
+6C 06F Gun Snake
+6C 070 Demon Boar
+6C 071 Dulcet Goose
+6C 072 Lava Fox
+6C 073 Gibney Jackal
+6C 074 Ball Mosquito
+6C 075 Stretching Locust
+6C 076 Tractor Beetle
+6C 077 Multi-speckled Ladybug
+6C 078 Meteo Eater
+6C 079 Vagabond Ant
+6C 07A Assassin Springtail
+6C 07B Noctilucent Dragonfly
+6C 07C Strobing Horsefly
+6C 07D Tenacious Moth
+6C 07E Madame Mantis
+6C 07F Madness Hornet
+6C 080 Pardo Spider
+6C 081 Kusakiri Stag Beetle
+6C 082 Absop's Swallowtail
+6C 083 Fullbelly Gecko
+6C 084 Moleworm
+6C 085 Imposter Bug
+6C 086 Shadow Fly
+6C 087 Common Stick Insect
+6C 088 Whip Scorpion
+6C 089 Slasher Beetle
+6C 08A White Sand Beetle
+6C 08B Baibai Beetle
+6C 08C Glassy Cricket
+6C 08D Rainy Cricket
+6C 08E Crystal Butterfly
+6C 08F Snowy Angelhair
+6C 090 Shooting Firefly
+6C 091 Abyssal Cricket
+6C 092 Cetecegem Beetle
+6C 093 Bullet Fly
+6C 094 Prickly Cricket
+6C 095 Logunie's Driftwood
+6C 096 White Iron Sand
+6C 097 Fillal Filth
+6C 098 Sanelac Pearl
+6C 099 Arnacian Orewood
+6C 09A Auroran Bone
+6C 09B Katoan Leaf
+6C 09C Gluttonutan Clay
+6C 09D Cane Soil
+6C 09E Noka Mirrorstone
+6C 09F Galjim Crystal
+6C 0A0 Harnenga Cotton
+6C 0A1 Eternal Moss
+6C 0A2 Wainess Fossil
+6C 0A3 Zedis Twig
+6C 0A4 Exubera Stalactite
+6C 0A5 Silvery Cactaceous Resin
+6C 0A6 Kridokan Air
+6C 0A7 Dring Slick
+6C 0A8 Acton Rock Shards
+6C 0A9 Fullerene Coral
+6C 0AA Taoman Acid
+6C 0AB Grandan Rock
+6C 0AC Jagitos Copper
+6C 0AD Pomio Spore
+6C 0AE Cooling Lava
+6C 0AF Zalon Dirt
+6C 0B0 Rogebra Shockstone
+6C 0B1 Autiga Powder
+6C 0B2 Zagyrin Cragstone
+6C 0B3 Cliord Oil
+6C 0B4 Deflection Shield Mirror
+6C 0B5 Anhydrous Radiator
+6C 0B6 Heatproof Inox Pipe
+6C 0B7 L-002 Fuel Tank
+6C 0B8 L-002 Space Analyzer
+6C 0B9 US-X Space Suit
+6C 0BA Centrifugal Beam Generator
+6C 0BB Earthfreezer
+6C 0BC Nostalgia L-002
+6C 0BD HI9 Ion Thruster
+6C 0BE Mk. IX Hypercooler
+6C 0BF Gesture Glove
+6C 0C0 3D Printer
+6C 0C1 Criuse Deflector AiR
+6C 0C2 Multi-mirror Solar Drone
+6C 0C3 5th Gen Recycler
+6C 0C4 L-002 Degeneration Reactor
+6C 0C5 Cordless Transformer
+6C 0C6 Hard Skin
+6C 0C7 Decoy DNA
+6C 0C8 L-002 Dagoo Heat Ray
+6C 0C9 A-HAB autonomous AI
+6C 0CA Solar Wind Converter
+6C 0CB Oxygen Airbrake
+6C 0CC Exalting Paint
+6C 0CD Autoposturizer
+6C 0CE Planter
+6C 0CF FN Prototype 3
+6C 0D0 Octopus Regulator
+6C 0D1 Jagged Mortar
+6C 0D2 Acom Abacus
+6C 0D3 Facewood
+6C 0D4 Hemp Wallet
+6C 0D5 Hummingstone
+6C 0D6 Loathsome Blob
+6C 0D7 Sea Anemone Platter
+6C 0D8 Logunie's Driftwood Boat
+6C 0D9 Shiny Lamp
+6C 0DA Spine-O-Corrector
+6C 0DB Thornbox
+6C 0DC Perished Stone Spear
+6C 0DD Sandstone Etching
+6C 0DE Magical Finding Rod
+6C 0DF Ouroboros Bracelet
+6C 0E0 Drum of Valor
+6C 0E1 Nopolith
+6C 0E2 Yabuyabu Ointment
+6C 0E3 Straw Buoy
+6C 0E4 Spore Balloon
+6C 0E5 Stargazer
+6C 0E6 Camocloak
+6C 0E7 Spirit Wand
+6C 0E8 Chrampoline
+6C 0E9 Sharpening Stone
+6C 0EA Charred Crock
+6C 0EB Stone Lens
+6C 0EC Dark Lantern
+6C 0ED Icarus Wings
+6C 0EE Bogano Sleeping Bag
+6C 0EF Extra-large Cash Box
+6C 0F0 High Accelerator
+6C 0F1 Crush Ring
+6C 0F2 T-ray Light
+6C 0F3 Flecked Bottle
+6C 0F4 Grosium Core
+6C 0F5 Brain Terminal
+6C 0F6 Hexagauge
+6C 0F7 Joadtank
+6C 0F8 Resonating Madonater
+6C 0F9 Ultra Filter
+6C 0FA Eradicator Eyepiece
+6C 0FB Sacrifical Reactor
+6C 0FC Steel Tail Sheath
+6C 0FD Horned Helmet
+6C 0FE Warbone
+6C 0FF Shimmering Skin
+# TODO: scan from 100 to max
 
 ### 74 Important Items
 74 001 Conner's Comm Device
@@ -258,5 +459,4 @@
 74 0E3 North Coast Riddle Rock
 74 0E4 Communication Data
 74 0E5 Medical Data
-#74 0E6 Gubura Cabbage Leaf (crash on description)
-#From here to 74 FF = Gubura Cabbage Leaf (crash on description)
+# 0E6+ are debug or bugged
