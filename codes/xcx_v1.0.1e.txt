@@ -600,12 +600,9 @@ Important Items: Slot 500 [MiMiC]
 1C3C0080 63 >>21
 
 
-# TODO: ascii support in edit + verbose_poke_str + name changes in XCXWidget
 # TODO: custom poke code(s) widget + add/remove instances + Other Codes vs Custom Codes tabs
 # TODO: update screenshot
 # TODO: update first post with features and formatted images
-
-# TODO: bug - for float codes, dropdown values should be printed as floats instead of dec
 
 # TODO: support for fetching latest DBs from github / web
 

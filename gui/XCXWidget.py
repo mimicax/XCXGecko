@@ -6,9 +6,10 @@ from StaticEntryFrame import *
 
 
 class XCXWidget(QWidget):
-  CHARACTERS = ['Protagonist', 'Elma', 'Lin', 'Alexa', 'Boze', 'Celica', 'Doug', 'Fyre', 'Gwin', 'H.B.', 'Hope',
-                'Irina', 'L', 'Lao', 'Mia', 'Murderess', 'Nagi', 'Phog', 'Yelv']
-  TRAIT_LABELS = ['Name', 'Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height', 'Chest Depth', 'Chest Height', 'Chest Width']
+  CHARACTERS = ['Protagonist', 'Elma', 'Lin', 'Alexa', 'Boze', 'Celica', 'Doug', 'Fyre', 'Gwin',
+                'H.B.', 'Hope', 'Irina', 'L', 'Lao', 'Mia', 'Murderess', 'Nagi', 'Phog', 'Yelv']
+  TRAIT_LABELS = ['Name', 'Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height (float)',
+                  'Chest Depth (float)', 'Chest Height (float)', 'Chest Width (float)']
 
   read = pyqtSignal(str) # code_label
   word_read = pyqtSignal(str, int) # txt_addr, word_val
@@ -76,32 +77,10 @@ class XCXWidget(QWidget):
     self.entries.append(self.cmb_char)
     self.cmb_char.activated[str].connect(self.onChooseChar)
 
-    self.wdg_char_name = StaticEntryFrame(None, 'Name', self)
-    self.entries.append(self.wdg_char_name)
-
-    self.wdg_char_lv_exp = StaticEntryFrame(None, 'Lv Exp', self)
-    self.entries.append(self.wdg_char_lv_exp)
-
-    self.wdg_char_rank_exp = StaticEntryFrame(None, 'Rank Exp', self)
-    self.entries.append(self.wdg_char_rank_exp)
-
-    self.wdg_char_bp = StaticEntryFrame(None, 'BP', self)
-    self.entries.append(self.wdg_char_bp)
-
-    self.wdg_char_affinity = StaticEntryFrame(None, 'Affinity', self)
-    self.entries.append(self.wdg_char_affinity)
-
-    self.wdg_char_height = StaticEntryFrame(None, 'Height (float)', self)
-    self.entries.append(self.wdg_char_height)
-
-    self.wdg_char_chest_depth = StaticEntryFrame(None, 'Chest Depth (float)', self)
-    self.entries.append(self.wdg_char_chest_depth)
-
-    self.wdg_char_chest_height = StaticEntryFrame(None, 'Chest Height (float)', self)
-    self.entries.append(self.wdg_char_chest_height)
-
-    self.wdg_char_chest_width = StaticEntryFrame(None, 'Chest Width (float)', self)
-    self.entries.append(self.wdg_char_chest_width)
+    self.wdg_char_traits = dict()
+    for trait in self.TRAIT_LABELS:
+      self.wdg_char_traits[trait] = StaticEntryFrame(None, trait, self)
+      self.entries.append(self.wdg_char_traits[trait])
 
     self.entries.append(None)  # horizontal divider
 
@@ -184,57 +163,9 @@ class XCXWidget(QWidget):
   def onChooseChar(self, char):
     code_keys = self.d.codes.keys()
 
-    # TODO: convert to wdg_char_trait dict
-    key = [key for key in code_keys if key.find('%s Name' % char) == 0]
-    if key:
-      self.wdg_char_name.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_name.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Lv Exp' % char) == 0]
-    if key:
-      self.wdg_char_lv_exp.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_lv_exp.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Rank Exp' % char) == 0]
-    if key:
-      self.wdg_char_rank_exp.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_rank_exp.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s BP' % char) == 0]
-    if key:
-      self.wdg_char_bp.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_bp.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Affinity' % char) == 0]
-    if key:
-      self.wdg_char_affinity.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_affinity.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Height' % char) == 0]
-    if key:
-      self.wdg_char_height.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_height.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Chest Depth' % char) == 0]
-    if key:
-      self.wdg_char_chest_depth.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_chest_depth.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Chest Height' % char) == 0]
-    if key:
-      self.wdg_char_chest_height.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_chest_height.changeCode(None)
-
-    key = [key for key in code_keys if key.find('%s Chest Width' % char) == 0]
-    if key:
-      self.wdg_char_chest_width.changeCode(self.d.codes[key[0]])
-    else:
-      self.wdg_char_chest_width.changeCode(None)
+    for trait in self.TRAIT_LABELS:
+      key = [key for key in code_keys if key.find('%s %s' % (char, trait)) == 0]
+      if key:
+        self.wdg_char_traits[trait].changeCode(self.d.codes[key[0]])
+      else:
+        self.wdg_char_traits[trait].changeCode(None)

@@ -79,14 +79,20 @@ class StaticEntryFrame(QFrame):
     dft_values = []
     if self.code is not None:
       num_bytes = self.code.num_bytes
-      if self.code.num_bytes == 1:
-        dft_values += self.UINT8_VALUES
-      elif self.code.num_bytes == 2:
-        dft_values += self.UINT16_VALUES
-      elif self.code.num_bytes == 4:
-        dft_values += self.UINT32_VALUES
+      if not self.code.is_ascii and not self.code.is_float:
+        if self.code.num_bytes == 1:
+          dft_values += self.UINT8_VALUES
+        elif self.code.num_bytes == 2:
+          dft_values += self.UINT16_VALUES
+        elif self.code.num_bytes == 4:
+          dft_values += self.UINT32_VALUES
       if self.code.dft_value is not None:
-        dft_values.append(self.code.dft_value)
+        if self.code.is_float and isinstance(self.code.dft_value, int):
+          value_raw = struct.pack('>I', self.code.dft_value)
+          value_float = struct.unpack('>f', value_raw)[0]
+          dft_values.append(str(value_float))
+        else:
+          dft_values.append(str(self.code.dft_value))
 
     if self.cur_val is None:
       self.btn_curval.setText(' Fetch Value')
