@@ -4,12 +4,188 @@
 68 005 Golden Chalice
 68 006 Gold Ingot
 68 007 Golden Cedar
-# TODO: scan from 03B to 150
+68 056 Gold Sylooth Brace
+68 0AB Cloudy Gerrid Soup
+68 10A Black Steel Heavy Armor
+68 109 Eerie Lightning Tentacle
+68 10B Laser Light
+68 10C Rainbow Carving Shard
+68 10D Electrified Xeno Blood
+68 10E Herculean Beast Hair
+68 10F Metal Xeno Chain
+68 110 Pristine Bristle
+68 111 White Yggrolith Scale
+68 112 Black Yggrolith Scale
+68 113 Silver Yggrolith Nut
+68 114 Telethia Mirror
+68 115 Stripped Plating
+68 116 Quality Crank
+68 117 Standard Crank
+68 118 All-Purpose Plug
+68 119 Standard Jammer
+68 11A Standard Coil
+68 11B Reinforced Crank
+68 11C Standard Sensor Part
+68 11D Reinforced Jet
+68 11E Dirty Cloth
+68 11F Broken Buckle
+68 120 Tatty Insect Wing
+68 121 Viscous Humour
+68 122 Sticky Mucus
+68 123 Broken Antenna
+68 124 Broken Pincer
+68 125 Cracked Claw
+68 126 Gooey Gunge
+68 127 Small Dorsal Fin
+68 128 Opaque Membrane
+68 129 Rotten Meat
+68 12A Smelly Fish Meat
+68 12B Taut Leather
+68 12C Supple Leather
+68 12D Stiff Hair
+68 12E Worm Muscle Fiber
+68 12F Fleecy Fur
+68 130 Slimy Epithelium
+68 131 Rough Skin
+68 132 Small Scale
+68 133 Lead Carapace
+68 134 Scratched Jewel
+68 135 Filthy Wing
+68 136 Muddy Pelt
+68 137 Upgraded Lens
+68 138 Quality Core
+68 139 White Fungal Egg
+68 13A Flaming Rock
+68 13B Fatty Fish Belly
+68 13C Mollusk Mucus
+68 13D Pristine Whiskers
+68 13E Rugged Skin
+68 13F Sturdy Drakebone
+68 140 Libertas Glyph
+68 141 Creore Glyph
+68 142 Tempus Glyph
+68 143 Dialek Glyph
+68 144 Spathi Glyph
+68 145 Scienti Glyph
+68 146 Experia Glyph
+68 147 Esse Glyph
+68 148 Blazing Gas Sac
+68 149 White Yggralith Nut
+68 14A Black Yggralith Nut
+68 14B Golden Yggralith Nut
+68 14C Infinite Telethia Pen
+68 14D Dual Boards
+68 14E Multi-Wire
+68 14F Upgraded Jammer
+68 150 Upgraded Coil
 68 151 Energy Tube
 68 152 Upgraded Sensor Port
 68 153 Hi-Spec Sensor Module
 68 154 Advanced Jet
-# TODO: scan from 155 to max (1023)
+68 155 Fine Transparent Belt
+68 156 Fine White Belt
+68 157 Fine Red Belt
+68 158 Parasitic Capsule
+68 159 Fine Black Belt
+68 15A Insect Jaw
+68 15B Small Shell
+68 15C Small Insect Leg
+68 15D Pristine Insect Leg
+68 15E Musky Nectar
+68 15F Pristine Insect Jaw
+68 160 Refined Horn
+68 161 Dried Seaweed Lichen
+68 162 Blue Fungi
+68 163 Pristine Spicule
+68 164 Fresh Fish Meat
+68 165 Quirky Liver
+68 166 Transparent Membrane
+68 167 Glowing Retina
+68 168 Hard Backbone
+68 169 Slimy Tongue
+68 16A Succulent Meat
+68 16B Cracked Bill
+68 16C Dull Stone
+68 16D Juicy Wild Meat
+68 16E Slender Horn
+68 16F Quality Pelt
+68 170 Large Hoof
+68 171 Iron Lump
+68 172 Chipped Talon
+68 173 Squishy Cartilage
+68 174 Active Cells
+68 175 Black Fog Deposits
+68 176 Fluffy Tuft
+68 177 Shimmering Silk
+68 178 Nutritious Microbes
+68 179 Vibrant Plume
+68 17A Lightweight Pelt
+68 17B Perforated Oar
+68 17C Advanced Lens
+68 17D Octopus Board
+68 17E Distilled Sap
+68 17F Lava Crystal
+68 180 Tasty Fish Belly
+68 181 Quality Skin
+68 182 Quality Scale
+68 183 Warrior Race's Seal
+68 184 Obsidian Fragment
+68 185 Fossilized Bone
+68 186 Noble Yggrolith Scale
+68 187 Telethia Stem Cell
+68 188 Reinforced Thruster
+68 189 Advanced Thruster
+68 18A Genuine Crank
+68 18B Used Cylinder
+68 18C New Cylinder
+68 18D Quality Fuse
+68 18E Reinforced Plug
+68 18F R.B. Unit
+68 190 T.P. Unit
+68 191 S.P. Unit
+68 192 E.M. Unit
+68 193 O.X. Unit
+68 194 Galdr Head
+68 195 Quo Pod
+68 196 Reinforced Plunger
+68 197 Black Gyrocompass
+68 198 Golden Gyrocompass
+68 199 Elemental Cluster
+68 19A Oc-serv Hand
+68 19B Genuine Frame
+68 19C Reinforced Frame
+68 19D Bloodied Face
+68 19E Standard Blade Module
+68 19F Tempered Blade Module
+68 1A0 Shrad Eye
+68 1A1 Standard Shaft
+68 1A2 Genuine Shaft
+68 1A3 Upgraded Shaft Part
+68 1A4 Quality Shaft
+68 1A5 Qmoevan Capacitor
+68 1A6 Elemental Fragment
+68 1A7 Genuine Plate
+68 1A8 Golden Stabilizer
+68 1A9 Black Stabilizer
+68 1AA Ocher Stabilizer
+68 1AB White Stabilizer
+68 1AC Red Milsaadi Hood
+68 1AD Bue Milsaadi Hood
+68 1AE Gray Shell
+68 1AF Sticky Scirpo Silk
+68 1B0 Silver Petramand Silk
+68 1B1 Golden Petramand Silk
+68 1B2 Malevolent Petramand Silk
+68 1B3 Black Petramand Silk
+68 1B4 Omate Petramand Claw
+68 1B5 Scirpo Malic Acid Sac
+68 1B6 Pristine Claw
+68 1B7 Scirpo Cyanide Sac
+68 1B8 Forfex Miso
+68 1B9 Pristine Pincer
+68 1BA Red Forfex Shell
+68 1BB White Forfex Shell
+# TODO: scan from 1BC to max (1023)
 
 ### 64 Precious Resources
 64 001 Arc Sand Ore
