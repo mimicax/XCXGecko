@@ -872,9 +872,9 @@
 74 022 Fosdyke's Key
 74 023 Moorehouse's Key
 74 027 Quegga's Note
-74 02A Keycard
+74 02A Keycard (Biahno)
 74 02B ID Card
-# 02C-02E are test items
+# 02C-02E are debug items
 74 02F Ajoa's ID card
 74 033 Ice Cream Cake
 74 034 Malyteth's Bottle
@@ -899,10 +899,10 @@
 74 061 Dodonga Treaty
 74 062 Dorian Treaty
 74 063 Wrathian Part
-74 064 Med Kit
+74 064 Med Kit (Human)
 74 065 Internment Camp Key
 74 067 Skell License
-74 06B White Whale Parts
+74 06B White Whale Parts (Alternate)
 74 06C L-002 Power Cable
 74 06D Skell License Certificate
 74 072 Tissue Sample
@@ -969,13 +969,13 @@
 74 0D1 Data Unit FN097
 74 0D2 Practice Data Probe
 74 0D3 Toxic Chemical Bomb
-74 0D4 Med Kit
+74 0D4 Med Kit (Ganglion)
 74 0D5 Noble Silk
 74 0D6 Data Unit FN098
 74 0D7 Sword of Legendaryness
 74 0D8 Unbreakable Sword
 74 0D9 Voltant
-74 0DA Keycard
+74 0DA Keycard (Yardley)
 74 0DB Troylan's Gorkwa
 74 0DC Traditional Orphean Drug
 74 0DD Weapon Test Data
