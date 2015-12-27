@@ -122,7 +122,6 @@ class ItemEntriesFrame(QFrame):
     self.btn_poke.setFixedSize(btn_size)
 
     self.updateUI()
-    self.show()
 
   def updateUI(self):
     # Disable editing if cache missing

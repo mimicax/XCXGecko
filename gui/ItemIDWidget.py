@@ -86,7 +86,6 @@ class ItemIDWidget(QWidget):
     #self.layout.setContentsMargins(2, 2, 2, 2)
 
     self.setStyleSheet('ItemIDWidget { background-color: white; }')
-    self.show()
 
   @pyqtSlot()
   def loadDB(self):

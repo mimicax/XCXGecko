@@ -599,8 +599,6 @@ Important Items: Slot 001 [MiMiC]
 Important Items: Slot 500 [MiMiC]
 1C3C0080 63 >>21
 
-
-# TODO: custom poke code(s) widget + add/remove instances + Other Codes vs Custom Codes tabs
 # TODO: update screenshot
 # TODO: update first post with features and formatted images
 

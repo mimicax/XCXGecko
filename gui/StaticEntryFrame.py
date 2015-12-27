@@ -72,7 +72,6 @@ class StaticEntryFrame(QFrame):
     self.val_newval.log.connect(self.log)
 
     self.updateUI()
-    self.show()
 
   def updateUI(self):
     num_bytes = 4

@@ -3,10 +3,8 @@
 import socket
 import sys
 import time
-import traceback
 import webbrowser
 
-from PyQt4.QtCore import QByteArray
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QDockWidget
 from PyQt4.QtGui import QMainWindow
@@ -14,8 +12,9 @@ from PyQt4.QtGui import QScrollArea
 from PyQt4.QtGui import QTabWidget
 from PyQt4.QtGui import QTextEdit
 
-from gui.CustomGeckoWidget import *
+from gui.CustomCodesWidget import *
 from gui.ItemIDWidget import *
+from gui.RawCodesWidget import *
 from gui.XCXWidget import *
 from pygecko.tcpgecko import TCPGecko
 
@@ -115,7 +114,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_status.setAllowedAreas(Qt.TopDockWidgetArea | Qt.BottomDockWidgetArea)
 
     # Setup tabbed widgets
-    self.wdg_xcx = XCXWidget(self.d)
+    self.wdg_xcx = XCXWidget(self.d, self)
     self.wdg_xcx.read.connect(self.read)
     self.word_read.connect(self.wdg_xcx.word_read)
     self.wdg_xcx.poke.connect(self.poke)
@@ -130,7 +129,22 @@ class XCXGeckoMainWindow(QMainWindow):
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
     
-    self.wdg_custom = CustomGeckoWidget(self.d)
+    self.wdg_raw_codes = RawCodesWidget(self.d, self)
+    self.wdg_raw_codes.read.connect(self.read)
+    self.word_read.connect(self.wdg_raw_codes.word_read)
+    self.wdg_raw_codes.poke.connect(self.poke)
+    self.wdg_raw_codes.readmem.connect(self.readmem)
+    self.block_read.connect(self.wdg_raw_codes.block_read)
+    self.wdg_raw_codes.writestr.connect(self.writestr)
+    self.wdg_raw_codes.log.connect(self.log)
+    self.scr_raw_codes = QScrollArea(self)
+    self.scr_raw_codes.setWidget(self.wdg_raw_codes)
+    self.scr_raw_codes.setWidgetResizable(True)
+    self.scr_raw_codes.setMinimumWidth(self.wdg_raw_codes.minimumWidth())
+    self.scr_raw_codes.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+    self.scr_raw_codes.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+    self.wdg_custom = CustomCodesWidget(self.d, self)
     self.wdg_custom.read.connect(self.read)
     self.word_read.connect(self.wdg_custom.word_read)
     self.wdg_custom.poke.connect(self.poke)
@@ -153,6 +167,7 @@ class XCXGeckoMainWindow(QMainWindow):
 
     self.wdg_tabs = QTabWidget(self)
     self.wdg_tabs.addTab(self.scr_xcx, 'XCX')
+    self.wdg_tabs.addTab(self.scr_raw_codes, 'Other Codes')
     self.wdg_tabs.addTab(self.scr_custom, 'Custom Codes')
     self.wdg_tabs.addTab(self.wdg_item_id, 'Item ID')
 

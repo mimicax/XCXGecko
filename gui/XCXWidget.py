@@ -157,7 +157,6 @@ class XCXWidget(QWidget):
 
     self.setStyleSheet('XCXWidget { background-color: white; }')
     self.onChooseChar(self.CHARACTERS[0])
-    self.show()
 
   @pyqtSlot(str)
   def onChooseChar(self, char):

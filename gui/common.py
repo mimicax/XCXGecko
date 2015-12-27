@@ -1,7 +1,7 @@
+import ConfigParser
 import math
 import string
 import traceback
-import ConfigParser
 
 
 class DataStore:
