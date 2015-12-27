@@ -29,10 +29,12 @@ class ItemIDWidget(QWidget):
 
     self.lbl_path_db = QLabel('DB not loaded', self)
     self.layout.addWidget(self.lbl_path_db, 0, 0, 1, 2)
-    self.btn_load_db = QPushButton('Load Custom DB', self)
+    self.btn_load_db = QPushButton(' Load Custom DB', self)
+    self.btn_load_db.setIcon(QIcon('img/flaticon/file186.png'))
     self.btn_load_db.clicked.connect(self.loadDB)
     self.layout.addWidget(self.btn_load_db, 0, 2)
-    self.btn_save_db = QPushButton('Save Custom DB', self)
+    self.btn_save_db = QPushButton(' Save Custom DB', self)
+    self.btn_save_db.setIcon(QIcon('img/flaticon/save31.png'))
     self.btn_save_db.clicked.connect(self.saveDB)
     self.layout.addWidget(self.btn_save_db, 0, 3)
 
@@ -44,11 +46,14 @@ class ItemIDWidget(QWidget):
     self.btn_curval.setIcon(QIcon('img/flaticon/open135.png'))
     self.btn_curval.clicked.connect(self.onReadVal)
     self.layout.addWidget(self.btn_curval, 1, 1)
-    self.btn_auto_incr = QPushButton('Auto Increment: OFF', self)
+    self.ico_auto_incr_off = QIcon('img/flaticon/delete85.png')
+    self.ico_auto_incr_on = QIcon('img/flaticon/verification15.png')
+    self.btn_auto_incr = QPushButton(' Auto Increment: OFF', self)
+    self.btn_auto_incr.setIcon(self.ico_auto_incr_off)
     self.btn_auto_incr.setCheckable(True)
     self.btn_auto_incr.setChecked(False)
     self.btn_auto_incr.clicked.connect(self.onAutoIncrChanged)
-    self.layout.addWidget(self.btn_auto_incr, 1, 2)
+    self.layout.addWidget(self.btn_auto_incr, 1, 3)
     self.txt_type = QLineEdit(self)
     self.txt_type.setMaxLength(2)
     self.txt_type.setPlaceholderText('Type')
@@ -205,9 +210,11 @@ class ItemIDWidget(QWidget):
   @pyqtSlot(bool)
   def onAutoIncrChanged(self, checked):
     if checked:
-      self.btn_auto_incr.setText('Auto Increment: ON')
+      self.btn_auto_incr.setText(' Auto Increment: ON')
+      self.btn_auto_incr.setIcon(self.ico_auto_incr_on)
     else:
-      self.btn_auto_incr.setText('Auto Increment: OFF')
+      self.btn_auto_incr.setText(' Auto Increment: OFF')
+      self.btn_auto_incr.setIcon(self.ico_auto_incr_off)
 
   @pyqtSlot(str, int)
   def onWordRead(self, txt_addr, word_val):

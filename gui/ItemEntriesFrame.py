@@ -2,16 +2,12 @@ import struct
 
 from PyQt4.QtCore import QByteArray
 from PyQt4.QtCore import QSize
-from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QComboBox
 from PyQt4.QtGui import QFrame
-from PyQt4.QtGui import QGridLayout
 from PyQt4.QtGui import QIcon
-from PyQt4.QtGui import QLabel
-from PyQt4.QtGui import QLineEdit
-from PyQt4.QtGui import QPushButton
 
+from FixItemNameDialog import *
 from common import *
 
 
@@ -78,9 +74,11 @@ class ItemEntriesFrame(QFrame):
     self.txt_id.setMaxLength(3)
     self.txt_id.textChanged.connect(self.fetchName)
 
-    self.txt_type = QLineEdit('Type: %02X' % type_val, self)
-    self.txt_type.setReadOnly(True)
-    self.txt_type.setDisabled(True)
+    self.btn_rename = QPushButton(' Fix Name', self)
+    self.btn_rename.setIcon(QIcon('img/flaticon/cloud-storage3.png'))
+    self.btn_rename.setToolTip('Add/Correct Item Name for %s (type: %02X)' % (self.label, type_val))
+    self.btn_rename.setStyleSheet('background-color: white')
+    self.btn_rename.clicked.connect(self.onRename)
 
     self.txt_amount = QLineEdit(self)
     self.txt_amount.setPlaceholderText('Amount')
@@ -100,7 +98,7 @@ class ItemEntriesFrame(QFrame):
     self.layout.addWidget(self.btn_read, 0, 4)
     self.layout.addWidget(self.cmb_names, 1, 0)
     self.layout.addWidget(self.txt_id, 1, 1)
-    self.layout.addWidget(self.txt_type, 1, 2)
+    self.layout.addWidget(self.btn_rename, 1, 2)
     self.layout.addWidget(self.txt_amount, 1, 3)
     self.layout.addWidget(self.btn_poke, 1, 4)
 
@@ -115,6 +113,7 @@ class ItemEntriesFrame(QFrame):
     icon_size = QSize(icon_height, icon_height)
     self.btn_read_slots.setIconSize(icon_size)
     self.btn_search_cache.setIconSize(icon_size)
+    self.btn_rename.setIconSize(icon_size)
     self.btn_read.setIconSize(icon_size)
     self.btn_poke.setIconSize(icon_size)
     btn_size = QSize(icon_height*1.5, icon_height*1.5)
@@ -149,6 +148,15 @@ class ItemEntriesFrame(QFrame):
 
   def setAlternateBGColor(self):
     self.setStyleSheet('ItemEntriesFrame { background-color:rgb(248,248,248) }')
+
+  @pyqtSlot()
+  def onRename(self):
+    id_txt = str(self.txt_id.text())
+    if len(id_txt) != 3:
+      return
+    dialog = FixItemNameDialog('%02X' % self.type_val, id_txt, self)
+    dialog.log.connect(self.log)
+    dialog.exec_()
 
   @pyqtSlot()
   def onReadSlots(self):
