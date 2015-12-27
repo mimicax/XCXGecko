@@ -598,8 +598,3 @@ Important Items: Slot 001 [MiMiC]
 
 Important Items: Slot 500 [MiMiC]
 1C3C0080 63 >>21
-
-# TODO: support for fetching latest DBs from github / web
-
-# TODO: Protagonist Face Type ID? 1C38B071
-# TODO: re-write read and poke API: takes raw addr int + num_bytes [+val], or code label str [+val]

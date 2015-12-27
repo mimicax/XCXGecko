@@ -19,6 +19,8 @@ def parse_cfg_file(cfg_path):
   items = [('General', 'wiiu_ip', 'wiiu_ip'),
            ('Databases', 'code_db', 'code_db'),
            ('Databases', 'item_id_db', 'item_id_db'),
+           ('Databases', 'local_code_db', 'local_code_db'),
+           ('Databases', 'local_item_id_db', 'local_item_id_db'),
            ('Verbosity', 'read', 'verbose_read'),
            ('Verbosity', 'poke', 'verbose_poke'),
            ('Verbosity', 'poke_str', 'verbose_poke_str')]

@@ -4,6 +4,7 @@ import socket
 import sys
 import time
 import webbrowser
+import urllib2
 
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QDockWidget
@@ -53,16 +54,43 @@ class XCXGeckoMainWindow(QMainWindow):
     self.d = DataStore()
     self.conn = None
 
+    init_msgs = []
     init_errors = []
     try:
       self.d.config = parse_cfg_file('config.ini')
       self.d.ip = self.d.config['wiiu_ip']
 
-      with open(self.d.config['code_db']) as f:
-        self.d.codes = parse_codes(f.read())
+      code_db_txt = ''
+      if self.d.config['code_db'].find('http') == 0:
+        try:
+          code_db_txt = urllib2.urlopen(self.d.config['code_db']).read()
+          init_msgs.append('Code DB: ' + self.d.config['code_db'])
+        except BaseException, e:
+          init_errors.append('Failed to load %s: %s' % (self.d.config['code_db'], str(e)))
+          with open(self.d.config['local_code_db']) as f:
+            code_db_txt = f.read()
+            init_msgs.append('Code DB: ' + self.d.config['local_code_db'])
+      else:
+        with open(self.d.config['code_db']) as f:
+          code_db_txt = f.read()
+          init_msgs.append('Code DB: ' + self.d.config['code_db'])
+      self.d.codes = parse_codes(code_db_txt)
 
-      with open(self.d.config['item_id_db']) as f:
-        (self.d.item_ids, self.d.item_lines, self.d.item_types) = parse_item_db(f.read())
+      item_id_db_txt = ''
+      if self.d.config['item_id_db'].find('http') == 0:
+        try:
+          item_id_db_txt = urllib2.urlopen(self.d.config['item_id_db']).read()
+          init_msgs.append('Item ID DB: ' + self.d.config['item_id_db'])
+        except BaseException, e:
+          init_errors.append('Failed to load %s: %s' % (self.d.config['item_id_db'], str(e)))
+          with open(self.d.config['local_item_id_db']) as f:
+            item_id_db_txt = f.read()
+            init_msgs.append('Item ID DB: ' + self.d.config['local_item_id_db'])
+      else:
+        with open(self.d.config['item_id_db']) as f:
+          item_id_db_txt = f.read()
+          init_msgs.append('Item ID DB: ' + self.d.config['item_id_db'])
+      (self.d.item_ids, self.d.item_lines, self.d.item_types) = parse_item_db(item_id_db_txt)
 
     except BaseException, e:
       init_errors.append(str(e))
@@ -71,10 +99,7 @@ class XCXGeckoMainWindow(QMainWindow):
 
     # Setup window
     self.setGeometry(200, 200, 620, 700)
-    if self.d.config is not None:
-      self.setWindowTitle('XCXGecko (%s | %s)' % (self.d.config['code_db'], self.d.config['item_id_db']))
-    else:
-      self.setWindowTitle('XCXGecko')
+    self.setWindowTitle('XCXGecko')
     self.setWindowIcon(QIcon('img/logo.ico'))
 
     # Create toolbars
@@ -173,9 +198,10 @@ class XCXGeckoMainWindow(QMainWindow):
 
     self.setCentralWidget(self.wdg_tabs)
 
-    if len(init_errors) > 0:
-      for init_error in init_errors:
-        self.log.emit(init_error, 'red')
+    for init_error in init_errors:
+      self.log.emit(init_error, 'red')
+    for init_msg in init_msgs:
+      self.log.emit(init_msg, 'black')
 
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
@@ -358,3 +384,7 @@ if __name__ == '__main__':
   app = QApplication(sys.argv)
   gui = XCXGeckoMainWindow()
   sys.exit(app.exec_())
+
+
+# TODO: Protagonist Face Type ID? 1C38B071
+# TODO: re-write read and poke API: takes raw addr int + num_bytes [+val], or code label str [+val]

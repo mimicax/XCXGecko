@@ -34,7 +34,7 @@ class RawCodesWidget(QWidget):
           entry.setAlternateBGColor()
         self.layout.addWidget(entry)
     else:
-      self.layout.addWidget(QLabel('No extra codes found in %s' % self.d.config['code_db']))
+      self.layout.addWidget(QLabel('No extra codes found in DB'))
     self.layout.addStretch()
     self.layout.setSpacing(0)
 
