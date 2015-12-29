@@ -23,10 +23,10 @@ traits_raw = '''Lv Exp [MiMiC]: 7C 000F423F
 Rank Exp [MiMiC]: 12C 7FFF
 BP [MiMiC]: 374 0000270F
 Affinity [MiMiC]: 57A 32
-Height (float) [Intropy]: 68 3F8020C4
-Chest Depth (float) [Intropy]: 6C 3F8020C4
-Chest Height (float) [Intropy]: 70 3F8020C4
-Chest Width (float) [Intropy]: 74 3F8020C4
+Height (float) [MiMiC]: 68 3F8020C4
+Chest Depth (float) [MiMiC]: 6C 3F8020C4
+Chest Height (float) [MiMiC]: 70 3F8020C4
+Chest Width (float) [MiMiC]: 74 3F8020C4
 '''
 
 traits = []
@@ -44,10 +44,11 @@ chars = []
 for line in chars_raw.splitlines():
   name, addr = line.split()
   addr = int(addr, 16)
+  addr -= 4096 # for JP version
   chars.append((name, addr))
-  # print '> %s: 0x%08X' % (name, addr)
+  print '> %s: 0x%08X' % (name, addr)
 
-  print '%s Name [MiMiC]\n%08X ASCII(10)\n' % (name, addr)
+  print '%s Name [MiMiC]\n%08X ASCII(20)\n' % (name, addr)
 
   for (trait, incr, value) in traits:
     print '%s %s\n%08X %s\n' % (name, trait, addr+incr, value)

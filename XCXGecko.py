@@ -386,5 +386,35 @@ if __name__ == '__main__':
   sys.exit(app.exec_())
 
 
+# TODO: check if we can still poke protagonist chest size + persists across loads
+# TODO: find char name alt addresses + main address that persists
 # TODO: Protagonist Face Type ID? 1C38B071
 # TODO: re-write read and poke API: takes raw addr int + num_bytes [+val], or code label str [+val]
+
+'''
+# TODO: addr range
+Storm Assault Rifle: Ranged Attack Up 1, Theroid Slayer 1, Extend Physical Res Down 1, 0/3 slots
+1C3AC7A8: 3190C008 010EE240 ????99?? 07905A40 AC00FFFF FFFFFFFF
+
+ADDRESS : ........ ........ ....pp.. aaaabbbb cccc1111 22223333
+# TODO: first 2.5 words
+# TODO: how many bits for p
+p: placement index
+# TODO: what's between p and a
+a-c: skills 1-3: yyyi
+     y: 3-bit packed effect type + base lvl (in increments of 20)
+     i: 4-bit level incr (+0 to +15)
+1-3: slots 1-3 (FFFF = no slot, 0000 = empty slot)
+
+Storm Assault Rifle: Ranged Attack Up 1, Theroid Slayer 1, Extend Physical Res Down 1, 3/3 slots
+1C3AC6D0: 3190C008 010EE240 00009800 07905A40 AC000000 00000000
+1C3AC6E8: 3190C008 010EE240 00009840 07905A40 AC000000 00000000
+1C3AC718: 3190C008 010EE240 00009880 07905A40 AC000000 00000000
+1C3AC790: 3190C008 010EE240 000098C0 07905A40 AC000000 00000000
+
+Potential Up XX, Potential Boost XX, Treasure Sensor XX
+0A001400 DE000000 00000000
+
+Melee Attack Up XX, Melee Accuracy Up XX, Melee Attack Boost XX
+07801180 03C00000 00000000
+'''

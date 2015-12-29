@@ -1,5 +1,5 @@
 Funds Modifier [danmc]
-1C39AD90 3B9AC9FF
+1C39AD90 05F5E0FF
 
 Miranium Modifier [danmc]
 1C39AD94 000F423F
@@ -8,12 +8,12 @@ Reward Tickets Modifier [danmc]
 1C39AD98 0000270F
 
 Blade Lv Exp [danmc]
-1C3C76E7 3B9AC9FF
+1C3C76E4 0007A120
 
 
 
 Protagonist Name [MiMiC]
-1C38B624 ASCII(10)
+1C38B624 ASCII(20)
 
 Protagonist Lv Exp [danmc]
 1C38E644 000F423F
@@ -570,7 +570,6 @@ Materials: Slot 800 [MiMiC]
 
 Precious Resources: Slot 001 [MiMiC]
 1C3C0540 63 >>21
-
 
 Precious Resources: Slot 100 [MiMiC]
 1C3C09E4 63 >>21

@@ -34,6 +34,9 @@ def parse_cfg_file(cfg_path):
   except BaseException, e:
     traceback.print_exc()
     raise BaseException('Failed to parse %s: %s' % (cfg_path, str(e)))
+  config['verbose_read'] = (config['verbose_read'] == 'True')
+  config['verbose_poke'] = (config['verbose_poke'] == 'True')
+  config['verbose_poke_str'] = (config['verbose_poke_str'] == 'True')
   return config
 
 

@@ -1,0 +1,599 @@
+Funds Modifier [MiZ J0K3R]
+1C399D90 05F5E0FF
+
+Miranium Modifier [MiZ J0K3R]
+1C399D94 000F423F
+
+Reward Tickets Modifier [MiZ J0K3R]
+1C399D98 0000270F
+
+Blade Lv Exp [MiZ J0K3R]
+1C3C66E4 0007A120
+
+
+
+Protagonist Name [MiMiC]
+1C38A624 ASCII(20)
+
+Protagonist Lv Exp [MiZ J0K3R]
+1C38D644 000F423F
+
+Protagonist Rank Exp [MiZ J0K3R]
+1C38D6F4 7FFF
+
+Protagonist BP [MiMiC]
+1C38D93C 0000270F
+
+Protagonist Height (float) [MiMiC]
+1C38D630 3F8020C4
+
+Protagonist Chest Depth (float) [MiMiC]
+1C38D634 3F8020C4
+
+Protagonist Chest Height (float) [MiMiC]
+1C38D638 3F8020C4
+
+Protagonist Chest Width (float) [MiMiC]
+1C38D63C 3F8020C4
+
+
+
+Nagi Name [MiMiC]
+1C38DB44 ASCII(20)
+
+Nagi Lv Exp [MiMiC]
+1C38DBC0 000F423F
+
+Nagi Rank Exp [MiMiC]
+1C38DC70 7FFF
+
+Nagi BP [MiMiC]
+1C38DEB8 0000270F
+
+Nagi Affinity [MiMiC]
+1C38E0BE 32
+
+Nagi Height (float) [MiMiC]
+1C38DBAC 3F8020C4
+
+Nagi Chest Depth (float) [MiMiC]
+1C38DBB0 3F8020C4
+
+Nagi Chest Height (float) [MiMiC]
+1C38DBB4 3F8020C4
+
+Nagi Chest Width (float) [MiMiC]
+1C38DBB8 3F8020C4
+
+
+
+L Name [MiMiC]
+1C38E0C0 ASCII(20)
+
+L Lv Exp [MiMiC]
+1C38E13C 000F423F
+
+L Rank Exp [MiMiC]
+1C38E1EC 7FFF
+
+L BP [MiMiC]
+1C38E434 0000270F
+
+L Affinity [MiMiC]
+1C38E63A 32
+
+L Height (float) [MiMiC]
+1C38E128 3F8020C4
+
+L Chest Depth (float) [MiMiC]
+1C38E12C 3F8020C4
+
+L Chest Height (float) [MiMiC]
+1C38E130 3F8020C4
+
+L Chest Width (float) [MiMiC]
+1C38E134 3F8020C4
+
+
+
+Lao Name [MiMiC]
+1C38E63C ASCII(20)
+
+Lao Lv Exp [MiMiC]
+1C38E6B8 000F423F
+
+Lao Rank Exp [MiMiC]
+1C38E768 7FFF
+
+Lao BP [MiMiC]
+1C38E9B0 0000270F
+
+Lao Affinity [MiMiC]
+1C38EBB6 32
+
+Lao Height (float) [MiMiC]
+1C38E6A4 3F8020C4
+
+Lao Chest Depth (float) [MiMiC]
+1C38E6A8 3F8020C4
+
+Lao Chest Height (float) [MiMiC]
+1C38E6AC 3F8020C4
+
+Lao Chest Width (float) [MiMiC]
+1C38E6B0 3F8020C4
+
+
+
+H.B. Name [MiMiC]
+1C38EBB8 ASCII(20)
+
+H.B. Lv Exp [MiMiC]
+1C38EC34 000F423F
+
+H.B. Rank Exp [MiMiC]
+1C38ECE4 7FFF
+
+H.B. BP [MiMiC]
+1C38EF2C 0000270F
+
+H.B. Affinity [MiMiC]
+1C38F132 32
+
+H.B. Height (float) [MiMiC]
+1C38EC20 3F8020C4
+
+H.B. Chest Depth (float) [MiMiC]
+1C38EC24 3F8020C4
+
+H.B. Chest Height (float) [MiMiC]
+1C38EC28 3F8020C4
+
+H.B. Chest Width (float) [MiMiC]
+1C38EC2C 3F8020C4
+
+
+
+Gwin Name [MiMiC]
+1C38F134 ASCII(20)
+
+Gwin Lv Exp [MiMiC]
+1C38F1B0 000F423F
+
+Gwin Rank Exp [MiMiC]
+1C38F260 7FFF
+
+Gwin BP [MiMiC]
+1C38F4A8 0000270F
+
+Gwin Affinity [MiMiC]
+1C38F6AE 32
+
+Gwin Height (float) [MiMiC]
+1C38F19C 3F8020C4
+
+Gwin Chest Depth (float) [MiMiC]
+1C38F1A0 3F8020C4
+
+Gwin Chest Height (float) [MiMiC]
+1C38F1A4 3F8020C4
+
+Gwin Chest Width (float) [MiMiC]
+1C38F1A8 3F8020C4
+
+
+
+Fyre Name [MiMiC]
+1C38F6B0 ASCII(20)
+
+Fyre Lv Exp [MiMiC]
+1C38F72C 000F423F
+
+Fyre Rank Exp [MiMiC]
+1C38F7DC 7FFF
+
+Fyre BP [MiMiC]
+1C38FA24 0000270F
+
+Fyre Affinity [MiMiC]
+1C38FC2A 32
+
+Fyre Height (float) [MiMiC]
+1C38F718 3F8020C4
+
+Fyre Chest Depth (float) [MiMiC]
+1C38F71C 3F8020C4
+
+Fyre Chest Height (float) [MiMiC]
+1C38F720 3F8020C4
+
+Fyre Chest Width (float) [MiMiC]
+1C38F724 3F8020C4
+
+
+
+Doug Name [MiMiC]
+1C38FC2C ASCII(20)
+
+Doug Lv Exp [MiMiC]
+1C38FCA8 000F423F
+
+Doug Rank Exp [MiMiC]
+1C38FD58 7FFF
+
+Doug BP [MiMiC]
+1C38FFA0 0000270F
+
+Doug Affinity [MiMiC]
+1C3901A6 32
+
+Doug Height (float) [MiMiC]
+1C38FC94 3F8020C4
+
+Doug Chest Depth (float) [MiMiC]
+1C38FC98 3F8020C4
+
+Doug Chest Height (float) [MiMiC]
+1C38FC9C 3F8020C4
+
+Doug Chest Width (float) [MiMiC]
+1C38FCA0 3F8020C4
+
+
+
+Yelv Name [MiMiC]
+1C3901A8 ASCII(20)
+
+Yelv Lv Exp [MiMiC]
+1C390224 000F423F
+
+Yelv Rank Exp [MiMiC]
+1C3902D4 7FFF
+
+Yelv BP [MiMiC]
+1C39051C 0000270F
+
+Yelv Affinity [MiMiC]
+1C390722 32
+
+Yelv Height (float) [MiMiC]
+1C390210 3F8020C4
+
+Yelv Chest Depth (float) [MiMiC]
+1C390214 3F8020C4
+
+Yelv Chest Height (float) [MiMiC]
+1C390218 3F8020C4
+
+Yelv Chest Width (float) [MiMiC]
+1C39021C 3F8020C4
+
+
+
+Boze Name [MiMiC]
+1C390724 ASCII(20)
+
+Boze Lv Exp [MiMiC]
+1C3907A0 000F423F
+
+Boze Rank Exp [MiMiC]
+1C390850 7FFF
+
+Boze BP [MiMiC]
+1C390A98 0000270F
+
+Boze Affinity [MiMiC]
+1C390C9E 32
+
+Boze Height (float) [MiMiC]
+1C39078C 3F8020C4
+
+Boze Chest Depth (float) [MiMiC]
+1C390790 3F8020C4
+
+Boze Chest Height (float) [MiMiC]
+1C390794 3F8020C4
+
+Boze Chest Width (float) [MiMiC]
+1C390798 3F8020C4
+
+
+
+Phog Name [MiMiC]
+1C390CA0 ASCII(20)
+
+Phog Lv Exp [MiMiC]
+1C390D1C 000F423F
+
+Phog Rank Exp [MiMiC]
+1C390DCC 7FFF
+
+Phog BP [MiMiC]
+1C391014 0000270F
+
+Phog Affinity [MiMiC]
+1C39121A 32
+
+Phog Height (float) [MiMiC]
+1C390D08 3F8020C4
+
+Phog Chest Depth (float) [MiMiC]
+1C390D0C 3F8020C4
+
+Phog Chest Height (float) [MiMiC]
+1C390D10 3F8020C4
+
+Phog Chest Width (float) [MiMiC]
+1C390D14 3F8020C4
+
+
+
+Elma Name [MiMiC]
+1C39121C ASCII(20)
+
+Elma Lv Exp [MiMiC]
+1C391298 000F423F
+
+Elma Rank Exp [MiMiC]
+1C391348 7FFF
+
+Elma BP [MiMiC]
+1C391590 0000270F
+
+Elma Affinity [MiMiC]
+1C391796 32
+
+Elma Height (float) [MiMiC]
+1C391284 3F8020C4
+
+Elma Chest Depth (float) [MiMiC]
+1C391288 3F8020C4
+
+Elma Chest Height (float) [MiMiC]
+1C39128C 3F8020C4
+
+Elma Chest Width (float) [MiMiC]
+1C391290 3F8020C4
+
+
+
+Lin Name [MiMiC]
+1C391798 ASCII(20)
+
+Lin Lv Exp [MiMiC]
+1C391814 000F423F
+
+Lin Rank Exp [MiMiC]
+1C3918C4 7FFF
+
+Lin BP [MiMiC]
+1C391B0C 0000270F
+
+Lin Affinity [MiMiC]
+1C391D12 32
+
+Lin Height (float) [MiMiC]
+1C391800 3F8020C4
+
+Lin Chest Depth (float) [MiMiC]
+1C391804 3F8020C4
+
+Lin Chest Height (float) [MiMiC]
+1C391808 3F8020C4
+
+Lin Chest Width (float) [MiMiC]
+1C39180C 3F8020C4
+
+
+
+Celica Name [MiMiC]
+1C391D14 ASCII(20)
+
+Celica Lv Exp [MiMiC]
+1C391D90 000F423F
+
+Celica Rank Exp [MiMiC]
+1C391E40 7FFF
+
+Celica BP [MiMiC]
+1C392088 0000270F
+
+Celica Affinity [MiMiC]
+1C39228E 32
+
+Celica Height (float) [MiMiC]
+1C391D7C 3F8020C4
+
+Celica Chest Depth (float) [MiMiC]
+1C391D80 3F8020C4
+
+Celica Chest Height (float) [MiMiC]
+1C391D84 3F8020C4
+
+Celica Chest Width (float) [MiMiC]
+1C391D88 3F8020C4
+
+
+
+Irina Name [MiMiC]
+1C392290 ASCII(20)
+
+Irina Lv Exp [MiMiC]
+1C39230C 000F423F
+
+Irina Rank Exp [MiMiC]
+1C3923BC 7FFF
+
+Irina BP [MiMiC]
+1C392604 0000270F
+
+Irina Affinity [MiMiC]
+1C39280A 32
+
+Irina Height (float) [MiMiC]
+1C3922F8 3F8020C4
+
+Irina Chest Depth (float) [MiMiC]
+1C3922FC 3F8020C4
+
+Irina Chest Height (float) [MiMiC]
+1C392300 3F8020C4
+
+Irina Chest Width (float) [MiMiC]
+1C392304 3F8020C4
+
+
+
+Murderess Name [MiMiC]
+1C39280C ASCII(20)
+
+Murderess Lv Exp [MiMiC]
+1C392888 000F423F
+
+Murderess Rank Exp [MiMiC]
+1C392938 7FFF
+
+Murderess BP [MiMiC]
+1C392B80 0000270F
+
+Murderess Affinity [MiMiC]
+1C392D86 32
+
+Murderess Height (float) [MiMiC]
+1C392874 3F8020C4
+
+Murderess Chest Depth (float) [MiMiC]
+1C392878 3F8020C4
+
+Murderess Chest Height (float) [MiMiC]
+1C39287C 3F8020C4
+
+Murderess Chest Width (float) [MiMiC]
+1C392880 3F8020C4
+
+
+
+Alexa Name [MiMiC]
+1C392D88 ASCII(20)
+
+Alexa Lv Exp [MiMiC]
+1C392E04 000F423F
+
+Alexa Rank Exp [MiMiC]
+1C392EB4 7FFF
+
+Alexa BP [MiMiC]
+1C3930FC 0000270F
+
+Alexa Affinity [MiMiC]
+1C393302 32
+
+Alexa Height (float) [MiMiC]
+1C392DF0 3F8020C4
+
+Alexa Chest Depth (float) [MiMiC]
+1C392DF4 3F8020C4
+
+Alexa Chest Height (float) [MiMiC]
+1C392DF8 3F8020C4
+
+Alexa Chest Width (float) [MiMiC]
+1C392DFC 3F8020C4
+
+
+
+Hope Name [MiMiC]
+1C393304 ASCII(20)
+
+Hope Lv Exp [MiMiC]
+1C393380 000F423F
+
+Hope Rank Exp [MiMiC]
+1C393430 7FFF
+
+Hope BP [MiMiC]
+1C393678 0000270F
+
+Hope Affinity [MiMiC]
+1C39387E 32
+
+Hope Height (float) [MiMiC]
+1C39336C 3F8020C4
+
+Hope Chest Depth (float) [MiMiC]
+1C393370 3F8020C4
+
+Hope Chest Height (float) [MiMiC]
+1C393374 3F8020C4
+
+Hope Chest Width (float) [MiMiC]
+1C393378 3F8020C4
+
+
+
+Mia Name [MiMiC]
+1C393880 ASCII(20)
+
+Mia Lv Exp [MiMiC]
+1C3938FC 000F423F
+
+Mia Rank Exp [MiMiC]
+1C3939AC 7FFF
+
+Mia BP [MiMiC]
+1C393BF4 0000270F
+
+Mia Affinity [MiMiC]
+1C393DFA 32
+
+Mia Height (float) [MiMiC]
+1C3938E8 3F8020C4
+
+Mia Chest Depth (float) [MiMiC]
+1C3938EC 3F8020C4
+
+Mia Chest Height (float) [MiMiC]
+1C3938F0 3F8020C4
+
+Mia Chest Width (float) [MiMiC]
+1C3938F4 3F8020C4
+
+
+
+Materials: Slot 001 [MiMiC]
+1C3BA0DC 63 >>21
+
+Materials: Slot 800 [MiMiC]
+1C3BC650 63 >>21
+
+
+
+Precious Resources: Slot 001 [MiMiC]
+1C3BF540 63 >>21
+
+Precious Resources: Slot 100 [MiMiC]
+1C3BF9E4 63 >>21
+
+
+
+Data Probes: Slot 001 [MiMiC]
+1C3BC65C 63 >>21
+
+Data Probes: Slot 100 [MiMiC]
+1C3BCB00 63 >>21
+
+
+
+Collectibles: Slot 001 [MiMiC]
+1C3BCB0C 63 >>21
+
+Collectibles: Slot 300 [MiMiC]
+1C3BD910 63 >>21
+
+
+
+Important Items: Slot 001 [MiMiC]
+1C3BD91C 63 >>21
+
+Important Items: Slot 500 [MiMiC]
+1C3BF080 63 >>21

@@ -1,6 +1,9 @@
 # XCXGecko
 Trainer for XCX using [pyGecko](https://github.com/wiiudev/pyGecko). Requires kernel exploit to use.
 
+* All codes tested on v1.0.1E, and should be compatible with v1.0.1U.
+* To use with v1.0.1(J), edit ```config.ini```
+
 ## Features
 
 * Modify funds, miranium, reward tickets, ...
