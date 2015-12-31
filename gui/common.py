@@ -10,6 +10,7 @@ class DataStore:
     self.ip = ''
     self.connected = False
     self.codes = dict()
+    self.custom_codes = dict()
     self.item_ids = dict()
     self.item_lines = []
     self.item_types = []
@@ -41,55 +42,65 @@ def parse_cfg_file(cfg_path):
 
 
 class Code:
-  def __init__(self, idx, txt_addr='0x10000000', bit_rshift=0, num_bytes=4, dft_value=None, is_float=False, is_acsii=False, label='NO_LABEL [NO_USER]'):
-    self.idx = idx
-    self.txt_addr = txt_addr # either 0xMEMADDR or [0xPOINTER]+OFFSET
-    self.bit_rshift = bit_rshift
-    self.num_bytes = num_bytes
-    self.dft_value = dft_value # either None or hex
-    self.is_float = is_float
-    self.is_ascii = is_acsii
+  free_id = 0
+
+  def __init__(self, label, addr_txt, bit_rshift, num_bytes, dft_value,
+               is_float, is_ascii):
+    # Populate fields
+    Code.free_id += 1
+    self.id = Code.free_id
     self.label = label
 
-    self.num_mem_words = int(math.ceil(float(bit_rshift+num_bytes*8)/32)) # number of 32-bit addresses spanning value
-    self.hidden = False # hidden in custom gecko codes view
+    self.addr_txt = addr_txt # either 0xMEMADDR or [0xPOINTER]+OFFSET
+    self.is_ptr = False
+    self.addr_base = None
+    self.ptr_offset = None
+    self.bit_rshift = bit_rshift
+    self.num_bytes = num_bytes
+    self.dft_value = dft_value # either None or packed bytes
+    self.is_float = is_float
+    self.is_ascii = is_ascii
 
-    if self.txt_addr[:2] == '0x':
+    # Parse addr_txt into memory or pointer addr_base
+    if self.addr_txt[:2] == '0x':
       self.is_ptr = False
-      self.base_addr = int(self.txt_addr[2:], 16)
+      self.addr_base = int(self.addr_txt[2:], 16)
       self.ptr_offset = None
-    elif self.txt_addr[:3] == '[0x' and self.txt_addr.find('+') > 0:
+    elif self.addr_txt[:3] == '[0x' and self.addr_txt.find('+') > 0:
       self.is_ptr = True
-      self.base_addr = int(self.txt_addr[3:11], 16)
-      self.ptr_offset = int(self.txt_addr[13:])
-    elif self.txt_addr[0] == '[' and self.txt_addr.find('+') > 0: # forgot 0x in pointer address
-      self.base_addr = int(self.txt_addr[1:9], 16)
+      self.addr_base = int(self.addr_txt[3:11], 16)
+      self.ptr_offset = int(self.addr_txt[13:])
+    elif self.addr_txt[0] == '[' and self.addr_txt.find('+') > 0: # omitted 0x in pointer address
+      self.addr_base = int(self.addr_txt[1:9], 16)
       self.is_ptr = True
-      self.ptr_offset = int(self.txt_addr[11:])
-    else: # forgot 0x in memory address
-      self.base_addr = int(self.txt_addr, 16)
+      self.ptr_offset = int(self.addr_txt[11:])
+    else: # omitted 0x in memory address
+      self.addr_base = int(self.addr_txt, 16)
       self.is_ptr = False
       self.ptr_offset = None
 
-    # Compute word-aligned memory address (if not pointer)
-    if not self.is_ptr:
-      if num_bytes == 1 or num_bytes == 2:
-        rem = self.base_addr % 4
-        if rem > 0:
-          self.bit_rshift += rem * 8
-          self.base_addr -= rem
+    # Adjust addr_base/bit_rshift so that (bit_rshift+num_bytes*8) < 32 bits, to facilitate read_mem
+    if (not self.is_ascii) and (self.num_bytes > 4 or (self.num_bytes == 4 and self.bit_rshift > 0)):
+      raise ValueError('missing support for non-text codes spanning multiple words') # use 2+ codes instead
+    if self.bit_rshift != 0:
+      if not self.is_ptr:
+        total_num_bits = self.bit_rshift + self.num_bytes*8
+        if self.num_bytes == 1 or self.num_bytes == 2:
+          rem_num_bits = (total_num_bits - 1) % 32 + 1
+          num_word_shift = (total_num_bits - rem_num_bits) / 32
+          self.bit_rshift -= num_word_shift * 32
+          self.addr_base += num_word_shift * 4
+      else: # self.is_ptr
+        if self.bit_rshift + self.num_bytes*8 > 32:
+          raise ValueError('missing support for bit-shifted pointer code spanning multiple words')
 
   def __str__(self):
     msg = ''
-    if self.hidden:
-      msg += '* '
-    else:
-      msg += '  '
-    msg += self.label + ': '
+    msg += str(self.id) + ' - ' + self.label + ': '
     if self.is_ptr:
-      msg += '[0x%08X]+%d ' % (self.base_addr, self.ptr_offset)
+      msg += '[0x%08X]+%d ' % (self.addr_base, self.ptr_offset)
     else:
-      msg += '0x%08X ' % self.base_addr
+      msg += '0x%08X ' % self.addr_base
     if self.is_ascii:
       msg += 'ASCII(%d)' % self.num_bytes
     elif self.dft_value is not None:
@@ -102,26 +113,57 @@ class Code:
       msg += 'X'*(self.num_bytes*2)
       if self.is_float:
         msg += '(f)'
-    msg += ' >>%d' % self.bit_rshift
+    if self.bit_rshift != 0:
+      msg += ' >>%d' % self.bit_rshift
+    return msg
+
+
+class CodeSet:
+  def __init__(self, label):
+    self.id = None
+    self.label = label
+    self.hidden = False # hidden in Other Codes view
+    self.c = []
+
+  def addCode(self, addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii):
+    code_i = len(self.c) + 1
+    label = self.label
+    if code_i > 1:
+      label += '-%d' % code_i
+    code = Code(label, addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii)
+    if self.id is None:
+      self.id = code.id
+    self.c.append(code)
+
+  def __str__(self):
+    msg = ''
+    for code in self.c:
+      if self.hidden:
+        msg += '_ '
+      else:
+        msg += '* '
+      msg += str(code) + '\n'
     return msg
 
 
 # Supported code formats:
-# <MEMORY_ADDR | [POINTER_ADDR]+BYTE_OFFSET> <HEX_FORMAT | HEX_VALUE | ASCII(BYTES)> >>OPTIONAL_BIT_RSHIFT
+# ARG1_ADDR ARG2_VALUE ARG3_OPT
+#
+# ARG1_ADDR  = MEMORY_ADDR | [POINTER_ADDR]+BYTE_OFFSET
+# ARG2_VALUE = XX | XXXX | XXXXXXXX | HEX_VALUE | ASCII(BYTES)
+# ARG3_OPT   = >>BIT_RSHIFT
 #
 # Examples:
 # 16-bit memory poke: 12345678 XXXX
-# 8-bit memory poke with specific value: 12345678 1A
+# 8-bit memory poke with default value: 12345678 1A
 # 32-bit pointer memory poke: [1F000000]+128 XXXXXXXX
-# 8-bit pointer memory poke with 3-bit right shift and specific value: [1F900000]+12 FF >>3
+# 8-bit pointer memory poke with 3-bit right shift and default value: [1F900000]+12 F9 >>3
 # 10-byte ASCII memory poke: 1C303984 ASCII(10)
 def parse_codes(codes_txt):
   codes_lines = codes_txt.split('\n')
-  codes = {}
-  code_idx = 0
+  codes = dict()
 
-  label = None
-  label_multi_count = 0
+  cs = None
   line_count = 0
   try:
     for line in codes_lines:
@@ -129,27 +171,32 @@ def parse_codes(codes_txt):
 
       line = line.strip()
       if len(line) <= 0: # new code
-        label = None
-        label_multi_count = 0
+        if cs is not None and len(cs.c) == 0:
+          codes.pop(cs.label) # Prune empty code
+        cs = None
       elif line[0] == '#': # comment line
         continue
-      elif label is None: # label line
+      elif cs is None: # label line
         label = line.strip()
-        label_multi_count = 0
+        if label in codes:
+          raise ValueError('duplicate label for ' + label)
+        cs = CodeSet(label)
+        codes[label] = cs
+
       else: # code line
-        # Parse code line
-        bit_rshift = 0
-        dft_value = None
-        is_ascii = False
         tokens = line.split()
         if len(tokens) < 2:
-          raise BaseException('expecting MEM_ADDR|[PTR_ADDR]+OFFSET HEX_FORMAT|HEX_VALUE|ASCII(BYTES)')
-        txt_addr = tokens[0]
-        is_float = (label.find('(float)') >= 0)
+          raise SyntaxError('invalid code entry, expecting ARG1_ADDR ARG2_VALUE (ARG3_OPT)')
+        
+        addr_txt = tokens[0]
+        bit_rshift = 0
+        dft_value = None
+        is_float = (cs.label.find('(float)') >= 0)
+        is_ascii = False
         if len(tokens) >= 3 and len(tokens[2]) > 2 and tokens[2][:2] == '>>':
           bit_rshift = int(tokens[2][2:])
-          if bit_rshift <= 0 or bit_rshift >= 24:
-            raise BaseException('bit rshift not within [0, 24] range')
+          if bit_rshift < 0:
+            raise ValueError('bit_rshift should be non-negative') # suspect typo in code
         if tokens[1].find('ASCII(') == 0:
           num_bytes = int(tokens[1][6:-1])
           is_ascii = True
@@ -166,17 +213,10 @@ def parse_codes(codes_txt):
           if tokens[1] != 'XXXXXXXX':
             dft_value = int(tokens[1], 16)
         else:
-          raise BaseException('format or value must have 1/2/4 bytes length')
+          raise ValueError('hex format or hex value must be 1/2/4 bytes')
 
-        # Store code line
-        label_multi_count += 1
-        cur_label = label
-        if label_multi_count > 1:
-          cur_label = '%s (%d)' % (label, label_multi_count)
-        if cur_label in codes:
-          raise BaseException('duplicate label for ' + cur_label)
-        codes[cur_label] = Code(code_idx, txt_addr, bit_rshift, num_bytes, dft_value, is_float, is_ascii, cur_label)
-        code_idx += 1
+        cs.addCode(addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii)
+
   except BaseException, e:
     traceback.print_exc()
     raise BaseException('Failed to parse Codes DB on line %d: %s' % (line_count, str(e)))
@@ -185,7 +225,7 @@ def parse_codes(codes_txt):
 
 
 class Item:
-  MAX_ID_VAL = 0x3FF
+  MAX_ID_VAL = 0x3FF # NOTE: also used as bit mask!
 
   '''
   WARNING: poking an illegal/large ID will cause XCX to crash back to title screen
@@ -208,6 +248,10 @@ class Item:
     self.name = name
     self.val_word = form_item_word(type_val, id_val, 0)
     self.line = line
+
+  def __str__(self):
+    msg = 'l%d t%02X i%03X v%08X %s' % (self.line, self.type_val, self.id_val, self.val_word, self.name)
+    return msg
 
 
 def form_item_word(type_val, id_val, amount):

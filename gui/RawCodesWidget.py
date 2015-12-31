@@ -21,9 +21,16 @@ class RawCodesWidget(QWidget):
     self.d = data_store
     self.entries = []
 
-    for code in (sorted(self.d.codes.values(), key=operator.attrgetter('idx'))):
-      if not code.hidden:
-        self.entries.append(StaticEntryFrame(code, None, self))
+    code_sets = []
+    for key in self.d.codes.keys():
+      cs = self.d.codes[key]
+      if not cs.hidden:
+        code_sets.append((cs.c[0].id, cs))
+    code_sets.sort(key=lambda c: c[0])
+    for id, cs in code_sets:
+      self.entries.append(StaticEntryFrame(cs.c[0], cs.label, self))
+      for idx in xrange(1, len(cs.c)):
+        self.entries.append(StaticEntryFrame(cs.c[idx], '...', self))
 
     self.layout = QVBoxLayout(self)
     if len(self.entries) > 0:

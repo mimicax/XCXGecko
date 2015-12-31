@@ -312,7 +312,7 @@ class ItemEntriesFrame(QFrame):
       self.read.emit(cur_addr_hex)
 
     except BaseException, e:
-      #traceback.print_exc()
+      # traceback.print_exc()
       self.log.emit('Memory poke failed: ' + str(e), 'red')
 
   @pyqtSlot(str, int)

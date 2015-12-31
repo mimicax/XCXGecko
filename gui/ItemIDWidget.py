@@ -88,7 +88,7 @@ class ItemIDWidget(QWidget):
     self.layout.setColumnStretch(2, 1)
     self.layout.setColumnStretch(3, 1)
     self.layout.setSpacing(5)
-    #self.layout.setContentsMargins(2, 2, 2, 2)
+    # self.layout.setContentsMargins(2, 2, 2, 2)
 
     self.setStyleSheet('ItemIDWidget { background-color: white; }')
 

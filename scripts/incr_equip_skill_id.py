@@ -7,9 +7,9 @@ print '> Connecting to Wii U...'
 g = TCPGecko(wiiu_addr)
 print '> Connected to Wii U'
 
-base_addr = 0x1C3AC718
-skill_12_addr = base_addr+12
-skill_3_addr = base_addr+16
+addr_base = 0x1C3AC718
+skill_12_addr = addr_base + 12
+skill_3_addr = addr_base + 16
 
 skill_names = []
 incr_by_one = True

@@ -34,7 +34,7 @@ class StaticEntryFrame(QFrame):
       label = self.code.label
     self.lbl_label = QLabel(label, self)
     if self.code is not None:
-      self.lbl_label.setToolTip(self.code.txt_addr)
+      self.lbl_label.setToolTip(self.code.addr_txt)
 
     self.val_newval = ValueComboBox([], 4, self)
     self.val_newval.setToolTip('New value')
@@ -111,7 +111,7 @@ class StaticEntryFrame(QFrame):
       self.val_newval.setDisabled(True)
       self.btn_poke.setDisabled(True)
     else:
-      self.lbl_label.setToolTip(self.code.txt_addr)
+      self.lbl_label.setToolTip(self.code.addr_txt)
       self.btn_curval.setDisabled(False)
       self.val_newval.setDisabled(False)
       self.btn_poke.setDisabled(False)
@@ -125,10 +125,10 @@ class StaticEntryFrame(QFrame):
     self.setStyleSheet('StaticEntryFrame { background-color:rgb(248,248,248) }')
 
   @pyqtSlot(str, int)
-  def onWordRead(self, txt_addr, word_val):
+  def onWordRead(self, addr_txt, word_val):
     if self.code is None:
       return
-    if txt_addr == self.code.txt_addr:
+    if addr_txt == self.code.addr_txt:
       if word_val < 0:
         self.cur_val = 0x100000000 - word_val
       else:
@@ -156,7 +156,7 @@ class StaticEntryFrame(QFrame):
   @pyqtSlot(int, int, QByteArray)
   def onBlockRead(self, addr_start, num_bytes, raw_bytes):
     if (self.code is not None) and (self.code.is_ascii) and (not self.code.is_ptr) and \
-       (addr_start == self.code.base_addr) and (num_bytes == self.code.num_bytes+1):
+       (addr_start == self.code.addr_base) and (num_bytes == self.code.num_bytes+1):
       val_str = raw_bytes.data()
       eos_idx = val_str.find('\0')
       if eos_idx >= 0:
@@ -195,11 +195,9 @@ class StaticEntryFrame(QFrame):
     if self.code is None:
       return
     if self.code.is_ascii and not self.code.is_ptr:
-      self.readmem.emit(self.code.base_addr, self.code.num_bytes+1)
-    elif self.code.num_mem_words == 1:
+      self.readmem.emit(self.code.addr_base, self.code.num_bytes+1)
+    else: # Assume 1 word
       self.read.emit(self.code.label)
-    else:
-      self.log.emit('Missing support for codes straddling across multiple memory words', 'red')
 
   def onPoke(self):
     if self.code is None:
@@ -221,8 +219,8 @@ class StaticEntryFrame(QFrame):
             new_qbytes.append('\0')
 
           # Poke and update
-          self.writestr.emit(self.code.base_addr, new_qbytes)
-          self.readmem.emit(self.code.base_addr, self.code.num_bytes+1)
+          self.writestr.emit(self.code.addr_base, new_qbytes)
+          self.readmem.emit(self.code.addr_base, self.code.num_bytes+1)
         return
 
       # Process decimal code: transform val to decimal
@@ -245,12 +243,9 @@ class StaticEntryFrame(QFrame):
         if new_val_dec < 0:
           new_val_dec += val_cap
 
-        # Poke and update
-        if self.code.num_mem_words != 1:
-          self.log.emit('Missing support for codes straddling across multiple memory words', 'red')
-        else:
-          self.poke.emit(self.code.label, new_val_dec)
-          self.read.emit(self.code.label)
+      # Poke and update
+      self.poke.emit(self.code.label, new_val_dec)
+      self.read.emit(self.code.label)
 
     except ValueError, e:
       self.log.emit('Memory poke failed: %s' % str(e), 'red')

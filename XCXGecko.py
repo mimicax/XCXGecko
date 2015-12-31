@@ -2,42 +2,19 @@
 
 import socket
 import sys
-import time
 import webbrowser
-import urllib2
 
 from PyQt4.QtGui import QApplication
-from PyQt4.QtGui import QDockWidget
 from PyQt4.QtGui import QMainWindow
 from PyQt4.QtGui import QScrollArea
 from PyQt4.QtGui import QTabWidget
-from PyQt4.QtGui import QTextEdit
 
 from gui.CustomCodesWidget import *
 from gui.ItemIDWidget import *
 from gui.RawCodesWidget import *
+from gui.StatusWidget import *
 from gui.XCXWidget import *
 from pygecko.tcpgecko import TCPGecko
-
-
-class StatusWidget(QDockWidget):
-  def __init__(self, parent=None):
-    super(QDockWidget, self).__init__('Status', parent)
-    self.setFeatures(QDockWidget.DockWidgetMovable)
-
-    self.txt_log = QTextEdit(self)
-    self.txt_log.setReadOnly(False)
-    self.setWidget(self.txt_log)
-
-    self.setMaximumHeight(120)
-
-  @pyqtSlot(str, str)
-  def onLog(self, txt, color='black'):
-    now = time.strftime('%x %X')
-    html = '<span style="color:%s"><b>[%s]</b>: %s</span><br>' % (color, now, txt)
-    self.txt_log.insertHtml(html)
-    scroll_bar = self.txt_log.verticalScrollBar()
-    scroll_bar.setValue(scroll_bar.maximum())
 
 
 class XCXGeckoMainWindow(QMainWindow):
@@ -51,8 +28,19 @@ class XCXGeckoMainWindow(QMainWindow):
 
   def __init__(self):
     super(XCXGeckoMainWindow, self).__init__()
-    self.d = DataStore()
     self.conn = None
+
+    (init_msgs, init_errors) = self.initData()
+
+    self.initUI()
+
+    for init_error in init_errors:
+      self.log.emit(init_error, 'red')
+    for init_msg in init_msgs:
+      self.log.emit(init_msg, 'black')
+
+  def initData(self):
+    self.d = DataStore()
 
     init_msgs = []
     init_errors = []
@@ -60,7 +48,6 @@ class XCXGeckoMainWindow(QMainWindow):
       self.d.config = parse_cfg_file('config.ini')
       self.d.ip = self.d.config['wiiu_ip']
 
-      code_db_txt = ''
       if self.d.config['code_db'].find('http') == 0:
         try:
           code_db_txt = urllib2.urlopen(self.d.config['code_db']).read()
@@ -76,7 +63,6 @@ class XCXGeckoMainWindow(QMainWindow):
           init_msgs.append('Code DB: ' + self.d.config['code_db'])
       self.d.codes = parse_codes(code_db_txt)
 
-      item_id_db_txt = ''
       if self.d.config['item_id_db'].find('http') == 0:
         try:
           item_id_db_txt = urllib2.urlopen(self.d.config['item_id_db']).read()
@@ -97,6 +83,9 @@ class XCXGeckoMainWindow(QMainWindow):
       self.d.codes = {}
       self.d.item_ids = []
 
+    return init_msgs, init_errors
+
+  def initUI(self):
     # Setup window
     self.setGeometry(200, 200, 620, 700)
     self.setWindowTitle('XCXGecko')
@@ -153,7 +142,7 @@ class XCXGeckoMainWindow(QMainWindow):
     self.scr_xcx.setMinimumWidth(self.wdg_xcx.minimumWidth())
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-    
+
     self.wdg_raw_codes = RawCodesWidget(self.d, self)
     self.wdg_raw_codes.read.connect(self.read)
     self.word_read.connect(self.wdg_raw_codes.word_read)
@@ -197,11 +186,6 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_tabs.addTab(self.wdg_item_id, 'Item ID')
 
     self.setCentralWidget(self.wdg_tabs)
-
-    for init_error in init_errors:
-      self.log.emit(init_error, 'red')
-    for init_msg in init_msgs:
-      self.log.emit(init_msg, 'black')
 
     self.read.connect(self.onRead)
     self.poke.connect(self.onPoke)
@@ -251,42 +235,39 @@ class XCXGeckoMainWindow(QMainWindow):
     self.d.connected = False
 
   @pyqtSlot(str)
-  def onRead(self, code_label):
+  def onRead(self, code_txt):
     try:
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
-      code_label = str(code_label)
-      if self.d.codes is not None and code_label in self.d.codes:
-        code = self.d.codes[code_label]
-        if code.num_mem_words != 1:
-          raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
-        if code.is_ptr:
+      code_txt = str(code_txt)
+      if self.d.codes is not None and code_txt in self.d.codes:
+        cs = self.d.codes[code_txt]
+        for code in cs.c:
+          if code.is_ptr:
+            if self.d.config['verbose_read']:
+              self.log.emit('READ %08X %d' % (code.addr_base, 4), 'blue')
+            ptr_val = self.conn.readmem(code.addr_base, 4)
+            ptr_val = struct.unpack('>I', ptr_val)[0]
+            addr_base = ptr_val + code.ptr_offset
+          else: # not code.is_ptr
+            addr_base = code.addr_base
+  
+          # Read from a single 32-bit memory addresses
+          num_bytes = 4
           if self.d.config['verbose_read']:
-            self.log.emit('READ %08X %d' % (code.base_addr, 4), 'blue')
-          ptr_val = self.conn.readmem(code.base_addr, 4)
-          ptr_val = struct.unpack('>I', ptr_val)[0]
-          mem_addr = ptr_val+code.ptr_offset
-        else:
-          mem_addr = code.base_addr
-
-        # Read from one or more 32-bit memory addresses
-        num_bytes = code.num_mem_words*4
-        if self.d.config['verbose_read']:
-          self.log.emit('READ %08X %d' % (mem_addr, num_bytes), 'blue')
-        val_mem_chr = self.conn.readmem(mem_addr, num_bytes)
-        val_words = struct.unpack('>' + ('I' * code.num_mem_words), val_mem_chr)
-
-        for val_word in val_words:
-          self.word_read.emit(code.txt_addr, val_word)
-          break # Currently only support reading 1 word per request
+            self.log.emit('READ %08X %d' % (addr_base, num_bytes), 'blue')
+          val_mem_chr = self.conn.readmem(addr_base, num_bytes)
+          val_word = struct.unpack('>I', val_mem_chr)[0]
+          self.word_read.emit(code.addr_txt, val_word)
+          
       else: # read raw address
-        mem_addr = int(code_label, 16)
+        addr_base = int(code_txt, 16)
         if self.d.config['verbose_read']:
-          self.log.emit('READ %08X %d' % (mem_addr, 4), 'blue')
-        val_mem_chr = self.conn.readmem(mem_addr, 4)
-        val_words = struct.unpack('>I', val_mem_chr)
-        self.word_read.emit(code_label, val_words[0])
+          self.log.emit('READ %08X %d' % (addr_base, 4), 'blue')
+        val_mem_chr = self.conn.readmem(addr_base, 4)
+        val_word = struct.unpack('>I', val_mem_chr)[0]
+        self.word_read.emit(code_txt, val_word)
 
     except BaseException, e:
       self.log.emit('Memory read failed: %s' % str(e), 'red')
@@ -309,50 +290,46 @@ class XCXGeckoMainWindow(QMainWindow):
       traceback.print_exc()
 
   @pyqtSlot(str, int)
-  def onPoke(self, code_label, new_val):
+  def onPoke(self, code_txt, new_val):
     try:
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
-      code_label = str(code_label)
-      if self.d.codes is not None and code_label in self.d.codes:
-        code = self.d.codes[code_label]
-        if code.num_mem_words != 1:
-          raise BaseException('XCXGecko safety check (only supports reading 1 word currently)')
-        if code.is_ptr:
-          if self.d.config['verbose_read']:
-            self.log.emit('READ %08X %d' % (code.base_addr, 4), 'blue')
-          ptr_val = self.conn.readmem(code.base_addr, 4)
-          ptr_val = struct.unpack('>I', ptr_val)[0]
-          mem_addr = ptr_val+code.ptr_offset
-        else:
-          mem_addr = code.base_addr
+      code_txt = str(code_txt)
+      if self.d.codes is not None and code_txt in self.d.codes:
+        cs = self.d.codes[code_txt]
+        for code in cs.c:
+          if code.is_ptr:
+            if self.d.config['verbose_read']:
+              self.log.emit('READ %08X %d' % (code.addr_base, 4), 'blue')
+            ptr_val = self.conn.readmem(code.addr_base, 4)
+            ptr_val = struct.unpack('>I', ptr_val)[0]
+            mem_addr = ptr_val + code.ptr_offset
+          else: # not code.is_ptr
+            mem_addr = code.addr_base
+  
+          # Determine bit shift of word value buffer (required if bit_offset != 0 and/or num_bytes < 4)
+          lshift_bits = (32 - code.num_bytes * 8 - code.bit_rshift)
+          if lshift_bits < 0:
+            raise ValueError('invalid code - negative lshift_bits')  # either num_bytes > 4, or bit_rshift is wrong
+  
+          # Compute updated 32-bit value to addr
+          if code.num_bytes == 4 and code.bit_rshift == 0:
+            new_word = new_val
+          else:
+            if self.d.config['verbose_read']:
+              self.log.emit('READ %08X %d' % (mem_addr, 4), 'blue')
+            old_word = self.conn.readmem(mem_addr, 4)
+            old_word = struct.unpack('>I', old_word)[0]
+            word_mask = ((256**code.num_bytes) - 1) << lshift_bits
+            new_word = (old_word & ~word_mask) | (new_val << lshift_bits)
 
-        # Determine bit shift (needed if bit_offset != 0 and/or num_bytes < 4)
-        lshift_bits = (32 - code.num_bytes * 8 - code.bit_rshift)
-        if lshift_bits < 0:
-          raise BaseException('improper code (negative lshift_bits)')  # either num_bytes > 4, or bit_rshift is wrong
-
-        # Compute updated 32-bit value to addr
-        if code.num_bytes == 4 and code.bit_rshift == 0:
-          new_word = new_val
-          # print 'Poke(0x%08X, 0x%08X)' % (mem_addr, new_word)
-        else:
-          if self.d.config['verbose_read']:
-            self.log.emit('READ %08X %d' % (mem_addr, 4), 'blue')
-          old_word = self.conn.readmem(mem_addr, 4)
-          old_word = struct.unpack('>I', old_word)[0]
-          word_mask = ((256**code.num_bytes) - 1) << lshift_bits
-          new_word = (old_word & ~word_mask) | (new_val << lshift_bits)
-          # print ('Poke(0x%08X, bytes=%d, bit_offset=%d, 0x%%0%dX) == Poke(0x%08X, from=0x%08X, to=0x%08X)' %
-          #   (mem_addr, code.num_bytes, code.bit_rshift, code.num_bytes*2, mem_addr, old_word, new_word)) % new_val
-
-        if self.d.config['verbose_poke']:
-          self.log.emit('POKE %08X %08X' % (mem_addr, new_word), 'blue')
-        self.conn.pokemem(mem_addr, new_word)
+          if self.d.config['verbose_poke']:
+            self.log.emit('POKE %08X %08X' % (mem_addr, new_word), 'blue')
+          self.conn.pokemem(mem_addr, new_word)
 
       else: # poke raw address
-        mem_addr = int(code_label, 16)
+        mem_addr = int(code_txt, 16)
         new_word = new_val
 
         if self.d.config['verbose_poke']:
@@ -386,10 +363,7 @@ if __name__ == '__main__':
   sys.exit(app.exec_())
 
 
-# TODO: check if we can still poke protagonist chest size + persists across loads
-# TODO: find char name alt addresses + main address that persists
-# TODO: Protagonist Face Type ID? 1C38B071
-# TODO: re-write read and poke API: takes raw addr int + num_bytes [+val], or code label str [+val]
+# TODO: equip ids
 
 '''
 # TODO: addr range
@@ -418,3 +392,6 @@ Potential Up XX, Potential Boost XX, Treasure Sensor XX
 Melee Attack Up XX, Melee Accuracy Up XX, Melee Attack Boost XX
 07801180 03C00000 00000000
 '''
+
+# TODO: re-write read and poke API: takes raw addr int + num_bytes [+val], or code label str [+val]
+# TODO: separate GeckoGUI vs XCXGecko
