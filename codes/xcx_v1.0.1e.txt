@@ -601,3 +601,64 @@ Important Items: Slot 001 [MiMiC]
 
 Important Items: Slot 500 [MiMiC]
 1C3C0080 63 >>21
+
+
+
+# ===== Gear codes: partially decoded =====
+# Ground/Skill Gear Format: wwwwxxxx yyyyyyyy zzzzpppq aaaabbbb cccc1111 22223333
+#  w: 2-byte unknown; includes gear ID (with embedded maker + specs)
+#  x: 2-byte unknown; ranged wep=0xC008/0xC009, melee wep=0xE008/0xE009
+#  y: 4-byte unknown; possibly indicates item purchase / found locations; only seen \0 in last 6 bits
+#  z: 2-byte unknown; only seen 0x0000
+#  p: 10-bit placement index (incl upper 2 bits of 3rd byte)
+#  q: 6-bit unknown; only seen 0b000000
+#  a-c: gear/skell skill ID 1-3: yyyi
+#     y: 12-bit (packed); skill type + base lvl (if applicable); see codes/gear_id_v1.0.1e.txt
+#     i: 4-bit skill level incr (+0 to +15)
+#  1-3: slot 1-3: 0xFFFF = no slot, 0x0000 = empty slot, other values = possibly augment slot ID
+#
+# Potential Up XX, Potential Boost XX, Treasure Sensor XX
+# 0A001400 DE000000 00000000
+#
+# Melee Attack Up XX, Melee Accuracy Up XX, Melee Attack Boost XX
+# 07801180 03C00000 00000000
+
+DO_NOT_POKE Ranged Weapons: Slot 001 [MiMiC]
+1C3AC6B8 XXXXXXXX
+
+DO_NOT_POKE Ranged Weapons: Slot 999 [MiMiC]
+1C3B2448 XXXXXXXX
+
+DO_NOT_POKE Melee Weapons: Slot 001 [MiMiC]
+1C3B2460 XXXXXXXX
+
+DO_NOT_POKE Melee Weapons: Slot 999 [MiMiC]
+1C3B81F0 XXXXXXXX
+
+DO_NOT_POKE Armor: Slot 001 [MiMiC]
+1C3A6910 XXXXXXXX
+
+DO_NOT_POKE Armor: Slot 999 [MiMiC]
+1C3AC6A0 XXXXXXXX
+
+DO_NOT_POKE Skell Weapons: Slot 001 [MiMiC]
+1C3A0B68 XXXXXXXX
+
+DO_NOT_POKE Skell Weapons: Slot 999 [MiMiC]
+1C3A68F8 XXXXXXXX
+
+DO_NOT_POKE Skell Armor: Slot 001 [MiMiC]
+1C39ADC0 XXXXXXXX
+
+DO_NOT_POKE Skell Armor: Slot 999 [MiMiC]
+1C3A0B50 XXXXXXXX
+
+# Augment Format: XXXXXXXX XXXXXXXX XXXXXXXX
+
+DO_NOT_POKE Augments: Slot 001 [MiMiC]
+1C3B8208 XXXXXXXX
+
+DO_NOT_POKE Augments: Slot 999 [MiMiC]
+1C3BB0D0 XXXXXXXX
+
+# ===== Gear codes: END =====
