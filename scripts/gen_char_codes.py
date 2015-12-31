@@ -1,5 +1,5 @@
-# Removed protagonist (1C38B624) due to having different memory offsets
-chars_raw = '''Nagi 1C38EB44
+chars_raw = '''Protagonist 1C38E5C8
+Nagi 1C38EB44
 L 1C38F0C0
 Lao 1C38F63C
 H.B. 1C38FBB8

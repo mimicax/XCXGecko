@@ -13,7 +13,11 @@ Blade Lv Exp [danmc]
 
 
 Protagonist Name [MiMiC]
-1C38B624 ASCII(20)
+1C38E5C8 ASCII(20)
+# Other possible addresses:
+# 1C38B624: display only
+# 1C38E584: right before current addr, not sure why
+# 1C59E0A4: not sure why here
 
 Protagonist Lv Exp [danmc]
 1C38E644 000F423F

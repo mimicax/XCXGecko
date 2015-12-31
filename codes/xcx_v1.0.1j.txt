@@ -13,7 +13,11 @@ Blade Lv Exp [MiZ J0K3R]
 
 
 Protagonist Name [MiMiC]
-1C38A624 ASCII(20)
+1C38D5C8 ASCII(20)
+# Other possible addresses:
+# 1C38A624: display only
+# 1C38D584: right before current addr, not sure why
+# 1C59D0A4: not sure why here
 
 Protagonist Lv Exp [MiZ J0K3R]
 1C38D644 000F423F
