@@ -395,7 +395,7 @@
 68 28B Imperial Sphinx Fang
 68 28C Yggralith Recovery Horn
 68 28D Yggralith Horn
-68 28E Yggralith GOld
+68 28E Yggralith Gold
 68 28F Telethia Emerald
 68 290 Puge Counter
 68 291 Puge Self-Destruct Mechanism
