@@ -1,8 +1,10 @@
 # XCXGecko
 Trainer for XCX using [pyGecko](https://github.com/wiiudev/pyGecko). Requires kernel exploit to use.
 
-* All codes tested on v1.0.1E, and should be compatible with v1.0.1U.
+* Use at your own risk
+* All codes tested on v1.0.1E, and should be compatible with v1.0.1U
 * To use with v1.0.1(J), edit ```config.ini```
+* This tool is NOT currently compatible with Wii U firmwares above 5.3.2
 
 ## Features
 

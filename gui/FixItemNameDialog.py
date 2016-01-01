@@ -16,6 +16,8 @@ class FixItemNameDialog(QDialog):
     self.type = type_txt
     self.id = id_txt
 
+    self.setWindowTitle('Add/Correct Item Name')
+
     self.layout = QGridLayout(self)
 
     self.layout.addWidget(QLabel('Type:'), 0, 0)

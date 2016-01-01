@@ -12,8 +12,8 @@ from common import *
 
 
 class ItemEntriesFrame(QFrame):
-  readmem = pyqtSignal(int, int) # start_addr, num_bytes
-  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+  read_block = pyqtSignal(int, int) # start_addr, num_bytes
+  poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
   log = pyqtSignal(str, str) # msg, color
 
   MISSING_ITEM_NAME = '[NOT IN DB]'
@@ -154,7 +154,7 @@ class ItemEntriesFrame(QFrame):
 
   @pyqtSlot()
   def onReadSlots(self):
-    self.readmem.emit(self.addr_start, self.max_num_slots*4*3)
+    self.read_block.emit(self.addr_start, self.max_num_slots*4*3)
 
   @pyqtSlot(int, int, QByteArray)
   def onBlockRead(self, addr_start, num_bytes, raw_bytes):
@@ -295,7 +295,7 @@ class ItemEntriesFrame(QFrame):
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         raise BaseException('must cache slots before poking')
       addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
-      self.readmem.emit(addr_cur_slot, 4)
+      self.read_block.emit(addr_cur_slot, 4)
     except BaseException, e:
       # traceback.print_exc()
       cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
@@ -331,8 +331,8 @@ class ItemEntriesFrame(QFrame):
 
       val_word = form_item_word(self.type_val, id_val, new_amount)
       raw_bytes = struct.pack('>I', val_word)
-      self.writestr.emit(addr_cur_slot, QByteArray(raw_bytes))
-      self.readmem.emit(addr_cur_slot, 4)
+      self.poke_block.emit(addr_cur_slot, QByteArray(raw_bytes), False)
+      self.read_block.emit(addr_cur_slot, 4)
 
     except BaseException, e:
       # traceback.print_exc()

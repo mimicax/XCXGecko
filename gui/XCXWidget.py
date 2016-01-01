@@ -22,9 +22,11 @@ class XCXWidget(QWidget):
   read_code = pyqtSignal(str, int) # code_set_label, code_id
   code_read = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, raw_bytes
   poke_code = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, new_bytes
-  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+
+  read_block = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
-  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+  poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
+
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self, data_store, parent=None):
@@ -152,9 +154,9 @@ class XCXWidget(QWidget):
         entry.poke_code.connect(self.poke_code)
         entry.log.connect(self.log)
       elif isinstance(entry, ItemEntriesFrame):
-        entry.readmem.connect(self.readmem)
+        entry.read_block.connect(self.read_block)
         self.block_read.connect(entry.onBlockRead)
-        entry.writestr.connect(self.writestr)
+        entry.poke_block.connect(self.poke_block)
         entry.log.connect(self.log)
 
     self.setStyleSheet('XCXWidget { background-color: white; }')

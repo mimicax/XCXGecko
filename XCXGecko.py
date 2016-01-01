@@ -23,9 +23,9 @@ class XCXGeckoMainWindow(QMainWindow):
   code_read = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, raw_bytes
   poke_code = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, new_bytes
 
-  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  read_block = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
-  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+  poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
 
   log = pyqtSignal(str, str) # msg, color
 
@@ -135,9 +135,9 @@ class XCXGeckoMainWindow(QMainWindow):
     self.wdg_xcx.read_code.connect(self.read_code)
     self.code_read.connect(self.wdg_xcx.code_read)
     self.wdg_xcx.poke_code.connect(self.poke_code)
-    self.wdg_xcx.readmem.connect(self.readmem)
+    self.wdg_xcx.read_block.connect(self.read_block)
     self.block_read.connect(self.wdg_xcx.block_read)
-    self.wdg_xcx.writestr.connect(self.writestr)
+    self.wdg_xcx.poke_block.connect(self.poke_block)
     self.wdg_xcx.log.connect(self.log)
     self.scr_xcx = QScrollArea(self)
     self.scr_xcx.setWidget(self.wdg_xcx)
@@ -169,9 +169,9 @@ class XCXGeckoMainWindow(QMainWindow):
     self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
     self.wdg_item_id = ItemIDWidget()
-    self.wdg_item_id.readmem.connect(self.readmem)
+    self.wdg_item_id.read_block.connect(self.read_block)
     self.block_read.connect(self.wdg_item_id.onBlockRead)
-    self.wdg_item_id.writestr.connect(self.writestr)
+    self.wdg_item_id.poke_block.connect(self.poke_block)
     self.wdg_item_id.log.connect(self.log)
 
     self.wdg_tabs = QTabWidget(self)
@@ -184,8 +184,8 @@ class XCXGeckoMainWindow(QMainWindow):
 
     self.read_code.connect(self.onReadCode)
     self.poke_code.connect(self.onPokeCode)
-    self.readmem.connect(self.onReadMem)
-    self.writestr.connect(self.onWriteStr)
+    self.read_block.connect(self.onReadBlock)
+    self.poke_block.connect(self.onPokeBlock)
 
     self.show()
 
@@ -296,16 +296,16 @@ class XCXGeckoMainWindow(QMainWindow):
       traceback.print_exc()
 
   @pyqtSlot(int, int)
-  def onReadMem(self, start_addr, num_bytes):
+  def onReadBlock(self, addr_start, num_bytes):
     try:
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
       if self.d.config['verbose_read']:
-        self.log.emit('READ %08X %d' % (start_addr, num_bytes), 'blue')
-      raw_bytes = self.conn.readmem(start_addr, num_bytes)
+        self.log.emit('READ %08X %d' % (addr_start, num_bytes), 'blue')
+      raw_bytes = self.conn.readmem(addr_start, num_bytes)
       qt_bytes = QByteArray(raw_bytes)
-      self.block_read.emit(start_addr, num_bytes, qt_bytes)
+      self.block_read.emit(addr_start, num_bytes, qt_bytes)
 
     except BaseException, e:
       self.log.emit('Block memory read failed: %s' % str(e), 'red')
@@ -398,17 +398,26 @@ class XCXGeckoMainWindow(QMainWindow):
       self.log.emit('POKE %s [%d] failed: %s' % (cs_label, code_id, str(e)), 'red')
       traceback.print_exc()
 
-  @pyqtSlot(int, QByteArray)
-  def onWriteStr(self, start_addr, raw_qbytes):
+  @pyqtSlot(int, QByteArray, bool)
+  def onPokeBlock(self, addr_start, raw_qbytes, is_ascii):
     try:
       if self.conn is None:
         raise BaseException('not connected to Wii U')
 
       raw_bytes = bytes(raw_qbytes)
-      if self.d.config['verbose_poke_str']:
-        msg = 'WRITESTR %08X %s' % (start_addr, raw_bytes)
+      if is_ascii and self.d.config['verbose_poke_str']:
+        msg = 'WRITESTR %08X %s' % (addr_start, raw_bytes)
         self.log.emit(QString.fromUtf8(msg), 'blue')
-      self.conn.writestr(start_addr, raw_bytes)
+      elif not is_ascii and self.d.config['verbose_poke_str']:
+        if len(raw_bytes) <= 8:
+          long_bytes = ('\00' * (8 - len(raw_bytes))) + raw_bytes
+          long_val = struct.unpack('>Q', long_bytes)[0]
+          fmt = 'POKE %%08X %%0%dX' % (len(raw_bytes) * 2)
+          msg = fmt % (addr_start, long_val)
+        else:
+          msg = 'POKE %08X %s' % (addr_start, raw_bytes)
+        self.log.emit(msg, 'blue')
+      self.conn.writestr(addr_start, raw_bytes)
 
     except BaseException, e:
       self.log.emit('Memory writestr failed: %s' % str(e), 'red')
@@ -421,6 +430,5 @@ if __name__ == '__main__':
   sys.exit(app.exec_())
 
 
-# TODO: factor readmem into read_block, and writestr into poke_block (in poke_block, pass extra arg to indicate ASCII)
 # TODO: look into max ticket addr (ptr?)
 # TODO: separate GeckoGUI vs XCXGecko

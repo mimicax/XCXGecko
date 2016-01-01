@@ -17,8 +17,8 @@ from common import *
 
 
 class ItemIDWidget(QWidget):
-  readmem = pyqtSignal(int, int) # start_addr, num_bytes
-  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+  read_block = pyqtSignal(int, int) # start_addr, num_bytes
+  poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
 
   log = pyqtSignal(str, str)  # msg, color
 
@@ -234,7 +234,7 @@ class ItemIDWidget(QWidget):
     if addr_word is None:
       self.log.emit('Failed to parse address: invalid address, expecting XXXXXXXX', 'red')
       return
-    self.readmem.emit(addr_word, 4)
+    self.read_block.emit(addr_word, 4)
 
   @pyqtSlot(int, int, QByteArray)
   def onBlockRead(self, addr_start, num_bytes, raw_qbytes):
@@ -269,5 +269,5 @@ class ItemIDWidget(QWidget):
       return
 
     raw_bytes = struct.pack('>I', val_word)
-    self.writestr.emit(addr_word, QByteArray(raw_bytes))
-    self.readmem.emit(addr_word, 4)
+    self.poke_block.emit(addr_word, QByteArray(raw_bytes), False)
+    self.read_block.emit(addr_word, 4)
