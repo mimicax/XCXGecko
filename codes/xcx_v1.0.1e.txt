@@ -12,6 +12,18 @@ Blade Lv Exp [danmc]
 
 
 
+Elma Appearance: Normal Form [MiMiC]
+1C38E1D0 00
+1C38E55C 00
+1C392260 000B0028
+
+Elma Appearance: True Form (SPOILERS) [MiMiC]
+1C38E1D0 01
+1C38E55C 01
+1C392260 000C002A
+
+
+
 Protagonist Name [MiMiC]
 1C38E5C8 ASCII(20)
 # Other possible addresses:

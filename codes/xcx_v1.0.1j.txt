@@ -12,6 +12,18 @@ Blade Lv Exp [MiZ J0K3R]
 
 
 
+Elma Appearance: Normal Form [MiMiC]
+1C38D1D0 00
+1C38D55C 00
+1C391260 000B0028
+
+Elma Appearance: True Form (SPOILERS) [MiMiC]
+1C38D1D0 01
+1C38D55C 01
+1C391260 000C002A
+
+
+
 Protagonist Name [MiMiC]
 1C38D5C8 ASCII(20)
 # Other possible addresses:
