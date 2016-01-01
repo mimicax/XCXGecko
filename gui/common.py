@@ -1,5 +1,4 @@
 import ConfigParser
-import math
 import string
 import traceback
 
@@ -125,12 +124,12 @@ class CodeSet:
     self.hidden = False # hidden in Other Codes view
     self.c = []
 
+  def clear(self):
+    self.c = []
+
   def addCode(self, addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii):
     code_i = len(self.c) + 1
-    label = self.label
-    if code_i > 1:
-      label += '-%d' % code_i
-    code = Code(label, addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii)
+    code = Code(self.label, addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii)
     if self.id is None:
       self.id = code.id
     self.c.append(code)
@@ -222,6 +221,57 @@ def parse_codes(codes_txt):
     raise BaseException('Failed to parse Codes DB on line %d: %s' % (line_count, str(e)))
 
   return codes
+
+
+# Same as above, but parses all code lines into a single existing code_set
+def parse_custom_codes(cs, codes_txt):
+  codes_lines = codes_txt.split('\n')
+  cs.clear()
+  line_count = 0
+  try:
+    for line in codes_lines:
+      line_count += 1
+
+      line = line.strip()
+      if len(line) <= 0 or line[0] == '#': # comment line
+        continue
+      else: # code line
+        tokens = line.split()
+        if len(tokens) < 2:
+          raise SyntaxError('invalid code entry, expecting ARG1_ADDR ARG2_VALUE (ARG3_OPT)')
+
+        addr_txt = tokens[0]
+        bit_rshift = 0
+        dft_value = None
+        is_float = (cs.label.find('(float)') >= 0)
+        is_ascii = False
+        if len(tokens) >= 3 and len(tokens[2]) > 2 and tokens[2][:2] == '>>':
+          bit_rshift = int(tokens[2][2:])
+          if bit_rshift < 0:
+            raise ValueError('bit_rshift should be non-negative') # suspect typo in code
+        if tokens[1].find('ASCII(') == 0:
+          num_bytes = int(tokens[1][6:-1])
+          is_ascii = True
+        elif len(tokens[1]) == 2:
+          num_bytes = 1
+          if tokens[1] != 'XX':
+            dft_value = int(tokens[1], 16)
+        elif len(tokens[1]) == 4:
+          num_bytes = 2
+          if tokens[1] != 'XXXX':
+            dft_value = int(tokens[1], 16)
+        elif len(tokens[1]) == 8:
+          num_bytes = 4
+          if tokens[1] != 'XXXXXXXX':
+            dft_value = int(tokens[1], 16)
+        else:
+          raise ValueError('hex format or hex value must be 1/2/4 bytes')
+
+        cs.addCode(addr_txt, bit_rshift, num_bytes, dft_value, is_float, is_ascii)
+
+  except BaseException, e:
+    traceback.print_exc()
+    raise BaseException('Failed to parse line %d: %s' % (line_count, str(e)))
 
 
 class Item:

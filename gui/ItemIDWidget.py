@@ -1,3 +1,6 @@
+import struct
+
+from PyQt4.QtCore import QByteArray
 from PyQt4.QtCore import QDir
 from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
@@ -14,9 +17,9 @@ from common import *
 
 
 class ItemIDWidget(QWidget):
-  read = pyqtSignal(str)  # code_label
-  poke = pyqtSignal(str, int)  # code_label, new_val
-  word_read = pyqtSignal(str, int)  # txt_addr, word_val
+  readmem = pyqtSignal(int, int) # start_addr, num_bytes
+  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+
   log = pyqtSignal(str, str)  # msg, color
 
   def __init__(self, parent=None):
@@ -42,10 +45,12 @@ class ItemIDWidget(QWidget):
     self.txt_addr.setPlaceholderText('Memory Address')
     self.txt_addr.setMaxLength(10)
     self.layout.addWidget(self.txt_addr, 1, 0)
+
     self.btn_curval = QPushButton(' Fetch Value', self)
     self.btn_curval.setIcon(QIcon('img/flaticon/open135.png'))
-    self.btn_curval.clicked.connect(self.onReadVal)
+    self.btn_curval.clicked.connect(self.onReadWord)
     self.layout.addWidget(self.btn_curval, 1, 1)
+
     self.ico_auto_incr_off = QIcon('img/flaticon/delete85.png')
     self.ico_auto_incr_on = QIcon('img/flaticon/verification15.png')
     self.btn_auto_incr = QPushButton(' Auto Increment: OFF', self)
@@ -54,26 +59,32 @@ class ItemIDWidget(QWidget):
     self.btn_auto_incr.setChecked(False)
     self.btn_auto_incr.clicked.connect(self.onAutoIncrChanged)
     self.layout.addWidget(self.btn_auto_incr, 1, 3)
+
     self.txt_type = QLineEdit(self)
     self.txt_type.setMaxLength(2)
     self.txt_type.setPlaceholderText('Type')
     self.txt_type.editingFinished.connect(self.fetchName)
     self.layout.addWidget(self.txt_type, 2, 0)
+
     self.txt_id = QLineEdit(self)
     self.txt_id.setMaxLength(3)
     self.txt_id.setPlaceholderText('ID')
     self.txt_id.editingFinished.connect(self.fetchName)
     self.layout.addWidget(self.txt_id, 2, 1)
+
     self.txt_amount = QLineEdit(self)
     self.txt_amount.setMaxLength(3)
     self.txt_amount.setPlaceholderText('Amount')
     self.layout.addWidget(self.txt_amount, 2, 2)
+
     self.btn_poke = QPushButton(' Poke Memory', self)
     self.btn_poke.setIcon(QIcon('img/flaticon/draw39.png'))
-    self.btn_poke.clicked.connect(self.onPokeVal)
+    self.btn_poke.clicked.connect(self.onPokeWord)
     self.layout.addWidget(self.btn_poke, 2, 3)
+
     self.lbl_name = QLabel('Name: [NOT IN DB]', self)
     self.layout.addWidget(self.lbl_name, 3, 0, 1, 2)
+
     self.txt_new_name = QLineEdit(self)
     self.txt_new_name.setPlaceholderText('Add/Modify Item Name')
     self.txt_new_name.returnPressed.connect(self.updateName)
@@ -91,6 +102,20 @@ class ItemIDWidget(QWidget):
     # self.layout.setContentsMargins(2, 2, 2, 2)
 
     self.setStyleSheet('ItemIDWidget { background-color: white; }')
+
+  def getAddrWord(self):
+    addr_txt = self.txt_addr.text()
+    addr_word = None
+    try:
+      if len(addr_txt) == 8:
+        addr_word = int(str(addr_txt), 16)
+      elif len(addr_txt) == 10 and addr_txt[:2] == '0x':
+        addr_word = int(str(addr_txt[2:]), 16)
+      else:
+        addr_word = None
+    except BaseException, e:
+      addr_word = None
+    return addr_word
 
   @pyqtSlot()
   def loadDB(self):
@@ -132,6 +157,7 @@ class ItemIDWidget(QWidget):
         self.log.emit('Failed to save Item ID DB: ' + str(e), 'red')
         traceback.print_exc()
 
+  @pyqtSlot()
   def fetchName(self):
     val_word = None
     try:
@@ -191,21 +217,7 @@ class ItemIDWidget(QWidget):
       if id_val <= Item.MAX_ID_VAL:
         self.txt_id.setText('%03X' % id_val)
         self.txt_new_name.setText('')
-        self.onPokeVal()
-
-  def getAddrWord(self):
-    addr_txt = self.txt_addr.text()
-    addr_word = None
-    try:
-      if len(addr_txt) == 8:
-        addr_word = int(str(addr_txt), 16)
-      elif len(addr_txt) == 10 and addr_txt[:2] == '0x':
-        addr_word = int(str(addr_txt[2:]), 16)
-      else:
-        addr_word = None
-    except BaseException, e:
-      addr_word = None
-    return addr_word
+        self.onPokeWord()
 
   @pyqtSlot(bool)
   def onAutoIncrChanged(self, checked):
@@ -216,17 +228,20 @@ class ItemIDWidget(QWidget):
       self.btn_auto_incr.setText(' Auto Increment: OFF')
       self.btn_auto_incr.setIcon(self.ico_auto_incr_off)
 
-  @pyqtSlot(str, int)
-  def onWordRead(self, txt_addr, word_val):
+  @pyqtSlot()
+  def onReadWord(self):
     addr_word = self.getAddrWord()
     if addr_word is None:
+      self.log.emit('Failed to parse address: invalid address, expecting XXXXXXXX', 'red')
       return
+    self.readmem.emit(addr_word, 4)
 
-    cur_addr = '%08X' % addr_word
-    if txt_addr != cur_addr:
-      # print 'ItemIDWidget.onWordRead(%s != %s)' % (txt_addr, cur_addr)
+  @pyqtSlot(int, int, QByteArray)
+  def onBlockRead(self, addr_start, num_bytes, raw_qbytes):
+    addr_word = self.getAddrWord()
+    if addr_word is None or addr_word != addr_start or num_bytes != 4:
       return
-
+    word_val = struct.unpack('>I', str(raw_qbytes))[0]
     (type_val, id_val, amount) = parse_item_word(word_val)
     self.txt_type.setText('%02X' % type_val)
     self.txt_id.setText('%03X' % id_val)
@@ -234,36 +249,25 @@ class ItemIDWidget(QWidget):
     self.fetchName()
 
   @pyqtSlot()
-  def onReadVal(self):
+  def onPokeWord(self):
     addr_word = self.getAddrWord()
     if addr_word is None:
       self.log.emit('Failed to parse address: invalid address, expecting XXXXXXXX', 'red')
       return
 
-    self.read.emit('%08X' % addr_word)
-
-  @pyqtSlot()
-  def onPokeVal(self):
-    addr_word = self.getAddrWord()
-    if addr_word is None:
-      self.log.emit('Failed to parse address: invalid address, expecting XXXXXXXX', 'red')
-      return
-
-    val_word = None
     try:
       type_val = int(str(self.txt_type.text()), 16)
       id_val = int(str(self.txt_id.text()), 16)
       amount = int(str(self.txt_amount.text()))
-      if amount < 0 or amount > 0xFF:
-        self.log.emit('Amount out of [0, 255] range', 'red')
+      if amount < 0 or amount > 99:
+        self.log.emit('Amount not in [0, 99] range', 'red')
         return
       val_word = form_item_word(type_val, id_val, amount)
     except BaseException, e:
-      self.log.emit('Failed to fetch ID/Type/Name', 'red')
+      self.log.emit('Failed to parse ID/Type/Name', 'red')
       traceback.print_exc()
       return
 
-    if addr_word is not None and val_word is not None:
-      addr = '%08X' % addr_word
-      self.poke.emit(addr, val_word)
-      self.read.emit(addr)
+    raw_bytes = struct.pack('>I', val_word)
+    self.writestr.emit(addr_word, QByteArray(raw_bytes))
+    self.readmem.emit(addr_word, 4)

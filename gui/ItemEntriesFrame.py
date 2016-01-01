@@ -12,15 +12,9 @@ from common import *
 
 
 class ItemEntriesFrame(QFrame):
-  read = pyqtSignal(str) # code_label
-  poke = pyqtSignal(str, int) # code_label, new_val
   readmem = pyqtSignal(int, int) # start_addr, num_bytes
   writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
   log = pyqtSignal(str, str) # msg, color
-
-  UINT8_VALUES = ['0', '0xFF']
-  UINT16_VALUES = ['0', '0xFFFF']
-  UINT32_VALUES = ['0', '0xFFFFFFFF']
 
   MISSING_ITEM_NAME = '[NOT IN DB]'
 
@@ -55,7 +49,7 @@ class ItemEntriesFrame(QFrame):
     self.btn_read.setIcon(QIcon('img/flaticon/open135.png'))
     self.btn_read.setToolTip('Read item slot value from memory')
     self.btn_read.setStyleSheet('background-color: white')
-    self.btn_read.clicked.connect(self.onReadVal)
+    self.btn_read.clicked.connect(self.onReadSlot)
 
     self.cmb_slots = QComboBox(self)
     self.cmb_slots.setToolTip('')
@@ -66,7 +60,7 @@ class ItemEntriesFrame(QFrame):
     self.cmb_names = QComboBox(self)
     self.cmb_names.setEditable(True)
     self.cmb_names.addItems(self.names)
-    self.cmb_names.lineEdit().setText(self.MISSING_ITEM_NAME)
+    self.cmb_names.lineEdit().setText(ItemEntriesFrame.MISSING_ITEM_NAME)
     self.cmb_names.currentIndexChanged[int].connect(self.fetchID)
 
     self.txt_id = QLineEdit(self)
@@ -88,7 +82,7 @@ class ItemEntriesFrame(QFrame):
     self.btn_poke.setIcon(QIcon('img/flaticon/draw39.png'))
     self.btn_poke.setToolTip('Poke new value for item slot')
     self.btn_poke.setStyleSheet('background-color: white')
-    self.btn_poke.clicked.connect(self.onPokeVal)
+    self.btn_poke.clicked.connect(self.onPokeSlot)
 
     self.layout = QGridLayout(self)
     self.layout.addWidget(self.lbl_label, 0, 0)
@@ -125,7 +119,7 @@ class ItemEntriesFrame(QFrame):
   def updateUI(self):
     # Disable editing if cache missing
     if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
-      self.cmb_names.lineEdit().setText(self.MISSING_ITEM_NAME)
+      self.cmb_names.lineEdit().setText(ItemEntriesFrame.MISSING_ITEM_NAME)
       self.cmb_names.setDisabled(True)
       self.txt_id.setText('')
       self.txt_id.setDisabled(True)
@@ -164,9 +158,16 @@ class ItemEntriesFrame(QFrame):
 
   @pyqtSlot(int, int, QByteArray)
   def onBlockRead(self, addr_start, num_bytes, raw_bytes):
-    if addr_start != self.addr_start or num_bytes != self.max_num_slots*4*3:
-      return
+    # Determine whether block has cache or single slot
+    if addr_start == self.addr_start and num_bytes == self.max_num_slots*4*3:
+      self.onCacheRead(addr_start, num_bytes, raw_bytes)
+    elif num_bytes == 4: # Assume read slot
+      # Ignore if no cache
+      if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
+        return
+      self.onSlotRead(addr_start, raw_bytes)
 
+  def onCacheRead(self, addr_start, num_bytes, raw_bytes):
     slot_bytes = str(raw_bytes)
     self.slots_cache = []
     slots_txt = []
@@ -202,6 +203,28 @@ class ItemEntriesFrame(QFrame):
       self.cmb_slots.addItems(slots_txt)
       self.cur_slot_idx = 0
     self.updateUI()
+
+  def onSlotRead(self, addr_word, raw_bytes):
+    addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
+    if addr_word == addr_cur_slot:
+      cur_cache = self.slots_cache[self.cur_slot_idx]
+      new_val = struct.unpack('>I', str(raw_bytes))[0]
+      new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], new_val)
+      self.slots_cache[self.cur_slot_idx] = new_cache
+      self.updateUI()
+    else: # Update cached value of other slots
+      addr_first_slot = self.slots_cache[0][1]
+      addr_last_slot = self.slots_cache[-1][1]
+      if (addr_first_slot <= addr_word <= addr_last_slot) and \
+         ((addr_word - addr_first_slot) % 12 == 0):
+        for slot_i in xrange(len(self.slots_cache)):
+          addr_cur_slot = self.slots_cache[slot_i][1]
+          if addr_word == addr_cur_slot:
+            cur_cache = self.slots_cache[slot_i]
+            new_val = struct.unpack('>I', str(raw_bytes))[0]
+            new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], new_val)
+            self.slots_cache[slot_i] = new_cache
+            return
 
   @pyqtSlot()
   def onSearchCacheForID(self):
@@ -242,11 +265,11 @@ class ItemEntriesFrame(QFrame):
     self.cur_slot_idx = new_slot_idx
     cur_addr_hex = self.slots_cache[self.cur_slot_idx][0]
     self.cmb_slots.setToolTip(cur_addr_hex)
-    self.cmb_names.lineEdit().setText(self.MISSING_ITEM_NAME)
+    self.cmb_names.lineEdit().setText(ItemEntriesFrame.MISSING_ITEM_NAME)
     self.cmb_names.setDisabled(True)
     self.txt_id.setText('')
     self.txt_id.setDisabled(True)
-    self.onReadVal()
+    self.onReadSlot()
 
   @pyqtSlot()
   def fetchName(self):
@@ -267,25 +290,24 @@ class ItemEntriesFrame(QFrame):
       self.txt_id.setText(self.idx2id[cmb_idx])
 
   @pyqtSlot()
-  def onReadVal(self):
+  def onReadSlot(self):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         raise BaseException('must cache slots before poking')
-
-      cur_addr_hex = self.slots_cache[self.cur_slot_idx][0]
-      self.read.emit(cur_addr_hex)
-
+      addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
+      self.readmem.emit(addr_cur_slot, 4)
     except BaseException, e:
-      #traceback.print_exc()
-      self.log.emit('Memory read failed: ' + str(e), 'red')
+      # traceback.print_exc()
+      cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
+      self.log.emit('READ %s Slot %03d failed: %s' % (self.label, cur_slot_num, str(e)), 'red')
 
   @pyqtSlot()
-  def onPokeVal(self):
+  def onPokeSlot(self):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         raise BaseException('must cache slots before poking')
 
-      cur_addr_hex = self.slots_cache[self.cur_slot_idx][0]
+      addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
       cur_val = self.slots_cache[self.cur_slot_idx][3]
       (type_val, id_val, cur_amount) = parse_item_word(cur_val)
       if self.type_val == 0 or cur_amount == 0:
@@ -296,7 +318,7 @@ class ItemEntriesFrame(QFrame):
         raise BaseException('item ID not specified')
 
       id_val = int(id_txt, 16)
-      if id_val <= 0 or id_val > Item.MAX_ID_VAL:
+      if id_val < 0 or id_val > Item.MAX_ID_VAL:
         raise BaseException('item ID not in [0x000, 0x%03X] range' % Item.MAX_ID_VAL)
 
       amount_txt = str(self.txt_amount.text())
@@ -308,37 +330,11 @@ class ItemEntriesFrame(QFrame):
         raise BaseException('item amount not in [1, 255] range')
 
       val_word = form_item_word(self.type_val, id_val, new_amount)
-      self.poke.emit(cur_addr_hex, val_word)
-      self.read.emit(cur_addr_hex)
+      raw_bytes = struct.pack('>I', val_word)
+      self.writestr.emit(addr_cur_slot, QByteArray(raw_bytes))
+      self.readmem.emit(addr_cur_slot, 4)
 
     except BaseException, e:
       # traceback.print_exc()
-      self.log.emit('Memory poke failed: ' + str(e), 'red')
-
-  @pyqtSlot(str, int)
-  def onWordRead(self, txt_addr, word_val):
-    # Ignore if no cache
-    if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
-      return
-
-    cur_addr_hex = self.slots_cache[self.cur_slot_idx][0]
-    if txt_addr == cur_addr_hex:
-      cur_cache = self.slots_cache[self.cur_slot_idx]
-      new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], word_val)
-      self.slots_cache[self.cur_slot_idx] = new_cache
-      self.updateUI()
-    else: # Update cached value of other slots
-      try:
-        word_addr = int(str(txt_addr), 16)
-        first_slot_addr = self.slots_cache[0][1]
-        last_slot_addr = self.slots_cache[-1][1]
-        if first_slot_addr <= word_addr <= last_slot_addr:
-          for slot_i in xrange(len(self.slots_cache)):
-            cur_slot_addr = self.slots_cache[slot_i][1]
-            if word_addr == cur_slot_addr:
-              cur_cache = self.slots_cache[slot_i]
-              new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], word_val)
-              self.slots_cache[slot_i] = new_cache
-              return
-      except BaseException, e:
-        pass
+      cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
+      self.log.emit('POKE %s Slot %03d failed: %s' % (self.label, cur_slot_num, str(e)), 'red')

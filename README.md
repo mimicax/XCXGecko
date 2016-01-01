@@ -48,9 +48,9 @@ Example: maximize item amounts to engineer <i>Potential Boost XX</i> augment:
 1. Purchase, find, or [add](#change-and-add-items) <i>Nutricious Microbes</i>, <i>Clear Gerrid Soup</i>, <i>Gularthion Everflame</i>, and <i>Bonjelium</i>
 * Click ```Cache Slots``` for Materials
 * Set ```Name``` to <i>Nutricious Microbes</i>, click ```Search ID```, set ```Amount``` to 99, then click ```Poke```
-* In ```Status``` dialog, note down latest POKE entry, e.g. ```POKE 1C3BD65C 00138318``` (assuming poke verbosity is enabled in ```config.ini```)
+* In ```Status``` dialog, note down latest ```POKE``` entry, e.g. ```1C3BD65C 00138318``` (assuming poke verbosity is enabled in ```config.ini```)
 * Repeat above to find POKE codes for <i>Clear Gerrid Soup</i>, <i>Gularthion Everflame</i>, and <i>Bonjelium (Precious Resources)</i>
-* In ```Custom Codes``` tab, click ```Add Entry```, then paste all 4 POKE entries on separate lines
+* In ```Custom Codes``` tab, click ```Add Entry```, then paste all 4 ```POKE``` entries on separate lines
 * Click ```Poke``` to maximize amounts for all 4 items
 
 ## Binary Dependencies

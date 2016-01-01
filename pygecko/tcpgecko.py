@@ -298,7 +298,7 @@ class TCPGecko:
             if access.lower() == "write": return True
         else: return False
 
-    class FileSystem: #TODO: Try to clean this up ????
+    class FileSystem:
         Flags = enum(
             IS_DIRECTORY    = 0x80000000,
             IS_QUOTA        = 0x40000000,

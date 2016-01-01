@@ -8,12 +8,9 @@ from StaticEntryFrame import *
 
 
 class RawCodesWidget(QWidget):
-  read = pyqtSignal(str) # code_label
-  word_read = pyqtSignal(str, int) # txt_addr, word_val
-  poke = pyqtSignal(str, int) # code_label, new_val
-  readmem = pyqtSignal(int, int) # start_addr, num_bytes
-  block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
-  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+  read_code = pyqtSignal(str, int) # code_set_label, code_id
+  code_read = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, raw_bytes
+  poke_code = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, new_bytes
   log = pyqtSignal(str, str) # msg, color
 
   def __init__(self, data_store, parent=None):
@@ -46,12 +43,9 @@ class RawCodesWidget(QWidget):
     self.layout.setSpacing(0)
 
     for entry in self.entries:
-      entry.read.connect(self.read)
-      self.word_read.connect(entry.onWordRead)
-      entry.poke.connect(self.poke)
-      entry.readmem.connect(self.readmem)
-      self.block_read.connect(entry.onBlockRead)
-      entry.writestr.connect(self.writestr)
+      entry.read_code.connect(self.read_code)
+      self.code_read.connect(entry.onCodeRead)
+      entry.poke_code.connect(self.poke_code)
       entry.log.connect(self.log)
 
     self.setStyleSheet('RawCodesWidget {background-color: white}')

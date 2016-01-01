@@ -19,9 +19,9 @@ class XCXWidget(QWidget):
   TRAIT_LABELS = ['Name', 'Lv Exp', 'Rank Exp', 'BP', 'Affinity', 'Height (float)',
                   'Chest Depth (float)', 'Chest Height (float)', 'Chest Width (float)']
 
-  read = pyqtSignal(str) # code_label
-  word_read = pyqtSignal(str, int) # txt_addr, word_val
-  poke = pyqtSignal(str, int) # code_label, new_val
+  read_code = pyqtSignal(str, int) # code_set_label, code_id
+  code_read = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, raw_bytes
+  poke_code = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, new_bytes
   readmem = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
   writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
@@ -146,10 +146,12 @@ class XCXWidget(QWidget):
     self.layout.setSpacing(0)
 
     for entry in self.entries:
-      if isinstance(entry, StaticEntryFrame) or isinstance(entry, ItemEntriesFrame):
-        entry.read.connect(self.read)
-        self.word_read.connect(entry.onWordRead)
-        entry.poke.connect(self.poke)
+      if isinstance(entry, StaticEntryFrame):
+        entry.read_code.connect(self.read_code)
+        self.code_read.connect(entry.onCodeRead)
+        entry.poke_code.connect(self.poke_code)
+        entry.log.connect(self.log)
+      elif isinstance(entry, ItemEntriesFrame):
         entry.readmem.connect(self.readmem)
         self.block_read.connect(entry.onBlockRead)
         entry.writestr.connect(self.writestr)

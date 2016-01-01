@@ -12,14 +12,17 @@ from QLMRPushButton import *
 from ValueComboBox import *
 
 
+def enum(*sequential, **named):
+    enums = dict(zip(sequential, range(len(sequential))), **named)
+    return type('Enum', (), enums)
+
+
 class StaticEntryFrame(QFrame):
-  read = pyqtSignal(str) # code_label
-  poke = pyqtSignal(str, int) # code_label, new_val
-  readmem = pyqtSignal(int, int) # start_addr, num_bytes
-  writestr = pyqtSignal(int, QByteArray) # start_addr, ascii_bytes
+  read_code = pyqtSignal(str, int) # code_set_label, code_id
+  poke_code = pyqtSignal(str, int, QByteArray) # code_set_label, code_id, new_bytes
   log = pyqtSignal(str, str) # msg, color
 
-  CUR_VAL_MODES = ['dec', 'hex', 'float', 'ascii']
+  DISPLAY_MODES = enum('DEC', 'HEX', 'FLOAT', 'ASCII')
   UINT8_VALUES = ['0', '0xFF']
   UINT16_VALUES = ['0', '0xFFFF']
   UINT32_VALUES = ['0', '0xFFFFFFFF']
@@ -27,8 +30,8 @@ class StaticEntryFrame(QFrame):
   def __init__(self, code, label=None, parent=None):
     super(StaticEntryFrame, self).__init__(parent)
     self.code = code
-    self.cur_val = None
-    self.cur_val_mode = 0
+    self.cur_bytes = None
+    self.display_mode = StaticEntryFrame.DISPLAY_MODES.DEC
 
     if label is None:
       label = self.code.label
@@ -49,7 +52,7 @@ class StaticEntryFrame(QFrame):
     self.btn_curval.setIcon(self.read_icon)
     self.btn_curval.setIconSize(self.icon_size)
     self.btn_curval.setToolTip('Read value from memory')
-    self.btn_curval.clicked.connect(self.readCurVal)
+    self.btn_curval.clicked.connect(self.readCode)
     self.btn_curval.right_clicked.connect(self.toggleCurValMode)
     self.btn_curval.setFixedWidth(120)
 
@@ -60,7 +63,7 @@ class StaticEntryFrame(QFrame):
     self.btn_poke.setAutoFillBackground(True)
     self.btn_poke.setStyleSheet('background-color: white')
     self.btn_poke.setToolTip('Poke new value into memory')
-    self.btn_poke.clicked.connect(self.onPoke)
+    self.btn_poke.clicked.connect(self.pokeCode)
 
     self.layout = QHBoxLayout(self)
     self.layout.addWidget(self.lbl_label)
@@ -80,11 +83,11 @@ class StaticEntryFrame(QFrame):
       num_bytes = self.code.num_bytes
       if not self.code.is_ascii and not self.code.is_float:
         if self.code.num_bytes == 1:
-          dft_values += self.UINT8_VALUES
+          dft_values += StaticEntryFrame.UINT8_VALUES
         elif self.code.num_bytes == 2:
-          dft_values += self.UINT16_VALUES
+          dft_values += StaticEntryFrame.UINT16_VALUES
         elif self.code.num_bytes == 4:
-          dft_values += self.UINT32_VALUES
+          dft_values += StaticEntryFrame.UINT32_VALUES
       if self.code.dft_value is not None:
         if self.code.is_float and isinstance(self.code.dft_value, int):
           value_raw = struct.pack('>I', self.code.dft_value)
@@ -93,15 +96,25 @@ class StaticEntryFrame(QFrame):
         else:
           dft_values.append(str(self.code.dft_value))
 
-    if self.cur_val is None:
+    if self.cur_bytes is None:
       self.btn_curval.setText(' Fetch Value')
       self.btn_curval.setIcon(self.read_icon)
       self.btn_curval.setIconSize(self.icon_size)
     else:
-      cur_val_dec = str(self.cur_val)
-      self.btn_curval.setText(cur_val_dec)
+      if self.display_mode == StaticEntryFrame.DISPLAY_MODES.DEC:
+        cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+        val_str = str(cur_long)
+      elif self.display_mode == StaticEntryFrame.DISPLAY_MODES.FLOAT:
+        val_str = str(struct.unpack('>f', self.cur_bytes)[0])
+      elif self.display_mode == StaticEntryFrame.DISPLAY_MODES.ASCII:
+        val_str = self.cur_bytes.encode('utf-8')
+      else: # Assume HEX by default
+        cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+        fmt = '0x%%0%dX' % (self.code.num_bytes*2)
+        val_str = fmt % cur_long
+      self.btn_curval.setText(val_str)
       self.btn_curval.setIcon(QIcon())
-      self.val_newval.lineEdit().setText(cur_val_dec)
+      self.val_newval.lineEdit().setText(val_str)
 
     self.val_newval.updateValues(dft_values, num_bytes)
 
@@ -118,135 +131,129 @@ class StaticEntryFrame(QFrame):
 
   def changeCode(self, new_code):
     self.code = new_code
-    self.cur_val = None
+    self.cur_bytes = None
     self.updateUI()
 
   def setAlternateBGColor(self):
     self.setStyleSheet('StaticEntryFrame { background-color:rgb(248,248,248) }')
 
-  @pyqtSlot(str, int)
-  def onWordRead(self, addr_txt, word_val):
+  def toggleCurValMode(self):
+    if self.code is None or self.cur_bytes is None:
+      return
+    self.display_mode += 1
+    try:
+      if self.display_mode == StaticEntryFrame.DISPLAY_MODES.HEX:
+        cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+        fmt = '0x%%0%dX' % (self.code.num_bytes*2)
+        val_str = fmt % cur_long
+      elif self.display_mode == StaticEntryFrame.DISPLAY_MODES.FLOAT:
+        val_str = str(struct.unpack('>f', self.cur_bytes)[0])
+      elif self.display_mode == StaticEntryFrame.DISPLAY_MODES.ASCII:
+        val_str = self.cur_bytes.encode('utf-8')
+      else: # assume DEC by default
+        self.display_mode = StaticEntryFrame.DISPLAY_MODES.DEC
+        cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+        val_str = str(cur_long)
+    except struct.error, e:
+      self.display_mode = StaticEntryFrame.DISPLAY_MODES.DEC
+      cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+      val_str = str(cur_long)
+    except UnicodeDecodeError, e:
+      self.display_mode = StaticEntryFrame.DISPLAY_MODES.DEC
+      cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+      val_str = str(cur_long)
+    self.btn_curval.setText(val_str)
+
+  @pyqtSlot()
+  def readCode(self):
     if self.code is None:
       return
-    if addr_txt == self.code.addr_txt:
-      if word_val < 0:
-        self.cur_val = 0x100000000 - word_val
-      else:
-        self.cur_val = word_val
-      if self.code.num_bytes < 4 or self.code.bit_rshift != 0:
-        lshift_bits = (32 - self.code.num_bytes * 8 - self.code.bit_rshift)
-        if lshift_bits < 0:
-          return # improper code (negative lshift_bits)
-        word_mask = ((256**self.code.num_bytes) - 1) << lshift_bits
-        self.cur_val = (word_val & word_mask) >> lshift_bits
+    self.read_code.emit(self.code.label, self.code.id)
 
-      if self.code.is_ascii:
-        val_str = struct.pack('>I', self.cur_val)
-        self.cur_val_mode = 3
-      elif self.code.is_float:
-        val_str = str(struct.unpack('>f', struct.pack('>I', self.cur_val))[0])
-        self.cur_val_mode = 2
-      else:
-        val_str = str(self.cur_val)
-        self.cur_val_mode = 0
-      self.btn_curval.setText(val_str)
-      self.btn_curval.setIcon(QIcon())
-      self.val_newval.lineEdit().setText(val_str)
+  @pyqtSlot(str, int, QByteArray)
+  def onCodeRead(self, code_set_label, code_id, raw_qbytes):
+    if self.code is None:
+      return
+    if self.code.label != code_set_label or self.code.id != code_id:
+      return
 
-  @pyqtSlot(int, int, QByteArray)
-  def onBlockRead(self, addr_start, num_bytes, raw_bytes):
-    if (self.code is not None) and (self.code.is_ascii) and (not self.code.is_ptr) and \
-       (addr_start == self.code.addr_base) and (num_bytes == self.code.num_bytes+1):
-      val_str = raw_bytes.data()
-      eos_idx = val_str.find('\0')
+    self.cur_bytes = bytes(raw_qbytes)
+    if self.code.is_ascii:
+      val_str = self.cur_bytes
+      eos_idx = val_str.find('\00')
       if eos_idx >= 0:
         val_str = val_str[:eos_idx]
       try:
         val_str = val_str.decode('utf-8')
       except UnicodeDecodeError, e:
         val_str = val_str[:-1].decode('utf-8')
-
-      self.cur_val_mode = 3
-      self.btn_curval.setText(val_str)
-      self.btn_curval.setIcon(QIcon())
-      self.val_newval.lineEdit().setText(val_str)
-
-  def toggleCurValMode(self):
-    if self.code is None or self.cur_val is None:
-      return
-    self.cur_val_mode += 1
-    try:
-      if self.cur_val_mode == 1: # hex
-        fmt = '0x%%0%dX' % self.code.num_bytes
-        val_str = fmt % self.cur_val
-      elif self.cur_val_mode == 2: # float
-        val_str = str(struct.unpack('>f', struct.pack('>I', self.cur_val))[0])
-      elif self.cur_val_mode == 3: # ascii
-        val_str = struct.pack('>I', self.cur_val)
-      else: # assume mode 0 by default
-        self.cur_val_mode = 0
-        val_str = str(self.cur_val)
-    except struct.error, e:
-      self.cur_val_mode = 0
-      val_str = str(self.cur_val)
+      self.display_mode = StaticEntryFrame.DISPLAY_MODES.ASCII
+    elif self.code.is_float:
+      val_str = str(struct.unpack('>f', self.cur_bytes)[0])
+      self.display_mode = StaticEntryFrame.DISPLAY_MODES.FLOAT
+    else:
+      cur_long = struct.unpack('>Q', ('\00'*(8 - len(self.cur_bytes)) + self.cur_bytes))[0]
+      if self.display_mode == StaticEntryFrame.DISPLAY_MODES.DEC:
+        val_str = str(cur_long)
+      else:
+        self.display_mode = StaticEntryFrame.DISPLAY_MODES.HEX
+        fmt = '0x%%0%dX' % (self.code.num_bytes*2)
+        val_str = fmt % cur_long
     self.btn_curval.setText(val_str)
+    self.btn_curval.setIcon(QIcon())
+    self.val_newval.lineEdit().setText(val_str)
 
-  def readCurVal(self):
-    if self.code is None:
-      return
-    if self.code.is_ascii and not self.code.is_ptr:
-      self.readmem.emit(self.code.addr_base, self.code.num_bytes+1)
-    else: # Assume 1 word
-      self.read.emit(self.code.label)
-
-  def onPoke(self):
+  @pyqtSlot()
+  def pokeCode(self):
     if self.code is None:
       return
     try:
       # Process ASCII code
       if self.code.is_ascii:
-        if self.code.is_ptr:
-          self.log.emit('Missing support for ASCII pointer codes', 'red')
-        else:
-          new_qbytes = self.val_newval.currentText().toUtf8()
-          if len(new_qbytes) > self.code.num_bytes:
-            new_qbytes = new_qbytes[:self.code.num_bytes]
-          try:
-            str(new_qbytes).decode('utf-8')
-          except UnicodeDecodeError, e:
-            new_qbytes = new_qbytes[:-1]
-          if new_qbytes[-1] != '\0':
-            new_qbytes.append('\0')
+        new_qbytes = self.val_newval.currentText().toUtf8()
+        if len(new_qbytes) > self.code.num_bytes:
+          new_qbytes = new_qbytes[:self.code.num_bytes]
+        try:
+          str(new_qbytes).decode('utf-8')
+        except UnicodeDecodeError, e:
+          new_qbytes = new_qbytes[:-1]
+        if len(new_qbytes) < self.code.num_bytes:
+          new_qbytes += ('\00' * self.code.num_bytes)
 
-          # Poke and update
-          self.writestr.emit(self.code.addr_base, new_qbytes)
-          self.readmem.emit(self.code.addr_base, self.code.num_bytes+1)
+        # Poke and update
+        self.poke_code.emit(self.code.label, self.code.id, new_qbytes)
         return
 
-      # Process decimal code: transform val to decimal
+      # Convert desired value into raw bytes
       new_val_str = self.val_newval.getValue()
-      if self.code.is_float:
-        if len(new_val_str) > 2 and new_val_str[:2] == '0x':
-          new_val_dec = int(str(new_val_str[2:]), 16)
-        else:
-          new_val_dec = struct.unpack('>I', struct.pack('>f', float(new_val_str)))[0]
-      else:
-        val_cap = 256 ** self.code.num_bytes
-        if len(new_val_str) > 2 and new_val_str[:2] == '0x':
-          new_val_dec = int(str(new_val_str[2:]), 16)
-        else:
-          new_val_dec = int(new_val_str)
-        if new_val_dec > val_cap or new_val_dec < -val_cap / 2:
-          self.log.emit('Requested value does not fit in %d bytes' % self.code.num_bytes, 'red')
+      if len(new_val_str) <= 0:
+        self.log.emit('Missing code value', 'red')
+        self.val_newval.setErrorBGColor()
+        return
+      if len(new_val_str) > 2 and new_val_str[:2] == '0x':
+        if len(new_val_str) != 2 + self.code.num_bytes*2:
+          self.log.emit('Invalid hex value, code expects %d hex' % (self.code.num_bytes*2), 'red')
           self.val_newval.setErrorBGColor()
           return
-        if new_val_dec < 0:
-          new_val_dec += val_cap
+        new_val = int(str(new_val_str[2:]), 16)
+        new_bytes = struct.pack('>Q', new_val)[-self.code.num_bytes:]
+      elif self.code.is_float:
+        new_bytes = struct.pack('>f', float(new_val_str))
+      else:
+        new_val = int(new_val_str)
+        val_cap = 256 ** self.code.num_bytes
+        if new_val > val_cap or new_val < -val_cap / 2:
+          self.log.emit('Requested code value does not fit in %d bytes' % self.code.num_bytes, 'red')
+          self.val_newval.setErrorBGColor()
+          return
+        if new_val < 0:
+          new_val += val_cap
+        new_bytes = struct.pack('>Q', new_val)[-self.code.num_bytes:]
 
-      # Poke and update
-      self.poke.emit(self.code.label, new_val_dec)
-      self.read.emit(self.code.label)
+      # Poke code
+      new_qbytes = QByteArray(new_bytes)
+      self.poke_code.emit(self.code.label, self.code.id, new_qbytes)
 
     except ValueError, e:
-      self.log.emit('Memory poke failed: %s' % str(e), 'red')
+      self.log.emit('Parser failed: %s' % str(e), 'red')
       self.val_newval.setErrorBGColor()
