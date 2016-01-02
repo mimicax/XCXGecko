@@ -167,8 +167,3 @@ if __name__ == '__main__':
   app = QApplication(sys.argv)
   gui = XCXGeckoMainWindow()
   sys.exit(app.exec_())
-
-
-# TODO: look into max ticket addr (ptr?)
-# TODO: build + test all features + failures
-# TODO: commit + release

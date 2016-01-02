@@ -261,7 +261,7 @@ class ItemEntriesFrame(QFrame):
         self.updateUI()
         return
     self.log.emit('Did not find ID=%03X in %d cached %s slots' %
-                  (target_id_val, self.label, len(self.slots_cache)), 'red')
+                  (target_id_val, len(self.slots_cache), self.label), 'red')
 
   @pyqtSlot(int)
   def onChangeSlot(self, new_slot_idx):

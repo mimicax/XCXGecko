@@ -7,6 +7,9 @@ Miranium Modifier [danmc]
 Reward Tickets Modifier [danmc]
 1C39AD98 0000270F
 
+Reward Tickets Cap Modifier [MiMiC]
+[0x1C38E164]+516 000F423F
+
 Blade Lv Exp [danmc]
 1C3C76E4 0007A120
 
