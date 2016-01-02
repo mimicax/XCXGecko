@@ -1,6 +1,6 @@
 import sys, os
 sys.path.append(os.path.abspath('../pygecko'))
-from tcpgecko import *
+from tcpgecko import TCPGecko
 
 wiiu_addr = '192.168.0.133'
 print '> Connecting to Wii U...'

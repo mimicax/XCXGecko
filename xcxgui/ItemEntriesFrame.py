@@ -1,4 +1,5 @@
 import struct
+import traceback
 
 from PyQt4.QtCore import QByteArray
 from PyQt4.QtCore import QSize
@@ -13,6 +14,9 @@ from PyQt4.QtGui import QLineEdit
 from PyQt4.QtGui import QPushButton
 
 from FixItemNameDialog import FixItemNameDialog
+from xcx_utils import Item
+from xcx_utils import form_item_word
+from xcx_utils import parse_item_word
 
 
 class ItemEntriesFrame(QFrame):

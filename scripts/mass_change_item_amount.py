@@ -1,8 +1,9 @@
-import sys, os, struct
-sys.path.append(os.path.abspath('../gui'))
-from common import *
+import sys, os
+import struct
 sys.path.append(os.path.abspath('../pygecko'))
-from tcpgecko import *
+from tcpgecko import TCPGecko
+sys.path.append(os.path.abspath('../xcxgui'))
+from item_utils import *
 
 # MODIFY BELOW
 wiiu_addr = '192.168.0.133'
@@ -13,7 +14,7 @@ item_type_val = 0x68 # see codes/item_id_v1.0.1e.txt for the appropriate 1-byte 
 slot_num_bytes = 12 # do not change
 
 if new_amount <= 0 or new_amount > 99:
-  raise BaseException('new_amount must be in [1, 99] range')
+  raise ValueError('new_amount must be in [1, 99] range')
 
 with open('../codes/item_id_v1.0.1e.txt', 'r') as f:
   (item_db, item_db_lines, item_types) = parse_item_db(f.read())

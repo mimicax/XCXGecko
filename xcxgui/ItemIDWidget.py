@@ -14,8 +14,10 @@ from PyQt4.QtGui import QPlainTextEdit
 from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QWidget
 
-from xcx_utils import Item
-from xcx_utils import parse_item_db
+from item_utils import Item
+from item_utils import form_item_word
+from item_utils import parse_item_db
+from item_utils import parse_item_word
 
 
 class ItemIDWidget(QWidget):
