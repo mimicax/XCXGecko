@@ -414,7 +414,7 @@
 68 29E Gremlin Stone
 68 29F Green Crystal
 68 2A0 Moving Vivohast Tail
-68 2A1 Moving Hallus Tail
+68 2A1 Moving Thallus Tail
 68 2A2 Black Thallus Antenna
 68 2A3 Red Thallus Antenna
 68 2A4 Medicinal Blatta Oil
@@ -807,7 +807,7 @@
 6C 107 Savage Claw
 6C 108 Elemental Battery
 6C 109 Spatial Control Jointer
-6C 10A Dirthblade Fragment
+6C 10A Dithblade Fragment
 6C 10B Voltant Scanner
 6C 10C Meditation Powder
 6C 10D California Sunset
