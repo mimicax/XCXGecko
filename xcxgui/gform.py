@@ -1,4 +1,3 @@
-import re
 import urllib
 import urllib2
 
@@ -13,7 +12,7 @@ def get_ip():
   prefix_idx = htm.find(prefix)
   suffix_idx = htm.find(suffix, prefix_idx)
   if prefix_idx < 0 or suffix_idx < 0:
-    raise BaseException('failed to parse ipchicken.com response')
+    raise SyntaxError('failed to parse ipchicken.com response')
   return htm[prefix_idx+len(prefix):suffix_idx-6].strip() # also remove " <br>\r\n"
 
 
@@ -33,4 +32,4 @@ def gform_submit_item_name(type_str, id_str, name, contributor):
   f = urllib2.urlopen(req)
   res = f.read()
   if res.find('<title>Thanks!</title>') < 0:
-    raise BaseException('invalid form data')
+    raise SyntaxError('invalid form data')

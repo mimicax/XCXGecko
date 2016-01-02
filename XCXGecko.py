@@ -3,19 +3,30 @@
 import math
 import socket
 import sys
+import urllib2
 import webbrowser
 
+from PyQt4.QtCore import QByteArray
+from PyQt4.QtCore import Qt
+from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtGui import QAction
 from PyQt4.QtGui import QApplication
+from PyQt4.QtGui import QIcon
+from PyQt4.QtGui import QLineEdit
 from PyQt4.QtGui import QMainWindow
 from PyQt4.QtGui import QScrollArea
 from PyQt4.QtGui import QTabWidget
 
-from gui.CustomCodesWidget import *
-from gui.ItemIDWidget import *
-from gui.RawCodesWidget import *
-from gui.StatusWidget import *
-from gui.XCXWidget import *
+from gui.CustomCodesWidget import CustomCodesWidget
+from gui.RawCodesWidget import RawCodesWidget
+from gui.StatusWidget import StatusWidget
+from gui.gecko_utils import parse_codes
 from pygecko.tcpgecko import TCPGecko
+from xcxgui.ItemIDWidget import ItemIDWidget
+from xcxgui.XCXWidget import XCXWidget
+from xcxgui.xcx_utils import XCXDataStore
+from xcxgui.xcx_utils import parse_item_db
 
 
 class XCXGeckoMainWindow(QMainWindow):
@@ -32,6 +43,7 @@ class XCXGeckoMainWindow(QMainWindow):
   def __init__(self):
     super(XCXGeckoMainWindow, self).__init__()
     self.conn = None
+    self.d = XCXDataStore()
 
     (init_msgs, init_errors) = self.initData()
 
@@ -43,19 +55,17 @@ class XCXGeckoMainWindow(QMainWindow):
       self.log.emit(init_msg, 'black')
 
   def initData(self):
-    self.d = DataStore()
-
     init_msgs = []
     init_errors = []
     try:
-      self.d.config = parse_cfg_file('config.ini')
+      self.d.parseCfg('config.ini')
       self.d.ip = self.d.config['wiiu_ip']
 
       if self.d.config['code_db'].find('http') == 0:
         try:
           code_db_txt = urllib2.urlopen(self.d.config['code_db']).read()
           init_msgs.append('Code DB: ' + self.d.config['code_db'])
-        except BaseException, e:
+        except IOError, e:
           init_errors.append('Failed to load %s: %s' % (self.d.config['code_db'], str(e)))
           with open(self.d.config['local_code_db']) as f:
             code_db_txt = f.read()
@@ -70,7 +80,8 @@ class XCXGeckoMainWindow(QMainWindow):
         try:
           item_id_db_txt = urllib2.urlopen(self.d.config['item_id_db']).read()
           init_msgs.append('Item ID DB: ' + self.d.config['item_id_db'])
-        except BaseException, e:
+        except IOError, e:
+          traceback.print_exc()
           init_errors.append('Failed to load %s: %s' % (self.d.config['item_id_db'], str(e)))
           with open(self.d.config['local_item_id_db']) as f:
             item_id_db_txt = f.read()
@@ -234,7 +245,7 @@ class XCXGeckoMainWindow(QMainWindow):
     cs_label = str(code_set_label)
     try:
       if self.conn is None:
-        raise BaseException('not connected to Wii U')
+        raise IOError('not connected to Wii U')
 
       # Find and validate designated code
       if self.d.codes is None or not (cs_label in self.d.codes):
@@ -246,7 +257,7 @@ class XCXGeckoMainWindow(QMainWindow):
           code = c
           break
       if code is None:
-        raise BaseException('failed to find code')
+        raise LookupError('failed to find code')
       if code.bit_rshift < 0 or code.bit_rshift >= 32:
         raise ValueError('bit_rshift out of [0, 31] range')
 
@@ -291,6 +302,8 @@ class XCXGeckoMainWindow(QMainWindow):
       code_qbytes = QByteArray(code_bytes)
       self.code_read.emit(code_set_label, code_id, code_qbytes)
 
+    except (IOError, ValueError), e:
+      self.log.emit('READ %s [%d] failed: %s' % (cs_label, code_id, str(e)), 'red')
     except BaseException, e:
       self.log.emit('READ %s [%d] failed: %s' % (cs_label, code_id, str(e)), 'red')
       traceback.print_exc()
@@ -299,7 +312,7 @@ class XCXGeckoMainWindow(QMainWindow):
   def onReadBlock(self, addr_start, num_bytes):
     try:
       if self.conn is None:
-        raise BaseException('not connected to Wii U')
+        raise IOError('not connected to Wii U')
 
       if self.d.config['verbose_read']:
         self.log.emit('READ %08X %d' % (addr_start, num_bytes), 'blue')
@@ -307,8 +320,10 @@ class XCXGeckoMainWindow(QMainWindow):
       qt_bytes = QByteArray(raw_bytes)
       self.block_read.emit(addr_start, num_bytes, qt_bytes)
 
+    except IOError, e:
+      self.log.emit('READ BLOCK failed: %s' % str(e), 'red')
     except BaseException, e:
-      self.log.emit('Block memory read failed: %s' % str(e), 'red')
+      self.log.emit('READ BLOCK failed: %s' % str(e), 'red')
       traceback.print_exc()
 
   @pyqtSlot(str, int, QByteArray)
@@ -317,7 +332,7 @@ class XCXGeckoMainWindow(QMainWindow):
     new_bytes = bytes(new_qbytes)
     try:
       if self.conn is None:
-        raise BaseException('not connected to Wii U')
+        raise IOError('not connected to Wii U')
 
       # Find and validate designated code
       cs = None
@@ -334,7 +349,7 @@ class XCXGeckoMainWindow(QMainWindow):
           code = c
           break
       if code is None:
-        raise BaseException('failed to find code')
+        raise LookupError('failed to find code')
       if code.bit_rshift < 0 or code.bit_rshift >= 32:
         raise ValueError('bit_rshift out of [0, 31] range')
 
@@ -389,11 +404,13 @@ class XCXGeckoMainWindow(QMainWindow):
           self.log.emit('POKE %08X %08X' % (addr_base + word_offset + 4, new_words[1]), 'blue')
         self.conn.pokemem(addr_base+4, new_words[1])
       else:
-        raise BaseException('no support for >8-byte code')
+        raise NotImplementedError('no support for >8-byte code')
 
       # Return updated value from memory to caller
       self.onReadCode(code_set_label, code_id)
 
+    except (IOError, ValueError, NotImplementedError), e:
+      self.log.emit('POKE %s [%d] failed: %s' % (cs_label, code_id, str(e)), 'red')
     except BaseException, e:
       self.log.emit('POKE %s [%d] failed: %s' % (cs_label, code_id, str(e)), 'red')
       traceback.print_exc()
@@ -402,7 +419,7 @@ class XCXGeckoMainWindow(QMainWindow):
   def onPokeBlock(self, addr_start, raw_qbytes, is_ascii):
     try:
       if self.conn is None:
-        raise BaseException('not connected to Wii U')
+        raise IOError('not connected to Wii U')
 
       raw_bytes = bytes(raw_qbytes)
       if is_ascii and self.d.config['verbose_poke_str']:
@@ -419,8 +436,10 @@ class XCXGeckoMainWindow(QMainWindow):
         self.log.emit(msg, 'blue')
       self.conn.writestr(addr_start, raw_bytes)
 
+    except IOError, e:
+      self.log.emit('WRITESTR failed: %s' % str(e), 'red')
     except BaseException, e:
-      self.log.emit('Memory writestr failed: %s' % str(e), 'red')
+      self.log.emit('WRITESTR failed: %s' % str(e), 'red')
       traceback.print_exc()
 
 
@@ -430,5 +449,6 @@ if __name__ == '__main__':
   sys.exit(app.exec_())
 
 
-# TODO: look into max ticket addr (ptr?)
 # TODO: separate GeckoGUI vs XCXGecko
+# TODO: look into max ticket addr (ptr?)
+# TODO: test all features + commit + release

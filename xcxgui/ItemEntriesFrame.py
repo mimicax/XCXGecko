@@ -2,13 +2,17 @@ import struct
 
 from PyQt4.QtCore import QByteArray
 from PyQt4.QtCore import QSize
+from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QComboBox
 from PyQt4.QtGui import QFrame
+from PyQt4.QtGui import QGridLayout
 from PyQt4.QtGui import QIcon
+from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QLineEdit
+from PyQt4.QtGui import QPushButton
 
-from FixItemNameDialog import *
-from common import *
+from FixItemNameDialog import FixItemNameDialog
 
 
 class ItemEntriesFrame(QFrame):
@@ -240,7 +244,7 @@ class ItemEntriesFrame(QFrame):
       if target_id_val < 0 or target_id_val > Item.MAX_ID_VAL:
         self.log.emit('Item ID out of [0, 0x%03X] range' % Item.MAX_ID_VAL)
         return
-    except BaseException, e:
+    except ValueError, e:
       self.log.emit('Failed to parse item ID, expecting XXX', 'red')
       return
 
@@ -293,48 +297,54 @@ class ItemEntriesFrame(QFrame):
   def onReadSlot(self):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
-        raise BaseException('must cache slots before poking')
+        raise ValueError('must cache slots before poking')
       addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
       self.read_block.emit(addr_cur_slot, 4)
-    except BaseException, e:
-      # traceback.print_exc()
+    except ValueError, e:
       cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
       self.log.emit('READ %s Slot %03d failed: %s' % (self.label, cur_slot_num, str(e)), 'red')
+    except BaseException, e:
+      cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
+      self.log.emit('READ %s Slot %03d failed: %s' % (self.label, cur_slot_num, str(e)), 'red')
+      traceback.print_exc()
 
   @pyqtSlot()
   def onPokeSlot(self):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
-        raise BaseException('must cache slots before poking')
+        raise ValueError('must cache slots before poking')
 
       addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
       cur_val = self.slots_cache[self.cur_slot_idx][3]
       (type_val, id_val, cur_amount) = parse_item_word(cur_val)
       if self.type_val == 0 or cur_amount == 0:
-        raise BaseException('cannot poke empty item slot')
+        raise ValueError('cannot poke empty item slot')
 
       id_txt = str(self.txt_id.text())
       if len(id_txt) <= 0:
-        raise BaseException('item ID not specified')
+        raise ValueError('item ID not specified')
 
       id_val = int(id_txt, 16)
       if id_val < 0 or id_val > Item.MAX_ID_VAL:
-        raise BaseException('item ID not in [0x000, 0x%03X] range' % Item.MAX_ID_VAL)
+        raise ValueError('item ID not in [0x000, 0x%03X] range' % Item.MAX_ID_VAL)
 
       amount_txt = str(self.txt_amount.text())
       if len(amount_txt) <= 0:
-        raise BaseException('amount not specified')
+        raise ValueError('amount not specified')
 
       new_amount = int(amount_txt)
       if new_amount <= 0 or new_amount > 0xFF:
-        raise BaseException('item amount not in [1, 255] range')
+        raise ValueError('item amount not in [1, 255] range')
 
       val_word = form_item_word(self.type_val, id_val, new_amount)
       raw_bytes = struct.pack('>I', val_word)
       self.poke_block.emit(addr_cur_slot, QByteArray(raw_bytes), False)
       self.read_block.emit(addr_cur_slot, 4)
 
-    except BaseException, e:
-      # traceback.print_exc()
+    except ValueError, e:
       cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
       self.log.emit('POKE %s Slot %03d failed: %s' % (self.label, cur_slot_num, str(e)), 'red')
+    except BaseException, e:
+      cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
+      self.log.emit('POKE %s Slot %03d failed: %s' % (self.label, cur_slot_num, str(e)), 'red')
+      traceback.print_exc()

@@ -2,14 +2,16 @@ import struct
 
 from PyQt4.QtCore import QByteArray
 from PyQt4.QtCore import QSize
+from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QFrame
 from PyQt4.QtGui import QHBoxLayout
 from PyQt4.QtGui import QIcon
 from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QPushButton
 
-from QLMRPushButton import *
-from ValueComboBox import *
+from QLMRPushButton import QLMRPushButton
+from ValueComboBox import ValueComboBox
 
 
 def enum(*sequential, **named):
@@ -81,13 +83,6 @@ class StaticEntryFrame(QFrame):
     dft_values = []
     if self.code is not None:
       num_bytes = self.code.num_bytes
-      if not self.code.is_ascii and not self.code.is_float:
-        if self.code.num_bytes == 1:
-          dft_values += StaticEntryFrame.UINT8_VALUES
-        elif self.code.num_bytes == 2:
-          dft_values += StaticEntryFrame.UINT16_VALUES
-        elif self.code.num_bytes == 4:
-          dft_values += StaticEntryFrame.UINT32_VALUES
       if self.code.dft_value is not None:
         if self.code.is_float and isinstance(self.code.dft_value, int):
           value_raw = struct.pack('>I', self.code.dft_value)
@@ -95,6 +90,13 @@ class StaticEntryFrame(QFrame):
           dft_values.append(str(value_float))
         else:
           dft_values.append(str(self.code.dft_value))
+      if not self.code.is_ascii and not self.code.is_float:
+        if self.code.num_bytes == 1:
+          dft_values += StaticEntryFrame.UINT8_VALUES
+        elif self.code.num_bytes == 2:
+          dft_values += StaticEntryFrame.UINT16_VALUES
+        elif self.code.num_bytes == 4:
+          dft_values += StaticEntryFrame.UINT32_VALUES
 
     if self.cur_bytes is None:
       self.btn_curval.setText(' Fetch Value')

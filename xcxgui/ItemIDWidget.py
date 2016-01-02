@@ -5,6 +5,7 @@ from PyQt4.QtCore import QDir
 from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QFileDialog
+from PyQt4.QtGui import QFont
 from PyQt4.QtGui import QGridLayout
 from PyQt4.QtGui import QIcon
 from PyQt4.QtGui import QLabel
@@ -13,7 +14,8 @@ from PyQt4.QtGui import QPlainTextEdit
 from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QWidget
 
-from common import *
+from xcx_utils import Item
+from xcx_utils import parse_item_db
 
 
 class ItemIDWidget(QWidget):
@@ -92,6 +94,9 @@ class ItemIDWidget(QWidget):
 
     self.txt_db = QPlainTextEdit(self)
     self.txt_db.setReadOnly(True)
+    font = QFont('Monospace')
+    font.setStyleHint(QFont.TypeWriter)
+    self.txt_db.setFont(font)
     self.layout.addWidget(self.txt_db, 4, 0, 1, 4)
 
     self.layout.setColumnStretch(0, 1)
@@ -113,7 +118,7 @@ class ItemIDWidget(QWidget):
         addr_word = int(str(addr_txt[2:]), 16)
       else:
         addr_word = None
-    except BaseException, e:
+    except ValueError, e:
       addr_word = None
     return addr_word
 
@@ -131,13 +136,14 @@ class ItemIDWidget(QWidget):
     try:
       with open(str(path), 'r') as f:
         db_txt = f.read()
-        try:
-          self.custom_db, self.custom_db_lines, self.item_types = parse_item_db(db_txt)
-        except BaseException, e:
-          self.log.emit(str(e), 'red')
+        self.custom_db, self.custom_db_lines, self.item_types = parse_item_db(db_txt)
       self.txt_db.setPlainText('\n'.join(self.custom_db_lines))
       self.lbl_path_db.setText(path)
       self.log.emit('Loaded custom Item ID DB', 'black')
+    except SyntaxError, e:
+      self.log.emit(str(e), 'red')
+    except IOError, e:
+      self.log.emit('Failed to load Item ID DB: ' + str(e), 'red')
     except BaseException, e:
       self.log.emit('Failed to load Item ID DB: ' + str(e), 'red')
       traceback.print_exc()
@@ -153,6 +159,8 @@ class ItemIDWidget(QWidget):
         with open(str(path), 'w') as f:
           f.write('\n'.join(self.custom_db_lines))
         self.log.emit('Saved custom Item ID DB', 'black')
+      except IOError, e:
+        self.log.emit('Failed to save Item ID DB: ' + str(e), 'red')
       except BaseException, e:
         self.log.emit('Failed to save Item ID DB: ' + str(e), 'red')
         traceback.print_exc()
@@ -168,7 +176,7 @@ class ItemIDWidget(QWidget):
       type_val = int(str(type_txt), 16)
       id_val = int(str(id_txt), 16)
       val_word = form_item_word(type_val, id_val, 0)
-    except BaseException, e:
+    except ValueError, e:
       traceback.print_exc()
 
     if val_word is not None:
@@ -191,7 +199,6 @@ class ItemIDWidget(QWidget):
       val_word = form_item_word(type_val, id_val, 0)
     except ValueError, e:
       self.log.emit('Failed to fetch ID/Type/Name', 'red')
-      traceback.print_exc()
     except BaseException, e:
       self.log.emit('Failed to fetch ID/Type/Name: ' + str(e), 'red')
       traceback.print_exc()
@@ -263,9 +270,8 @@ class ItemIDWidget(QWidget):
         self.log.emit('Amount not in [0, 99] range', 'red')
         return
       val_word = form_item_word(type_val, id_val, amount)
-    except BaseException, e:
+    except ValueError, e:
       self.log.emit('Failed to parse ID/Type/Name', 'red')
-      traceback.print_exc()
       return
 
     raw_bytes = struct.pack('>I', val_word)

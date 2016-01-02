@@ -2,6 +2,7 @@ import time
 
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QDockWidget
+from PyQt4.QtGui import QFont
 from PyQt4.QtGui import QTextEdit
 
 
@@ -12,6 +13,9 @@ class StatusWidget(QDockWidget):
 
     self.txt_log = QTextEdit(self)
     self.txt_log.setReadOnly(False)
+    font = QFont('Monospace')
+    font.setStyleHint(QFont.TypeWriter)
+    self.txt_log.setFont(font)
     self.setWidget(self.txt_log)
 
     self.setMaximumHeight(120)

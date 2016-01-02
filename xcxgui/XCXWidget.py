@@ -1,8 +1,14 @@
+from PyQt4.QtCore import QByteArray
+from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtGui import QComboBox
+from PyQt4.QtGui import QFrame
+from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QVBoxLayout
 from PyQt4.QtGui import QWidget
 
-from ItemEntriesFrame import *
-from StaticEntryFrame import *
+from gui.StaticEntryFrame import StaticEntryFrame
+from ItemEntriesFrame import ItemEntriesFrame
 
 
 class XCXWidget(QWidget):

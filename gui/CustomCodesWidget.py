@@ -1,7 +1,12 @@
+from PyQt4.QtCore import QByteArray
+from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSlot
+from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QVBoxLayout
 from PyQt4.QtGui import QWidget
 
-from CustomCodeFrame import *
+from CustomCodeFrame import CustomCodeFrame
+from gecko_utils import CodeSet
 
 
 class CustomCodesWidget(QWidget):

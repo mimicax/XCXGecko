@@ -8,12 +8,13 @@ from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QFrame
 from PyQt4.QtGui import QHBoxLayout
+from PyQt4.QtGui import QFont
 from PyQt4.QtGui import QIcon
 from PyQt4.QtGui import QLineEdit
 from PyQt4.QtGui import QPlainTextEdit
 from PyQt4.QtGui import QPushButton
 
-from common import *
+from gecko_utils import parse_custom_codes
 
 
 class CustomCodeFrame(QFrame):
@@ -34,6 +35,9 @@ class CustomCodeFrame(QFrame):
 
     self.txt_codes = QPlainTextEdit(self)
     self.txt_codes.setMaximumHeight(66)
+    font = QFont('Monospace')
+    font.setStyleHint(QFont.TypeWriter)
+    self.txt_codes.setFont(font)
     self.txt_codes.cursorPositionChanged.connect(self.resetBGColor)
 
     icon_height = self.txt_label.height()*8/15
@@ -72,8 +76,8 @@ class CustomCodeFrame(QFrame):
   def onPoke(self):
     try:
       parse_custom_codes(self.cs, str(self.txt_codes.toPlainText()))
-    except BaseException, e:
-      self.log.emit('POKE failed: %s' % str(e), 'red')
+    except SyntaxError, e:
+      self.log.emit(str(e), 'red')
       self.setErrorBGColor()
       return
 

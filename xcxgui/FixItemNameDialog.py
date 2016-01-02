@@ -1,3 +1,5 @@
+import traceback
+
 from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtGui import QDialog
 from PyQt4.QtGui import QGridLayout
@@ -5,7 +7,7 @@ from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QLineEdit
 from PyQt4.QtGui import QPushButton
 
-from gform import *
+from gform import gform_submit_item_name
 
 
 class FixItemNameDialog(QDialog):
@@ -58,8 +60,12 @@ class FixItemNameDialog(QDialog):
       contributor = 'anonymous'
     try:
       gform_submit_item_name(self.type, self.id, name, contributor)
+    except (SyntaxError, IOError), e:
+      self.log.emit('Submit failed: %s' % str(e), 'red')
+      self.reject()
     except BaseException, e:
-      self.log.emit('Failed: %s' % str(e), 'red')
+      traceback.print_exc()
+      self.log.emit('Submit failed: %s' % str(e), 'red')
       self.reject()
     self.log.emit('Uploaded item name [%s] for TYPE=%s ID=%s; thank you for contributing!' %
                   (name, self.type, self.id), 'green')
