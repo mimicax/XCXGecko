@@ -76,6 +76,15 @@ class GeckoMainWindow(QMainWindow):
       self.d.codes = parse_codes(code_db_txt)
       init_msgs.append('Code DB: ' + code_db_path)
 
+      if self.d.config['loadiine_v4_pygecko']:
+        num_codes_adjusted = 0
+        for k, cs in self.d.codes.iteritems():
+          for c in cs.c:
+            # Do not bother fixing addr_txt
+            c.addr_base -= 20480
+            num_codes_adjusted += 1
+        init_msgs.append('Adjusted %d codes for Loadiine v4 + pyGecko' % num_codes_adjusted)
+
     except BaseException, e:
       init_errors.append(str(e))
       self.d.codes = {}
@@ -107,6 +116,7 @@ class GeckoMainWindow(QMainWindow):
     self.txt_ip.setFixedWidth(140)
     self.txt_ip.setPlaceholderText('Wii U IP')
     self.txt_ip.setToolTip('Wii U IP')
+    self.txt_ip.setStyleSheet('background-color: white')
 
     self.act_conn = QAction(QIcon('img/flaticon/connector3.png'), 'Connect to Wii U', self)
     self.act_conn.setShortcut('Ctrl-C')
@@ -155,6 +165,7 @@ class GeckoMainWindow(QMainWindow):
       self.conn.s.close()
       self.conn = None
       self.d.connected = False
+      self.txt_ip.setStyleSheet('background-color: white')
     event.accept()
 
   @pyqtSlot()
@@ -162,23 +173,29 @@ class GeckoMainWindow(QMainWindow):
     if self.conn is None:
       self.d.ip = self.txt_ip.text()
       try:
+        self.txt_ip.setStyleSheet('background-color: rgb(255,255,196)')
+        self.txt_ip.repaint()
         self.log.emit('Connecting to Wii U on %s...' % self.d.ip, 'black')
         self.conn = TCPGecko(self.d.ip)
         self.d.connected = True
+        self.txt_ip.setStyleSheet('background-color: rgb(196,255,196)')
         self.log.emit('Connected to Wii U on %s' % self.d.ip, 'green')
 
       except socket.timeout:
         self.log.emit('Timed out while connecting to Wii U on %s' % self.d.ip, 'red')
         self.d.connected = False
+        self.txt_ip.setStyleSheet('background-color: white')
       except socket.error:
         self.log.emit('Failed to connect to Wii U on %s' % self.d.ip, 'red')
         self.d.connected = False
+        self.txt_ip.setStyleSheet('background-color: white')
 
   @pyqtSlot()
   def onDisc(self):
     if self.conn is not None:
       self.conn.s.close()
       self.log.emit('Disconnected from Wii U on %s' % self.d.ip, 'green')
+    self.txt_ip.setStyleSheet('background-color: white')
     self.conn = None
     self.d.connected = False
 

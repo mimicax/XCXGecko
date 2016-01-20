@@ -13,6 +13,7 @@ class XCXDataStore(DataStore):
 
   def parseCfg(self, path):
     items = [('General', 'wiiu_ip', 'wiiu_ip'),
+             ('General', 'loadiine_v4_pygecko', 'loadiine_v4_pygecko'),
              ('Databases', 'code_db', 'code_db'),
              ('Databases', 'item_id_db', 'item_id_db'),
              ('Databases', 'local_code_db', 'local_code_db'),
@@ -30,6 +31,7 @@ class XCXDataStore(DataStore):
     except BaseException, e:
       traceback.print_exc()
       raise SyntaxError('Failed to parse %s: %s' % (path, str(e)))
+    config['loadiine_v4_pygecko'] = (config['loadiine_v4_pygecko'] == 'True')
     config['verbose_read'] = (config['verbose_read'] == 'True')
     config['verbose_poke'] = (config['verbose_poke'] == 'True')
     config['verbose_poke_str'] = (config['verbose_poke_str'] == 'True')

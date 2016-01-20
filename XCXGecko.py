@@ -61,6 +61,15 @@ class XCXGeckoMainWindow(GeckoMainWindow):
       self.d.codes = parse_codes(code_db_txt)
       init_msgs.append('Code DB: ' + code_db_path)
 
+      if self.d.config['loadiine_v4_pygecko']:
+        num_codes_adjusted = 0
+        for k, cs in self.d.codes.iteritems():
+          for c in cs.c:
+            # Do not bother fixing addr_txt
+            c.addr_base -= 20480
+            num_codes_adjusted += 1
+        init_msgs.append('Adjusted %d codes for Loadiine v4 + pyGecko' % num_codes_adjusted)
+
       item_db_path = self.d.config['item_id_db']
       if item_db_path.find('http') == 0:
         try:
