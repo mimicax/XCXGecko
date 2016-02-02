@@ -390,8 +390,11 @@ class GeckoMainWindow(QMainWindow):
           long_val = struct.unpack('>Q', long_bytes)[0]
           fmt = 'POKE %%08X %%0%dX' % (len(raw_bytes) * 2)
           msg = fmt % (addr_start, long_val)
-        else:
+        elif is_ascii:
           msg = 'POKE %08X %s' % (addr_start, raw_bytes)
+        else:
+          first_word = struct.unpack('>I', raw_bytes[:4])[0]
+          msg = 'POKE %08X %08X ... (%d bytes)' % (addr_start, first_word, len(raw_bytes))
         self.log.emit(msg, 'blue')
       self.conn.writestr(addr_start, raw_bytes)
 

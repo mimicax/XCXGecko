@@ -62,3 +62,7 @@ target/
 # py2exe
 build/
 dist/
+
+# Custom code
+xcxgui/GearEntriesFrame.py
+xcxgui/GearModWidget.py

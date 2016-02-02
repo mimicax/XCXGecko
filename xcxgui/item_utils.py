@@ -56,6 +56,7 @@ def parse_item_db(db_txt):
     for line in db_lines:
       line_count += 1
 
+      line = line.strip()
       if len(line) <= 0: # Skip empty lines
         continue
 

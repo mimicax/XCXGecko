@@ -638,34 +638,34 @@ Important Items: Slot 500 [MiMiC]
 # Melee Attack Up XX, Melee Accuracy Up XX, Melee Attack Boost XX
 # 07801180 03C00000 00000000
 
-DO_NOT_POKE Ranged Weapons: Slot 001 [MiMiC]
+Ranged Weapons: Slot 001 [MiMiC]
 1C3AC6B8 XXXXXXXX
 
-DO_NOT_POKE Ranged Weapons: Slot 999 [MiMiC]
+Ranged Weapons: Slot 999 [MiMiC]
 1C3B2448 XXXXXXXX
 
-DO_NOT_POKE Melee Weapons: Slot 001 [MiMiC]
+Melee Weapons: Slot 001 [MiMiC]
 1C3B2460 XXXXXXXX
 
-DO_NOT_POKE Melee Weapons: Slot 999 [MiMiC]
+Melee Weapons: Slot 999 [MiMiC]
 1C3B81F0 XXXXXXXX
 
-DO_NOT_POKE Armor: Slot 001 [MiMiC]
+Armor: Slot 001 [MiMiC]
 1C3A6910 XXXXXXXX
 
-DO_NOT_POKE Armor: Slot 999 [MiMiC]
+Armor: Slot 999 [MiMiC]
 1C3AC6A0 XXXXXXXX
 
-DO_NOT_POKE Skell Weapons: Slot 001 [MiMiC]
+Skell Weapons: Slot 001 [MiMiC]
 1C3A0B68 XXXXXXXX
 
-DO_NOT_POKE Skell Weapons: Slot 999 [MiMiC]
+Skell Weapons: Slot 999 [MiMiC]
 1C3A68F8 XXXXXXXX
 
-DO_NOT_POKE Skell Armor: Slot 001 [MiMiC]
+Skell Armor: Slot 001 [MiMiC]
 1C39ADC0 XXXXXXXX
 
-DO_NOT_POKE Skell Armor: Slot 999 [MiMiC]
+Skell Armor: Slot 999 [MiMiC]
 1C3A0B50 XXXXXXXX
 
 # Augment Format: XXXXXXXX XXXXXXXX XXXXXXXX

@@ -8,6 +8,7 @@ class XCXDataStore(DataStore):
   def __init__(self):
     super(XCXDataStore, self).__init__()
     self.item_ids = dict()
+    self.gear_ids = dict()
     self.item_lines = []
     self.item_types = []
 
@@ -16,8 +17,10 @@ class XCXDataStore(DataStore):
              ('General', 'loadiine_v4_pygecko', 'loadiine_v4_pygecko'),
              ('Databases', 'code_db', 'code_db'),
              ('Databases', 'item_id_db', 'item_id_db'),
+             ('Databases', 'gear_id_db', 'gear_id_db'),
              ('Databases', 'local_code_db', 'local_code_db'),
              ('Databases', 'local_item_id_db', 'local_item_id_db'),
+             ('Databases', 'local_gear_id_db', 'local_gear_id_db'),
              ('Verbosity', 'read', 'verbose_read'),
              ('Verbosity', 'poke', 'verbose_poke'),
              ('Verbosity', 'poke_str', 'verbose_poke_str')]

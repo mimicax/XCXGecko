@@ -168,14 +168,14 @@ class ItemEntriesFrame(QFrame):
   def onBlockRead(self, addr_start, num_bytes, raw_bytes):
     # Determine whether block has cache or single slot
     if addr_start == self.addr_start and num_bytes == self.max_num_slots*4*3:
-      self.onCacheRead(addr_start, num_bytes, raw_bytes)
+      self.onCacheRead(addr_start, raw_bytes)
     elif num_bytes == 4: # Assume read slot
       # Ignore if no cache
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         return
       self.onSlotRead(addr_start, raw_bytes)
 
-  def onCacheRead(self, addr_start, num_bytes, raw_bytes):
+  def onCacheRead(self, addr_start, raw_bytes):
     slot_bytes = str(raw_bytes)
     self.slots_cache = []
     slots_txt = []
@@ -242,13 +242,12 @@ class ItemEntriesFrame(QFrame):
       return
 
     # Fetch and validate target ID
-    target_id_val = None
     try:
       target_id_val = int(str(self.txt_id.text()), 16)
       if target_id_val < 0 or target_id_val > Item.MAX_ID_VAL:
         self.log.emit('Item ID out of [0, 0x%03X] range' % Item.MAX_ID_VAL)
         return
-    except ValueError, e:
+    except ValueError:
       self.log.emit('Failed to parse item ID, expecting XXX', 'red')
       return
 
@@ -283,7 +282,7 @@ class ItemEntriesFrame(QFrame):
   def fetchName(self):
     try:
       id_val = int(str(self.txt_id.text()), 16)
-    except ValueError, e:
+    except ValueError:
       return
     name = self.MISSING_ITEM_NAME
     if id_val in self.id2name:
@@ -301,7 +300,7 @@ class ItemEntriesFrame(QFrame):
   def onReadSlot(self):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
-        raise ValueError('must cache slots before poking')
+        raise ValueError('must cache slots before reading')
       addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
       self.read_block.emit(addr_cur_slot, 4)
     except ValueError, e:

@@ -3,6 +3,7 @@
 import sys
 import urllib2
 import webbrowser
+import traceback
 
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import pyqtSlot
@@ -19,6 +20,12 @@ from xcxgui.ItemIDWidget import ItemIDWidget
 from xcxgui.XCXWidget import XCXWidget
 from xcxgui.xcx_utils import XCXDataStore
 from xcxgui.xcx_utils import parse_item_db
+from xcxgui.gear_utils import parse_gear_db
+
+try:
+  from xcxgui.GearModWidget import GearModWidget
+except ImportError:
+  pass
 
 
 class XCXGeckoMainWindow(GeckoMainWindow):
@@ -85,6 +92,21 @@ class XCXGeckoMainWindow(GeckoMainWindow):
       (self.d.item_ids, self.d.item_lines, self.d.item_types) = parse_item_db(item_id_db_txt)
       init_msgs.append('Item ID DB: ' + item_db_path)
 
+      gear_db_path = self.d.config['gear_id_db']
+      if gear_db_path.find('http') == 0:
+        try:
+          gear_id_db_txt = urllib2.urlopen(gear_db_path).read()
+        except IOError, e:
+          init_errors.append('Failed to load %s: %s' % (gear_db_path, str(e)))
+          gear_db_path = self.d.config['local_gear_id_db']
+          with open(gear_db_path) as f:
+            gear_id_db_txt = f.read()
+      else:
+        with open(gear_db_path) as f:
+          gear_id_db_txt = f.read()
+      self.d.gear_ids = parse_gear_db(gear_id_db_txt)
+      init_msgs.append('Gear ID DB: ' + gear_db_path)
+
     except BaseException, e:
       init_errors.append(str(e))
       self.d.codes = {}
@@ -117,6 +139,23 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
+    has_gear_mod = False
+    try:
+      self.wdg_gear_mod = GearModWidget(self.d, self)
+      self.wdg_gear_mod.read_block.connect(self.read_block)
+      self.block_read.connect(self.wdg_gear_mod.block_read)
+      self.wdg_gear_mod.poke_block.connect(self.poke_block)
+      self.wdg_gear_mod.log.connect(self.log)
+      self.scr_gear_mod = QScrollArea(self)
+      self.scr_gear_mod.setWidget(self.wdg_gear_mod)
+      self.scr_gear_mod.setWidgetResizable(True)
+      self.scr_gear_mod.setMinimumWidth(self.wdg_gear_mod.minimumWidth())
+      self.scr_gear_mod.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+      self.scr_gear_mod.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+      has_gear_mod = True
+    except NameError, e:
+      has_gear_mod = False
+
     self.wdg_raw_codes = RawCodesWidget(self.d, self)
     self.wdg_raw_codes.read_code.connect(self.read_code)
     self.code_read.connect(self.wdg_raw_codes.code_read)
@@ -146,6 +185,8 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.wdg_item_id.log.connect(self.log)
 
     self.wdg_tabs.addTab(self.scr_xcx, 'XCX')
+    if has_gear_mod:
+      self.wdg_tabs.addTab(self.scr_gear_mod, 'Gear Mod')
     self.wdg_tabs.addTab(self.scr_raw_codes, 'Other Codes')
     self.wdg_tabs.addTab(self.scr_custom, 'Custom Codes')
     self.wdg_tabs.addTab(self.wdg_item_id, 'Item ID')
