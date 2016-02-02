@@ -1,120 +1,2208 @@
 ### GROUND GEAR SKILL ID
-# NOTE: skills without "I" do not have level
 # 000 NO_SKILL, downgrades equipment rarity
 001 Max HP Up I
+002 Max HP Up II
+003 Max HP Up III
+004 Max HP Up IV
+005 Max HP Up V
+006 Max HP Up VI
+007 Max HP Up VII
+008 Max HP Up VIII
+009 Max HP Up IX
+00A Max HP Up X
+00B Max HP Up XI
+00C Max HP Up XII
+00D Max HP Up XIII
+00E Max HP Up XIV
+00F Max HP Up XV
+010 Max HP Up XVI
+011 Max HP Up XVII
+012 Max HP Up XVIII
+013 Max HP Up XIX
+014 Max HP Up XX
 015 Max TP Up I
+016 Max TP Up II
+017 Max TP Up III
+018 Max TP Up IV
+019 Max TP Up V
+01A Max TP Up VI
+01B Max TP Up VII
+01C Max TP Up VIII
+01D Max TP Up IX
+01E Max TP Up X
+01F Max TP Up XI
+020 Max TP Up XII
+021 Max TP Up XIII
+022 Max TP Up XIV
+023 Max TP Up XV
+024 Max TP Up XVI
+025 Max TP Up XVII
+026 Max TP Up XVIII
+027 Max TP Up XIX
+028 Max TP Up XX
 029 Melee Accuracy Up I
+02A Melee Accuracy Up II
+02B Melee Accuracy Up III
+02C Melee Accuracy Up IV
+02D Melee Accuracy Up V
+02E Melee Accuracy Up VI
+02F Melee Accuracy Up VII
+030 Melee Accuracy Up VIII
+031 Melee Accuracy Up IX
+032 Melee Accuracy Up X
+033 Melee Accuracy Up XI
+034 Melee Accuracy Up XII
+035 Melee Accuracy Up XIII
+036 Melee Accuracy Up XIV
+037 Melee Accuracy Up XV
+038 Melee Accuracy Up XVI
+039 Melee Accuracy Up XVII
+03A Melee Accuracy Up XVIII
+03B Melee Accuracy Up XIX
+03C Melee Accuracy Up XX
 03D Ranged Accuracy Up I
+03E Ranged Accuracy Up II
+03F Ranged Accuracy Up III
+040 Ranged Accuracy Up IV
+041 Ranged Accuracy Up V
+042 Ranged Accuracy Up VI
+043 Ranged Accuracy Up VII
+044 Ranged Accuracy Up VIII
+045 Ranged Accuracy Up IX
+046 Ranged Accuracy Up X
+047 Ranged Accuracy Up XI
+048 Ranged Accuracy Up XII
+049 Ranged Accuracy Up XIII
+04A Ranged Accuracy Up XIV
+04B Ranged Accuracy Up XV
+04C Ranged Accuracy Up XVI
+04D Ranged Accuracy Up XVII
+04E Ranged Accuracy Up XVIII
+04F Ranged Accuracy Up XIX
+050 Ranged Accuracy Up XX
 051 Evasion Up I
+052 Evasion Up II
+053 Evasion Up III
+054 Evasion Up IV
+055 Evasion Up V
+056 Evasion Up VI
+057 Evasion Up VII
+058 Evasion Up VIII
+059 Evasion Up IX
+05A Evasion Up X
+05B Evasion Up XI
+05C Evasion Up XII
+05D Evasion Up XIII
+05E Evasion Up XIV
+05F Evasion Up XV
+060 Evasion Up XVI
+061 Evasion Up XVII
+062 Evasion Up XVIII
+063 Evasion Up XIX
+064 Evasion Up XX
 065 Melee Attack Up I
+066 Melee Attack Up II
+067 Melee Attack Up III
+068 Melee Attack Up IV
+069 Melee Attack Up V
+06A Melee Attack Up VI
+06B Melee Attack Up VII
+06C Melee Attack Up VIII
+06D Melee Attack Up IX
+06E Melee Attack Up X
+06F Melee Attack Up XI
+070 Melee Attack Up XII
+071 Melee Attack Up XIII
+072 Melee Attack Up XIV
+073 Melee Attack Up XV
+074 Melee Attack Up XVI
+075 Melee Attack Up XVII
+076 Melee Attack Up XVIII
+077 Melee Attack Up XIX
+078 Melee Attack Up XX
 079 Ranged Attack Up I
+07A Ranged Attack Up II
+07B Ranged Attack Up III
+07C Ranged Attack Up IV
+07D Ranged Attack Up V
+07E Ranged Attack Up VI
+07F Ranged Attack Up VII
+080 Ranged Attack Up VIII
+081 Ranged Attack Up IX
+082 Ranged Attack Up X
+083 Ranged Attack Up XI
+084 Ranged Attack Up XII
+085 Ranged Attack Up XIII
+086 Ranged Attack Up XIV
+087 Ranged Attack Up XV
+088 Ranged Attack Up XVI
+089 Ranged Attack Up XVII
+08A Ranged Attack Up XVIII
+08B Ranged Attack Up XIX
+08C Ranged Attack Up XX
 08D Potential Up I
+08E Potential Up II
+08F Potential Up III
+090 Potential Up IV
+091 Potential Up V
+092 Potential Up VI
+093 Potential Up VII
+094 Potential Up VIII
+095 Potential Up IX
+096 Potential Up X
+097 Potential Up XI
+098 Potential Up XII
+099 Potential Up XIII
+09A Potential Up XIV
+09B Potential Up XV
+09C Potential Up XVI
+09D Potential Up XVII
+09E Potential Up XVIII
+09F Potential Up XIX
+0A0 Potential Up XX
 0A1 Max HP Boost I
+0A2 Max HP Boost II
+0A3 Max HP Boost III
+0A4 Max HP Boost IV
+0A5 Max HP Boost V
+0A6 Max HP Boost VI
+0A7 Max HP Boost VII
+0A8 Max HP Boost VIII
+0A9 Max HP Boost IX
+0AA Max HP Boost X
+0AB Max HP Boost XI
+0AC Max HP Boost XII
+0AD Max HP Boost XIII
+0AE Max HP Boost XIV
+0AF Max HP Boost XV
+0B0 Max HP Boost XVI
+0B1 Max HP Boost XVII
+0B2 Max HP Boost XVIII
+0B3 Max HP Boost XIX
+0B4 Max HP Boost XX
 0B5 Max TP Boost I
+0B6 Max TP Boost II
+0B7 Max TP Boost III
+0B8 Max TP Boost IV
+0B9 Max TP Boost V
+0BA Max TP Boost VI
+0BB Max TP Boost VII
+0BC Max TP Boost VIII
+0BD Max TP Boost IX
+0BE Max TP Boost X
+0BF Max TP Boost XI
+0C0 Max TP Boost XII
+0C1 Max TP Boost XIII
+0C2 Max TP Boost XIV
+0C3 Max TP Boost XV
+0C4 Max TP Boost XVI
+0C5 Max TP Boost XVII
+0C6 Max TP Boost XVIII
+0C7 Max TP Boost XIX
+0C8 Max TP Boost XX
 0C9 Melee Accuracy Boost I
+0CA Melee Accuracy Boost II
+0CB Melee Accuracy Boost III
+0CC Melee Accuracy Boost IV
+0CD Melee Accuracy Boost V
+0CE Melee Accuracy Boost VI
+0CF Melee Accuracy Boost VII
+0D0 Melee Accuracy Boost VIII
+0D1 Melee Accuracy Boost IX
+0D2 Melee Accuracy Boost X
+0D3 Melee Accuracy Boost XI
+0D4 Melee Accuracy Boost XII
+0D5 Melee Accuracy Boost XIII
+0D6 Melee Accuracy Boost XIV
+0D7 Melee Accuracy Boost XV
+0D8 Melee Accuracy Boost XVI
+0D9 Melee Accuracy Boost XVII
+0DA Melee Accuracy Boost XVIII
+0DB Melee Accuracy Boost XIX
+0DC Melee Accuracy Boost XX
 0DD Ranged Accuracy Boost I
+0DE Ranged Accuracy Boost II
+0DF Ranged Accuracy Boost III
+0E0 Ranged Accuracy Boost IV
+0E1 Ranged Accuracy Boost V
+0E2 Ranged Accuracy Boost VI
+0E3 Ranged Accuracy Boost VII
+0E4 Ranged Accuracy Boost VIII
+0E5 Ranged Accuracy Boost IX
+0E6 Ranged Accuracy Boost X
+0E7 Ranged Accuracy Boost XI
+0E8 Ranged Accuracy Boost XII
+0E9 Ranged Accuracy Boost XIII
+0EA Ranged Accuracy Boost XIV
+0EB Ranged Accuracy Boost XV
+0EC Ranged Accuracy Boost XVI
+0ED Ranged Accuracy Boost XVII
+0EE Ranged Accuracy Boost XVIII
+0EF Ranged Accuracy Boost XIX
+0F0 Ranged Accuracy Boost XX
 0F1 Evasion Boost I
+0F2 Evasion Boost II
+0F3 Evasion Boost III
+0F4 Evasion Boost IV
+0F5 Evasion Boost V
+0F6 Evasion Boost VI
+0F7 Evasion Boost VII
+0F8 Evasion Boost VIII
+0F9 Evasion Boost IX
+0FA Evasion Boost X
+0FB Evasion Boost XI
+0FC Evasion Boost XII
+0FD Evasion Boost XIII
+0FE Evasion Boost XIV
+0FF Evasion Boost XV
+100 Evasion Boost XVI
+101 Evasion Boost XVII
+102 Evasion Boost XVIII
+103 Evasion Boost XIX
+104 Evasion Boost XX
 105 Melee Attack Boost I
+106 Melee Attack Boost II
+107 Melee Attack Boost III
+108 Melee Attack Boost IV
+109 Melee Attack Boost V
+10A Melee Attack Boost VI
+10B Melee Attack Boost VII
+10C Melee Attack Boost VIII
+10D Melee Attack Boost IX
+10E Melee Attack Boost X
+10F Melee Attack Boost XI
+110 Melee Attack Boost XII
+111 Melee Attack Boost XIII
+112 Melee Attack Boost XIV
+113 Melee Attack Boost XV
+114 Melee Attack Boost XVI
+115 Melee Attack Boost XVII
+116 Melee Attack Boost XVIII
+117 Melee Attack Boost XIX
+118 Melee Attack Boost XX
 119 Ranged Attack Boost I
+11A Ranged Attack Boost II
+11B Ranged Attack Boost III
+11C Ranged Attack Boost IV
+11D Ranged Attack Boost V
+11E Ranged Attack Boost VI
+11F Ranged Attack Boost VII
+120 Ranged Attack Boost VIII
+121 Ranged Attack Boost IX
+122 Ranged Attack Boost X
+123 Ranged Attack Boost XI
+124 Ranged Attack Boost XII
+125 Ranged Attack Boost XIII
+126 Ranged Attack Boost XIV
+127 Ranged Attack Boost XV
+128 Ranged Attack Boost XVI
+129 Ranged Attack Boost XVII
+12A Ranged Attack Boost XVIII
+12B Ranged Attack Boost XIX
+12C Ranged Attack Boost XX
 12D Potential Boost I
+12E Potential Boost II
+12F Potential Boost III
+130 Potential Boost IV
+131 Potential Boost V
+132 Potential Boost VI
+133 Potential Boost VII
+134 Potential Boost VIII
+135 Potential Boost IX
+136 Potential Boost X
+137 Potential Boost XI
+138 Potential Boost XII
+139 Potential Boost XIII
+13A Potential Boost XIV
+13B Potential Boost XV
+13C Potential Boost XVI
+13D Potential Boost XVII
+13E Potential Boost XVIII
+13F Potential Boost XIX
+140 Potential Boost XX
 141 Max HP Drive I
+142 Max HP Drive II
+143 Max HP Drive III
+144 Max HP Drive IV
+145 Max HP Drive V
+146 Max HP Drive VI
+147 Max HP Drive VII
+148 Max HP Drive VIII
+149 Max HP Drive IX
+14A Max HP Drive X
+14B Max HP Drive XI
+14C Max HP Drive XII
+14D Max HP Drive XIII
+14E Max HP Drive XIV
+14F Max HP Drive XV
+150 Max HP Drive XVI
+151 Max HP Drive XVII
+152 Max HP Drive XVIII
+153 Max HP Drive XIX
+154 Max HP Drive XX
 155 Max GP Drive I
+156 Max GP Drive II
+157 Max GP Drive III
+158 Max GP Drive IV
+159 Max GP Drive V
+15A Max GP Drive VI
+15B Max GP Drive VII
+15C Max GP Drive VIII
+15D Max GP Drive IX
+15E Max GP Drive X
+15F Max GP Drive XI
+160 Max GP Drive XII
+161 Max GP Drive XIII
+162 Max GP Drive XIV
+163 Max GP Drive XV
+164 Max GP Drive XVI
+165 Max GP Drive XVII
+166 Max GP Drive XVIII
+167 Max GP Drive XIX
+168 Max GP Drive XX
 169 Melee Accuracy Drive I
+16A Melee Accuracy Drive II
+16B Melee Accuracy Drive III
+16C Melee Accuracy Drive IV
+16D Melee Accuracy Drive V
+16E Melee Accuracy Drive VI
+16F Melee Accuracy Drive VII
+170 Melee Accuracy Drive VIII
+171 Melee Accuracy Drive IX
+172 Melee Accuracy Drive X
+173 Melee Accuracy Drive XI
+174 Melee Accuracy Drive XII
+175 Melee Accuracy Drive XIII
+176 Melee Accuracy Drive XIV
+177 Melee Accuracy Drive XV
+178 Melee Accuracy Drive XVI
+179 Melee Accuracy Drive XVII
+17A Melee Accuracy Drive XVIII
+17B Melee Accuracy Drive XIX
+17C Melee Accuracy Drive XX
 17D Ranged Accuracy Drive I
+17E Ranged Accuracy Drive II
+17F Ranged Accuracy Drive III
+180 Ranged Accuracy Drive IV
+181 Ranged Accuracy Drive V
+182 Ranged Accuracy Drive VI
+183 Ranged Accuracy Drive VII
+184 Ranged Accuracy Drive VIII
+185 Ranged Accuracy Drive IX
+186 Ranged Accuracy Drive X
+187 Ranged Accuracy Drive XI
+188 Ranged Accuracy Drive XII
+189 Ranged Accuracy Drive XIII
+18A Ranged Accuracy Drive XIV
+18B Ranged Accuracy Drive XV
+18C Ranged Accuracy Drive XVI
+18D Ranged Accuracy Drive XVII
+18E Ranged Accuracy Drive XVIII
+18F Ranged Accuracy Drive XIX
+190 Ranged Accuracy Drive XX
 191 Evasion Drive I
+192 Evasion Drive II
+193 Evasion Drive III
+194 Evasion Drive IV
+195 Evasion Drive V
+196 Evasion Drive VI
+197 Evasion Drive VII
+198 Evasion Drive VIII
+199 Evasion Drive IX
+19A Evasion Drive X
+19B Evasion Drive XI
+19C Evasion Drive XII
+19D Evasion Drive XIII
+19E Evasion Drive XIV
+19F Evasion Drive XV
+1A0 Evasion Drive XVI
+1A1 Evasion Drive XVII
+1A2 Evasion Drive XVIII
+1A3 Evasion Drive XIX
+1A4 Evasion Drive XX
 1A5 Melee Attack Drive I
+1A6 Melee Attack Drive II
+1A7 Melee Attack Drive III
+1A8 Melee Attack Drive IV
+1A9 Melee Attack Drive V
+1AA Melee Attack Drive VI
+1AB Melee Attack Drive VII
+1AC Melee Attack Drive VIII
+1AD Melee Attack Drive IX
+1AE Melee Attack Drive X
+1AF Melee Attack Drive XI
+1B0 Melee Attack Drive XII
+1B1 Melee Attack Drive XIII
+1B2 Melee Attack Drive XIV
+1B3 Melee Attack Drive XV
+1B4 Melee Attack Drive XVI
+1B5 Melee Attack Drive XVII
+1B6 Melee Attack Drive XVIII
+1B7 Melee Attack Drive XIX
+1B8 Melee Attack Drive XX
 1B9 Ranged Attack Drive I
+1BA Ranged Attack Drive II
+1BB Ranged Attack Drive III
+1BC Ranged Attack Drive IV
+1BD Ranged Attack Drive V
+1BE Ranged Attack Drive VI
+1BF Ranged Attack Drive VII
+1C0 Ranged Attack Drive VIII
+1C1 Ranged Attack Drive IX
+1C2 Ranged Attack Drive X
+1C3 Ranged Attack Drive XI
+1C4 Ranged Attack Drive XII
+1C5 Ranged Attack Drive XIII
+1C6 Ranged Attack Drive XIV
+1C7 Ranged Attack Drive XV
+1C8 Ranged Attack Drive XVI
+1C9 Ranged Attack Drive XVII
+1CA Ranged Attack Drive XVIII
+1CB Ranged Attack Drive XIX
+1CC Ranged Attack Drive XX
 1CD Potential Drive I
+1CE Potential Drive II
+1CF Potential Drive III
+1D0 Potential Drive IV
+1D1 Potential Drive V
+1D2 Potential Drive VI
+1D3 Potential Drive VII
+1D4 Potential Drive VIII
+1D5 Potential Drive IX
+1D6 Potential Drive X
+1D7 Potential Drive XI
+1D8 Potential Drive XII
+1D9 Potential Drive XIII
+1DA Potential Drive XIV
+1DB Potential Drive XV
+1DC Potential Drive XVI
+1DD Potential Drive XVII
+1DE Potential Drive XVIII
+1DF Potential Drive XIX
+1E0 Potential Drive XX
 1E1 Bind: Refuel I
+1E2 Bind: Refuel II
+1E3 Bind: Refuel III
+1E4 Bind: Refuel IV
+1E5 Bind: Refuel V
+1E6 Bind: Refuel VI
+1E7 Bind: Refuel VII
+1E8 Bind: Refuel VIII
+1E9 Bind: Refuel IX
+1EA Bind: Refuel X
+1EB Bind: Refuel XI
+1EC Bind: Refuel XII
+1ED Bind: Refuel XIII
+1EE Bind: Refuel XIV
+1EF Bind: Refuel XV
+1F0 Bind: Refuel XVI
+1F1 Bind: Refuel XVII
+1F2 Bind: Refuel XVIII
+1F3 Bind: Refuel XIX
+1F4 Bind: Refuel XX
 1F5 Fuel Efficiency Up I
+1F6 Fuel Efficiency Up II
+1F7 Fuel Efficiency Up III
+1F8 Fuel Efficiency Up IV
+1F9 Fuel Efficiency Up V
+1FA Fuel Efficiency Up VI
+1FB Fuel Efficiency Up VII
+1FC Fuel Efficiency Up VIII
+1FD Fuel Efficiency Up IX
+1FE Fuel Efficiency Up X
+1FF Fuel Efficiency Up XI
+200 Fuel Efficiency Up XII
+201 Fuel Efficiency Up XIII
+202 Fuel Efficiency Up XIV
+203 Fuel Efficiency Up XV
+204 Fuel Efficiency Up XVI
+205 Fuel Efficiency Up XVII
+206 Fuel Efficiency Up XVIII
+207 Fuel Efficiency Up XIX
+208 Fuel Efficiency Up XX
 209 Physical Resistance Up I
+20A Physical Resistance Up II
+20B Physical Resistance Up III
+20C Physical Resistance Up IV
+20D Physical Resistance Up V
+20E Physical Resistance Up VI
+20F Physical Resistance Up VII
+210 Physical Resistance Up VIII
+211 Physical Resistance Up IX
+212 Physical Resistance Up X
+213 Physical Resistance Up XI
+214 Physical Resistance Up XII
+215 Physical Resistance Up XIII
+216 Physical Resistance Up XIV
+217 Physical Resistance Up XV
+218 Physical Resistance Up XVI
+219 Physical Resistance Up XVII
+21A Physical Resistance Up XVIII
+21B Physical Resistance Up XIX
+21C Physical Resistance Up XX
 21D Beam Resistance Up I
+21E Beam Resistance Up II
+21F Beam Resistance Up III
+220 Beam Resistance Up IV
+221 Beam Resistance Up V
+222 Beam Resistance Up VI
+223 Beam Resistance Up VII
+224 Beam Resistance Up VIII
+225 Beam Resistance Up IX
+226 Beam Resistance Up X
+227 Beam Resistance Up XI
+228 Beam Resistance Up XII
+229 Beam Resistance Up XIII
+22A Beam Resistance Up XIV
+22B Beam Resistance Up XV
+22C Beam Resistance Up XVI
+22D Beam Resistance Up XVII
+22E Beam Resistance Up XVIII
+22F Beam Resistance Up XIX
+230 Beam Resistance Up XX
 231 Electric Resistance Up I
+232 Electric Resistance Up II
+233 Electric Resistance Up III
+234 Electric Resistance Up IV
+235 Electric Resistance Up V
+236 Electric Resistance Up VI
+237 Electric Resistance Up VII
+238 Electric Resistance Up VIII
+239 Electric Resistance Up IX
+23A Electric Resistance Up X
+23B Electric Resistance Up XI
+23C Electric Resistance Up XII
+23D Electric Resistance Up XIII
+23E Electric Resistance Up XIV
+23F Electric Resistance Up XV
+240 Electric Resistance Up XVI
+241 Electric Resistance Up XVII
+242 Electric Resistance Up XVIII
+243 Electric Resistance Up XIX
+244 Electric Resistance Up XX
 245 Thermal Resistance Up I
+246 Thermal Resistance Up II
+247 Thermal Resistance Up III
+248 Thermal Resistance Up IV
+249 Thermal Resistance Up V
+24A Thermal Resistance Up VI
+24B Thermal Resistance Up VII
+24C Thermal Resistance Up VIII
+24D Thermal Resistance Up IX
+24E Thermal Resistance Up X
+24F Thermal Resistance Up XI
+250 Thermal Resistance Up XII
+251 Thermal Resistance Up XIII
+252 Thermal Resistance Up XIV
+253 Thermal Resistance Up XV
+254 Thermal Resistance Up XVI
+255 Thermal Resistance Up XVII
+256 Thermal Resistance Up XVIII
+257 Thermal Resistance Up XIX
+258 Thermal Resistance Up XX
 259 Ether Resistance Up I
+25A Ether Resistance Up II
+25B Ether Resistance Up III
+25C Ether Resistance Up IV
+25D Ether Resistance Up V
+25E Ether Resistance Up VI
+25F Ether Resistance Up VII
+260 Ether Resistance Up VIII
+261 Ether Resistance Up IX
+262 Ether Resistance Up X
+263 Ether Resistance Up XI
+264 Ether Resistance Up XII
+265 Ether Resistance Up XIII
+266 Ether Resistance Up XIV
+267 Ether Resistance Up XV
+268 Ether Resistance Up XVI
+269 Ether Resistance Up XVII
+26A Ether Resistance Up XVIII
+26B Ether Resistance Up XIX
+26C Ether Resistance Up XX
 26D Gravity Resistance Up I
+26E Gravity Resistance Up II
+26F Gravity Resistance Up III
+270 Gravity Resistance Up IV
+271 Gravity Resistance Up V
+272 Gravity Resistance Up VI
+273 Gravity Resistance Up VII
+274 Gravity Resistance Up VIII
+275 Gravity Resistance Up IX
+276 Gravity Resistance Up X
+277 Gravity Resistance Up XI
+278 Gravity Resistance Up XII
+279 Gravity Resistance Up XIII
+27A Gravity Resistance Up XIV
+27B Gravity Resistance Up XV
+27C Gravity Resistance Up XVI
+27D Gravity Resistance Up XVII
+27E Gravity Resistance Up XVIII
+27F Gravity Resistance Up XIX
+280 Gravity Resistance Up XX
 281 Weapon Attack Power Up I
+282 Weapon Attack Power Up II
+283 Weapon Attack Power Up III
+284 Weapon Attack Power Up IV
+285 Weapon Attack Power Up V
+286 Weapon Attack Power Up VI
+287 Weapon Attack Power Up VII
+288 Weapon Attack Power Up VIII
+289 Weapon Attack Power Up IX
+28A Weapon Attack Power Up X
+28B Weapon Attack Power Up XI
+28C Weapon Attack Power Up XII
+28D Weapon Attack Power Up XIII
+28E Weapon Attack Power Up XIV
+28F Weapon Attack Power Up XV
+290 Weapon Attack Power Up XVI
+291 Weapon Attack Power Up XVII
+292 Weapon Attack Power Up XVIII
+293 Weapon Attack Power Up XIX
+294 Weapon Attack Power Up XX
 295 Stabilizer I
+296 Stabilizer II
+297 Stabilizer III
+298 Stabilizer IV
+299 Stabilizer V
+29A Stabilizer VI
+29B Stabilizer VII
+29C Stabilizer VIII
+29D Stabilizer IX
+29E Stabilizer X
+29F Stabilizer XI
+2A0 Stabilizer XII
+2A1 Stabilizer XIII
+2A2 Stabilizer XIV
+2A3 Stabilizer XV
+2A4 Stabilizer XVI
+2A5 Stabilizer XVII
+2A6 Stabilizer XVIII
+2A7 Stabilizer XIX
+2A8 Stabilizer XX
 2A9 Destabilizer I
+2AA Destabilizer II
+2AB Destabilizer III
+2AC Destabilizer IV
+2AD Destabilizer V
+2AE Destabilizer VI
+2AF Destabilizer VII
+2B0 Destabilizer VIII
+2B1 Destabilizer IX
+2B2 Destabilizer X
+2B3 Destabilizer XI
+2B4 Destabilizer XII
+2B5 Destabilizer XIII
+2B6 Destabilizer XIV
+2B7 Destabilizer XV
+2B8 Destabilizer XVI
+2B9 Destabilizer XVII
+2BA Destabilizer XVIII
+2BB Destabilizer XIX
+2BC Destabilizer XX
 2BD Magazine Capacity Up I
+2BE Magazine Capacity Up II
+2BF Magazine Capacity Up III
+2C0 Magazine Capacity Up IV
+2C1 Magazine Capacity Up V
+2C2 Magazine Capacity Up VI
+2C3 Magazine Capacity Up VII
+2C4 Magazine Capacity Up VIII
+2C5 Magazine Capacity Up IX
+2C6 Magazine Capacity Up X
+2C7 Magazine Capacity Up XI
+2C8 Magazine Capacity Up XII
+2C9 Magazine Capacity Up XIII
+2CA Magazine Capacity Up XIV
+2CB Magazine Capacity Up XV
+2CC Magazine Capacity Up XVI
+2CD Magazine Capacity Up XVII
+2CE Magazine Capacity Up XVIII
+2CF Magazine Capacity Up XIX
+2D0 Magazine Capacity Up XX
 2D1 Melee: TP Gain Up
 2D2 Ranged: TP Gain Up
 2D3 Cooldown Reducer I
-2D3 Cooldown Reducer I
-2E7 FIring Range Up I
+2D4 Cooldown Reducer II
+2D5 Cooldown Reducer III
+2D6 Cooldown Reducer IV
+2D7 Cooldown Reducer V
+2D8 Cooldown Reducer VI
+2D9 Cooldown Reducer VII
+2DA Cooldown Reducer VIII
+2DB Cooldown Reducer IX
+2DC Cooldown Reducer X
+2DD Cooldown Reducer XI
+2DE Cooldown Reducer XII
+2DF Cooldown Reducer XIII
+2E0 Cooldown Reducer XIV
+2E1 Cooldown Reducer XV
+2E2 Cooldown Reducer XVI
+2E3 Cooldown Reducer XVII
+2E4 Cooldown Reducer XVIII
+2E5 Cooldown Reducer XIX
+2E6 Cooldown Reducer XX
+2E7 Firing Range Up I
+2E8 Firing Range Up II
+2E9 Firing Range Up III
+2EA Firing Range Up IV
+2EB Firing Range Up V
+2EC Firing Range Up VI
+2ED Firing Range Up VII
+2EE Firing Range Up VIII
+2EF Firing Range Up IX
+2F0 Firing Range Up X
+2F1 Firing Range Up XI
+2F2 Firing Range Up XII
+2F3 Firing Range Up XIII
+2F4 Firing Range Up XIV
+2F5 Firing Range Up XV
+2F6 Firing Range Up XVI
+2F7 Firing Range Up XVII
+2F8 Firing Range Up XVIII
+2F9 Firing Range Up XIX
+2FA Firing Range Up XX
 2FB Resist Stagger I
+2FC Resist Stagger II
+2FD Resist Stagger III
+2FE Resist Stagger IV
+2FF Resist Stagger V
+300 Resist Stagger VI
+301 Resist Stagger VII
+302 Resist Stagger VIII
+303 Resist Stagger IX
+304 Resist Stagger X
+305 Resist Stagger XI
+306 Resist Stagger XII
+307 Resist Stagger XIII
+308 Resist Stagger XIV
+309 Resist Stagger XV
+30A Resist Stagger XVI
+30B Resist Stagger XVII
+30C Resist Stagger XVIII
+30D Resist Stagger XIX
+30E Resist Stagger XX
 30F Resist Flinch I
+310 Resist Flinch II
+311 Resist Flinch III
+312 Resist Flinch IV
+313 Resist Flinch V
+314 Resist Flinch VI
+315 Resist Flinch VII
+316 Resist Flinch VIII
+317 Resist Flinch IX
+318 Resist Flinch X
+319 Resist Flinch XI
+31A Resist Flinch XII
+31B Resist Flinch XIII
+31C Resist Flinch XIV
+31D Resist Flinch XV
+31E Resist Flinch XVI
+31F Resist Flinch XVII
+320 Resist Flinch XVIII
+321 Resist Flinch XIX
+322 Resist Flinch XX
 323 Resist Topple I
+324 Resist Topple II
+325 Resist Topple III
+326 Resist Topple IV
+327 Resist Topple V
+328 Resist Topple VI
+329 Resist Topple VII
+32A Resist Topple VIII
+32B Resist Topple IX
+32C Resist Topple X
+32D Resist Topple XI
+32E Resist Topple XII
+32F Resist Topple XIII
+330 Resist Topple XIV
+331 Resist Topple XV
+332 Resist Topple XVI
+333 Resist Topple XVII
+334 Resist Topple XVIII
+335 Resist Topple XIX
+336 Resist Topple XX
 337 Resist Knockback I
+338 Resist Knockback II
+339 Resist Knockback III
+33A Resist Knockback IV
+33B Resist Knockback V
+33C Resist Knockback VI
+33D Resist Knockback VII
+33E Resist Knockback VIII
+33F Resist Knockback IX
+340 Resist Knockback X
+341 Resist Knockback XI
+342 Resist Knockback XII
+343 Resist Knockback XIII
+344 Resist Knockback XIV
+345 Resist Knockback XV
+346 Resist Knockback XVI
+347 Resist Knockback XVII
+348 Resist Knockback XVIII
+349 Resist Knockback XIX
+34A Resist Knockback XX
 34B Resist Launch I
+34C Resist Launch II
+34D Resist Launch III
+34E Resist Launch IV
+34F Resist Launch V
+350 Resist Launch VI
+351 Resist Launch VII
+352 Resist Launch VIII
+353 Resist Launch IX
+354 Resist Launch X
+355 Resist Launch XI
+356 Resist Launch XII
+357 Resist Launch XIII
+358 Resist Launch XIV
+359 Resist Launch XV
+35A Resist Launch XVI
+35B Resist Launch XVII
+35C Resist Launch XVIII
+35D Resist Launch XIX
+35E Resist Launch XX
 35F Resist Stun I
+360 Resist Stun II
+361 Resist Stun III
+362 Resist Stun IV
+363 Resist Stun V
+364 Resist Stun VI
+365 Resist Stun VII
+366 Resist Stun VIII
+367 Resist Stun IX
+368 Resist Stun X
+369 Resist Stun XI
+36A Resist Stun XII
+36B Resist Stun XIII
+36C Resist Stun XIV
+36D Resist Stun XV
+36E Resist Stun XVI
+36F Resist Stun XVII
+370 Resist Stun XVIII
+371 Resist Stun XIX
+372 Resist Stun XX
 373 Resist Sleep I
+374 Resist Sleep II
+375 Resist Sleep III
+376 Resist Sleep IV
+377 Resist Sleep V
+378 Resist Sleep VI
+379 Resist Sleep VII
+37A Resist Sleep VIII
+37B Resist Sleep IX
+37C Resist Sleep X
+37D Resist Sleep XI
+37E Resist Sleep XII
+37F Resist Sleep XIII
+380 Resist Sleep XIV
+381 Resist Sleep XV
+382 Resist Sleep XVI
+383 Resist Sleep XVII
+384 Resist Sleep XVIII
+385 Resist Sleep XIX
+386 Resist Sleep XX
 387 Resist Taunt I
+388 Resist Taunt II
+389 Resist Taunt III
+38A Resist Taunt IV
+38B Resist Taunt V
+38C Resist Taunt VI
+38D Resist Taunt VII
+38E Resist Taunt VIII
+38F Resist Taunt IX
+390 Resist Taunt X
+391 Resist Taunt XI
+392 Resist Taunt XII
+393 Resist Taunt XIII
+394 Resist Taunt XIV
+395 Resist Taunt XV
+396 Resist Taunt XVI
+397 Resist Taunt XVII
+398 Resist Taunt XVIII
+399 Resist Taunt XIX
+39A Resist Taunt XX
 39B Resist Control I
+39C Resist Control II
+39D Resist Control III
+39E Resist Control IV
+39F Resist Control V
+3A0 Resist Control VI
+3A1 Resist Control VII
+3A2 Resist Control VIII
+3A3 Resist Control IX
+3A4 Resist Control X
+3A5 Resist Control XI
+3A6 Resist Control XII
+3A7 Resist Control XIII
+3A8 Resist Control XIV
+3A9 Resist Control XV
+3AA Resist Control XVI
+3AB Resist Control XVII
+3AC Resist Control XVIII
+3AD Resist Control XIX
+3AE Resist Control XX
 3AF Resist Virus I
+3B0 Resist Virus II
+3B1 Resist Virus III
+3B2 Resist Virus IV
+3B3 Resist Virus V
+3B4 Resist Virus VI
+3B5 Resist Virus VII
+3B6 Resist Virus VIII
+3B7 Resist Virus IX
+3B8 Resist Virus X
+3B9 Resist Virus XI
+3BA Resist Virus XII
+3BB Resist Virus XIII
+3BC Resist Virus XIV
+3BD Resist Virus XV
+3BE Resist Virus XVI
+3BF Resist Virus XVII
+3C0 Resist Virus XVIII
+3C1 Resist Virus XIX
+3C2 Resist Virus XX
 3C3 Resist Blackout I
+3C4 Resist Blackout II
+3C5 Resist Blackout III
+3C6 Resist Blackout IV
+3C7 Resist Blackout V
+3C8 Resist Blackout VI
+3C9 Resist Blackout VII
+3CA Resist Blackout VIII
+3CB Resist Blackout IX
+3CC Resist Blackout X
+3CD Resist Blackout XI
+3CE Resist Blackout XII
+3CF Resist Blackout XIII
+3D0 Resist Blackout XIV
+3D1 Resist Blackout XV
+3D2 Resist Blackout XVI
+3D3 Resist Blackout XVII
+3D4 Resist Blackout XVIII
+3D5 Resist Blackout XIX
+3D6 Resist Blackout XX
 3D7 Resist Fatigue I
+3D8 Resist Fatigue II
+3D9 Resist Fatigue III
+3DA Resist Fatigue IV
+3DB Resist Fatigue V
+3DC Resist Fatigue VI
+3DD Resist Fatigue VII
+3DE Resist Fatigue VIII
+3DF Resist Fatigue IX
+3E0 Resist Fatigue X
+3E1 Resist Fatigue XI
+3E2 Resist Fatigue XII
+3E3 Resist Fatigue XIII
+3E4 Resist Fatigue XIV
+3E5 Resist Fatigue XV
+3E6 Resist Fatigue XVI
+3E7 Resist Fatigue XVII
+3E8 Resist Fatigue XVIII
+3E9 Resist Fatigue XIX
+3EA Resist Fatigue XX
 3EB Resist Slow Arts I
+3EC Resist Slow Arts II
+3ED Resist Slow Arts III
+3EE Resist Slow Arts IV
+3EF Resist Slow Arts V
+3F0 Resist Slow Arts VI
+3F1 Resist Slow Arts VII
+3F2 Resist Slow Arts VIII
+3F3 Resist Slow Arts IX
+3F4 Resist Slow Arts X
+3F5 Resist Slow Arts XI
+3F6 Resist Slow Arts XII
+3F7 Resist Slow Arts XIII
+3F8 Resist Slow Arts XIV
+3F9 Resist Slow Arts XV
+3FA Resist Slow Arts XVI
+3FB Resist Slow Arts XVII
+3FC Resist Slow Arts XVIII
+3FD Resist Slow Arts XIX
+3FE Resist Slow Arts XX
 3FF Resist Physical Res Down I
+400 Resist Physical Res Down II
+401 Resist Physical Res Down III
+402 Resist Physical Res Down IV
+403 Resist Physical Res Down V
+404 Resist Physical Res Down VI
+405 Resist Physical Res Down VII
+406 Resist Physical Res Down VIII
+407 Resist Physical Res Down IX
+408 Resist Physical Res Down X
+409 Resist Physical Res Down XI
+40A Resist Physical Res Down XII
+40B Resist Physical Res Down XIII
+40C Resist Physical Res Down XIV
+40D Resist Physical Res Down XV
+40E Resist Physical Res Down XVI
+40F Resist Physical Res Down XVII
+410 Resist Physical Res Down XVIII
+411 Resist Physical Res Down XIX
+412 Resist Physical Res Down XX
 413 Resist Beam Res Down I
+414 Resist Beam Res Down II
+415 Resist Beam Res Down III
+416 Resist Beam Res Down IV
+417 Resist Beam Res Down V
+418 Resist Beam Res Down VI
+419 Resist Beam Res Down VII
+41A Resist Beam Res Down VIII
+41B Resist Beam Res Down IX
+41C Resist Beam Res Down X
+41D Resist Beam Res Down XI
+41E Resist Beam Res Down XII
+41F Resist Beam Res Down XIII
+420 Resist Beam Res Down XIV
+421 Resist Beam Res Down XV
+422 Resist Beam Res Down XVI
+423 Resist Beam Res Down XVII
+424 Resist Beam Res Down XVIII
+425 Resist Beam Res Down XIX
+426 Resist Beam Res Down XX
 427 Resist Thermal Res Down I
+428 Resist Thermal Res Down II
+429 Resist Thermal Res Down III
+42A Resist Thermal Res Down IV
+42B Resist Thermal Res Down V
+42C Resist Thermal Res Down VI
+42D Resist Thermal Res Down VII
+42E Resist Thermal Res Down VIII
+42F Resist Thermal Res Down IX
+430 Resist Thermal Res Down X
+431 Resist Thermal Res Down XI
+432 Resist Thermal Res Down XII
+433 Resist Thermal Res Down XIII
+434 Resist Thermal Res Down XIV
+435 Resist Thermal Res Down XV
+436 Resist Thermal Res Down XVI
+437 Resist Thermal Res Down XVII
+438 Resist Thermal Res Down XVIII
+439 Resist Thermal Res Down XIX
+43A Resist Thermal Res Down XX
 43B Resist Electric Res Down I
+43C Resist Electric Res Down II
+43D Resist Electric Res Down III
+43E Resist Electric Res Down IV
+43F Resist Electric Res Down V
+440 Resist Electric Res Down VI
+441 Resist Electric Res Down VII
+442 Resist Electric Res Down VIII
+443 Resist Electric Res Down IX
+444 Resist Electric Res Down X
+445 Resist Electric Res Down XI
+446 Resist Electric Res Down XII
+447 Resist Electric Res Down XIII
+448 Resist Electric Res Down XIV
+449 Resist Electric Res Down XV
+44A Resist Electric Res Down XVI
+44B Resist Electric Res Down XVII
+44C Resist Electric Res Down XVIII
+44D Resist Electric Res Down XIX
+44E Resist Electric Res Down XX
 44F Resist Ether Res Down I
+450 Resist Ether Res Down II
+451 Resist Ether Res Down III
+452 Resist Ether Res Down IV
+453 Resist Ether Res Down V
+454 Resist Ether Res Down VI
+455 Resist Ether Res Down VII
+456 Resist Ether Res Down VIII
+457 Resist Ether Res Down IX
+458 Resist Ether Res Down X
+459 Resist Ether Res Down XI
+45A Resist Ether Res Down XII
+45B Resist Ether Res Down XIII
+45C Resist Ether Res Down XIV
+45D Resist Ether Res Down XV
+45E Resist Ether Res Down XVI
+45F Resist Ether Res Down XVII
+460 Resist Ether Res Down XVIII
+461 Resist Ether Res Down XIX
+462 Resist Ether Res Down XX
 463 Resist Gravity Res Down I
+464 Resist Gravity Res Down II
+465 Resist Gravity Res Down III
+466 Resist Gravity Res Down IV
+467 Resist Gravity Res Down V
+468 Resist Gravity Res Down VI
+469 Resist Gravity Res Down VII
+46A Resist Gravity Res Down VIII
+46B Resist Gravity Res Down IX
+46C Resist Gravity Res Down X
+46D Resist Gravity Res Down XI
+46E Resist Gravity Res Down XII
+46F Resist Gravity Res Down XIII
+470 Resist Gravity Res Down XIV
+471 Resist Gravity Res Down XV
+472 Resist Gravity Res Down XVI
+473 Resist Gravity Res Down XVII
+474 Resist Gravity Res Down XVIII
+475 Resist Gravity Res Down XIX
+476 Resist Gravity Res Down XX
 477 Resist Time Bomb I
+478 Resist Time Bomb II
+479 Resist Time Bomb III
+47A Resist Time Bomb IV
+47B Resist Time Bomb V
+47C Resist Time Bomb VI
+47D Resist Time Bomb VII
+47E Resist Time Bomb VIII
+47F Resist Time Bomb IX
+480 Resist Time Bomb X
+481 Resist Time Bomb XI
+482 Resist Time Bomb XII
+483 Resist Time Bomb XIII
+484 Resist Time Bomb XIV
+485 Resist Time Bomb XV
+486 Resist Time Bomb XVI
+487 Resist Time Bomb XVII
+488 Resist Time Bomb XVIII
+489 Resist Time Bomb XIX
+48A Resist Time Bomb XX
 48B Resist Debuff Res Down I
+48C Resist Debuff Res Down II
+48D Resist Debuff Res Down III
+48E Resist Debuff Res Down IV
+48F Resist Debuff Res Down V
+490 Resist Debuff Res Down VI
+491 Resist Debuff Res Down VII
+492 Resist Debuff Res Down VIII
+493 Resist Debuff Res Down IX
+494 Resist Debuff Res Down X
+495 Resist Debuff Res Down XI
+496 Resist Debuff Res Down XII
+497 Resist Debuff Res Down XIII
+498 Resist Debuff Res Down XIV
+499 Resist Debuff Res Down XV
+49A Resist Debuff Res Down XVI
+49B Resist Debuff Res Down XVII
+49C Resist Debuff Res Down XVIII
+49D Resist Debuff Res Down XIX
+49E Resist Debuff Res Down XX
 49F Resist HP Recovery Down I
+4A0 Resist HP Recovery Down II
+4A1 Resist HP Recovery Down III
+4A2 Resist HP Recovery Down IV
+4A3 Resist HP Recovery Down V
+4A4 Resist HP Recovery Down VI
+4A5 Resist HP Recovery Down VII
+4A6 Resist HP Recovery Down VIII
+4A7 Resist HP Recovery Down IX
+4A8 Resist HP Recovery Down X
+4A9 Resist HP Recovery Down XI
+4AA Resist HP Recovery Down XII
+4AB Resist HP Recovery Down XIII
+4AC Resist HP Recovery Down XIV
+4AD Resist HP Recovery Down XV
+4AE Resist HP Recovery Down XVI
+4AF Resist HP Recovery Down XVII
+4B0 Resist HP Recovery Down XVIII
+4B1 Resist HP Recovery Down XIX
+4B2 Resist HP Recovery Down XX
 4B3 Resist Blaze I
+4B4 Resist Blaze II
+4B5 Resist Blaze III
+4B6 Resist Blaze IV
+4B7 Resist Blaze V
+4B8 Resist Blaze VI
+4B9 Resist Blaze VII
+4BA Resist Blaze VIII
+4BB Resist Blaze IX
+4BC Resist Blaze X
+4BD Resist Blaze XI
+4BE Resist Blaze XII
+4BF Resist Blaze XIII
+4C0 Resist Blaze XIV
+4C1 Resist Blaze XV
+4C2 Resist Blaze XVI
+4C3 Resist Blaze XVII
+4C4 Resist Blaze XVIII
+4C5 Resist Blaze XIX
+4C6 Resist Blaze XX
 4C7 Resist Shock I
+4C8 Resist Shock II
+4C9 Resist Shock III
+4CA Resist Shock IV
+4CB Resist Shock V
+4CC Resist Shock VI
+4CD Resist Shock VII
+4CE Resist Shock VIII
+4CF Resist Shock IX
+4D0 Resist Shock X
+4D1 Resist Shock XI
+4D2 Resist Shock XII
+4D3 Resist Shock XIII
+4D4 Resist Shock XIV
+4D5 Resist Shock XV
+4D6 Resist Shock XVI
+4D7 Resist Shock XVII
+4D8 Resist Shock XVIII
+4D9 Resist Shock XIX
+4DA Resist Shock XX
 4DB Debuff Suppressor I
+4DC Debuff Suppressor II
+4DD Debuff Suppressor III
+4DE Debuff Suppressor IV
+4DF Debuff Suppressor V
+4E0 Debuff Suppressor VI
+4E1 Debuff Suppressor VII
+4E2 Debuff Suppressor VIII
+4E3 Debuff Suppressor IX
+4E4 Debuff Suppressor X
+4E5 Debuff Suppressor XI
+4E6 Debuff Suppressor XII
+4E7 Debuff Suppressor XIII
+4E8 Debuff Suppressor XIV
+4E9 Debuff Suppressor XV
+4EA Debuff Suppressor XVI
+4EB Debuff Suppressor XVII
+4EC Debuff Suppressor XVIII
+4ED Debuff Suppressor XIX
+4EE Debuff Suppressor XX
 4EF Critical Chance Up I
+4F0 Critical Chance Up II
+4F1 Critical Chance Up III
+4F2 Critical Chance Up IV
+4F3 Critical Chance Up V
+4F4 Critical Chance Up VI
+4F5 Critical Chance Up VII
+4F6 Critical Chance Up VIII
+4F7 Critical Chance Up IX
+4F8 Critical Chance Up X
+4F9 Critical Chance Up XI
+4FA Critical Chance Up XII
+4FB Critical Chance Up XIII
+4FC Critical Chance Up XIV
+4FD Critical Chance Up XV
+4FE Critical Chance Up XVI
+4FF Critical Chance Up XVII
+500 Critical Chance Up XVIII
+501 Critical Chance Up XIX
+502 Critical Chance Up XX
 503 Theroid Criticals Up I
+504 Theroid Criticals Up II
+505 Theroid Criticals Up III
+506 Theroid Criticals Up IV
+507 Theroid Criticals Up V
+508 Theroid Criticals Up VI
+509 Theroid Criticals Up VII
+50A Theroid Criticals Up VIII
+50B Theroid Criticals Up IX
+50C Theroid Criticals Up X
+50D Theroid Criticals Up XI
+50E Theroid Criticals Up XII
+50F Theroid Criticals Up XIII
+510 Theroid Criticals Up XIV
+511 Theroid Criticals Up XV
+512 Theroid Criticals Up XVI
+513 Theroid Criticals Up XVII
+514 Theroid Criticals Up XVIII
+515 Theroid Criticals Up XIX
+516 Theroid Criticals Up XX
 517 Insectoid Criticals Up I
+518 Insectoid Criticals Up II
+519 Insectoid Criticals Up III
+51A Insectoid Criticals Up IV
+51B Insectoid Criticals Up V
+51C Insectoid Criticals Up VI
+51D Insectoid Criticals Up VII
+51E Insectoid Criticals Up VIII
+51F Insectoid Criticals Up IX
+520 Insectoid Criticals Up X
+521 Insectoid Criticals Up XI
+522 Insectoid Criticals Up XII
+523 Insectoid Criticals Up XIII
+524 Insectoid Criticals Up XIV
+525 Insectoid Criticals Up XV
+526 Insectoid Criticals Up XVI
+527 Insectoid Criticals Up XVII
+528 Insectoid Criticals Up XVIII
+529 Insectoid Criticals Up XIX
+52A Insectoid Criticals Up XX
 52B Piscinoid Criticals Up I
+52C Piscinoid Criticals Up II
+52D Piscinoid Criticals Up III
+52E Piscinoid Criticals Up IV
+52F Piscinoid Criticals Up V
+530 Piscinoid Criticals Up VI
+531 Piscinoid Criticals Up VII
+532 Piscinoid Criticals Up VIII
+533 Piscinoid Criticals Up IX
+534 Piscinoid Criticals Up X
+535 Piscinoid Criticals Up XI
+536 Piscinoid Criticals Up XII
+537 Piscinoid Criticals Up XIII
+538 Piscinoid Criticals Up XIV
+539 Piscinoid Criticals Up XV
+53A Piscinoid Criticals Up XVI
+53B Piscinoid Criticals Up XVII
+53C Piscinoid Criticals Up XVIII
+53D Piscinoid Criticals Up XIX
+53E Piscinoid Criticals Up XX
 53F Humanoid Criticals Up I
+540 Humanoid Criticals Up II
+541 Humanoid Criticals Up III
+542 Humanoid Criticals Up IV
+543 Humanoid Criticals Up V
+544 Humanoid Criticals Up VI
+545 Humanoid Criticals Up VII
+546 Humanoid Criticals Up VIII
+547 Humanoid Criticals Up IX
+548 Humanoid Criticals Up X
+549 Humanoid Criticals Up XI
+54A Humanoid Criticals Up XII
+54B Humanoid Criticals Up XIII
+54C Humanoid Criticals Up XIV
+54D Humanoid Criticals Up XV
+54E Humanoid Criticals Up XVI
+54F Humanoid Criticals Up XVII
+550 Humanoid Criticals Up XVIII
+551 Humanoid Criticals Up XIX
+552 Humanoid Criticals Up XX
 553 Mechanoid Criticals Up I
+554 Mechanoid Criticals Up II
+555 Mechanoid Criticals Up III
+556 Mechanoid Criticals Up IV
+557 Mechanoid Criticals Up V
+558 Mechanoid Criticals Up VI
+559 Mechanoid Criticals Up VII
+55A Mechanoid Criticals Up VIII
+55B Mechanoid Criticals Up IX
+55C Mechanoid Criticals Up X
+55D Mechanoid Criticals Up XI
+55E Mechanoid Criticals Up XII
+55F Mechanoid Criticals Up XIII
+560 Mechanoid Criticals Up XIV
+561 Mechanoid Criticals Up XV
+562 Mechanoid Criticals Up XVI
+563 Mechanoid Criticals Up XVII
+564 Mechanoid Criticals Up XVIII
+565 Mechanoid Criticals Up XIX
+566 Mechanoid Criticals Up XX
 567 Chimeroid Criticals Up I
+568 Chimeroid Criticals Up II
+569 Chimeroid Criticals Up III
+56A Chimeroid Criticals Up IV
+56B Chimeroid Criticals Up V
+56C Chimeroid Criticals Up VI
+56D Chimeroid Criticals Up VII
+56E Chimeroid Criticals Up VIII
+56F Chimeroid Criticals Up IX
+570 Chimeroid Criticals Up X
+571 Chimeroid Criticals Up XI
+572 Chimeroid Criticals Up XII
+573 Chimeroid Criticals Up XIII
+574 Chimeroid Criticals Up XIV
+575 Chimeroid Criticals Up XV
+576 Chimeroid Criticals Up XVI
+577 Chimeroid Criticals Up XVII
+578 Chimeroid Criticals Up XVIII
+579 Chimeroid Criticals Up XIX
+57A Chimeroid Criticals Up XX
 57B Ultrafauna Criticals Up I
+57C Ultrafauna Criticals Up II
+57D Ultrafauna Criticals Up III
+57E Ultrafauna Criticals Up IV
+57F Ultrafauna Criticals Up V
+580 Ultrafauna Criticals Up VI
+581 Ultrafauna Criticals Up VII
+582 Ultrafauna Criticals Up VIII
+583 Ultrafauna Criticals Up IX
+584 Ultrafauna Criticals Up X
+585 Ultrafauna Criticals Up XI
+586 Ultrafauna Criticals Up XII
+587 Ultrafauna Criticals Up XIII
+588 Ultrafauna Criticals Up XIV
+589 Ultrafauna Criticals Up XV
+58A Ultrafauna Criticals Up XVI
+58B Ultrafauna Criticals Up XVII
+58C Ultrafauna Criticals Up XVIII
+58D Ultrafauna Criticals Up XIX
+58E Ultrafauna Criticals Up XX
 58F Extend Critical Power I
+590 Extend Critical Power II
+591 Extend Critical Power III
+592 Extend Critical Power IV
+593 Extend Critical Power V
+594 Extend Critical Power VI
+595 Extend Critical Power VII
+596 Extend Critical Power VIII
+597 Extend Critical Power IX
+598 Extend Critical Power X
+599 Extend Critical Power XI
+59A Extend Critical Power XII
+59B Extend Critical Power XIII
+59C Extend Critical Power XIV
+59D Extend Critical Power XV
+59E Extend Critical Power XVI
+59F Extend Critical Power XVII
+5A0 Extend Critical Power XVIII
+5A1 Extend Critical Power XIX
+5A2 Extend Critical Power XX
 5A3 Zero Critical
 5A4 Theroid Slayer I
+5A5 Theroid Slayer II
+5A6 Theroid Slayer III
+5A7 Theroid Slayer IV
+5A8 Theroid Slayer V
+5A9 Theroid Slayer VI
+5AA Theroid Slayer VII
+5AB Theroid Slayer VIII
+5AC Theroid Slayer IX
+5AD Theroid Slayer X
+5AE Theroid Slayer XI
+5AF Theroid Slayer XII
+5B0 Theroid Slayer XIII
+5B1 Theroid Slayer XIV
+5B2 Theroid Slayer XV
+5B3 Theroid Slayer XVI
+5B4 Theroid Slayer XVII
+5B5 Theroid Slayer XVIII
+5B6 Theroid Slayer XIX
+5B7 Theroid Slayer XX
 5B8 Insectoid Slayer I
+5B9 Insectoid Slayer II
+5BA Insectoid Slayer III
+5BB Insectoid Slayer IV
+5BC Insectoid Slayer V
+5BD Insectoid Slayer VI
+5BE Insectoid Slayer VII
+5BF Insectoid Slayer VIII
+5C0 Insectoid Slayer IX
+5C1 Insectoid Slayer X
+5C2 Insectoid Slayer XI
+5C3 Insectoid Slayer XII
+5C4 Insectoid Slayer XIII
+5C5 Insectoid Slayer XIV
+5C6 Insectoid Slayer XV
+5C7 Insectoid Slayer XVI
+5C8 Insectoid Slayer XVII
+5C9 Insectoid Slayer XVIII
+5CA Insectoid Slayer XIX
+5CB Insectoid Slayer XX
 5CC Piscinoid Slayer I
+5CD Piscinoid Slayer II
+5CE Piscinoid Slayer III
+5CF Piscinoid Slayer IV
+5D0 Piscinoid Slayer V
+5D1 Piscinoid Slayer VI
+5D2 Piscinoid Slayer VII
+5D3 Piscinoid Slayer VIII
+5D4 Piscinoid Slayer IX
+5D5 Piscinoid Slayer X
+5D6 Piscinoid Slayer XI
+5D7 Piscinoid Slayer XII
+5D8 Piscinoid Slayer XIII
+5D9 Piscinoid Slayer XIV
+5DA Piscinoid Slayer XV
+5DB Piscinoid Slayer XVI
+5DC Piscinoid Slayer XVII
+5DD Piscinoid Slayer XVIII
+5DE Piscinoid Slayer XIX
+5DF Piscinoid Slayer XX
 5E0 Humanoid Slayer I
+5E1 Humanoid Slayer II
+5E2 Humanoid Slayer III
+5E3 Humanoid Slayer IV
+5E4 Humanoid Slayer V
+5E5 Humanoid Slayer VI
+5E6 Humanoid Slayer VII
+5E7 Humanoid Slayer VIII
+5E8 Humanoid Slayer IX
+5E9 Humanoid Slayer X
+5EA Humanoid Slayer XI
+5EB Humanoid Slayer XII
+5EC Humanoid Slayer XIII
+5ED Humanoid Slayer XIV
+5EE Humanoid Slayer XV
+5EF Humanoid Slayer XVI
+5F0 Humanoid Slayer XVII
+5F1 Humanoid Slayer XVIII
+5F2 Humanoid Slayer XIX
+5F3 Humanoid Slayer XX
 5F4 Mechanoid Slayer I
+5F5 Mechanoid Slayer II
+5F6 Mechanoid Slayer III
+5F7 Mechanoid Slayer IV
+5F8 Mechanoid Slayer V
+5F9 Mechanoid Slayer VI
+5FA Mechanoid Slayer VII
+5FB Mechanoid Slayer VIII
+5FC Mechanoid Slayer IX
+5FD Mechanoid Slayer X
+5FE Mechanoid Slayer XI
+5FF Mechanoid Slayer XII
+600 Mechanoid Slayer XIII
+601 Mechanoid Slayer XIV
+602 Mechanoid Slayer XV
+603 Mechanoid Slayer XVI
+604 Mechanoid Slayer XVII
+605 Mechanoid Slayer XVIII
+606 Mechanoid Slayer XIX
+607 Mechanoid Slayer XX
 608 Chimeroid Slayer I
+609 Chimeroid Slayer II
+60A Chimeroid Slayer III
+60B Chimeroid Slayer IV
+60C Chimeroid Slayer V
+60D Chimeroid Slayer VI
+60E Chimeroid Slayer VII
+60F Chimeroid Slayer VIII
+610 Chimeroid Slayer IX
+611 Chimeroid Slayer X
+612 Chimeroid Slayer XI
+613 Chimeroid Slayer XII
+614 Chimeroid Slayer XIII
+615 Chimeroid Slayer XIV
+616 Chimeroid Slayer XV
+617 Chimeroid Slayer XVI
+618 Chimeroid Slayer XVII
+619 Chimeroid Slayer XVIII
+61A Chimeroid Slayer XIX
+61B Chimeroid Slayer XX
 61C Ultrafauna Slayer I
+61D Ultrafauna Slayer II
+61E Ultrafauna Slayer III
+61F Ultrafauna Slayer IV
+620 Ultrafauna Slayer V
+621 Ultrafauna Slayer VI
+622 Ultrafauna Slayer VII
+623 Ultrafauna Slayer VIII
+624 Ultrafauna Slayer IX
+625 Ultrafauna Slayer X
+626 Ultrafauna Slayer XI
+627 Ultrafauna Slayer XII
+628 Ultrafauna Slayer XIII
+629 Ultrafauna Slayer XIV
+62A Ultrafauna Slayer XV
+62B Ultrafauna Slayer XVI
+62C Ultrafauna Slayer XVII
+62D Ultrafauna Slayer XVIII
+62E Ultrafauna Slayer XIX
+62F Ultrafauna Slayer XX
 630 Physical Attack Plus I
+631 Physical Attack Plus II
+632 Physical Attack Plus III
+633 Physical Attack Plus IV
+634 Physical Attack Plus V
+635 Physical Attack Plus VI
+636 Physical Attack Plus VII
+637 Physical Attack Plus VIII
+638 Physical Attack Plus IX
+639 Physical Attack Plus X
+63A Physical Attack Plus XI
+63B Physical Attack Plus XII
+63C Physical Attack Plus XIII
+63D Physical Attack Plus XIV
+63E Physical Attack Plus XV
+63F Physical Attack Plus XVI
+640 Physical Attack Plus XVII
+641 Physical Attack Plus XVIII
+642 Physical Attack Plus XIX
+643 Physical Attack Plus XX
 644 Beam Attack Plus I
+645 Beam Attack Plus II
+646 Beam Attack Plus III
+647 Beam Attack Plus IV
+648 Beam Attack Plus V
+649 Beam Attack Plus VI
+64A Beam Attack Plus VII
+64B Beam Attack Plus VIII
+64C Beam Attack Plus IX
+64D Beam Attack Plus X
+64E Beam Attack Plus XI
+64F Beam Attack Plus XII
+650 Beam Attack Plus XIII
+651 Beam Attack Plus XIV
+652 Beam Attack Plus XV
+653 Beam Attack Plus XVI
+654 Beam Attack Plus XVII
+655 Beam Attack Plus XVIII
+656 Beam Attack Plus XIX
+657 Beam Attack Plus XX
 658 Ether Attack Plus I
+659 Ether Attack Plus II
+65A Ether Attack Plus III
+65B Ether Attack Plus IV
+65C Ether Attack Plus V
+65D Ether Attack Plus VI
+65E Ether Attack Plus VII
+65F Ether Attack Plus VIII
+660 Ether Attack Plus IX
+661 Ether Attack Plus X
+662 Ether Attack Plus XI
+663 Ether Attack Plus XII
+664 Ether Attack Plus XIII
+665 Ether Attack Plus XIV
+666 Ether Attack Plus XV
+667 Ether Attack Plus XVI
+668 Ether Attack Plus XVII
+669 Ether Attack Plus XVIII
+66A Ether Attack Plus XIX
+66B Ether Attack Plus XX
 66C Thermal Attack Plus I
+66D Thermal Attack Plus II
+66E Thermal Attack Plus III
+66F Thermal Attack Plus IV
+670 Thermal Attack Plus V
+671 Thermal Attack Plus VI
+672 Thermal Attack Plus VII
+673 Thermal Attack Plus VIII
+674 Thermal Attack Plus IX
+675 Thermal Attack Plus X
+676 Thermal Attack Plus XI
+677 Thermal Attack Plus XII
+678 Thermal Attack Plus XIII
+679 Thermal Attack Plus XIV
+67A Thermal Attack Plus XV
+67B Thermal Attack Plus XVI
+67C Thermal Attack Plus XVII
+67D Thermal Attack Plus XVIII
+67E Thermal Attack Plus XIX
+67F Thermal Attack Plus XX
 680 Electric Attack Plus I
+681 Electric Attack Plus II
+682 Electric Attack Plus III
+683 Electric Attack Plus IV
+684 Electric Attack Plus V
+685 Electric Attack Plus VI
+686 Electric Attack Plus VII
+687 Electric Attack Plus VIII
+688 Electric Attack Plus IX
+689 Electric Attack Plus X
+68A Electric Attack Plus XI
+68B Electric Attack Plus XII
+68C Electric Attack Plus XIII
+68D Electric Attack Plus XIV
+68E Electric Attack Plus XV
+68F Electric Attack Plus XVI
+690 Electric Attack Plus XVII
+691 Electric Attack Plus XVIII
+692 Electric Attack Plus XIX
+693 Electric Attack Plus XX
 694 Gravity Attack Plus I
+695 Gravity Attack Plus II
+696 Gravity Attack Plus III
+697 Gravity Attack Plus IV
+698 Gravity Attack Plus V
+699 Gravity Attack Plus VI
+69A Gravity Attack Plus VII
+69B Gravity Attack Plus VIII
+69C Gravity Attack Plus IX
+69D Gravity Attack Plus X
+69E Gravity Attack Plus XI
+69F Gravity Attack Plus XII
+6A0 Gravity Attack Plus XIII
+6A1 Gravity Attack Plus XIV
+6A2 Gravity Attack Plus XV
+6A3 Gravity Attack Plus XVI
+6A4 Gravity Attack Plus XVII
+6A5 Gravity Attack Plus XVIII
+6A6 Gravity Attack Plus XIX
+6A7 Gravity Attack Plus XX
 6A8 Front Attack Plus I
+6A9 Front Attack Plus II
+6AA Front Attack Plus III
+6AB Front Attack Plus IV
+6AC Front Attack Plus V
+6AD Front Attack Plus VI
+6AE Front Attack Plus VII
+6AF Front Attack Plus VIII
+6B0 Front Attack Plus IX
+6B1 Front Attack Plus X
+6B2 Front Attack Plus XI
+6B3 Front Attack Plus XII
+6B4 Front Attack Plus XIII
+6B5 Front Attack Plus XIV
+6B6 Front Attack Plus XV
+6B7 Front Attack Plus XVI
+6B8 Front Attack Plus XVII
+6B9 Front Attack Plus XVIII
+6BA Front Attack Plus XIX
+6BB Front Attack Plus XX
 6BC Side Attack Plus I
+6BD Side Attack Plus II
+6BE Side Attack Plus III
+6BF Side Attack Plus IV
+6C0 Side Attack Plus V
+6C1 Side Attack Plus VI
+6C2 Side Attack Plus VII
+6C3 Side Attack Plus VIII
+6C4 Side Attack Plus IX
+6C5 Side Attack Plus X
+6C6 Side Attack Plus XI
+6C7 Side Attack Plus XII
+6C8 Side Attack Plus XIII
+6C9 Side Attack Plus XIV
+6CA Side Attack Plus XV
+6CB Side Attack Plus XVI
+6CC Side Attack Plus XVII
+6CD Side Attack Plus XVIII
+6CE Side Attack Plus XIX
+6CF Side Attack Plus XX
 6D0 Back Attack Plus I
+6D1 Back Attack Plus II
+6D2 Back Attack Plus III
+6D3 Back Attack Plus IV
+6D4 Back Attack Plus V
+6D5 Back Attack Plus VI
+6D6 Back Attack Plus VII
+6D7 Back Attack Plus VIII
+6D8 Back Attack Plus IX
+6D9 Back Attack Plus X
+6DA Back Attack Plus XI
+6DB Back Attack Plus XII
+6DC Back Attack Plus XIII
+6DD Back Attack Plus XIV
+6DE Back Attack Plus XV
+6DF Back Attack Plus XVI
+6E0 Back Attack Plus XVII
+6E1 Back Attack Plus XVIII
+6E2 Back Attack Plus XIX
+6E3 Back Attack Plus XX
 6E4 Vantage Attack Plus I
+6E5 Vantage Attack Plus II
+6E6 Vantage Attack Plus III
+6E7 Vantage Attack Plus IV
+6E8 Vantage Attack Plus V
+6E9 Vantage Attack Plus VI
+6EA Vantage Attack Plus VII
+6EB Vantage Attack Plus VIII
+6EC Vantage Attack Plus IX
+6ED Vantage Attack Plus X
+6EE Vantage Attack Plus XI
+6EF Vantage Attack Plus XII
+6F0 Vantage Attack Plus XIII
+6F1 Vantage Attack Plus XIV
+6F2 Vantage Attack Plus XV
+6F3 Vantage Attack Plus XVI
+6F4 Vantage Attack Plus XVII
+6F5 Vantage Attack Plus XVIII
+6F6 Vantage Attack Plus XIX
+6F7 Vantage Attack Plus XX
 6F8 Melee: Blackout I
+6F9 Melee: Blackout II
+6FA Melee: Blackout III
+6FB Melee: Blackout IV
+6FC Melee: Blackout V
+6FD Melee: Blackout VI
+6FE Melee: Blackout VII
+6FF Melee: Blackout VIII
+700 Melee: Blackout IX
+701 Melee: Blackout X
+702 Melee: Blackout XI
+703 Melee: Blackout XII
+704 Melee: Blackout XIII
+705 Melee: Blackout XIV
+706 Melee: Blackout XV
+707 Melee: Blackout XVI
+708 Melee: Blackout XVII
+709 Melee: Blackout XVIII
+70A Melee: Blackout XIX
+70B Melee: Blackout XX
 70C Melee: Fatigue I
+70D Melee: Fatigue II
+70E Melee: Fatigue III
+70F Melee: Fatigue IV
+710 Melee: Fatigue V
+711 Melee: Fatigue VI
+712 Melee: Fatigue VII
+713 Melee: Fatigue VIII
+714 Melee: Fatigue IX
+715 Melee: Fatigue X
+716 Melee: Fatigue XI
+717 Melee: Fatigue XII
+718 Melee: Fatigue XIII
+719 Melee: Fatigue XIV
+71A Melee: Fatigue XV
+71B Melee: Fatigue XVI
+71C Melee: Fatigue XVII
+71D Melee: Fatigue XVIII
+71E Melee: Fatigue XIX
+71F Melee: Fatigue XX
 720 Melee: Physical Res Down I
+721 Melee: Physical Res Down II
+722 Melee: Physical Res Down III
+723 Melee: Physical Res Down IV
+724 Melee: Physical Res Down V
+725 Melee: Physical Res Down VI
+726 Melee: Physical Res Down VII
+727 Melee: Physical Res Down VIII
+728 Melee: Physical Res Down IX
+729 Melee: Physical Res Down X
+72A Melee: Physical Res Down XI
+72B Melee: Physical Res Down XII
+72C Melee: Physical Res Down XIII
+72D Melee: Physical Res Down XIV
+72E Melee: Physical Res Down XV
+72F Melee: Physical Res Down XVI
+730 Melee: Physical Res Down XVII
+731 Melee: Physical Res Down XVIII
+732 Melee: Physical Res Down XIX
+733 Melee: Physical Res Down XX
 734 Melee: Beam Res Down I
+735 Melee: Beam Res Down II
+736 Melee: Beam Res Down III
+737 Melee: Beam Res Down IV
+738 Melee: Beam Res Down V
+739 Melee: Beam Res Down VI
+73A Melee: Beam Res Down VII
+73B Melee: Beam Res Down VIII
+73C Melee: Beam Res Down IX
+73D Melee: Beam Res Down X
+73E Melee: Beam Res Down XI
+73F Melee: Beam Res Down XII
+740 Melee: Beam Res Down XIII
+741 Melee: Beam Res Down XIV
+742 Melee: Beam Res Down XV
+743 Melee: Beam Res Down XVI
+744 Melee: Beam Res Down XVII
+745 Melee: Beam Res Down XVIII
+746 Melee: Beam Res Down XIX
+747 Melee: Beam Res Down XX
 748 Melee: Ether Res Down I
+749 Melee: Ether Res Down II
+74A Melee: Ether Res Down III
+74B Melee: Ether Res Down IV
+74C Melee: Ether Res Down V
+74D Melee: Ether Res Down VI
+74E Melee: Ether Res Down VII
+74F Melee: Ether Res Down VIII
+750 Melee: Ether Res Down IX
+751 Melee: Ether Res Down X
+752 Melee: Ether Res Down XI
+753 Melee: Ether Res Down XII
+754 Melee: Ether Res Down XIII
+755 Melee: Ether Res Down XIV
+756 Melee: Ether Res Down XV
+757 Melee: Ether Res Down XVI
+758 Melee: Ether Res Down XVII
+759 Melee: Ether Res Down XVIII
+75A Melee: Ether Res Down XIX
+75B Melee: Ether Res Down XX
 75C Melee: Thermal Res Down I
+75D Melee: Thermal Res Down II
+75E Melee: Thermal Res Down III
+75F Melee: Thermal Res Down IV
+760 Melee: Thermal Res Down V
+761 Melee: Thermal Res Down VI
+762 Melee: Thermal Res Down VII
+763 Melee: Thermal Res Down VIII
+764 Melee: Thermal Res Down IX
+765 Melee: Thermal Res Down X
+766 Melee: Thermal Res Down XI
+767 Melee: Thermal Res Down XII
+768 Melee: Thermal Res Down XIII
+769 Melee: Thermal Res Down XIV
+76A Melee: Thermal Res Down XV
+76B Melee: Thermal Res Down XVI
+76C Melee: Thermal Res Down XVII
+76D Melee: Thermal Res Down XVIII
+76E Melee: Thermal Res Down XIX
+76F Melee: Thermal Res Down XX
 770 Melee: Electric Res Down I
+771 Melee: Electric Res Down II
+772 Melee: Electric Res Down III
+773 Melee: Electric Res Down IV
+774 Melee: Electric Res Down V
+775 Melee: Electric Res Down VI
+776 Melee: Electric Res Down VII
+777 Melee: Electric Res Down VIII
+778 Melee: Electric Res Down IX
+779 Melee: Electric Res Down X
+77A Melee: Electric Res Down XI
+77B Melee: Electric Res Down XII
+77C Melee: Electric Res Down XIII
+77D Melee: Electric Res Down XIV
+77E Melee: Electric Res Down XV
+77F Melee: Electric Res Down XVI
+780 Melee: Electric Res Down XVII
+781 Melee: Electric Res Down XVIII
+782 Melee: Electric Res Down XIX
+783 Melee: Electric Res Down XX
 784 Melee: Gravity Res Down I
+785 Melee: Gravity Res Down II
+786 Melee: Gravity Res Down III
+787 Melee: Gravity Res Down IV
+788 Melee: Gravity Res Down V
+789 Melee: Gravity Res Down VI
+78A Melee: Gravity Res Down VII
+78B Melee: Gravity Res Down VIII
+78C Melee: Gravity Res Down IX
+78D Melee: Gravity Res Down X
+78E Melee: Gravity Res Down XI
+78F Melee: Gravity Res Down XII
+790 Melee: Gravity Res Down XIII
+791 Melee: Gravity Res Down XIV
+792 Melee: Gravity Res Down XV
+793 Melee: Gravity Res Down XVI
+794 Melee: Gravity Res Down XVII
+795 Melee: Gravity Res Down XVIII
+796 Melee: Gravity Res Down XIX
+797 Melee: Gravity Res Down XX
 798 Melee: Blaze I
+799 Melee: Blaze II
+79A Melee: Blaze III
+79B Melee: Blaze IV
+79C Melee: Blaze V
+79D Melee: Blaze VI
+79E Melee: Blaze VII
+79F Melee: Blaze VIII
+7A0 Melee: Blaze IX
+7A1 Melee: Blaze X
+7A2 Melee: Blaze XI
+7A3 Melee: Blaze XII
+7A4 Melee: Blaze XIII
+7A5 Melee: Blaze XIV
+7A6 Melee: Blaze XV
+7A7 Melee: Blaze XVI
+7A8 Melee: Blaze XVII
+7A9 Melee: Blaze XVIII
+7AA Melee: Blaze XIX
+7AB Melee: Blaze XX
 7AC Melee: Shock I
+7AD Melee: Shock II
+7AE Melee: Shock III
+7AF Melee: Shock IV
+7B0 Melee: Shock V
+7B1 Melee: Shock VI
+7B2 Melee: Shock VII
+7B3 Melee: Shock VIII
+7B4 Melee: Shock IX
+7B5 Melee: Shock X
+7B6 Melee: Shock XI
+7B7 Melee: Shock XII
+7B8 Melee: Shock XIII
+7B9 Melee: Shock XIV
+7BA Melee: Shock XV
+7BB Melee: Shock XVI
+7BC Melee: Shock XVII
+7BD Melee: Shock XVIII
+7BE Melee: Shock XIX
+7BF Melee: Shock XX
 7C0 Melee: Recover HP I
+7C1 Melee: Recover HP II
+7C2 Melee: Recover HP III
+7C3 Melee: Recover HP IV
+7C4 Melee: Recover HP V
+7C5 Melee: Recover HP VI
+7C6 Melee: Recover HP VII
+7C7 Melee: Recover HP VIII
+7C8 Melee: Recover HP IX
+7C9 Melee: Recover HP X
+7CA Melee: Recover HP XI
+7CB Melee: Recover HP XII
+7CC Melee: Recover HP XIII
+7CD Melee: Recover HP XIV
+7CE Melee: Recover HP XV
+7CF Melee: Recover HP XVI
+7D0 Melee: Recover HP XVII
+7D1 Melee: Recover HP XVIII
+7D2 Melee: Recover HP XIX
+7D3 Melee: Recover HP XX
 7D4 Soft Touch I
+7D5 Soft Touch II
+7D6 Soft Touch III
+7D7 Soft Touch IV
+7D8 Soft Touch V
+7D9 Soft Touch VI
+7DA Soft Touch VII
+7DB Soft Touch VIII
+7DC Soft Touch IX
+7DD Soft Touch X
+7DE Soft Touch XI
+7DF Soft Touch XII
+7E0 Soft Touch XIII
+7E1 Soft Touch XIV
+7E2 Soft Touch XV
+7E3 Soft Touch XVI
+7E4 Soft Touch XVII
+7E5 Soft Touch XVIII
+7E6 Soft Touch XIX
+7E7 Soft Touch XX
 7E8 HP Rebound I
+7E9 HP Rebound II
+7EA HP Rebound III
+7EB HP Rebound IV
+7EC HP Rebound V
+7ED HP Rebound VI
+7EE HP Rebound VII
+7EF HP Rebound VIII
+7F0 HP Rebound IX
+7F1 HP Rebound X
+7F2 HP Rebound XI
+7F3 HP Rebound XII
+7F4 HP Rebound XIII
+7F5 HP Rebound XIV
+7F6 HP Rebound XV
+7F7 HP Rebound XVI
+7F8 HP Rebound XVII
+7F9 HP Rebound XVIII
+7FA HP Rebound XIX
+7FB HP Rebound XX
 7FC TP Rebound I
+7FD TP Rebound II
+7FE TP Rebound III
+7FF TP Rebound IV
+800 TP Rebound V
+801 TP Rebound VI
+802 TP Rebound VII
+803 TP Rebound VIII
+804 TP Rebound IX
+805 TP Rebound X
+806 TP Rebound XI
+807 TP Rebound XII
+808 TP Rebound XIII
+809 TP Rebound XIV
+80A TP Rebound XV
+80B TP Rebound XVI
+80C TP Rebound XVII
+80D TP Rebound XVIII
+80E TP Rebound XIX
+80F TP Rebound XX
 810 Taunt: Barrier I
+811 Taunt: Barrier II
+812 Taunt: Barrier III
+813 Taunt: Barrier IV
+814 Taunt: Barrier V
+815 Taunt: Barrier VI
+816 Taunt: Barrier VII
+817 Taunt: Barrier VIII
+818 Taunt: Barrier IX
+819 Taunt: Barrier X
+81A Taunt: Barrier XI
+81B Taunt: Barrier XII
+81C Taunt: Barrier XIII
+81D Taunt: Barrier XIV
+81E Taunt: Barrier XV
+81F Taunt: Barrier XVI
+820 Taunt: Barrier XVII
+821 Taunt: Barrier XVIII
+822 Taunt: Barrier XIX
+823 Taunt: Barrier XX
 824 Taunt: Decoy I
+825 Taunt: Decoy II
+826 Taunt: Decoy III
+827 Taunt: Decoy IV
+828 Taunt: Decoy V
+829 Taunt: Decoy VI
+82A Taunt: Decoy VII
+82B Taunt: Decoy VIII
+82C Taunt: Decoy IX
+82D Taunt: Decoy X
+82E Taunt: Decoy XI
+82F Taunt: Decoy XII
+830 Taunt: Decoy XIII
+831 Taunt: Decoy XIV
+832 Taunt: Decoy XV
+833 Taunt: Decoy XVI
+834 Taunt: Decoy XVII
+835 Taunt: Decoy XVIII
+836 Taunt: Decoy XIX
+837 Taunt: Decoy XX
 838 Taunt: Supercharge I
+839 Taunt: Supercharge II
+83A Taunt: Supercharge III
+83B Taunt: Supercharge IV
+83C Taunt: Supercharge V
+83D Taunt: Supercharge VI
+83E Taunt: Supercharge VII
+83F Taunt: Supercharge VIII
+840 Taunt: Supercharge IX
+841 Taunt: Supercharge X
+842 Taunt: Supercharge XI
+843 Taunt: Supercharge XII
+844 Taunt: Supercharge XIII
+845 Taunt: Supercharge XIV
+846 Taunt: Supercharge XV
+847 Taunt: Supercharge XVI
+848 Taunt: Supercharge XVII
+849 Taunt: Supercharge XVIII
+84A Taunt: Supercharge XIX
+84B Taunt: Supercharge XX
 84C Topple: Barrier I
+84D Topple: Barrier II
+84E Topple: Barrier III
+84F Topple: Barrier IV
+850 Topple: Barrier V
+851 Topple: Barrier VI
+852 Topple: Barrier VII
+853 Topple: Barrier VIII
+854 Topple: Barrier IX
+855 Topple: Barrier X
+856 Topple: Barrier XI
+857 Topple: Barrier XII
+858 Topple: Barrier XIII
+859 Topple: Barrier XIV
+85A Topple: Barrier XV
+85B Topple: Barrier XVI
+85C Topple: Barrier XVII
+85D Topple: Barrier XVIII
+85E Topple: Barrier XIX
+85F Topple: Barrier XX
 860 Topple: Decoy I
+861 Topple: Decoy II
+862 Topple: Decoy III
+863 Topple: Decoy IV
+864 Topple: Decoy V
+865 Topple: Decoy VI
+866 Topple: Decoy VII
+867 Topple: Decoy VIII
+868 Topple: Decoy IX
+869 Topple: Decoy X
+86A Topple: Decoy XI
+86B Topple: Decoy XII
+86C Topple: Decoy XIII
+86D Topple: Decoy XIV
+86E Topple: Decoy XV
+86F Topple: Decoy XVI
+870 Topple: Decoy XVII
+871 Topple: Decoy XVIII
+872 Topple: Decoy XIX
+873 Topple: Decoy XX
 874 Stun: Barrier I
+875 Stun: Barrier II
+876 Stun: Barrier III
+877 Stun: Barrier IV
+878 Stun: Barrier V
+879 Stun: Barrier VI
+87A Stun: Barrier VII
+87B Stun: Barrier VIII
+87C Stun: Barrier IX
+87D Stun: Barrier X
+87E Stun: Barrier XI
+87F Stun: Barrier XII
+880 Stun: Barrier XIII
+881 Stun: Barrier XIV
+882 Stun: Barrier XV
+883 Stun: Barrier XVI
+884 Stun: Barrier XVII
+885 Stun: Barrier XVIII
+886 Stun: Barrier XIX
+887 Stun: Barrier XX
 888 Stun: Decoy I
+889 Stun: Decoy II
+88A Stun: Decoy III
+88B Stun: Decoy IV
+88C Stun: Decoy V
+88D Stun: Decoy VI
+88E Stun: Decoy VII
+88F Stun: Decoy VIII
+890 Stun: Decoy IX
+891 Stun: Decoy X
+892 Stun: Decoy XI
+893 Stun: Decoy XII
+894 Stun: Decoy XIII
+895 Stun: Decoy XIV
+896 Stun: Decoy XV
+897 Stun: Decoy XVI
+898 Stun: Decoy XVII
+899 Stun: Decoy XVIII
+89A Stun: Decoy XIX
+89B Stun: Decoy XX
 89C Reflect Physical
 89D Reflect Beam
 89E Reflect Ether
@@ -122,79 +2210,1172 @@
 8A0 Reflect Electric
 8A1 Reflect Gravity
 8A2 Reflect Damage Up I
+8A3 Reflect Damage Up II
+8A4 Reflect Damage Up III
+8A5 Reflect Damage Up IV
+8A6 Reflect Damage Up V
+8A7 Reflect Damage Up VI
+8A8 Reflect Damage Up VII
+8A9 Reflect Damage Up VIII
+8AA Reflect Damage Up IX
+8AB Reflect Damage Up X
+8AC Reflect Damage Up XI
+8AD Reflect Damage Up XII
+8AE Reflect Damage Up XIII
+8AF Reflect Damage Up XIV
+8B0 Reflect Damage Up XV
+8B1 Reflect Damage Up XVI
+8B2 Reflect Damage Up XVII
+8B3 Reflect Damage Up XVIII
+8B4 Reflect Damage Up XIX
+8B5 Reflect Damage Up XX
 8B6 Nullify Physical Reflect I
+8B7 Nullify Physical Reflect II
+8B8 Nullify Physical Reflect III
+8B9 Nullify Physical Reflect IV
+8BA Nullify Physical Reflect V
+8BB Nullify Physical Reflect VI
+8BC Nullify Physical Reflect VII
+8BD Nullify Physical Reflect VIII
+8BE Nullify Physical Reflect IX
+8BF Nullify Physical Reflect X
+8C0 Nullify Physical Reflect XI
+8C1 Nullify Physical Reflect XII
+8C2 Nullify Physical Reflect XIII
+8C3 Nullify Physical Reflect XIV
+8C4 Nullify Physical Reflect XV
+8C5 Nullify Physical Reflect XVI
+8C6 Nullify Physical Reflect XVII
+8C7 Nullify Physical Reflect XVIII
+8C8 Nullify Physical Reflect XIX
+8C9 Nullify Physical Reflect XX
 8CA Nullify Beam Reflect I
+8CB Nullify Beam Reflect II
+8CC Nullify Beam Reflect III
+8CD Nullify Beam Reflect IV
+8CE Nullify Beam Reflect V
+8CF Nullify Beam Reflect VI
+8D0 Nullify Beam Reflect VII
+8D1 Nullify Beam Reflect VIII
+8D2 Nullify Beam Reflect IX
+8D3 Nullify Beam Reflect X
+8D4 Nullify Beam Reflect XI
+8D5 Nullify Beam Reflect XII
+8D6 Nullify Beam Reflect XIII
+8D7 Nullify Beam Reflect XIV
+8D8 Nullify Beam Reflect XV
+8D9 Nullify Beam Reflect XVI
+8DA Nullify Beam Reflect XVII
+8DB Nullify Beam Reflect XVIII
+8DC Nullify Beam Reflect XIX
+8DD Nullify Beam Reflect XX
 8DE Nullify Ether Reflect I
+8DF Nullify Ether Reflect II
+8E0 Nullify Ether Reflect III
+8E1 Nullify Ether Reflect IV
+8E2 Nullify Ether Reflect V
+8E3 Nullify Ether Reflect VI
+8E4 Nullify Ether Reflect VII
+8E5 Nullify Ether Reflect VIII
+8E6 Nullify Ether Reflect IX
+8E7 Nullify Ether Reflect X
+8E8 Nullify Ether Reflect XI
+8E9 Nullify Ether Reflect XII
+8EA Nullify Ether Reflect XIII
+8EB Nullify Ether Reflect XIV
+8EC Nullify Ether Reflect XV
+8ED Nullify Ether Reflect XVI
+8EE Nullify Ether Reflect XVII
+8EF Nullify Ether Reflect XVIII
+8F0 Nullify Ether Reflect XIX
+8F1 Nullify Ether Reflect XX
 8F2 Nullify Thermal Reflect I
+8F3 Nullify Thermal Reflect II
+8F4 Nullify Thermal Reflect III
+8F5 Nullify Thermal Reflect IV
+8F6 Nullify Thermal Reflect V
+8F7 Nullify Thermal Reflect VI
+8F8 Nullify Thermal Reflect VII
+8F9 Nullify Thermal Reflect VIII
+8FA Nullify Thermal Reflect IX
+8FB Nullify Thermal Reflect X
+8FC Nullify Thermal Reflect XI
+8FD Nullify Thermal Reflect XII
+8FE Nullify Thermal Reflect XIII
+8FF Nullify Thermal Reflect XIV
+900 Nullify Thermal Reflect XV
+901 Nullify Thermal Reflect XVI
+902 Nullify Thermal Reflect XVII
+903 Nullify Thermal Reflect XVIII
+904 Nullify Thermal Reflect XIX
+905 Nullify Thermal Reflect XX
 906 Nullify Electric Reflect I
+907 Nullify Electric Reflect II
+908 Nullify Electric Reflect III
+909 Nullify Electric Reflect IV
+90A Nullify Electric Reflect V
+90B Nullify Electric Reflect VI
+90C Nullify Electric Reflect VII
+90D Nullify Electric Reflect VIII
+90E Nullify Electric Reflect IX
+90F Nullify Electric Reflect X
+910 Nullify Electric Reflect XI
+911 Nullify Electric Reflect XII
+912 Nullify Electric Reflect XIII
+913 Nullify Electric Reflect XIV
+914 Nullify Electric Reflect XV
+915 Nullify Electric Reflect XVI
+916 Nullify Electric Reflect XVII
+917 Nullify Electric Reflect XVIII
+918 Nullify Electric Reflect XIX
+919 Nullify Electric Reflect XX
 91A Nullify Gravity Reflect I
+91B Nullify Gravity Reflect II
+91C Nullify Gravity Reflect III
+91D Nullify Gravity Reflect IV
+91E Nullify Gravity Reflect V
+91F Nullify Gravity Reflect VI
+920 Nullify Gravity Reflect VII
+921 Nullify Gravity Reflect VIII
+922 Nullify Gravity Reflect IX
+923 Nullify Gravity Reflect X
+924 Nullify Gravity Reflect XI
+925 Nullify Gravity Reflect XII
+926 Nullify Gravity Reflect XIII
+927 Nullify Gravity Reflect XIV
+928 Nullify Gravity Reflect XV
+929 Nullify Gravity Reflect XVI
+92A Nullify Gravity Reflect XVII
+92B Nullify Gravity Reflect XVIII
+92C Nullify Gravity Reflect XIX
+92D Nullify Gravity Reflect XX
 92E Overdrive: Recover HP I
+92F Overdrive: Recover HP II
+930 Overdrive: Recover HP III
+931 Overdrive: Recover HP IV
+932 Overdrive: Recover HP V
+933 Overdrive: Recover HP VI
+934 Overdrive: Recover HP VII
+935 Overdrive: Recover HP VIII
+936 Overdrive: Recover HP IX
+937 Overdrive: Recover HP X
+938 Overdrive: Recover HP XI
+939 Overdrive: Recover HP XII
+93A Overdrive: Recover HP XIII
+93B Overdrive: Recover HP XIV
+93C Overdrive: Recover HP XV
+93D Overdrive: Recover HP XVI
+93E Overdrive: Recover HP XVII
+93F Overdrive: Recover HP XVIII
+940 Overdrive: Recover HP XIX
+941 Overdrive: Recover HP XX
 942 Overdrive: Gain TP I
+943 Overdrive: Gain TP II
+944 Overdrive: Gain TP III
+945 Overdrive: Gain TP IV
+946 Overdrive: Gain TP V
+947 Overdrive: Gain TP VI
+948 Overdrive: Gain TP VII
+949 Overdrive: Gain TP VIII
+94A Overdrive: Gain TP IX
+94B Overdrive: Gain TP X
+94C Overdrive: Gain TP XI
+94D Overdrive: Gain TP XII
+94E Overdrive: Gain TP XIII
+94F Overdrive: Gain TP XIV
+950 Overdrive: Gain TP XV
+951 Overdrive: Gain TP XVI
+952 Overdrive: Gain TP XVII
+953 Overdrive: Gain TP XVIII
+954 Overdrive: Gain TP XIX
+955 Overdrive: Gain TP XX
 956 Overdrive: Count Up I
+957 Overdrive: Count Up II
+958 Overdrive: Count Up III
+959 Overdrive: Count Up IV
+95A Overdrive: Count Up V
+95B Overdrive: Count Up VI
+95C Overdrive: Count Up VII
+95D Overdrive: Count Up VIII
+95E Overdrive: Count Up IX
+95F Overdrive: Count Up X
+960 Overdrive: Count Up XI
+961 Overdrive: Count Up XII
+962 Overdrive: Count Up XIII
+963 Overdrive: Count Up XIV
+964 Overdrive: Count Up XV
+965 Overdrive: Count Up XVI
+966 Overdrive: Count Up XVII
+967 Overdrive: Count Up XVIII
+968 Overdrive: Count Up XIX
+969 Overdrive: Count Up XX
 96A Extend OverDrive I
+96B Extend OverDrive II
+96C Extend OverDrive III
+96D Extend OverDrive IV
+96E Extend OverDrive V
+96F Extend OverDrive VI
+970 Extend OverDrive VII
+971 Extend OverDrive VIII
+972 Extend OverDrive IX
+973 Extend OverDrive X
+974 Extend OverDrive XI
+975 Extend OverDrive XII
+976 Extend OverDrive XIII
+977 Extend OverDrive XIV
+978 Extend OverDrive XV
+979 Extend OverDrive XVI
+97A Extend OverDrive XVII
+97B Extend OverDrive XVIII
+97C Extend OverDrive XIX
+97D Extend OverDrive XX
 97E Overdrive Blue Bonus
 97F Overdrive Green Bonus
 980 Extend Aura I
-994 Aura Repid Cooldown I
+981 Extend Aura II
+982 Extend Aura III
+983 Extend Aura IV
+984 Extend Aura V
+985 Extend Aura VI
+986 Extend Aura VII
+987 Extend Aura VIII
+988 Extend Aura IX
+989 Extend Aura X
+98A Extend Aura XI
+98B Extend Aura XII
+98C Extend Aura XIII
+98D Extend Aura XIV
+98E Extend Aura XV
+98F Extend Aura XVI
+990 Extend Aura XVII
+991 Extend Aura XVIII
+992 Extend Aura XIX
+993 Extend Aura XX
+994 Aura Rapid Cooldown I
+995 Aura Rapid Cooldown II
+996 Aura Rapid Cooldown III
+997 Aura Rapid Cooldown IV
+998 Aura Rapid Cooldown V
+999 Aura Rapid Cooldown VI
+99A Aura Rapid Cooldown VII
+99B Aura Rapid Cooldown VIII
+99C Aura Rapid Cooldown IX
+99D Aura Rapid Cooldown X
+99E Aura Rapid Cooldown XI
+99F Aura Rapid Cooldown XII
+9A0 Aura Rapid Cooldown XIII
+9A1 Aura Rapid Cooldown XIV
+9A2 Aura Rapid Cooldown XV
+9A3 Aura Rapid Cooldown XVI
+9A4 Aura Rapid Cooldown XVII
+9A5 Aura Rapid Cooldown XVIII
+9A6 Aura Rapid Cooldown XIX
+9A7 Aura Rapid Cooldown XX
 9A8 Aura: Refuel I
+9A9 Aura: Refuel II
+9AA Aura: Refuel III
+9AB Aura: Refuel IV
+9AC Aura: Refuel V
+9AD Aura: Refuel VI
+9AE Aura: Refuel VII
+9AF Aura: Refuel VIII
+9B0 Aura: Refuel IX
+9B1 Aura: Refuel X
+9B2 Aura: Refuel XI
+9B3 Aura: Refuel XII
+9B4 Aura: Refuel XIII
+9B5 Aura: Refuel XIV
+9B6 Aura: Refuel XV
+9B7 Aura: Refuel XVI
+9B8 Aura: Refuel XVII
+9B9 Aura: Refuel XVIII
+9BA Aura: Refuel XIX
+9BB Aura: Refuel XX
 9BC Arts: Gain TP I
+9BD Arts: Gain TP II
+9BE Arts: Gain TP III
+9BF Arts: Gain TP IV
+9C0 Arts: Gain TP V
+9C1 Arts: Gain TP VI
+9C2 Arts: Gain TP VII
+9C3 Arts: Gain TP VIII
+9C4 Arts: Gain TP IX
+9C5 Arts: Gain TP X
+9C6 Arts: Gain TP XI
+9C7 Arts: Gain TP XII
+9C8 Arts: Gain TP XIII
+9C9 Arts: Gain TP XIV
+9CA Arts: Gain TP XV
+9CB Arts: Gain TP XVI
+9CC Arts: Gain TP XVII
+9CD Arts: Gain TP XVIII
+9CE Arts: Gain TP XIX
+9CF Arts: Gain TP XX
 9D0 Arts: Recover HP I
+9D1 Arts: Recover HP II
+9D2 Arts: Recover HP III
+9D3 Arts: Recover HP IV
+9D4 Arts: Recover HP V
+9D5 Arts: Recover HP VI
+9D6 Arts: Recover HP VII
+9D7 Arts: Recover HP VIII
+9D8 Arts: Recover HP IX
+9D9 Arts: Recover HP X
+9DA Arts: Recover HP XI
+9DB Arts: Recover HP XII
+9DC Arts: Recover HP XIII
+9DD Arts: Recover HP XIV
+9DE Arts: Recover HP XV
+9DF Arts: Recover HP XVI
+9E0 Arts: Recover HP XVII
+9E1 Arts: Recover HP XVIII
+9E2 Arts: Recover HP XIX
+9E3 Arts: Recover HP XX
 9E4 Secondary CD Reducer I
+9E5 Secondary CD Reducer II
+9E6 Secondary CD Reducer III
+9E7 Secondary CD Reducer IV
+9E8 Secondary CD Reducer V
+9E9 Secondary CD Reducer VI
+9EA Secondary CD Reducer VII
+9EB Secondary CD Reducer VIII
+9EC Secondary CD Reducer IX
+9ED Secondary CD Reducer X
+9EE Secondary CD Reducer XI
+9EF Secondary CD Reducer XII
+9F0 Secondary CD Reducer XIII
+9F1 Secondary CD Reducer XIV
+9F2 Secondary CD Reducer XV
+9F3 Secondary CD Reducer XVI
+9F4 Secondary CD Reducer XVII
+9F5 Secondary CD Reducer XVIII
+9F6 Secondary CD Reducer XIX
+9F7 Secondary CD Reducer XX
 9F8 Extend Taunt I
+9F9 Extend Taunt II
+9FA Extend Taunt III
+9FB Extend Taunt IV
+9FC Extend Taunt V
+9FD Extend Taunt VI
+9FE Extend Taunt VII
+9FF Extend Taunt VIII
+A00 Extend Taunt IX
+A01 Extend Taunt X
+A02 Extend Taunt XI
+A03 Extend Taunt XII
+A04 Extend Taunt XIII
+A05 Extend Taunt XIV
+A06 Extend Taunt XV
+A07 Extend Taunt XVI
+A08 Extend Taunt XVII
+A09 Extend Taunt XVIII
+A0A Extend Taunt XIX
+A0B Extend Taunt XX
 A0C Extend Control I
+A0D Extend Control II
+A0E Extend Control III
+A0F Extend Control IV
+A10 Extend Control V
+A11 Extend Control VI
+A12 Extend Control VII
+A13 Extend Control VIII
+A14 Extend Control IX
+A15 Extend Control X
+A16 Extend Control XI
+A17 Extend Control XII
+A18 Extend Control XIII
+A19 Extend Control XIV
+A1A Extend Control XV
+A1B Extend Control XVI
+A1C Extend Control XVII
+A1D Extend Control XVIII
+A1E Extend Control XIX
+A1F Extend Control XX
 A20 Extend Virus I
+A21 Extend Virus II
+A22 Extend Virus III
+A23 Extend Virus IV
+A24 Extend Virus V
+A25 Extend Virus VI
+A26 Extend Virus VII
+A27 Extend Virus VIII
+A28 Extend Virus IX
+A29 Extend Virus X
+A2A Extend Virus XI
+A2B Extend Virus XII
+A2C Extend Virus XIII
+A2D Extend Virus XIV
+A2E Extend Virus XV
+A2F Extend Virus XVI
+A30 Extend Virus XVII
+A31 Extend Virus XVIII
+A32 Extend Virus XIX
+A33 Extend Virus XX
 A34 Extend Blackout I
+A35 Extend Blackout II
+A36 Extend Blackout III
+A37 Extend Blackout IV
+A38 Extend Blackout V
+A39 Extend Blackout VI
+A3A Extend Blackout VII
+A3B Extend Blackout VIII
+A3C Extend Blackout IX
+A3D Extend Blackout X
+A3E Extend Blackout XI
+A3F Extend Blackout XII
+A40 Extend Blackout XIII
+A41 Extend Blackout XIV
+A42 Extend Blackout XV
+A43 Extend Blackout XVI
+A44 Extend Blackout XVII
+A45 Extend Blackout XVIII
+A46 Extend Blackout XIX
+A47 Extend Blackout XX
 A48 Extend Fatigue I
+A49 Extend Fatigue II
+A4A Extend Fatigue III
+A4B Extend Fatigue IV
+A4C Extend Fatigue V
+A4D Extend Fatigue VI
+A4E Extend Fatigue VII
+A4F Extend Fatigue VIII
+A50 Extend Fatigue IX
+A51 Extend Fatigue X
+A52 Extend Fatigue XI
+A53 Extend Fatigue XII
+A54 Extend Fatigue XIII
+A55 Extend Fatigue XIV
+A56 Extend Fatigue XV
+A57 Extend Fatigue XVI
+A58 Extend Fatigue XVII
+A59 Extend Fatigue XVIII
+A5A Extend Fatigue XIX
+A5B Extend Fatigue XX
 A5C Extend Slow Arts I
+A5D Extend Slow Arts II
+A5E Extend Slow Arts III
+A5F Extend Slow Arts IV
+A60 Extend Slow Arts V
+A61 Extend Slow Arts VI
+A62 Extend Slow Arts VII
+A63 Extend Slow Arts VIII
+A64 Extend Slow Arts IX
+A65 Extend Slow Arts X
+A66 Extend Slow Arts XI
+A67 Extend Slow Arts XII
+A68 Extend Slow Arts XIII
+A69 Extend Slow Arts XIV
+A6A Extend Slow Arts XV
+A6B Extend Slow Arts XVI
+A6C Extend Slow Arts XVII
+A6D Extend Slow Arts XVIII
+A6E Extend Slow Arts XIX
+A6F Extend Slow Arts XX
 A70 Extend Debuff Res Down I
 # A84 DEBUG
+A71 Extend Debuff Res Down II
+A72 Extend Debuff Res Down III
+A73 Extend Debuff Res Down IV
+A74 Extend Debuff Res Down V
+A75 Extend Debuff Res Down VI
+A76 Extend Debuff Res Down VII
+A77 Extend Debuff Res Down VIII
+A78 Extend Debuff Res Down IX
+A79 Extend Debuff Res Down X
+A7A Extend Debuff Res Down XI
+A7B Extend Debuff Res Down XII
+A7C Extend Debuff Res Down XIII
+A7D Extend Debuff Res Down XIV
+A7E Extend Debuff Res Down XV
+A7F Extend Debuff Res Down XVI
+A80 Extend Debuff Res Down XVII
+A81 Extend Debuff Res Down XVIII
+A82 Extend Debuff Res Down XIX
+A83 Extend Debuff Res Down XX
 A98 Extend Blaze I
+A99 Extend Blaze II
+A9A Extend Blaze III
+A9B Extend Blaze IV
+A9C Extend Blaze V
+A9D Extend Blaze VI
+A9E Extend Blaze VII
+A9F Extend Blaze VIII
+AA0 Extend Blaze IX
+AA1 Extend Blaze X
+AA2 Extend Blaze XI
+AA3 Extend Blaze XII
+AA4 Extend Blaze XIII
+AA5 Extend Blaze XIV
+AA6 Extend Blaze XV
+AA7 Extend Blaze XVI
+AA8 Extend Blaze XVII
+AA9 Extend Blaze XVIII
+AAA Extend Blaze XIX
+AAB Extend Blaze XX
 AAC Extend Shock I
+AAD Extend Shock II
+AAE Extend Shock III
+AAF Extend Shock IV
+AB0 Extend Shock V
+AB1 Extend Shock VI
+AB2 Extend Shock VII
+AB3 Extend Shock VIII
+AB4 Extend Shock IX
+AB5 Extend Shock X
+AB6 Extend Shock XI
+AB7 Extend Shock XII
+AB8 Extend Shock XIII
+AB9 Extend Shock XIV
+ABA Extend Shock XV
+ABB Extend Shock XVI
+ABC Extend Shock XVII
+ABD Extend Shock XVIII
+ABE Extend Shock XIX
+ABF Extend Shock XX
 AC0 Extended Phys Res Down I
+AC1 Extended Phys Res Down II
+AC2 Extended Phys Res Down III
+AC3 Extended Phys Res Down IV
+AC4 Extended Phys Res Down V
+AC5 Extended Phys Res Down VI
+AC6 Extended Phys Res Down VII
+AC7 Extended Phys Res Down VIII
+AC8 Extended Phys Res Down IX
+AC9 Extended Phys Res Down X
+ACA Extended Phys Res Down XI
+ACB Extended Phys Res Down XII
+ACC Extended Phys Res Down XIII
+ACD Extended Phys Res Down XIV
+ACE Extended Phys Res Down XV
+ACF Extended Phys Res Down XVI
+AD0 Extended Phys Res Down XVII
+AD1 Extended Phys Res Down XVIII
+AD2 Extended Phys Res Down XIX
+AD3 Extended Phys Res Down XX
 AD4 Extended Beam Res Down I
+AD5 Extended Beam Res Down II
+AD6 Extended Beam Res Down III
+AD7 Extended Beam Res Down IV
+AD8 Extended Beam Res Down V
+AD9 Extended Beam Res Down VI
+ADA Extended Beam Res Down VII
+ADB Extended Beam Res Down VIII
+ADC Extended Beam Res Down IX
+ADD Extended Beam Res Down X
+ADE Extended Beam Res Down XI
+ADF Extended Beam Res Down XII
+AE0 Extended Beam Res Down XIII
+AE1 Extended Beam Res Down XIV
+AE2 Extended Beam Res Down XV
+AE3 Extended Beam Res Down XVI
+AE4 Extended Beam Res Down XVII
+AE5 Extended Beam Res Down XVIII
+AE6 Extended Beam Res Down XIX
+AE7 Extended Beam Res Down XX
 AE8 Extend Ether Res Down I
+AE9 Extend Ether Res Down II
+AEA Extend Ether Res Down III
+AEB Extend Ether Res Down IV
+AEC Extend Ether Res Down V
+AED Extend Ether Res Down VI
+AEE Extend Ether Res Down VII
+AEF Extend Ether Res Down VIII
+AF0 Extend Ether Res Down IX
+AF1 Extend Ether Res Down X
+AF2 Extend Ether Res Down XI
+AF3 Extend Ether Res Down XII
+AF4 Extend Ether Res Down XIII
+AF5 Extend Ether Res Down XIV
+AF6 Extend Ether Res Down XV
+AF7 Extend Ether Res Down XVI
+AF8 Extend Ether Res Down XVII
+AF9 Extend Ether Res Down XVIII
+AFA Extend Ether Res Down XIX
+AFB Extend Ether Res Down XX
 AFC Extend Thermal Res Down I
+AFD Extend Thermal Res Down II
+AFE Extend Thermal Res Down III
+AFF Extend Thermal Res Down IV
+B00 Extend Thermal Res Down V
+B01 Extend Thermal Res Down VI
+B02 Extend Thermal Res Down VII
+B03 Extend Thermal Res Down VIII
+B04 Extend Thermal Res Down IX
+B05 Extend Thermal Res Down X
+B06 Extend Thermal Res Down XI
+B07 Extend Thermal Res Down XII
+B08 Extend Thermal Res Down XIII
+B09 Extend Thermal Res Down XIV
+B0A Extend Thermal Res Down XV
+B0B Extend Thermal Res Down XVI
+B0C Extend Thermal Res Down XVII
+B0D Extend Thermal Res Down XVIII
+B0E Extend Thermal Res Down XIX
+B0F Extend Thermal Res Down XX
 B10 Extend Electric Res Down I
+B11 Extend Electric Res Down II
+B12 Extend Electric Res Down III
+B13 Extend Electric Res Down IV
+B14 Extend Electric Res Down V
+B15 Extend Electric Res Down VI
+B16 Extend Electric Res Down VII
+B17 Extend Electric Res Down VIII
+B18 Extend Electric Res Down IX
+B19 Extend Electric Res Down X
+B1A Extend Electric Res Down XI
+B1B Extend Electric Res Down XII
+B1C Extend Electric Res Down XIII
+B1D Extend Electric Res Down XIV
+B1E Extend Electric Res Down XV
+B1F Extend Electric Res Down XVI
+B20 Extend Electric Res Down XVII
+B21 Extend Electric Res Down XVIII
+B22 Extend Electric Res Down XIX
+B23 Extend Electric Res Down XX
 B24 Extend Gravity Res Down I
 # B38 DEBUG
+B25 Extend Gravity Res Down II
+B26 Extend Gravity Res Down III
+B27 Extend Gravity Res Down IV
+B28 Extend Gravity Res Down V
+B29 Extend Gravity Res Down VI
+B2A Extend Gravity Res Down VII
+B2B Extend Gravity Res Down VIII
+B2C Extend Gravity Res Down IX
+B2D Extend Gravity Res Down X
+B2E Extend Gravity Res Down XI
+B2F Extend Gravity Res Down XII
+B30 Extend Gravity Res Down XIII
+B31 Extend Gravity Res Down XIV
+B32 Extend Gravity Res Down XV
+B33 Extend Gravity Res Down XVI
+B34 Extend Gravity Res Down XVII
+B35 Extend Gravity Res Down XVIII
+B36 Extend Gravity Res Down XIX
+B37 Extend Gravity Res Down XX
 B4C Opening Act: Damage Up I
-# B60 DEBUG
-# B74 DEBUG
-# B88 DEBUG
-# B9C DEBUG
-# BB0 DEBUG
-# BC4 DEBUG
-# BD8 DEBUG
-# BEC DEBUG
-# C00 DEBUG
-# C14 DEBUG
+# B60-C14 DEBUG
+B4D Opening Act: Damage Up II
+B4E Opening Act: Damage Up III
+B4F Opening Act: Damage Up IV
+B50 Opening Act: Damage Up V
+B51 Opening Act: Damage Up VI
+B52 Opening Act: Damage Up VII
+B53 Opening Act: Damage Up VIII
+B54 Opening Act: Damage Up IX
+B55 Opening Act: Damage Up X
+B56 Opening Act: Damage Up XI
+B57 Opening Act: Damage Up XII
+B58 Opening Act: Damage Up XIII
+B59 Opening Act: Damage Up XIV
+B5A Opening Act: Damage Up XV
+B5B Opening Act: Damage Up XVI
+B5C Opening Act: Damage Up XVII
+B5D Opening Act: Damage Up XVIII
+B5E Opening Act: Damage Up XIX
+B5F Opening Act: Damage Up XX
 C28 Melee Draw Surge I
+C29 Melee Draw Surge II
+C2A Melee Draw Surge III
+C2B Melee Draw Surge IV
+C2C Melee Draw Surge V
+C2D Melee Draw Surge VI
+C2E Melee Draw Surge VII
+C2F Melee Draw Surge VIII
+C30 Melee Draw Surge IX
+C31 Melee Draw Surge X
+C32 Melee Draw Surge XI
+C33 Melee Draw Surge XII
+C34 Melee Draw Surge XIII
+C35 Melee Draw Surge XIV
+C36 Melee Draw Surge XV
+C37 Melee Draw Surge XVI
+C38 Melee Draw Surge XVII
+C39 Melee Draw Surge XVIII
+C3A Melee Draw Surge XIX
+C3B Melee Draw Surge XX
 C3C Ranged Draw Surge I
+C3D Ranged Draw Surge II
+C3E Ranged Draw Surge III
+C3F Ranged Draw Surge IV
+C40 Ranged Draw Surge V
+C41 Ranged Draw Surge VI
+C42 Ranged Draw Surge VII
+C43 Ranged Draw Surge VIII
+C44 Ranged Draw Surge IX
+C45 Ranged Draw Surge X
+C46 Ranged Draw Surge XI
+C47 Ranged Draw Surge XII
+C48 Ranged Draw Surge XIII
+C49 Ranged Draw Surge XIV
+C4A Ranged Draw Surge XV
+C4B Ranged Draw Surge XVI
+C4C Ranged Draw Surge XVII
+C4D Ranged Draw Surge XVIII
+C4E Ranged Draw Surge XIX
+C4F Ranged Draw Surge XX
 C50 Art Draw Surge I
+C51 Art Draw Surge II
+C52 Art Draw Surge III
+C53 Art Draw Surge IV
+C54 Art Draw Surge V
+C55 Art Draw Surge VI
+C56 Art Draw Surge VII
+C57 Art Draw Surge VIII
+C58 Art Draw Surge IX
+C59 Art Draw Surge X
+C5A Art Draw Surge XI
+C5B Art Draw Surge XII
+C5C Art Draw Surge XIII
+C5D Art Draw Surge XIV
+C5E Art Draw Surge XV
+C5F Art Draw Surge XVI
+C60 Art Draw Surge XVII
+C61 Art Draw Surge XVIII
+C62 Art Draw Surge XIX
+C63 Art Draw Surge XX
 C64 Danger Surge I
+C65 Danger Surge II
+C66 Danger Surge III
+C67 Danger Surge IV
+C68 Danger Surge V
+C69 Danger Surge VI
+C6A Danger Surge VII
+C6B Danger Surge VIII
+C6C Danger Surge IX
+C6D Danger Surge X
+C6E Danger Surge XI
+C6F Danger Surge XII
+C70 Danger Surge XIII
+C71 Danger Surge XIV
+C72 Danger Surge XV
+C73 Danger Surge XVI
+C74 Danger Surge XVII
+C75 Danger Surge XVIII
+C76 Danger Surge XIX
+C77 Danger Surge XX
 C78 High Danger Surge I
+C79 High Danger Surge II
+C7A High Danger Surge III
+C7B High Danger Surge IV
+C7C High Danger Surge V
+C7D High Danger Surge VI
+C7E High Danger Surge VII
+C7F High Danger Surge VIII
+C80 High Danger Surge IX
+C81 High Danger Surge X
+C82 High Danger Surge XI
+C83 High Danger Surge XII
+C84 High Danger Surge XIII
+C85 High Danger Surge XIV
+C86 High Danger Surge XV
+C87 High Danger Surge XVI
+C88 High Danger Surge XVII
+C89 High Danger Surge XVIII
+C8A High Danger Surge XIX
+C8B High Danger Surge XX
 C8C Incapacitation Surge I
+C8D Incapacitation Surge II
+C8E Incapacitation Surge III
+C8F Incapacitation Surge IV
+C90 Incapacitation Surge V
+C91 Incapacitation Surge VI
+C92 Incapacitation Surge VII
+C93 Incapacitation Surge VIII
+C94 Incapacitation Surge IX
+C95 Incapacitation Surge X
+C96 Incapacitation Surge XI
+C97 Incapacitation Surge XII
+C98 Incapacitation Surge XIII
+C99 Incapacitation Surge XIV
+C9A Incapacitation Surge XV
+C9B Incapacitation Surge XVI
+C9C Incapacitation Surge XVII
+C9D Incapacitation Surge XVIII
+C9E Incapacitation Surge XIX
+C9F Incapacitation Surge XX
 CA0 Critical Surge I
+CA1 Critical Surge II
+CA2 Critical Surge III
+CA3 Critical Surge IV
+CA4 Critical Surge V
+CA5 Critical Surge VI
+CA6 Critical Surge VII
+CA7 Critical Surge VIII
+CA8 Critical Surge IX
+CA9 Critical Surge X
+CAA Critical Surge XI
+CAB Critical Surge XII
+CAC Critical Surge XIII
+CAD Critical Surge XIV
+CAE Critical Surge XV
+CAF Critical Surge XVI
+CB0 Critical Surge XVII
+CB1 Critical Surge XVIII
+CB2 Critical Surge XIX
+CB3 Critical Surge XX
 CB4 Crush Surge I
+CB5 Crush Surge II
+CB6 Crush Surge III
+CB7 Crush Surge IV
+CB8 Crush Surge V
+CB9 Crush Surge VI
+CBA Crush Surge VII
+CBB Crush Surge VIII
+CBC Crush Surge IX
+CBD Crush Surge X
+CBE Crush Surge XI
+CBF Crush Surge XII
+CC0 Crush Surge XIII
+CC1 Crush Surge XIV
+CC2 Crush Surge XV
+CC3 Crush Surge XVI
+CC4 Crush Surge XVII
+CC5 Crush Surge XVIII
+CC6 Crush Surge XIX
+CC7 Crush Surge XX
 CC8 Underdog Surge I
+CC9 Underdog Surge II
+CCA Underdog Surge III
+CCB Underdog Surge IV
+CCC Underdog Surge V
+CCD Underdog Surge VI
+CCE Underdog Surge VII
+CCF Underdog Surge VIII
+CD0 Underdog Surge IX
+CD1 Underdog Surge X
+CD2 Underdog Surge XI
+CD3 Underdog Surge XII
+CD4 Underdog Surge XIII
+CD5 Underdog Surge XIV
+CD6 Underdog Surge XV
+CD7 Underdog Surge XVI
+CD8 Underdog Surge XVII
+CD9 Underdog Surge XVIII
+CDA Underdog Surge XIX
+CDB Underdog Surge XX
 CDC Artful Execution Surge I
+CDD Artful Execution Surge II
+CDE Artful Execution Surge III
+CDF Artful Execution Surge IV
+CE0 Artful Execution Surge V
+CE1 Artful Execution Surge VI
+CE2 Artful Execution Surge VII
+CE3 Artful Execution Surge VIII
+CE4 Artful Execution Surge IX
+CE5 Artful Execution Surge X
+CE6 Artful Execution Surge XI
+CE7 Artful Execution Surge XII
+CE8 Artful Execution Surge XIII
+CE9 Artful Execution Surge XIV
+CEA Artful Execution Surge XV
+CEB Artful Execution Surge XVI
+CEC Artful Execution Surge XVII
+CED Artful Execution Surge XVIII
+CEE Artful Execution Surge XIX
+CEF Artful Execution Surge XX
 CF0 Aura Surge I
+CF1 Aura Surge II
+CF2 Aura Surge III
+CF3 Aura Surge IV
+CF4 Aura Surge V
+CF5 Aura Surge VI
+CF6 Aura Surge VII
+CF7 Aura Surge VIII
+CF8 Aura Surge IX
+CF9 Aura Surge X
+CFA Aura Surge XI
+CFB Aura Surge XII
+CFC Aura Surge XIII
+CFD Aura Surge XIV
+CFE Aura Surge XV
+CFF Aura Surge XVI
+D00 Aura Surge XVII
+D01 Aura Surge XVIII
+D02 Aura Surge XIX
+D03 Aura Surge XX
 D04 Overdrive Surge I
+D05 Overdrive Surge II
+D06 Overdrive Surge III
+D07 Overdrive Surge IV
+D08 Overdrive Surge V
+D09 Overdrive Surge VI
+D0A Overdrive Surge VII
+D0B Overdrive Surge VIII
+D0C Overdrive Surge IX
+D0D Overdrive Surge X
+D0E Overdrive Surge XI
+D0F Overdrive Surge XII
+D10 Overdrive Surge XIII
+D11 Overdrive Surge XIV
+D12 Overdrive Surge XV
+D13 Overdrive Surge XVI
+D14 Overdrive Surge XVII
+D15 Overdrive Surge XVIII
+D16 Overdrive Surge XIX
+D17 Overdrive Surge XX
 D18 Reinvigorate I
+D19 Reinvigorate II
+D1A Reinvigorate III
+D1B Reinvigorate IV
+D1C Reinvigorate V
+D1D Reinvigorate VI
+D1E Reinvigorate VII
+D1F Reinvigorate VIII
+D20 Reinvigorate IX
+D21 Reinvigorate X
+D22 Reinvigorate XI
+D23 Reinvigorate XII
+D24 Reinvigorate XIII
+D25 Reinvigorate XIV
+D26 Reinvigorate XV
+D27 Reinvigorate XVI
+D28 Reinvigorate XVII
+D29 Reinvigorate XVIII
+D2A Reinvigorate XIX
+D2B Reinvigorate XX
 D2C EXP Boost I
+D2D EXP Boost II
+D2E EXP Boost III
+D2F EXP Boost IV
+D30 EXP Boost V
+D31 EXP Boost VI
+D32 EXP Boost VII
+D33 EXP Boost VIII
+D34 EXP Boost IX
+D35 EXP Boost X
+D36 EXP Boost XI
+D37 EXP Boost XII
+D38 EXP Boost XIII
+D39 EXP Boost XIV
+D3A EXP Boost XV
+D3B EXP Boost XVI
+D3C EXP Boost XVII
+D3D EXP Boost XVIII
+D3E EXP Boost XIX
+D3F EXP Boost XX
 D40 Visual Cloaking I
-D54 Aural Cloacking I
+D41 Visual Cloaking II
+D42 Visual Cloaking III
+D43 Visual Cloaking IV
+D44 Visual Cloaking V
+D45 Visual Cloaking VI
+D46 Visual Cloaking VII
+D47 Visual Cloaking VIII
+D48 Visual Cloaking IX
+D49 Visual Cloaking X
+D4A Visual Cloaking XI
+D4B Visual Cloaking XII
+D4C Visual Cloaking XIII
+D4D Visual Cloaking XIV
+D4E Visual Cloaking XV
+D4F Visual Cloaking XVI
+D50 Visual Cloaking XVII
+D51 Visual Cloaking XVIII
+D52 Visual Cloaking XIX
+D53 Visual Cloaking XX
+D54 Aural Cloaking I
+D55 Aural Cloaking II
+D56 Aural Cloaking III
+D57 Aural Cloaking IV
+D58 Aural Cloaking V
+D59 Aural Cloaking VI
+D5A Aural Cloaking VII
+D5B Aural Cloaking VIII
+D5C Aural Cloaking IX
+D5D Aural Cloaking X
+D5E Aural Cloaking XI
+D5F Aural Cloaking XII
+D60 Aural Cloaking XIII
+D61 Aural Cloaking XIV
+D62 Aural Cloaking XV
+D63 Aural Cloaking XVI
+D64 Aural Cloaking XVII
+D65 Aural Cloaking XVIII
+D66 Aural Cloaking XIX
+D67 Aural Cloaking XX
 D68 Appendage Crusher
 D69 Crush: Gain TP I
+D6A Crush: Gain TP II
+D6B Crush: Gain TP III
+D6C Crush: Gain TP IV
+D6D Crush: Gain TP V
+D6E Crush: Gain TP VI
+D6F Crush: Gain TP VII
+D70 Crush: Gain TP VIII
+D71 Crush: Gain TP IX
+D72 Crush: Gain TP X
+D73 Crush: Gain TP XI
+D74 Crush: Gain TP XII
+D75 Crush: Gain TP XIII
+D76 Crush: Gain TP XIV
+D77 Crush: Gain TP XV
+D78 Crush: Gain TP XVI
+D79 Crush: Gain TP XVII
+D7A Crush: Gain TP XVIII
+D7B Crush: Gain TP XIX
+D7C Crush: Gain TP XX
 D7D Ranged Appendage Damage I
+D7E Ranged Appendage Damage II
+D7F Ranged Appendage Damage III
+D80 Ranged Appendage Damage IV
+D81 Ranged Appendage Damage V
+D82 Ranged Appendage Damage VI
+D83 Ranged Appendage Damage VII
+D84 Ranged Appendage Damage VIII
+D85 Ranged Appendage Damage IX
+D86 Ranged Appendage Damage X
+D87 Ranged Appendage Damage XI
+D88 Ranged Appendage Damage XII
+D89 Ranged Appendage Damage XIII
+D8A Ranged Appendage Damage XIV
+D8B Ranged Appendage Damage XV
+D8C Ranged Appendage Damage XVI
+D8D Ranged Appendage Damage XVII
+D8E Ranged Appendage Damage XVIII
+D8F Ranged Appendage Damage XIX
+D90 Ranged Appendage Damage XX
 D91 Terrain Damage Reducer I
+D92 Terrain Damage Reducer II
+D93 Terrain Damage Reducer III
+D94 Terrain Damage Reducer IV
+D95 Terrain Damage Reducer V
+D96 Terrain Damage Reducer VI
+D97 Terrain Damage Reducer VII
+D98 Terrain Damage Reducer VIII
+D99 Terrain Damage Reducer IX
+D9A Terrain Damage Reducer X
+D9B Terrain Damage Reducer XI
+D9C Terrain Damage Reducer XII
+D9D Terrain Damage Reducer XIII
+D9E Terrain Damage Reducer XIV
+D9F Terrain Damage Reducer XV
+DA0 Terrain Damage Reducer XVI
+DA1 Terrain Damage Reducer XVII
+DA2 Terrain Damage Reducer XVIII
+DA3 Terrain Damage Reducer XIX
+DA4 Terrain Damage Reducer XX
 DA5 Antispike I
+DA6 Antispike II
+DA7 Antispike III
+DA8 Antispike IV
+DA9 Antispike V
+DAA Antispike VI
+DAB Antispike VII
+DAC Antispike VIII
+DAD Antispike IX
+DAE Antispike X
+DAF Antispike XI
+DB0 Antispike XII
+DB1 Antispike XIII
+DB2 Antispike XIV
+DB3 Antispike XV
+DB4 Antispike XVI
+DB5 Antispike XVII
+DB6 Antispike XVIII
+DB7 Antispike XIX
+DB8 Antispike XX
 DB9 Resistance Reducer I
+DBA Resistance Reducer II
+DBB Resistance Reducer III
+DBC Resistance Reducer IV
+DBD Resistance Reducer V
+DBE Resistance Reducer VI
+DBF Resistance Reducer VII
+DC0 Resistance Reducer VIII
+DC1 Resistance Reducer IX
+DC2 Resistance Reducer X
+DC3 Resistance Reducer XI
+DC4 Resistance Reducer XII
+DC5 Resistance Reducer XIII
+DC6 Resistance Reducer XIV
+DC7 Resistance Reducer XV
+DC8 Resistance Reducer XVI
+DC9 Resistance Reducer XVII
+DCA Resistance Reducer XVIII
+DCB Resistance Reducer XIX
+DCC Resistance Reducer XX
 DCD Treasure Sensor I
+DCE Treasure Sensor II
+DCF Treasure Sensor III
+DD0 Treasure Sensor IV
+DD1 Treasure Sensor V
+DD2 Treasure Sensor VI
+DD3 Treasure Sensor VII
+DD4 Treasure Sensor VIII
+DD5 Treasure Sensor IX
+DD6 Treasure Sensor X
+DD7 Treasure Sensor XI
+DD8 Treasure Sensor XII
+DD9 Treasure Sensor XIII
+DDA Treasure Sensor XIV
+DDB Treasure Sensor XV
+DDC Treasure Sensor XVI
+DDD Treasure Sensor XVII
+DDE Treasure Sensor XVIII
+DDF Treasure Sensor XIX
+DE0 Treasure Sensor XX
 DE1 Untouchable Dash I
-# DF5 DEBUG
+# DF5-DE1 DEBUG
+DE2 Untouchable Dash II
+DE3 Untouchable Dash III
+DE4 Untouchable Dash IV
+DE5 Untouchable Dash V
+DE6 Untouchable Dash VI
+DE7 Untouchable Dash VII
+DE8 Untouchable Dash VIII
+DE9 Untouchable Dash IX
+DEA Untouchable Dash X
+DEB Untouchable Dash XI
+DEC Untouchable Dash XII
+DED Untouchable Dash XIII
+DEE Untouchable Dash XIV
+DEF Untouchable Dash XV
+DF0 Untouchable Dash XVI
+DF1 Untouchable Dash XVII
+DF2 Untouchable Dash XVIII
+DF3 Untouchable Dash XIX
+DF4 Untouchable Dash XX
 E09 Night Vision I
+E0A Night Vision II
+E0B Night Vision III
+E0C Night Vision IV
+E0D Night Vision V
+E0E Night Vision VI
+E0F Night Vision VII
+E10 Night Vision VIII
+E11 Night Vision IX
+E12 Night Vision X
+E13 Night Vision XI
+E14 Night Vision XII
+E15 Night Vision XIII
+E16 Night Vision XIV
+E17 Night Vision XV
+E18 Night Vision XVI
+E19 Night Vision XVII
+E1A Night Vision XVIII
+E1B Night Vision XIX
+E1C Night Vision XX
 E1D Focused Evasion I
+E1E Focused Evasion II
+E1F Focused Evasion III
+E20 Focused Evasion IV
+E21 Focused Evasion V
+E22 Focused Evasion VI
+E23 Focused Evasion VII
+E24 Focused Evasion VIII
+E25 Focused Evasion IX
+E26 Focused Evasion X
+E27 Focused Evasion XI
+E28 Focused Evasion XII
+E29 Focused Evasion XIII
+E2A Focused Evasion XIV
+E2B Focused Evasion XV
+E2C Focused Evasion XVI
+E2D Focused Evasion XVII
+E2E Focused Evasion XVIII
+E2F Focused Evasion XIX
+E30 Focused Evasion XX
 E31 Fog Screen
 E32 Rain Screen
 E33 Lightning Screen
@@ -212,3 +3393,2671 @@ E3E Spore Screen
 E3F Meteor Shower Screen
 E40 Weather Master I
 # E55-E5E EMPTY
+
+### SKELL GEAR SKILL ID
+# 000 NO_SKILL, downgrades equipment rarity
+001 SpecUp.HP-MAX I
+002 SpecUp.HP-MAX II
+003 SpecUp.HP-MAX III
+004 SpecUp.HP-MAX IV
+005 SpecUp.HP-MAX V
+006 SpecUp.HP-MAX VI
+007 SpecUp.HP-MAX VII
+008 SpecUp.HP-MAX VIII
+009 SpecUp.HP-MAX IX
+00A SpecUp.HP-MAX X
+00B SpecUp.HP-MAX XI
+00C SpecUp.HP-MAX XII
+00D SpecUp.HP-MAX XIII
+00E SpecUp.HP-MAX XIV
+00F SpecUp.HP-MAX XV
+010 SpecUp.HP-MAX XVI
+011 SpecUp.HP-MAX XVII
+012 SpecUp.HP-MAX XVIII
+013 SpecUp.HP-MAX XIX
+014 SpecUp.HP-MAX XX
+015 SpecUp.GP-MAX I
+016 SpecUp.GP-MAX II
+017 SpecUp.GP-MAX III
+018 SpecUp.GP-MAX IV
+019 SpecUp.GP-MAX V
+01A SpecUp.GP-MAX VI
+01B SpecUp.GP-MAX VII
+01C SpecUp.GP-MAX VIII
+01D SpecUp.GP-MAX IX
+01E SpecUp.GP-MAX X
+01F SpecUp.GP-MAX XI
+020 SpecUp.GP-MAX XII
+021 SpecUp.GP-MAX XIII
+022 SpecUp.GP-MAX XIV
+023 SpecUp.GP-MAX XV
+024 SpecUp.GP-MAX XVI
+025 SpecUp.GP-MAX XVII
+026 SpecUp.GP-MAX XVIII
+027 SpecUp.GP-MAX XIX
+028 SpecUp.GP-MAX XX
+029 SpecUp.M-ACC I
+02A SpecUp.M-ACC II
+02B SpecUp.M-ACC III
+02C SpecUp.M-ACC IV
+02D SpecUp.M-ACC V
+02E SpecUp.M-ACC VI
+02F SpecUp.M-ACC VII
+030 SpecUp.M-ACC VIII
+031 SpecUp.M-ACC IX
+032 SpecUp.M-ACC X
+033 SpecUp.M-ACC XI
+034 SpecUp.M-ACC XII
+035 SpecUp.M-ACC XIII
+036 SpecUp.M-ACC XIV
+037 SpecUp.M-ACC XV
+038 SpecUp.M-ACC XVI
+039 SpecUp.M-ACC XVII
+03A SpecUp.M-ACC XVIII
+03B SpecUp.M-ACC XIX
+03C SpecUp.M-ACC XX
+03D SpecUp.R-ACC I
+03E SpecUp.R-ACC II
+03F SpecUp.R-ACC III
+040 SpecUp.R-ACC IV
+041 SpecUp.R-ACC V
+042 SpecUp.R-ACC VI
+043 SpecUp.R-ACC VII
+044 SpecUp.R-ACC VIII
+045 SpecUp.R-ACC IX
+046 SpecUp.R-ACC X
+047 SpecUp.R-ACC XI
+048 SpecUp.R-ACC XII
+049 SpecUp.R-ACC XIII
+04A SpecUp.R-ACC XIV
+04B SpecUp.R-ACC XV
+04C SpecUp.R-ACC XVI
+04D SpecUp.R-ACC XVII
+04E SpecUp.R-ACC XVIII
+04F SpecUp.R-ACC XIX
+050 SpecUp.R-ACC XX
+051 SpecUp.EVA I
+052 SpecUp.EVA II
+053 SpecUp.EVA III
+054 SpecUp.EVA IV
+055 SpecUp.EVA V
+056 SpecUp.EVA VI
+057 SpecUp.EVA VII
+058 SpecUp.EVA VIII
+059 SpecUp.EVA IX
+05A SpecUp.EVA X
+05B SpecUp.EVA XI
+05C SpecUp.EVA XII
+05D SpecUp.EVA XIII
+05E SpecUp.EVA XIV
+05F SpecUp.EVA XV
+060 SpecUp.EVA XVI
+061 SpecUp.EVA XVII
+062 SpecUp.EVA XVIII
+063 SpecUp.EVA XIX
+064 SpecUp.EVA XX
+065 SpecUp.M-ATK I
+066 SpecUp.M-ATK II
+067 SpecUp.M-ATK III
+068 SpecUp.M-ATK IV
+069 SpecUp.M-ATK V
+06A SpecUp.M-ATK VI
+06B SpecUp.M-ATK VII
+06C SpecUp.M-ATK VIII
+06D SpecUp.M-ATK IX
+06E SpecUp.M-ATK X
+06F SpecUp.M-ATK XI
+070 SpecUp.M-ATK XII
+071 SpecUp.M-ATK XIII
+072 SpecUp.M-ATK XIV
+073 SpecUp.M-ATK XV
+074 SpecUp.M-ATK XVI
+075 SpecUp.M-ATK XVII
+076 SpecUp.M-ATK XVIII
+077 SpecUp.M-ATK XIX
+078 SpecUp.M-ATK XX
+079 SpecUp.R-ATK I
+07A SpecUp.R-ATK II
+07B SpecUp.R-ATK III
+07C SpecUp.R-ATK IV
+07D SpecUp.R-ATK V
+07E SpecUp.R-ATK VI
+07F SpecUp.R-ATK VII
+080 SpecUp.R-ATK VIII
+081 SpecUp.R-ATK IX
+082 SpecUp.R-ATK X
+083 SpecUp.R-ATK XI
+084 SpecUp.R-ATK XII
+085 SpecUp.R-ATK XIII
+086 SpecUp.R-ATK XIV
+087 SpecUp.R-ATK XV
+088 SpecUp.R-ATK XVI
+089 SpecUp.R-ATK XVII
+08A SpecUp.R-ATK XVIII
+08B SpecUp.R-ATK XIX
+08C SpecUp.R-ATK XX
+08D SpecUp.FTL I
+08E SpecUp.FTL II
+08F SpecUp.FTL III
+090 SpecUp.FTL IV
+091 SpecUp.FTL V
+092 SpecUp.FTL VI
+093 SpecUp.FTL VII
+094 SpecUp.FTL VIII
+095 SpecUp.FTL IX
+096 SpecUp.FTL X
+097 SpecUp.FTL XI
+098 SpecUp.FTL XII
+099 SpecUp.FTL XIII
+09A SpecUp.FTL XIV
+09B SpecUp.FTL XV
+09C SpecUp.FTL XVI
+09D SpecUp.FTL XVII
+09E SpecUp.FTL XVIII
+09F SpecUp.FTL XIX
+0A0 SpecUp.FTL XX
+0A1 SpecUp.APP-HP I
+0A2 SpecUp.APP-HP II
+0A3 SpecUp.APP-HP III
+0A4 SpecUp.APP-HP IV
+0A5 SpecUp.APP-HP V
+0A6 SpecUp.APP-HP VI
+0A7 SpecUp.APP-HP VII
+0A8 SpecUp.APP-HP VIII
+0A9 SpecUp.APP-HP IX
+0AA SpecUp.APP-HP X
+0AB SpecUp.APP-HP XI
+0AC SpecUp.APP-HP XII
+0AD SpecUp.APP-HP XIII
+0AE SpecUp.APP-HP XIV
+0AF SpecUp.APP-HP XV
+0B0 SpecUp.APP-HP XVI
+0B1 SpecUp.APP-HP XVII
+0B2 SpecUp.APP-HP XVIII
+0B3 SpecUp.APP-HP XIX
+0B4 SpecUp.APP-HP XX
+0B5 Boost.HP-MAX I
+0B6 Boost.HP-MAX II
+0B7 Boost.HP-MAX III
+0B8 Boost.HP-MAX IV
+0B9 Boost.HP-MAX V
+0BA Boost.HP-MAX VI
+0BB Boost.HP-MAX VII
+0BC Boost.HP-MAX VIII
+0BD Boost.HP-MAX IX
+0BE Boost.HP-MAX X
+0BF Boost.HP-MAX XI
+0C0 Boost.HP-MAX XII
+0C1 Boost.HP-MAX XIII
+0C2 Boost.HP-MAX XIV
+0C3 Boost.HP-MAX XV
+0C4 Boost.HP-MAX XVI
+0C5 Boost.HP-MAX XVII
+0C6 Boost.HP-MAX XVIII
+0C7 Boost.HP-MAX XIX
+0C8 Boost.HP-MAX XX
+0C9 Boost.GP-MAX I
+0CA Boost.GP-MAX II
+0CB Boost.GP-MAX III
+0CC Boost.GP-MAX IV
+0CD Boost.GP-MAX V
+0CE Boost.GP-MAX VI
+0CF Boost.GP-MAX VII
+0D0 Boost.GP-MAX VIII
+0D1 Boost.GP-MAX IX
+0D2 Boost.GP-MAX X
+0D3 Boost.GP-MAX XI
+0D4 Boost.GP-MAX XII
+0D5 Boost.GP-MAX XIII
+0D6 Boost.GP-MAX XIV
+0D7 Boost.GP-MAX XV
+0D8 Boost.GP-MAX XVI
+0D9 Boost.GP-MAX XVII
+0DA Boost.GP-MAX XVIII
+0DB Boost.GP-MAX XIX
+0DC Boost.GP-MAX XX
+0DD Boost.M-ACC I
+0DE Boost.M-ACC II
+0DF Boost.M-ACC III
+0E0 Boost.M-ACC IV
+0E1 Boost.M-ACC V
+0E2 Boost.M-ACC VI
+0E3 Boost.M-ACC VII
+0E4 Boost.M-ACC VIII
+0E5 Boost.M-ACC IX
+0E6 Boost.M-ACC X
+0E7 Boost.M-ACC XI
+0E8 Boost.M-ACC XII
+0E9 Boost.M-ACC XIII
+0EA Boost.M-ACC XIV
+0EB Boost.M-ACC XV
+0EC Boost.M-ACC XVI
+0ED Boost.M-ACC XVII
+0EE Boost.M-ACC XVIII
+0EF Boost.M-ACC XIX
+0F0 Boost.M-ACC XX
+0F1 Boost.R-ACC I
+0F2 Boost.R-ACC II
+0F3 Boost.R-ACC III
+0F4 Boost.R-ACC IV
+0F5 Boost.R-ACC V
+0F6 Boost.R-ACC VI
+0F7 Boost.R-ACC VII
+0F8 Boost.R-ACC VIII
+0F9 Boost.R-ACC IX
+0FA Boost.R-ACC X
+0FB Boost.R-ACC XI
+0FC Boost.R-ACC XII
+0FD Boost.R-ACC XIII
+0FE Boost.R-ACC XIV
+0FF Boost.R-ACC XV
+100 Boost.R-ACC XVI
+101 Boost.R-ACC XVII
+102 Boost.R-ACC XVIII
+103 Boost.R-ACC XIX
+104 Boost.R-ACC XX
+105 Boost.EVA I
+106 Boost.EVA II
+107 Boost.EVA III
+108 Boost.EVA IV
+109 Boost.EVA V
+10A Boost.EVA VI
+10B Boost.EVA VII
+10C Boost.EVA VIII
+10D Boost.EVA IX
+10E Boost.EVA X
+10F Boost.EVA XI
+110 Boost.EVA XII
+111 Boost.EVA XIII
+112 Boost.EVA XIV
+113 Boost.EVA XV
+114 Boost.EVA XVI
+115 Boost.EVA XVII
+116 Boost.EVA XVIII
+117 Boost.EVA XIX
+118 Boost.EVA XX
+119 Boost.M-ATK I
+11A Boost.M-ATK II
+11B Boost.M-ATK III
+11C Boost.M-ATK IV
+11D Boost.M-ATK V
+11E Boost.M-ATK VI
+11F Boost.M-ATK VII
+120 Boost.M-ATK VIII
+121 Boost.M-ATK IX
+122 Boost.M-ATK X
+123 Boost.M-ATK XI
+124 Boost.M-ATK XII
+125 Boost.M-ATK XIII
+126 Boost.M-ATK XIV
+127 Boost.M-ATK XV
+128 Boost.M-ATK XVI
+129 Boost.M-ATK XVII
+12A Boost.M-ATK XVIII
+12B Boost.M-ATK XIX
+12C Boost.M-ATK XX
+12D Boost.R-ATK I
+12E Boost.R-ATK II
+12F Boost.R-ATK III
+130 Boost.R-ATK IV
+131 Boost.R-ATK V
+132 Boost.R-ATK VI
+133 Boost.R-ATK VII
+134 Boost.R-ATK VIII
+135 Boost.R-ATK IX
+136 Boost.R-ATK X
+137 Boost.R-ATK XI
+138 Boost.R-ATK XII
+139 Boost.R-ATK XIII
+13A Boost.R-ATK XIV
+13B Boost.R-ATK XV
+13C Boost.R-ATK XVI
+13D Boost.R-ATK XVII
+13E Boost.R-ATK XVIII
+13F Boost.R-ATK XIX
+140 Boost.R-ATK XX
+141 Boost.PTL I
+142 Boost.PTL II
+143 Boost.PTL III
+144 Boost.PTL IV
+145 Boost.PTL V
+146 Boost.PTL VI
+147 Boost.PTL VII
+148 Boost.PTL VIII
+149 Boost.PTL IX
+14A Boost.PTL X
+14B Boost.PTL XI
+14C Boost.PTL XII
+14D Boost.PTL XIII
+14E Boost.PTL XIV
+14F Boost.PTL XV
+150 Boost.PTL XVI
+151 Boost.PTL XVII
+152 Boost.PTL XVIII
+153 Boost.PTL XIX
+154 Boost.PTL XX
+155 Generator Boost I
+156 Generator Boost II
+157 Generator Boost III
+158 SpecUp.PHYS-RES I
+159 SpecUp.PHYS-RES II
+15A SpecUp.PHYS-RES III
+15B SpecUp.PHYS-RES IV
+15C SpecUp.PHYS-RES V
+15D SpecUp.PHYS-RES VI
+15E SpecUp.PHYS-RES VII
+15F SpecUp.PHYS-RES VIII
+160 SpecUp.PHYS-RES IX
+161 SpecUp.PHYS-RES X
+162 SpecUp.PHYS-RES XI
+163 SpecUp.PHYS-RES XII
+164 SpecUp.PHYS-RES XIII
+165 SpecUp.PHYS-RES XIV
+166 SpecUp.PHYS-RES XV
+167 SpecUp.PHYS-RES XVI
+168 SpecUp.PHYS-RES XVII
+169 SpecUp.PHYS-RES XVIII
+16A SpecUp.PHYS-RES XIX
+16B SpecUp.PHYS-RES XX
+16C SpecUp.BEAM-RES I
+16D SpecUp.BEAM-RES II
+16E SpecUp.BEAM-RES III
+16F SpecUp.BEAM-RES IV
+170 SpecUp.BEAM-RES V
+171 SpecUp.BEAM-RES VI
+172 SpecUp.BEAM-RES VII
+173 SpecUp.BEAM-RES VIII
+174 SpecUp.BEAM-RES IX
+175 SpecUp.BEAM-RES X
+176 SpecUp.BEAM-RES XI
+177 SpecUp.BEAM-RES XII
+178 SpecUp.BEAM-RES XIII
+179 SpecUp.BEAM-RES XIV
+17A SpecUp.BEAM-RES XV
+17B SpecUp.BEAM-RES XVI
+17C SpecUp.BEAM-RES XVII
+17D SpecUp.BEAM-RES XVIII
+17E SpecUp.BEAM-RES XIX
+17F SpecUp.BEAM-RES XX
+180 SpecUp.ELEC-RES I
+181 SpecUp.ELEC-RES II
+182 SpecUp.ELEC-RES III
+183 SpecUp.ELEC-RES IV
+184 SpecUp.ELEC-RES V
+185 SpecUp.ELEC-RES VI
+186 SpecUp.ELEC-RES VII
+187 SpecUp.ELEC-RES VIII
+188 SpecUp.ELEC-RES IX
+189 SpecUp.ELEC-RES X
+18A SpecUp.ELEC-RES XI
+18B SpecUp.ELEC-RES XII
+18C SpecUp.ELEC-RES XIII
+18D SpecUp.ELEC-RES XIV
+18E SpecUp.ELEC-RES XV
+18F SpecUp.ELEC-RES XVI
+190 SpecUp.ELEC-RES XVII
+191 SpecUp.ELEC-RES XVIII
+192 SpecUp.ELEC-RES XIX
+193 SpecUp.ELEC-RES XX
+194 SpecUp.THERM-RES I
+195 SpecUp.THERM-RES II
+196 SpecUp.THERM-RES III
+197 SpecUp.THERM-RES IV
+198 SpecUp.THERM-RES V
+199 SpecUp.THERM-RES VI
+19A SpecUp.THERM-RES VII
+19B SpecUp.THERM-RES VIII
+19C SpecUp.THERM-RES IX
+19D SpecUp.THERM-RES X
+19E SpecUp.THERM-RES XI
+19F SpecUp.THERM-RES XII
+1A0 SpecUp.THERM-RES XIII
+1A1 SpecUp.THERM-RES XIV
+1A2 SpecUp.THERM-RES XV
+1A3 SpecUp.THERM-RES XVI
+1A4 SpecUp.THERM-RES XVII
+1A5 SpecUp.THERM-RES XVIII
+1A6 SpecUp.THERM-RES XIX
+1A7 SpecUp.THERM-RES XX
+1A8 SpecUp.ETHER-RES I
+1A9 SpecUp.ETHER-RES II
+1AA SpecUp.ETHER-RES III
+1AB SpecUp.ETHER-RES IV
+1AC SpecUp.ETHER-RES V
+1AD SpecUp.ETHER-RES VI
+1AE SpecUp.ETHER-RES VII
+1AF SpecUp.ETHER-RES VIII
+1B0 SpecUp.ETHER-RES IX
+1B1 SpecUp.ETHER-RES X
+1B2 SpecUp.ETHER-RES XI
+1B3 SpecUp.ETHER-RES XII
+1B4 SpecUp.ETHER-RES XIII
+1B5 SpecUp.ETHER-RES XIV
+1B6 SpecUp.ETHER-RES XV
+1B7 SpecUp.ETHER-RES XVI
+1B8 SpecUp.ETHER-RES XVII
+1B9 SpecUp.ETHER-RES XVIII
+1BA SpecUp.ETHER-RES XIX
+1BB SpecUp.ETHER-RES XX
+1BC SpecUp.GRAV-RES I
+1BD SpecUp.GRAV-RES II
+1BE SpecUp.GRAV-RES III
+1BF SpecUp.GRAV-RES IV
+1C0 SpecUp.GRAV-RES V
+1C1 SpecUp.GRAV-RES VI
+1C2 SpecUp.GRAV-RES VII
+1C3 SpecUp.GRAV-RES VIII
+1C4 SpecUp.GRAV-RES IX
+1C5 SpecUp.GRAV-RES X
+1C6 SpecUp.GRAV-RES XI
+1C7 SpecUp.GRAV-RES XII
+1C8 SpecUp.GRAV-RES XIII
+1C9 SpecUp.GRAV-RES XIV
+1CA SpecUp.GRAV-RES XV
+1CB SpecUp.GRAV-RES XVI
+1CC SpecUp.GRAV-RES XVII
+1CD SpecUp.GRAV-RES XVIII
+1CE SpecUp.GRAV-RES XIX
+1CF SpecUp.GRAV-RES XX
+1D0 SpecUp.FUEL-MAX I
+1D1 SpecUp.FUEL-MAX II
+1D2 SpecUp.FUEL-MAX III
+1D3 SpecUp.FUEL-MAX IV
+1D4 SpecUp.FUEL-MAX V
+1D5 SpecUp.FUEL-MAX VI
+1D6 SpecUp.FUEL-MAX VII
+1D7 SpecUp.FUEL-MAX VIII
+1D8 SpecUp.FUEL-MAX IX
+1D9 SpecUp.FUEL-MAX X
+1DA SpecUp.FUEL-MAX XI
+1DB SpecUp.FUEL-MAX XII
+1DC SpecUp.FUEL-MAX XIII
+1DD SpecUp.FUEL-MAX XIV
+1DE SpecUp.FUEL-MAX XV
+1DF SpecUp.FUEL-MAX XVI
+1E0 SpecUp.FUEL-MAX XVII
+1E1 SpecUp.FUEL-MAX XVIII
+1E2 SpecUp.FUEL-MAX XIX
+1E3 SpecUp.FUEL-MAX XX
+1E4 SpecUp.FUEL-COST I
+1E5 SpecUp.FUEL-COST II
+1E6 SpecUp.FUEL-COST III
+1E7 SpecUp.FUEL-COST IV
+1E8 SpecUp.FUEL-COST V
+1E9 SpecUp.FUEL-COST VI
+1EA SpecUp.FUEL-COST VII
+1EB SpecUp.FUEL-COST VIII
+1EC SpecUp.FUEL-COST IX
+1ED SpecUp.FUEL-COST X
+1EE SpecUp.FUEL-COST XI
+1EF SpecUp.FUEL-COST XII
+1F0 SpecUp.FUEL-COST XIII
+1F1 SpecUp.FUEL-COST XIV
+1F2 SpecUp.FUEL-COST XV
+1F3 SpecUp.FUEL-COST XVI
+1F4 SpecUp.FUEL-COST XVII
+1F5 SpecUp.FUEL-COST XVIII
+1F6 SpecUp.FUEL-COST XIX
+1F7 SpecUp.FUEL-COST XX
+1F8 SpecUp.FUEL-PARK I
+1F9 SpecUp.FUEL-PARK II
+1FA SpecUp.FUEL-PARK III
+1FB SpecUp.FUEL-PARK IV
+1FC SpecUp.FUEL-PARK V
+1FD SpecUp.FUEL-PARK VI
+1FE SpecUp.FUEL-PARK VII
+1FF SpecUp.FUEL-PARK VIII
+200 SpecUp.FUEL-PARK IX
+201 SpecUp.FUEL-PARK X
+202 SpecUp.FUEL-PARK XI
+203 SpecUp.FUEL-PARK XII
+204 SpecUp.FUEL-PARK XIII
+205 SpecUp.FUEL-PARK XIV
+206 SpecUp.FUEL-PARK XV
+207 SpecUp.FUEL-PARK XVI
+208 SpecUp.FUEL-PARK XVII
+209 SpecUp.FUEL-PARK XVIII
+20A SpecUp.FUEL-PARK XIX
+20B SpecUp.FUEL-PARK XX
+20C SpecUp.FUEL-BIND I
+20D SpecUp.FUEL-BIND II
+20E SpecUp.FUEL-BIND III
+20F SpecUp.FUEL-BIND IV
+210 SpecUp.FUEL-BIND V
+211 SpecUp.FUEL-BIND VI
+212 SpecUp.FUEL-BIND VII
+213 SpecUp.FUEL-BIND VIII
+214 SpecUp.FUEL-BIND IX
+215 SpecUp.FUEL-BIND X
+216 SpecUp.FUEL-BIND XI
+217 SpecUp.FUEL-BIND XII
+218 SpecUp.FUEL-BIND XIII
+219 SpecUp.FUEL-BIND XIV
+21A SpecUp.FUEL-BIND XV
+21B SpecUp.FUEL-BIND XVI
+21C SpecUp.FUEL-BIND XVII
+21D SpecUp.FUEL-BIND XVIII
+21E SpecUp.FUEL-BIND XIX
+21F SpecUp.FUEL-BIND XX
+220 SpecUp.FUEL-OD I
+221 SpecUp.FUEL-OD II
+222 SpecUp.FUEL-OD III
+223 SpecUp.FUEL-OD IV
+224 SpecUp.FUEL-OD V
+225 SpecUp.FUEL-OD VI
+226 SpecUp.FUEL-OD VII
+227 SpecUp.FUEL-OD VIII
+228 SpecUp.FUEL-OD IX
+229 SpecUp.FUEL-OD X
+22A SpecUp.FUEL-OD XI
+22B SpecUp.FUEL-OD XII
+22C SpecUp.FUEL-OD XIII
+22D SpecUp.FUEL-OD XIV
+22E SpecUp.FUEL-OD XV
+22F SpecUp.FUEL-OD XVI
+230 SpecUp.FUEL-OD XVII
+231 SpecUp.FUEL-OD XVIII
+232 SpecUp.FUEL-OD XIX
+233 SpecUp.FUEL-OD XX
+234 Custom.WP-ATK I
+235 Custom.WP-ATK II
+236 Custom.WP-ATK III
+237 Custom.WP-ATK IV
+238 Custom.WP-ATK V
+239 Custom.WP-ATK VI
+23A Custom.WP-ATK VII
+23B Custom.WP-ATK VIII
+23C Custom.WP-ATK IX
+23D Custom.WP-ATK X
+23E Custom.WP-ATK XI
+23F Custom.WP-ATK XII
+240 Custom.WP-ATK XIII
+241 Custom.WP-ATK XIV
+242 Custom.WP-ATK XV
+243 Custom.WP-ATK XVI
+244 Custom.WP-ATK XVII
+245 Custom.WP-ATK XVIII
+246 Custom.WP-ATK XIX
+247 Custom.WP-ATK XX
+248 Custom.WP-STABLE I
+249 Custom.WP-STABLE II
+24A Custom.WP-STABLE III
+24B Custom.WP-STABLE IV
+24C Custom.WP-STABLE V
+24D Custom.WP-STABLE VI
+24E Custom.WP-STABLE VII
+24F Custom.WP-STABLE VIII
+250 Custom.WP-STABLE IX
+251 Custom.WP-STABLE X
+252 Custom.WP-STABLE XI
+253 Custom.WP-STABLE XII
+254 Custom.WP-STABLE XIII
+255 Custom.WP-STABLE XIV
+256 Custom.WP-STABLE XV
+257 Custom.WP-STABLE XVI
+258 Custom.WP-STABLE XVII
+259 Custom.WP-STABLE XVIII
+25A Custom.WP-STABLE XIX
+25B Custom.WP-STABLE XX
+25C Custom.WP-DESTABLE I
+25D Custom.WP-DESTABLE II
+25E Custom.WP-DESTABLE III
+25F Custom.WP-DESTABLE IV
+260 Custom.WP-DESTABLE V
+261 Custom.WP-DESTABLE VI
+262 Custom.WP-DESTABLE VII
+263 Custom.WP-DESTABLE VIII
+264 Custom.WP-DESTABLE IX
+265 Custom.WP-DESTABLE X
+266 Custom.WP-DESTABLE XI
+267 Custom.WP-DESTABLE XII
+268 Custom.WP-DESTABLE XIII
+269 Custom.WP-DESTABLE XIV
+26A Custom.WP-DESTABLE XV
+26B Custom.WP-DESTABLE XVI
+26C Custom.WP-DESTABLE XVII
+26D Custom.WP-DESTABLE XVIII
+26E Custom.WP-DESTABLE XIX
+26F Custom.WP-DESTABLE XX
+270 Custom.WP-RFL-MAG I
+271 Custom.WP-RFL-MAG II
+272 Custom.WP-RFL-MAG III
+273 Custom.WP-RFL-MAG IV
+274 Custom.WP-RFL-MAG V
+275 Custom.WP-RFL-MAG VI
+276 Custom.WP-RFL-MAG VII
+277 Custom.WP-RFL-MAG VIII
+278 Custom.WP-RFL-MAG IX
+279 Custom.WP-RFL-MAG X
+27A Custom.WP-RFL-MAG XI
+27B Custom.WP-RFL-MAG XII
+27C Custom.WP-RFL-MAG XIII
+27D Custom.WP-RFL-MAG XIV
+27E Custom.WP-RFL-MAG XV
+27F Custom.WP-RFL-MAG XVI
+280 Custom.WP-RFL-MAG XVII
+281 Custom.WP-RFL-MAG XVIII
+282 Custom.WP-RFL-MAG XIX
+283 Custom.WP-RFL-MAG XX
+284 Custom.WP-MSL-MAG I
+285 Custom.WP-MSL-MAG II
+286 Custom.WP-MSL-MAG III
+287 Custom.WP-MSL-MAG IV
+288 Custom.WP-MSL-MAG V
+289 Custom.WP-MSL-MAG VI
+28A Custom.WP-MSL-MAG VII
+28B Custom.WP-MSL-MAG VIII
+28C Custom.WP-MSL-MAG IX
+28D Custom.WP-MSL-MAG X
+28E Custom.WP-MSL-MAG XI
+28F Custom.WP-MSL-MAG XII
+290 Custom.WP-MSL-MAG XIII
+291 Custom.WP-MSL-MAG XIV
+292 Custom.WP-MSL-MAG XV
+293 Custom.WP-MSL-MAG XVI
+294 Custom.WP-MSL-MAG XVII
+295 Custom.WP-MSL-MAG XVIII
+296 Custom.WP-MSL-MAG XIX
+297 Custom.WP-MSL-MAG XX
+298 Custom WP.M-GP
+# 299-29D DUPLICATES
+29E Custom.WP-R-GP
+# 29F-2A3 DUPLICATES
+2A4 Custom.WP-SPEED I
+2A5 Custom.WP-SPEED II
+2A6 Custom.WP-SPEED III
+2A7 Custom.WP-SPEED IV
+2A8 Custom.WP-SPEED V
+2A9 Custom.WP-SPEED VI
+2AA Custom.WP-SPEED VII
+2AB Custom.WP-SPEED VIII
+2AC Custom.WP-SPEED IX
+2AD Custom.WP-SPEED X
+2AE Custom.WP-SPEED XI
+2AF Custom.WP-SPEED XII
+2B0 Custom.WP-SPEED XIII
+2B1 Custom.WP-SPEED XIV
+2B2 Custom.WP-SPEED XV
+2B3 Custom.WP-SPEED XVI
+2B4 Custom.WP-SPEED XVII
+2B5 Custom.WP-SPEED XVIII
+2B6 Custom.WP-SPEED XIX
+2B7 Custom.WP-SPEED XX
+2B8 Custom.WP-R-RANGE I
+2B9 Custom.WP-R-RANGE II
+2BA Custom.WP-R-RANGE III
+2BB Custom.WP-R-RANGE IV
+2BC Custom.WP-R-RANGE V
+2BD Custom.WP-R-RANGE VI
+2BE Custom.WP-R-RANGE VII
+2BF Custom.WP-R-RANGE VIII
+2C0 Custom.WP-R-RANGE IX
+2C1 Custom.WP-R-RANGE X
+2C2 Custom.WP-R-RANGE XI
+2C3 Custom.WP-R-RANGE XII
+2C4 Custom.WP-R-RANGE XIII
+2C5 Custom.WP-R-RANGE XIV
+2C6 Custom.WP-R-RANGE XV
+2C7 Custom.WP-R-RANGE XVI
+2C8 Custom.WP-R-RANGE XVII
+2C9 Custom.WP-R-RANGE XVIII
+2CA Custom.WP-R-RANGE XIX
+2CB Custom.WP-R-RANGE XX
+2CC Custom.WP-FUEL I
+2CD Custom.WP-FUEL II
+2CE Custom.WP-FUEL III
+2CF Custom.WP-FUEL IV
+2D0 Custom.WP-FUEL V
+2D1 Custom.WP-FUEL VI
+2D2 Custom.WP-FUEL VII
+2D3 Custom.WP-FUEL VIII
+2D4 Custom.WP-FUEL IX
+2D5 Custom.WP-FUEL X
+2D6 Custom.WP-FUEL XI
+2D7 Custom.WP-FUEL XII
+2D8 Custom.WP-FUEL XIII
+2D9 Custom.WP-FUEL XIV
+2DA Custom.WP-FUEL XV
+2DB Custom.WP-FUEL XVI
+2DC Custom.WP-FUEL XVII
+2DD Custom.WP-FUEL XVIII
+2DE Custom.WP-FUEL XIX
+2DF Custom.WP-FUEL XX
+2E0 Resist.STAGGER I
+2E1 Resist.STAGGER II
+2E2 Resist.STAGGER III
+2E3 Resist.STAGGER IV
+2E4 Resist.STAGGER V
+2E5 Resist.STAGGER VI
+2E6 Resist.STAGGER VII
+2E7 Resist.STAGGER VIII
+2E8 Resist.STAGGER IX
+2E9 Resist.STAGGER X
+2EA Resist.STAGGER XI
+2EB Resist.STAGGER XII
+2EC Resist.STAGGER XIII
+2ED Resist.STAGGER XIV
+2EE Resist.STAGGER XV
+2EF Resist.STAGGER XVI
+2F0 Resist.STAGGER XVII
+2F1 Resist.STAGGER XVIII
+2F2 Resist.STAGGER XIX
+2F3 Resist.STAGGER XX
+2F4 Resist.FLINCH I
+2F5 Resist.FLINCH II
+2F6 Resist.FLINCH III
+2F7 Resist.FLINCH IV
+2F8 Resist.FLINCH V
+2F9 Resist.FLINCH VI
+2FA Resist.FLINCH VII
+2FB Resist.FLINCH VIII
+2FC Resist.FLINCH IX
+2FD Resist.FLINCH X
+2FE Resist.FLINCH XI
+2FF Resist.FLINCH XII
+300 Resist.FLINCH XIII
+301 Resist.FLINCH XIV
+302 Resist.FLINCH XV
+303 Resist.FLINCH XVI
+304 Resist.FLINCH XVII
+305 Resist.FLINCH XVIII
+306 Resist.FLINCH XIX
+307 Resist.FLINCH XX
+308 Resist.TOPPLE I
+309 Resist.TOPPLE II
+30A Resist.TOPPLE III
+30B Resist.TOPPLE IV
+30C Resist.TOPPLE V
+30D Resist.TOPPLE VI
+30E Resist.TOPPLE VII
+30F Resist.TOPPLE VIII
+310 Resist.TOPPLE IX
+311 Resist.TOPPLE X
+312 Resist.TOPPLE XI
+313 Resist.TOPPLE XII
+314 Resist.TOPPLE XIII
+315 Resist.TOPPLE XIV
+316 Resist.TOPPLE XV
+317 Resist.TOPPLE XVI
+318 Resist.TOPPLE XVII
+319 Resist.TOPPLE XVIII
+31A Resist.TOPPLE XIX
+31B Resist.TOPPLE XX
+31C Resist.KNOCKBACK I
+31D Resist.KNOCKBACK II
+31E Resist.KNOCKBACK III
+31F Resist.KNOCKBACK IV
+320 Resist.KNOCKBACK V
+321 Resist.KNOCKBACK VI
+322 Resist.KNOCKBACK VII
+323 Resist.KNOCKBACK VIII
+324 Resist.KNOCKBACK IX
+325 Resist.KNOCKBACK X
+326 Resist.KNOCKBACK XI
+327 Resist.KNOCKBACK XII
+328 Resist.KNOCKBACK XIII
+329 Resist.KNOCKBACK XIV
+32A Resist.KNOCKBACK XV
+32B Resist.KNOCKBACK XVI
+32C Resist.KNOCKBACK XVII
+32D Resist.KNOCKBACK XVIII
+32E Resist.KNOCKBACK XIX
+32F Resist.KNOCKBACK XX
+330 Resist.LAUNCH I
+331 Resist.LAUNCH II
+332 Resist.LAUNCH III
+333 Resist.LAUNCH IV
+334 Resist.LAUNCH V
+335 Resist.LAUNCH VI
+336 Resist.LAUNCH VII
+337 Resist.LAUNCH VIII
+338 Resist.LAUNCH IX
+339 Resist.LAUNCH X
+33A Resist.LAUNCH XI
+33B Resist.LAUNCH XII
+33C Resist.LAUNCH XIII
+33D Resist.LAUNCH XIV
+33E Resist.LAUNCH XV
+33F Resist.LAUNCH XVI
+340 Resist.LAUNCH XVII
+341 Resist.LAUNCH XVIII
+342 Resist.LAUNCH XIX
+343 Resist.LAUNCH XX
+344 Resist.STUN I
+345 Resist.STUN II
+346 Resist.STUN III
+347 Resist.STUN IV
+348 Resist.STUN V
+349 Resist.STUN VI
+34A Resist.STUN VII
+34B Resist.STUN VIII
+34C Resist.STUN IX
+34D Resist.STUN X
+34E Resist.STUN XI
+34F Resist.STUN XII
+350 Resist.STUN XIII
+351 Resist.STUN XIV
+352 Resist.STUN XV
+353 Resist.STUN XVI
+354 Resist.STUN XVII
+355 Resist.STUN XVIII
+356 Resist.STUN XIX
+357 Resist.STUN XX
+358 Resist.SLEEP I
+359 Resist.SLEEP II
+35A Resist.SLEEP III
+35B Resist.SLEEP IV
+35C Resist.SLEEP V
+35D Resist.SLEEP VI
+35E Resist.SLEEP VII
+35F Resist.SLEEP VIII
+360 Resist.SLEEP IX
+361 Resist.SLEEP X
+362 Resist.SLEEP XI
+363 Resist.SLEEP XII
+364 Resist.SLEEP XIII
+365 Resist.SLEEP XIV
+366 Resist.SLEEP XV
+367 Resist.SLEEP XVI
+368 Resist.SLEEP XVII
+369 Resist.SLEEP XVIII
+36A Resist.SLEEP XIX
+36B Resist.SLEEP XX
+36C Resist.TAUNT I
+36D Resist.TAUNT II
+36E Resist.TAUNT III
+36F Resist.TAUNT IV
+370 Resist.TAUNT V
+371 Resist.TAUNT VI
+372 Resist.TAUNT VII
+373 Resist.TAUNT VIII
+374 Resist.TAUNT IX
+375 Resist.TAUNT X
+376 Resist.TAUNT XI
+377 Resist.TAUNT XII
+378 Resist.TAUNT XIII
+379 Resist.TAUNT XIV
+37A Resist.TAUNT XV
+37B Resist.TAUNT XVI
+37C Resist.TAUNT XVII
+37D Resist.TAUNT XVIII
+37E Resist.TAUNT XIX
+37F Resist.TAUNT XX
+380 Resist.CONTROL I
+381 Resist.CONTROL II
+382 Resist.CONTROL III
+383 Resist.CONTROL IV
+384 Resist.CONTROL V
+385 Resist.CONTROL VI
+386 Resist.CONTROL VII
+387 Resist.CONTROL VIII
+388 Resist.CONTROL IX
+389 Resist.CONTROL X
+38A Resist.CONTROL XI
+38B Resist.CONTROL XII
+38C Resist.CONTROL XIII
+38D Resist.CONTROL XIV
+38E Resist.CONTROL XV
+38F Resist.CONTROL XVI
+390 Resist.CONTROL XVII
+391 Resist.CONTROL XVIII
+392 Resist.CONTROL XIX
+393 Resist.CONTROL XX
+394 Resist.VIRUS I
+395 Resist.VIRUS II
+396 Resist.VIRUS III
+397 Resist.VIRUS IV
+398 Resist.VIRUS V
+399 Resist.VIRUS VI
+39A Resist.VIRUS VII
+39B Resist.VIRUS VIII
+39C Resist.VIRUS IX
+39D Resist.VIRUS X
+39E Resist.VIRUS XI
+39F Resist.VIRUS XII
+3A0 Resist.VIRUS XIII
+3A1 Resist.VIRUS XIV
+3A2 Resist.VIRUS XV
+3A3 Resist.VIRUS XVI
+3A4 Resist.VIRUS XVII
+3A5 Resist.VIRUS XVIII
+3A6 Resist.VIRUS XIX
+3A7 Resist.VIRUS XX
+3A8 Resist.BLACKOUT I
+3A9 Resist.BLACKOUT II
+3AA Resist.BLACKOUT III
+3AB Resist.BLACKOUT IV
+3AC Resist.BLACKOUT V
+3AD Resist.BLACKOUT VI
+3AE Resist.BLACKOUT VII
+3AF Resist.BLACKOUT VIII
+3B0 Resist.BLACKOUT IX
+3B1 Resist.BLACKOUT X
+3B2 Resist.BLACKOUT XI
+3B3 Resist.BLACKOUT XII
+3B4 Resist.BLACKOUT XIII
+3B5 Resist.BLACKOUT XIV
+3B6 Resist.BLACKOUT XV
+3B7 Resist.BLACKOUT XVI
+3B8 Resist.BLACKOUT XVII
+3B9 Resist.BLACKOUT XVIII
+3BA Resist.BLACKOUT XIX
+3BB Resist.BLACKOUT XX
+3BC Resist.FATIGUE I
+3BD Resist.FATIGUE II
+3BE Resist.FATIGUE III
+3BF Resist.FATIGUE IV
+3C0 Resist.FATIGUE V
+3C1 Resist.FATIGUE VI
+3C2 Resist.FATIGUE VII
+3C3 Resist.FATIGUE VIII
+3C4 Resist.FATIGUE IX
+3C5 Resist.FATIGUE X
+3C6 Resist.FATIGUE XI
+3C7 Resist.FATIGUE XII
+3C8 Resist.FATIGUE XIII
+3C9 Resist.FATIGUE XIV
+3CA Resist.FATIGUE XV
+3CB Resist.FATIGUE XVI
+3CC Resist.FATIGUE XVII
+3CD Resist.FATIGUE XVIII
+3CE Resist.FATIGUE XIX
+3CF Resist.FATIGUE XX
+3D0 Resist.SLOW-ARTS I
+3D1 Resist.SLOW-ARTS II
+3D2 Resist.SLOW-ARTS III
+3D3 Resist.SLOW-ARTS IV
+3D4 Resist.SLOW-ARTS V
+3D5 Resist.SLOW-ARTS VI
+3D6 Resist.SLOW-ARTS VII
+3D7 Resist.SLOW-ARTS VIII
+3D8 Resist.SLOW-ARTS IX
+3D9 Resist.SLOW-ARTS X
+3DA Resist.SLOW-ARTS XI
+3DB Resist.SLOW-ARTS XII
+3DC Resist.SLOW-ARTS XIII
+3DD Resist.SLOW-ARTS XIV
+3DE Resist.SLOW-ARTS XV
+3DF Resist.SLOW-ARTS XVI
+3E0 Resist.SLOW-ARTS XVII
+3E1 Resist.SLOW-ARTS XVIII
+3E2 Resist.SLOW-ARTS XIX
+3E3 Resist.SLOW-ARTS XX
+3E4 Resist.PHYS-DOWN I
+3E5 Resist.PHYS-DOWN II
+3E6 Resist.PHYS-DOWN III
+3E7 Resist.PHYS-DOWN IV
+3E8 Resist.PHYS-DOWN V
+3E9 Resist.PHYS-DOWN VI
+3EA Resist.PHYS-DOWN VII
+3EB Resist.PHYS-DOWN VIII
+3EC Resist.PHYS-DOWN IX
+3ED Resist.PHYS-DOWN X
+3EE Resist.PHYS-DOWN XI
+3EF Resist.PHYS-DOWN XII
+3F0 Resist.PHYS-DOWN XIII
+3F1 Resist.PHYS-DOWN XIV
+3F2 Resist.PHYS-DOWN XV
+3F3 Resist.PHYS-DOWN XVI
+3F4 Resist.PHYS-DOWN XVII
+3F5 Resist.PHYS-DOWN XVIII
+3F6 Resist.PHYS-DOWN XIX
+3F7 Resist.PHYS-DOWN XX
+3F8 Resist.BEAM-DOWN I
+3F9 Resist.BEAM-DOWN II
+3FA Resist.BEAM-DOWN III
+3FB Resist.BEAM-DOWN IV
+3FC Resist.BEAM-DOWN V
+3FD Resist.BEAM-DOWN VI
+3FE Resist.BEAM-DOWN VII
+3FF Resist.BEAM-DOWN VIII
+400 Resist.BEAM-DOWN IX
+401 Resist.BEAM-DOWN X
+402 Resist.BEAM-DOWN XI
+403 Resist.BEAM-DOWN XII
+404 Resist.BEAM-DOWN XIII
+405 Resist.BEAM-DOWN XIV
+406 Resist.BEAM-DOWN XV
+407 Resist.BEAM-DOWN XVI
+408 Resist.BEAM-DOWN XVII
+409 Resist.BEAM-DOWN XVIII
+40A Resist.BEAM-DOWN XIX
+40B Resist.BEAM-DOWN XX
+40C Resist.THERM-DOWN I
+40D Resist.THERM-DOWN II
+40E Resist.THERM-DOWN III
+40F Resist.THERM-DOWN IV
+410 Resist.THERM-DOWN V
+411 Resist.THERM-DOWN VI
+412 Resist.THERM-DOWN VII
+413 Resist.THERM-DOWN VIII
+414 Resist.THERM-DOWN IX
+415 Resist.THERM-DOWN X
+416 Resist.THERM-DOWN XI
+417 Resist.THERM-DOWN XII
+418 Resist.THERM-DOWN XIII
+419 Resist.THERM-DOWN XIV
+41A Resist.THERM-DOWN XV
+41B Resist.THERM-DOWN XVI
+41C Resist.THERM-DOWN XVII
+41D Resist.THERM-DOWN XVIII
+41E Resist.THERM-DOWN XIX
+41F Resist.THERM-DOWN XX
+420 Resist.ELEC-DOWN I
+421 Resist.ELEC-DOWN II
+422 Resist.ELEC-DOWN III
+423 Resist.ELEC-DOWN IV
+424 Resist.ELEC-DOWN V
+425 Resist.ELEC-DOWN VI
+426 Resist.ELEC-DOWN VII
+427 Resist.ELEC-DOWN VIII
+428 Resist.ELEC-DOWN IX
+429 Resist.ELEC-DOWN X
+42A Resist.ELEC-DOWN XI
+42B Resist.ELEC-DOWN XII
+42C Resist.ELEC-DOWN XIII
+42D Resist.ELEC-DOWN XIV
+42E Resist.ELEC-DOWN XV
+42F Resist.ELEC-DOWN XVI
+430 Resist.ELEC-DOWN XVII
+431 Resist.ELEC-DOWN XVIII
+432 Resist.ELEC-DOWN XIX
+433 Resist.ELEC-DOWN XX
+434 Resist.ETHER-DOWN I
+435 Resist.ETHER-DOWN II
+436 Resist.ETHER-DOWN III
+437 Resist.ETHER-DOWN IV
+438 Resist.ETHER-DOWN V
+439 Resist.ETHER-DOWN VI
+43A Resist.ETHER-DOWN VII
+43B Resist.ETHER-DOWN VIII
+43C Resist.ETHER-DOWN IX
+43D Resist.ETHER-DOWN X
+43E Resist.ETHER-DOWN XI
+43F Resist.ETHER-DOWN XII
+440 Resist.ETHER-DOWN XIII
+441 Resist.ETHER-DOWN XIV
+442 Resist.ETHER-DOWN XV
+443 Resist.ETHER-DOWN XVI
+444 Resist.ETHER-DOWN XVII
+445 Resist.ETHER-DOWN XVIII
+446 Resist.ETHER-DOWN XIX
+447 Resist.ETHER-DOWN XX
+448 Resist.GRAV-DOWN I
+449 Resist.GRAV-DOWN II
+44A Resist.GRAV-DOWN III
+44B Resist.GRAV-DOWN IV
+44C Resist.GRAV-DOWN V
+44D Resist.GRAV-DOWN VI
+44E Resist.GRAV-DOWN VII
+44F Resist.GRAV-DOWN VIII
+450 Resist.GRAV-DOWN IX
+451 Resist.GRAV-DOWN X
+452 Resist.GRAV-DOWN XI
+453 Resist.GRAV-DOWN XII
+454 Resist.GRAV-DOWN XIII
+455 Resist.GRAV-DOWN XIV
+456 Resist.GRAV-DOWN XV
+457 Resist.GRAV-DOWN XVI
+458 Resist.GRAV-DOWN XVII
+459 Resist.GRAV-DOWN XVIII
+45A Resist.GRAV-DOWN XIX
+45B Resist.GRAV-DOWN XX
+45C Resist.TIME-BOMB I
+45D Resist.TIME-BOMB II
+45E Resist.TIME-BOMB III
+45F Resist.TIME-BOMB IV
+460 Resist.TIME-BOMB V
+461 Resist.TIME-BOMB VI
+462 Resist.TIME-BOMB VII
+463 Resist.TIME-BOMB VIII
+464 Resist.TIME-BOMB IX
+465 Resist.TIME-BOMB X
+466 Resist.TIME-BOMB XI
+467 Resist.TIME-BOMB XII
+468 Resist.TIME-BOMB XIII
+469 Resist.TIME-BOMB XIV
+46A Resist.TIME-BOMB XV
+46B Resist.TIME-BOMB XVI
+46C Resist.TIME-BOMB XVII
+46D Resist.TIME-BOMB XVIII
+46E Resist.TIME-BOMB XIX
+46F Resist.TIME-BOMB XX
+470 Resist.DEBUFF-DOWN I
+471 Resist.DEBUFF-DOWN II
+472 Resist.DEBUFF-DOWN III
+473 Resist.DEBUFF-DOWN IV
+474 Resist.DEBUFF-DOWN V
+475 Resist.DEBUFF-DOWN VI
+476 Resist.DEBUFF-DOWN VII
+477 Resist.DEBUFF-DOWN VIII
+478 Resist.DEBUFF-DOWN IX
+479 Resist.DEBUFF-DOWN X
+47A Resist.DEBUFF-DOWN XI
+47B Resist.DEBUFF-DOWN XII
+47C Resist.DEBUFF-DOWN XIII
+47D Resist.DEBUFF-DOWN XIV
+47E Resist.DEBUFF-DOWN XV
+47F Resist.DEBUFF-DOWN XVI
+480 Resist.DEBUFF-DOWN XVII
+481 Resist.DEBUFF-DOWN XVIII
+482 Resist.DEBUFF-DOWN XIX
+483 Resist.DEBUFF-DOWN XX
+484 Resist.RECOV-DOWN I
+485 Resist.RECOV-DOWN II
+486 Resist.RECOV-DOWN III
+487 Resist.RECOV-DOWN IV
+488 Resist.RECOV-DOWN V
+489 Resist.RECOV-DOWN VI
+48A Resist.RECOV-DOWN VII
+48B Resist.RECOV-DOWN VIII
+48C Resist.RECOV-DOWN IX
+48D Resist.RECOV-DOWN X
+48E Resist.RECOV-DOWN XI
+48F Resist.RECOV-DOWN XII
+490 Resist.RECOV-DOWN XIII
+491 Resist.RECOV-DOWN XIV
+492 Resist.RECOV-DOWN XV
+493 Resist.RECOV-DOWN XVI
+494 Resist.RECOV-DOWN XVII
+495 Resist.RECOV-DOWN XVIII
+496 Resist.RECOV-DOWN XIX
+497 Resist.RECOV-DOWN XX
+498 Resist.BLAZE I
+499 Resist.BLAZE II
+49A Resist.BLAZE III
+49B Resist.BLAZE IV
+49C Resist.BLAZE V
+49D Resist.BLAZE VI
+49E Resist.BLAZE VII
+49F Resist.BLAZE VIII
+4A0 Resist.BLAZE IX
+4A1 Resist.BLAZE X
+4A2 Resist.BLAZE XI
+4A3 Resist.BLAZE XII
+4A4 Resist.BLAZE XIII
+4A5 Resist.BLAZE XIV
+4A6 Resist.BLAZE XV
+4A7 Resist.BLAZE XVI
+4A8 Resist.BLAZE XVII
+4A9 Resist.BLAZE XVIII
+4AA Resist.BLAZE XIX
+4AB Resist.BLAZE XX
+4AC Resist.SHOCK I
+4AD Resist.SHOCK II
+4AE Resist.SHOCK III
+4AF Resist.SHOCK IV
+4B0 Resist.SHOCK V
+4B1 Resist.SHOCK VI
+4B2 Resist.SHOCK VII
+4B3 Resist.SHOCK VIII
+4B4 Resist.SHOCK IX
+4B5 Resist.SHOCK X
+4B6 Resist.SHOCK XI
+4B7 Resist.SHOCK XII
+4B8 Resist.SHOCK XIII
+4B9 Resist.SHOCK XIV
+4BA Resist.SHOCK XV
+4BB Resist.SHOCK XVI
+4BC Resist.SHOCK XVII
+4BD Resist.SHOCK XVIII
+4BE Resist.SHOCK XIX
+4BF Resist.SHOCK XX
+4C0 CutTime.DEBUFF I
+4C1 CutTime.DEBUFF II
+4C2 CutTime.DEBUFF III
+4C3 CutTime.DEBUFF IV
+4C4 CutTime.DEBUFF V
+4C5 CutTime.DEBUFF VI
+4C6 CutTime.DEBUFF VII
+4C7 CutTime.DEBUFF VIII
+4C8 CutTime.DEBUFF IX
+4C9 CutTime.DEBUFF X
+4CA CutTime.DEBUFF XI
+4CB CutTime.DEBUFF XII
+4CC CutTime.DEBUFF XIII
+4CD CutTime.DEBUFF XIV
+4CE CutTime.DEBUFF XV
+4CF CutTime.DEBUFF XVI
+4D0 CutTime.DEBUFF XVII
+4D1 CutTime.DEBUFF XVIII
+4D2 CutTime.DEBUFF XIX
+4D3 CutTime.DEBUFF XX
+4D4 CriticalUp I
+4D5 CriticalUp II
+4D6 CriticalUp III
+4D7 CriticalUp IV
+4D8 CriticalUp V
+4D9 CriticalUp VI
+4DA CriticalUp VII
+4DB CriticalUp VIII
+4DC CriticalUp IX
+4DD CriticalUp X
+4DE CriticalUp XI
+4DF CriticalUp XII
+4E0 CriticalUp XIII
+4E1 CriticalUp XIV
+4E2 CriticalUp XV
+4E3 CriticalUp XVI
+4E4 CriticalUp XVII
+4E5 CriticalUp XVIII
+4E6 CriticalUp XIX
+4E7 CriticalUp XX
+4E8 CritUp.THEROID I
+4E9 CritUp.THEROID II
+4EA CritUp.THEROID III
+4EB CritUp.THEROID IV
+4EC CritUp.THEROID V
+4ED CritUp.THEROID VI
+4EE CritUp.THEROID VII
+4EF CritUp.THEROID VIII
+4F0 CritUp.THEROID IX
+4F1 CritUp.THEROID X
+4F2 CritUp.THEROID XI
+4F3 CritUp.THEROID XII
+4F4 CritUp.THEROID XIII
+4F5 CritUp.THEROID XIV
+4F6 CritUp.THEROID XV
+4F7 CritUp.THEROID XVI
+4F8 CritUp.THEROID XVII
+4F9 CritUp.THEROID XVIII
+4FA CritUp.THEROID XIX
+4FB CritUp.THEROID XX
+4FC CritUp.INSECTOID I
+4FD CritUp.INSECTOID II
+4FE CritUp.INSECTOID III
+4FF CritUp.INSECTOID IV
+500 CritUp.INSECTOID V
+501 CritUp.INSECTOID VI
+502 CritUp.INSECTOID VII
+503 CritUp.INSECTOID VIII
+504 CritUp.INSECTOID IX
+505 CritUp.INSECTOID X
+506 CritUp.INSECTOID XI
+507 CritUp.INSECTOID XII
+508 CritUp.INSECTOID XIII
+509 CritUp.INSECTOID XIV
+50A CritUp.INSECTOID XV
+50B CritUp.INSECTOID XVI
+50C CritUp.INSECTOID XVII
+50D CritUp.INSECTOID XVIII
+50E CritUp.INSECTOID XIX
+50F CritUp.INSECTOID XX
+510 CritUp.PISCINOID I
+511 CritUp.PISCINOID II
+512 CritUp.PISCINOID III
+513 CritUp.PISCINOID IV
+514 CritUp.PISCINOID V
+515 CritUp.PISCINOID VI
+516 CritUp.PISCINOID VII
+517 CritUp.PISCINOID VIII
+518 CritUp.PISCINOID IX
+519 CritUp.PISCINOID X
+51A CritUp.PISCINOID XI
+51B CritUp.PISCINOID XII
+51C CritUp.PISCINOID XIII
+51D CritUp.PISCINOID XIV
+51E CritUp.PISCINOID XV
+51F CritUp.PISCINOID XVI
+520 CritUp.PISCINOID XVII
+521 CritUp.PISCINOID XVIII
+522 CritUp.PISCINOID XIX
+523 CritUp.PISCINOID XX
+524 CritUp.HUMANOID I
+525 CritUp.HUMANOID II
+526 CritUp.HUMANOID III
+527 CritUp.HUMANOID IV
+528 CritUp.HUMANOID V
+529 CritUp.HUMANOID VI
+52A CritUp.HUMANOID VII
+52B CritUp.HUMANOID VIII
+52C CritUp.HUMANOID IX
+52D CritUp.HUMANOID X
+52E CritUp.HUMANOID XI
+52F CritUp.HUMANOID XII
+530 CritUp.HUMANOID XIII
+531 CritUp.HUMANOID XIV
+532 CritUp.HUMANOID XV
+533 CritUp.HUMANOID XVI
+534 CritUp.HUMANOID XVII
+535 CritUp.HUMANOID XVIII
+536 CritUp.HUMANOID XIX
+537 CritUp.HUMANOID XX
+538 CritUp.MECHANOID I
+539 CritUp.MECHANOID II
+53A CritUp.MECHANOID III
+53B CritUp.MECHANOID IV
+53C CritUp.MECHANOID V
+53D CritUp.MECHANOID VI
+53E CritUp.MECHANOID VII
+53F CritUp.MECHANOID VIII
+540 CritUp.MECHANOID IX
+541 CritUp.MECHANOID X
+542 CritUp.MECHANOID XI
+543 CritUp.MECHANOID XII
+544 CritUp.MECHANOID XIII
+545 CritUp.MECHANOID XIV
+546 CritUp.MECHANOID XV
+547 CritUp.MECHANOID XVI
+548 CritUp.MECHANOID XVII
+549 CritUp.MECHANOID XVIII
+54A CritUp.MECHANOID XIX
+54B CritUp.MECHANOID XX
+54C CritUp.CHIMEROID I
+54D CritUp.CHIMEROID II
+54E CritUp.CHIMEROID III
+54F CritUp.CHIMEROID IV
+550 CritUp.CHIMEROID V
+551 CritUp.CHIMEROID VI
+552 CritUp.CHIMEROID VII
+553 CritUp.CHIMEROID VIII
+554 CritUp.CHIMEROID IX
+555 CritUp.CHIMEROID X
+556 CritUp.CHIMEROID XI
+557 CritUp.CHIMEROID XII
+558 CritUp.CHIMEROID XIII
+559 CritUp.CHIMEROID XIV
+55A CritUp.CHIMEROID XV
+55B CritUp.CHIMEROID XVI
+55C CritUp.CHIMEROID XVII
+55D CritUp.CHIMEROID XVIII
+55E CritUp.CHIMEROID XIX
+55F CritUp.CHIMEROID XX
+560 CritUp.ULTRAFAUNA I
+561 CritUp.ULTRAFAUNA II
+562 CritUp.ULTRAFAUNA III
+563 CritUp.ULTRAFAUNA IV
+564 CritUp.ULTRAFAUNA V
+565 CritUp.ULTRAFAUNA VI
+566 CritUp.ULTRAFAUNA VII
+567 CritUp.ULTRAFAUNA VIII
+568 CritUp.ULTRAFAUNA IX
+569 CritUp.ULTRAFAUNA X
+56A CritUp.ULTRAFAUNA XI
+56B CritUp.ULTRAFAUNA XII
+56C CritUp.ULTRAFAUNA XIII
+56D CritUp.ULTRAFAUNA XIV
+56E CritUp.ULTRAFAUNA XV
+56F CritUp.ULTRAFAUNA XVI
+570 CritUp.ULTRAFAUNA XVII
+571 CritUp.ULTRAFAUNA XVIII
+572 CritUp.ULTRAFAUNA XIX
+573 CritUp.ULTRAFAUNA XX
+574 ExTime.CRIT-FLOW I
+575 ExTime.CRIT-FLOW II
+576 ExTime.CRIT-FLOW III
+577 ExTime.CRIT-FLOW IV
+578 ExTime.CRIT-FLOW V
+579 ExTime.CRIT-FLOW VI
+57A ExTime.CRIT-FLOW VII
+57B ExTime.CRIT-FLOW VIII
+57C ExTime.CRIT-FLOW IX
+57D ExTime.CRIT-FLOW X
+57E ExTime.CRIT-FLOW XI
+57F ExTime.CRIT-FLOW XII
+580 ExTime.CRIT-FLOW XIII
+581 ExTime.CRIT-FLOW XIV
+582 ExTime.CRIT-FLOW XV
+583 ExTime.CRIT-FLOW XVI
+584 ExTime.CRIT-FLOW XVII
+585 ExTime.CRIT-FLOW XVIII
+586 ExTime.CRIT-FLOW XIX
+587 ExTime.CRIT-FLOW XX
+588 Slayer.THEROID I
+589 Slayer.THEROID II
+58A Slayer.THEROID III
+58B Slayer.THEROID IV
+58C Slayer.THEROID V
+58D Slayer.THEROID VI
+58E Slayer.THEROID VII
+58F Slayer.THEROID VIII
+590 Slayer.THEROID IX
+591 Slayer.THEROID X
+592 Slayer.THEROID XI
+593 Slayer.THEROID XII
+594 Slayer.THEROID XIII
+595 Slayer.THEROID XIV
+596 Slayer.THEROID XV
+597 Slayer.THEROID XVI
+598 Slayer.THEROID XVII
+599 Slayer.THEROID XVIII
+59A Slayer.THEROID XIX
+59B Slayer.THEROID XX
+59C Slayer.INSECTOID I
+59D Slayer.INSECTOID II
+59E Slayer.INSECTOID III
+59F Slayer.INSECTOID IV
+5A0 Slayer.INSECTOID V
+5A1 Slayer.INSECTOID VI
+5A2 Slayer.INSECTOID VII
+5A3 Slayer.INSECTOID VIII
+5A4 Slayer.INSECTOID IX
+5A5 Slayer.INSECTOID X
+5A6 Slayer.INSECTOID XI
+5A7 Slayer.INSECTOID XII
+5A8 Slayer.INSECTOID XIII
+5A9 Slayer.INSECTOID XIV
+5AA Slayer.INSECTOID XV
+5AB Slayer.INSECTOID XVI
+5AC Slayer.INSECTOID XVII
+5AD Slayer.INSECTOID XVIII
+5AE Slayer.INSECTOID XIX
+5AF Slayer.INSECTOID XX
+5B0 Slayer.PISCINOID I
+5B1 Slayer.PISCINOID II
+5B2 Slayer.PISCINOID III
+5B3 Slayer.PISCINOID IV
+5B4 Slayer.PISCINOID V
+5B5 Slayer.PISCINOID VI
+5B6 Slayer.PISCINOID VII
+5B7 Slayer.PISCINOID VIII
+5B8 Slayer.PISCINOID IX
+5B9 Slayer.PISCINOID X
+5BA Slayer.PISCINOID XI
+5BB Slayer.PISCINOID XII
+5BC Slayer.PISCINOID XIII
+5BD Slayer.PISCINOID XIV
+5BE Slayer.PISCINOID XV
+5BF Slayer.PISCINOID XVI
+5C0 Slayer.PISCINOID XVII
+5C1 Slayer.PISCINOID XVIII
+5C2 Slayer.PISCINOID XIX
+5C3 Slayer.PISCINOID XX
+5C4 Slayer.HUMANOID I
+5C5 Slayer.HUMANOID II
+5C6 Slayer.HUMANOID III
+5C7 Slayer.HUMANOID IV
+5C8 Slayer.HUMANOID V
+5C9 Slayer.HUMANOID VI
+5CA Slayer.HUMANOID VII
+5CB Slayer.HUMANOID VIII
+5CC Slayer.HUMANOID IX
+5CD Slayer.HUMANOID X
+5CE Slayer.HUMANOID XI
+5CF Slayer.HUMANOID XII
+5D0 Slayer.HUMANOID XIII
+5D1 Slayer.HUMANOID XIV
+5D2 Slayer.HUMANOID XV
+5D3 Slayer.HUMANOID XVI
+5D4 Slayer.HUMANOID XVII
+5D5 Slayer.HUMANOID XVIII
+5D6 Slayer.HUMANOID XIX
+5D7 Slayer.HUMANOID XX
+5D8 Slayer.MECHANOID I
+5D9 Slayer.MECHANOID II
+5DA Slayer.MECHANOID III
+5DB Slayer.MECHANOID IV
+5DC Slayer.MECHANOID V
+5DD Slayer.MECHANOID VI
+5DE Slayer.MECHANOID VII
+5DF Slayer.MECHANOID VIII
+5E0 Slayer.MECHANOID IX
+5E1 Slayer.MECHANOID X
+5E2 Slayer.MECHANOID XI
+5E3 Slayer.MECHANOID XII
+5E4 Slayer.MECHANOID XIII
+5E5 Slayer.MECHANOID XIV
+5E6 Slayer.MECHANOID XV
+5E7 Slayer.MECHANOID XVI
+5E8 Slayer.MECHANOID XVII
+5E9 Slayer.MECHANOID XVIII
+5EA Slayer.MECHANOID XIX
+5EB Slayer.MECHANOID XX
+5EC Slayer.CHIMEROID I
+5ED Slayer.CHIMEROID II
+5EE Slayer.CHIMEROID III
+5EF Slayer.CHIMEROID IV
+5F0 Slayer.CHIMEROID V
+5F1 Slayer.CHIMEROID VI
+5F2 Slayer.CHIMEROID VII
+5F3 Slayer.CHIMEROID VIII
+5F4 Slayer.CHIMEROID IX
+5F5 Slayer.CHIMEROID X
+5F6 Slayer.CHIMEROID XI
+5F7 Slayer.CHIMEROID XII
+5F8 Slayer.CHIMEROID XIII
+5F9 Slayer.CHIMEROID XIV
+5FA Slayer.CHIMEROID XV
+5FB Slayer.CHIMEROID XVI
+5FC Slayer.CHIMEROID XVII
+5FD Slayer.CHIMEROID XVIII
+5FE Slayer.CHIMEROID XIX
+5FF Slayer.CHIMEROID XX
+600 Slayer.ULTRAFAUNA I
+601 Slayer.ULTRAFAUNA II
+602 Slayer.ULTRAFAUNA III
+603 Slayer.ULTRAFAUNA IV
+604 Slayer.ULTRAFAUNA V
+605 Slayer.ULTRAFAUNA VI
+606 Slayer.ULTRAFAUNA VII
+607 Slayer.ULTRAFAUNA VIII
+608 Slayer.ULTRAFAUNA IX
+609 Slayer.ULTRAFAUNA X
+60A Slayer.ULTRAFAUNA XI
+60B Slayer.ULTRAFAUNA XII
+60C Slayer.ULTRAFAUNA XIII
+60D Slayer.ULTRAFAUNA XIV
+60E Slayer.ULTRAFAUNA XV
+60F Slayer.ULTRAFAUNA XVI
+610 Slayer.ULTRAFAUNA XVII
+611 Slayer.ULTRAFAUNA XVIII
+612 Slayer.ULTRAFAUNA XIX
+613 Slayer.ULTRAFAUNA XX
+614 AttributeDmg.PHYS I
+615 AttributeDmg.PHYS II
+616 AttributeDmg.PHYS III
+617 AttributeDmg.PHYS IV
+618 AttributeDmg.PHYS V
+619 AttributeDmg.PHYS VI
+61A AttributeDmg.PHYS VII
+61B AttributeDmg.PHYS VIII
+61C AttributeDmg.PHYS IX
+61D AttributeDmg.PHYS X
+61E AttributeDmg.PHYS XI
+61F AttributeDmg.PHYS XII
+620 AttributeDmg.PHYS XIII
+621 AttributeDmg.PHYS XIV
+622 AttributeDmg.PHYS XV
+623 AttributeDmg.PHYS XVI
+624 AttributeDmg.PHYS XVII
+625 AttributeDmg.PHYS XVIII
+626 AttributeDmg.PHYS XIX
+627 AttributeDmg.PHYS XX
+628 AttributeDmg.BEAM I
+629 AttributeDmg.BEAM II
+62A AttributeDmg.BEAM III
+62B AttributeDmg.BEAM IV
+62C AttributeDmg.BEAM V
+62D AttributeDmg.BEAM VI
+62E AttributeDmg.BEAM VII
+62F AttributeDmg.BEAM VIII
+630 AttributeDmg.BEAM IX
+631 AttributeDmg.BEAM X
+632 AttributeDmg.BEAM XI
+633 AttributeDmg.BEAM XII
+634 AttributeDmg.BEAM XIII
+635 AttributeDmg.BEAM XIV
+636 AttributeDmg.BEAM XV
+637 AttributeDmg.BEAM XVI
+638 AttributeDmg.BEAM XVII
+639 AttributeDmg.BEAM XVIII
+63A AttributeDmg.BEAM XIX
+63B AttributeDmg.BEAM XX
+63C AttributeDmg.ETHER I
+63D AttributeDmg.ETHER II
+63E AttributeDmg.ETHER III
+63F AttributeDmg.ETHER IV
+640 AttributeDmg.ETHER V
+641 AttributeDmg.ETHER VI
+642 AttributeDmg.ETHER VII
+643 AttributeDmg.ETHER VIII
+644 AttributeDmg.ETHER IX
+645 AttributeDmg.ETHER X
+646 AttributeDmg.ETHER XI
+647 AttributeDmg.ETHER XII
+648 AttributeDmg.ETHER XIII
+649 AttributeDmg.ETHER XIV
+64A AttributeDmg.ETHER XV
+64B AttributeDmg.ETHER XVI
+64C AttributeDmg.ETHER XVII
+64D AttributeDmg.ETHER XVIII
+64E AttributeDmg.ETHER XIX
+64F AttributeDmg.ETHER XX
+650 AttributeDmg.THERM I
+651 AttributeDmg.THERM II
+652 AttributeDmg.THERM III
+653 AttributeDmg.THERM IV
+654 AttributeDmg.THERM V
+655 AttributeDmg.THERM VI
+656 AttributeDmg.THERM VII
+657 AttributeDmg.THERM VIII
+658 AttributeDmg.THERM IX
+659 AttributeDmg.THERM X
+65A AttributeDmg.THERM XI
+65B AttributeDmg.THERM XII
+65C AttributeDmg.THERM XIII
+65D AttributeDmg.THERM XIV
+65E AttributeDmg.THERM XV
+65F AttributeDmg.THERM XVI
+660 AttributeDmg.THERM XVII
+661 AttributeDmg.THERM XVIII
+662 AttributeDmg.THERM XIX
+663 AttributeDmg.THERM XX
+664 AttributeDmg.ELEC I
+665 AttributeDmg.ELEC II
+666 AttributeDmg.ELEC III
+667 AttributeDmg.ELEC IV
+668 AttributeDmg.ELEC V
+669 AttributeDmg.ELEC VI
+66A AttributeDmg.ELEC VII
+66B AttributeDmg.ELEC VIII
+66C AttributeDmg.ELEC IX
+66D AttributeDmg.ELEC X
+66E AttributeDmg.ELEC XI
+66F AttributeDmg.ELEC XII
+670 AttributeDmg.ELEC XIII
+671 AttributeDmg.ELEC XIV
+672 AttributeDmg.ELEC XV
+673 AttributeDmg.ELEC XVI
+674 AttributeDmg.ELEC XVII
+675 AttributeDmg.ELEC XVIII
+676 AttributeDmg.ELEC XIX
+677 AttributeDmg.ELEC XX
+678 AttributeDmg.GRAV I
+679 AttributeDmg.GRAV II
+67A AttributeDmg.GRAV III
+67B AttributeDmg.GRAV IV
+67C AttributeDmg.GRAV V
+67D AttributeDmg.GRAV VI
+67E AttributeDmg.GRAV VII
+67F AttributeDmg.GRAV VIII
+680 AttributeDmg.GRAV IX
+681 AttributeDmg.GRAV X
+682 AttributeDmg.GRAV XI
+683 AttributeDmg.GRAV XII
+684 AttributeDmg.GRAV XIII
+685 AttributeDmg.GRAV XIV
+686 AttributeDmg.GRAV XV
+687 AttributeDmg.GRAV XVI
+688 AttributeDmg.GRAV XVII
+689 AttributeDmg.GRAV XVIII
+68A AttributeDmg.GRAV XIX
+68B AttributeDmg.GRAV XX
+68C PositionDmg.FRONT I
+68D PositionDmg.FRONT II
+68E PositionDmg.FRONT III
+68F PositionDmg.FRONT IV
+690 PositionDmg.FRONT V
+691 PositionDmg.FRONT VI
+692 PositionDmg.FRONT VII
+693 PositionDmg.FRONT VIII
+694 PositionDmg.FRONT IX
+695 PositionDmg.FRONT X
+696 PositionDmg.FRONT XI
+697 PositionDmg.FRONT XII
+698 PositionDmg.FRONT XIII
+699 PositionDmg.FRONT XIV
+69A PositionDmg.FRONT XV
+69B PositionDmg.FRONT XVI
+69C PositionDmg.FRONT XVII
+69D PositionDmg.FRONT XVIII
+69E PositionDmg.FRONT XIX
+69F PositionDmg.FRONT XX
+6A0 PositionDmg.SIDE I
+6A1 PositionDmg.SIDE II
+6A2 PositionDmg.SIDE III
+6A3 PositionDmg.SIDE IV
+6A4 PositionDmg.SIDE V
+6A5 PositionDmg.SIDE VI
+6A6 PositionDmg.SIDE VII
+6A7 PositionDmg.SIDE VIII
+6A8 PositionDmg.SIDE IX
+6A9 PositionDmg.SIDE X
+6AA PositionDmg.SIDE XI
+6AB PositionDmg.SIDE XII
+6AC PositionDmg.SIDE XIII
+6AD PositionDmg.SIDE XIV
+6AE PositionDmg.SIDE XV
+6AF PositionDmg.SIDE XVI
+6B0 PositionDmg.SIDE XVII
+6B1 PositionDmg.SIDE XVIII
+6B2 PositionDmg.SIDE XIX
+6B3 PositionDmg.SIDE XX
+6B4 PositionDmg.BACK I
+6B5 PositionDmg.BACK II
+6B6 PositionDmg.BACK III
+6B7 PositionDmg.BACK IV
+6B8 PositionDmg.BACK V
+6B9 PositionDmg.BACK VI
+6BA PositionDmg.BACK VII
+6BB PositionDmg.BACK VIII
+6BC PositionDmg.BACK IX
+6BD PositionDmg.BACK X
+6BE PositionDmg.BACK XI
+6BF PositionDmg.BACK XII
+6C0 PositionDmg.BACK XIII
+6C1 PositionDmg.BACK XIV
+6C2 PositionDmg.BACK XV
+6C3 PositionDmg.BACK XVI
+6C4 PositionDmg.BACK XVII
+6C5 PositionDmg.BACK XVIII
+6C6 PositionDmg.BACK XIX
+6C7 PositionDmg.BACK XX
+6C8 PositionDmg.ABOVE I
+6C9 PositionDmg.ABOVE II
+6CA PositionDmg.ABOVE III
+6CB PositionDmg.ABOVE IV
+6CC PositionDmg.ABOVE V
+6CD PositionDmg.ABOVE VI
+6CE PositionDmg.ABOVE VII
+6CF PositionDmg.ABOVE VIII
+6D0 PositionDmg.ABOVE IX
+6D1 PositionDmg.ABOVE X
+6D2 PositionDmg.ABOVE XI
+6D3 PositionDmg.ABOVE XII
+6D4 PositionDmg.ABOVE XIII
+6D5 PositionDmg.ABOVE XIV
+6D6 PositionDmg.ABOVE XV
+6D7 PositionDmg.ABOVE XVI
+6D8 PositionDmg.ABOVE XVII
+6D9 PositionDmg.ABOVE XVIII
+6DA PositionDmg.ABOVE XIX
+6DB PositionDmg.ABOVE XX
+6DC M-Auto.BLACKOUT I
+6DD M-Auto.BLACKOUT II
+6DE M-Auto.BLACKOUT III
+6DF M-Auto.BLACKOUT IV
+6E0 M-Auto.BLACKOUT V
+6E1 M-Auto.BLACKOUT VI
+6E2 M-Auto.BLACKOUT VII
+6E3 M-Auto.BLACKOUT VIII
+6E4 M-Auto.BLACKOUT IX
+6E5 M-Auto.BLACKOUT X
+6E6 M-Auto.BLACKOUT XI
+6E7 M-Auto.BLACKOUT XII
+6E8 M-Auto.BLACKOUT XIII
+6E9 M-Auto.BLACKOUT XIV
+6EA M-Auto.BLACKOUT XV
+6EB M-Auto.BLACKOUT XVI
+6EC M-Auto.BLACKOUT XVII
+6ED M-Auto.BLACKOUT XVIII
+6EE M-Auto.BLACKOUT XIX
+6EF M-Auto.BLACKOUT XX
+6F0 M-Auto.FATIGUE I
+6F1 M-Auto.FATIGUE II
+6F2 M-Auto.FATIGUE III
+6F3 M-Auto.FATIGUE IV
+6F4 M-Auto.FATIGUE V
+6F5 M-Auto.FATIGUE VI
+6F6 M-Auto.FATIGUE VII
+6F7 M-Auto.FATIGUE VIII
+6F8 M-Auto.FATIGUE IX
+6F9 M-Auto.FATIGUE X
+6FA M-Auto.FATIGUE XI
+6FB M-Auto.FATIGUE XII
+6FC M-Auto.FATIGUE XIII
+6FD M-Auto.FATIGUE XIV
+6FE M-Auto.FATIGUE XV
+6FF M-Auto.FATIGUE XVI
+700 M-Auto.FATIGUE XVII
+701 M-Auto.FATIGUE XVIII
+702 M-Auto.FATIGUE XIX
+703 M-Auto.FATIGUE XX
+704 M-Auto.PHYS-DOWN I
+705 M-Auto.PHYS-DOWN II
+706 M-Auto.PHYS-DOWN III
+707 M-Auto.PHYS-DOWN IV
+708 M-Auto.PHYS-DOWN V
+709 M-Auto.PHYS-DOWN VI
+70A M-Auto.PHYS-DOWN VII
+70B M-Auto.PHYS-DOWN VIII
+70C M-Auto.PHYS-DOWN IX
+70D M-Auto.PHYS-DOWN X
+70E M-Auto.PHYS-DOWN XI
+70F M-Auto.PHYS-DOWN XII
+710 M-Auto.PHYS-DOWN XIII
+711 M-Auto.PHYS-DOWN XIV
+712 M-Auto.PHYS-DOWN XV
+713 M-Auto.PHYS-DOWN XVI
+714 M-Auto.PHYS-DOWN XVII
+715 M-Auto.PHYS-DOWN XVIII
+716 M-Auto.PHYS-DOWN XIX
+717 M-Auto.PHYS-DOWN XX
+718 M-Auto.BEAM-DOWN I
+719 M-Auto.BEAM-DOWN II
+71A M-Auto.BEAM-DOWN III
+71B M-Auto.BEAM-DOWN IV
+71C M-Auto.BEAM-DOWN V
+71D M-Auto.BEAM-DOWN VI
+71E M-Auto.BEAM-DOWN VII
+71F M-Auto.BEAM-DOWN VIII
+720 M-Auto.BEAM-DOWN IX
+721 M-Auto.BEAM-DOWN X
+722 M-Auto.BEAM-DOWN XI
+723 M-Auto.BEAM-DOWN XII
+724 M-Auto.BEAM-DOWN XIII
+725 M-Auto.BEAM-DOWN XIV
+726 M-Auto.BEAM-DOWN XV
+727 M-Auto.BEAM-DOWN XVI
+728 M-Auto.BEAM-DOWN XVII
+729 M-Auto.BEAM-DOWN XVIII
+72A M-Auto.BEAM-DOWN XIX
+72B M-Auto.BEAM-DOWN XX
+72C M-Auto.ETHER-DOWN I
+72D M-Auto.ETHER-DOWN II
+72E M-Auto.ETHER-DOWN III
+72F M-Auto.ETHER-DOWN IV
+730 M-Auto.ETHER-DOWN V
+731 M-Auto.ETHER-DOWN VI
+732 M-Auto.ETHER-DOWN VII
+733 M-Auto.ETHER-DOWN VIII
+734 M-Auto.ETHER-DOWN IX
+735 M-Auto.ETHER-DOWN X
+736 M-Auto.ETHER-DOWN XI
+737 M-Auto.ETHER-DOWN XII
+738 M-Auto.ETHER-DOWN XIII
+739 M-Auto.ETHER-DOWN XIV
+73A M-Auto.ETHER-DOWN XV
+73B M-Auto.ETHER-DOWN XVI
+73C M-Auto.ETHER-DOWN XVII
+73D M-Auto.ETHER-DOWN XVIII
+73E M-Auto.ETHER-DOWN XIX
+73F M-Auto.ETHER-DOWN XX
+740 M-Auto.THERM-DOWN I
+741 M-Auto.THERM-DOWN II
+742 M-Auto.THERM-DOWN III
+743 M-Auto.THERM-DOWN IV
+744 M-Auto.THERM-DOWN V
+745 M-Auto.THERM-DOWN VI
+746 M-Auto.THERM-DOWN VII
+747 M-Auto.THERM-DOWN VIII
+748 M-Auto.THERM-DOWN IX
+749 M-Auto.THERM-DOWN X
+74A M-Auto.THERM-DOWN XI
+74B M-Auto.THERM-DOWN XII
+74C M-Auto.THERM-DOWN XIII
+74D M-Auto.THERM-DOWN XIV
+74E M-Auto.THERM-DOWN XV
+74F M-Auto.THERM-DOWN XVI
+750 M-Auto.THERM-DOWN XVII
+751 M-Auto.THERM-DOWN XVIII
+752 M-Auto.THERM-DOWN XIX
+753 M-Auto.THERM-DOWN XX
+754 M-Auto.ELEC-DOWN I
+755 M-Auto.ELEC-DOWN II
+756 M-Auto.ELEC-DOWN III
+757 M-Auto.ELEC-DOWN IV
+758 M-Auto.ELEC-DOWN V
+759 M-Auto.ELEC-DOWN VI
+75A M-Auto.ELEC-DOWN VII
+75B M-Auto.ELEC-DOWN VIII
+75C M-Auto.ELEC-DOWN IX
+75D M-Auto.ELEC-DOWN X
+75E M-Auto.ELEC-DOWN XI
+75F M-Auto.ELEC-DOWN XII
+760 M-Auto.ELEC-DOWN XIII
+761 M-Auto.ELEC-DOWN XIV
+762 M-Auto.ELEC-DOWN XV
+763 M-Auto.ELEC-DOWN XVI
+764 M-Auto.ELEC-DOWN XVII
+765 M-Auto.ELEC-DOWN XVIII
+766 M-Auto.ELEC-DOWN XIX
+767 M-Auto.ELEC-DOWN XX
+768 M-Auto.GRAV-DOWN I
+769 M-Auto.GRAV-DOWN II
+76A M-Auto.GRAV-DOWN III
+76B M-Auto.GRAV-DOWN IV
+76C M-Auto.GRAV-DOWN V
+76D M-Auto.GRAV-DOWN VI
+76E M-Auto.GRAV-DOWN VII
+76F M-Auto.GRAV-DOWN VIII
+770 M-Auto.GRAV-DOWN IX
+771 M-Auto.GRAV-DOWN X
+772 M-Auto.GRAV-DOWN XI
+773 M-Auto.GRAV-DOWN XII
+774 M-Auto.GRAV-DOWN XIII
+775 M-Auto.GRAV-DOWN XIV
+776 M-Auto.GRAV-DOWN XV
+777 M-Auto.GRAV-DOWN XVI
+778 M-Auto.GRAV-DOWN XVII
+779 M-Auto.GRAV-DOWN XVIII
+77A M-Auto.GRAV-DOWN XIX
+77B M-Auto.GRAV-DOWN XX
+77C M-Auto.BLAZE I
+77D M-Auto.BLAZE II
+77E M-Auto.BLAZE III
+77F M-Auto.BLAZE IV
+780 M-Auto.BLAZE V
+781 M-Auto.BLAZE VI
+782 M-Auto.BLAZE VII
+783 M-Auto.BLAZE VIII
+784 M-Auto.BLAZE IX
+785 M-Auto.BLAZE X
+786 M-Auto.BLAZE XI
+787 M-Auto.BLAZE XII
+788 M-Auto.BLAZE XIII
+789 M-Auto.BLAZE XIV
+78A M-Auto.BLAZE XV
+78B M-Auto.BLAZE XVI
+78C M-Auto.BLAZE XVII
+78D M-Auto.BLAZE XVIII
+78E M-Auto.BLAZE XIX
+78F M-Auto.BLAZE XX
+790 M-Auto.SHOCK I
+791 M-Auto.SHOCK II
+792 M-Auto.SHOCK III
+793 M-Auto.SHOCK IV
+794 M-Auto.SHOCK V
+795 M-Auto.SHOCK VI
+796 M-Auto.SHOCK VII
+797 M-Auto.SHOCK VIII
+798 M-Auto.SHOCK IX
+799 M-Auto.SHOCK X
+79A M-Auto.SHOCK XI
+79B M-Auto.SHOCK XII
+79C M-Auto.SHOCK XIII
+79D M-Auto.SHOCK XIV
+79E M-Auto.SHOCK XV
+79F M-Auto.SHOCK XVI
+7A0 M-Auto.SHOCK XVII
+7A1 M-Auto.SHOCK XVIII
+7A2 M-Auto.SHOCK XIX
+7A3 M-Auto.SHOCK XX
+7A4 M-Auto.HP-RECOV I
+7A5 M-Auto.HP-RECOV II
+7A6 M-Auto.HP-RECOV III
+7A7 M-Auto.HP-RECOV IV
+7A8 M-Auto.HP-RECOV V
+7A9 M-Auto.HP-RECOV VI
+7AA M-Auto.HP-RECOV VII
+7AB M-Auto.HP-RECOV VIII
+7AC M-Auto.HP-RECOV IX
+7AD M-Auto.HP-RECOV X
+7AE M-Auto.HP-RECOV XI
+7AF M-Auto.HP-RECOV XII
+7B0 M-Auto.HP-RECOV XIII
+7B1 M-Auto.HP-RECOV XIV
+7B2 M-Auto.HP-RECOV XV
+7B3 M-Auto.HP-RECOV XVI
+7B4 M-Auto.HP-RECOV XVII
+7B5 M-Auto.HP-RECOV XVIII
+7B6 M-Auto.HP-RECOV XIX
+7B7 M-Auto.HP-RECOV XX
+7B8 Damage.GP-GAIN I
+7B9 Damage.GP-GAIN II
+7BA Damage.GP-GAIN III
+7BB Damage.GP-GAIN IV
+7BC Damage.GP-GAIN V
+7BD Damage.GP-GAIN VI
+7BE Damage.GP-GAIN VII
+7BF Damage.GP-GAIN VIII
+7C0 Damage.GP-GAIN IX
+7C1 Damage.GP-GAIN X
+7C2 Damage.GP-GAIN XI
+7C3 Damage.GP-GAIN XII
+7C4 Damage.GP-GAIN XIII
+7C5 Damage.GP-GAIN XIV
+7C6 Damage.GP-GAIN XV
+7C7 Damage.GP-GAIN XVI
+7C8 Damage.GP-GAIN XVII
+7C9 Damage.GP-GAIN XVIII
+7CA Damage.GP-GAIN XIX
+7CB Damage.GP-GAIN XX
+7CC Damage.APPEND I
+7CD Damage.APPEND II
+7CE Damage.APPEND III
+7CF Damage.APPEND IV
+7D0 Damage.APPEND V
+7D1 Damage.APPEND VI
+7D2 Damage.APPEND VII
+7D3 Damage.APPEND VIII
+7D4 Damage.APPEND IX
+7D5 Damage.APPEND X
+7D6 Damage.APPEND XI
+7D7 Damage.APPEND XII
+7D8 Damage.APPEND XIII
+7D9 Damage.APPEND XIV
+7DA Damage.APPEND XV
+7DB Damage.APPEND XVI
+7DC Damage.APPEND XVII
+7DD Damage.APPEND XVIII
+7DE Damage.APPEND XIX
+7DF Damage.APPEND XX
+7E0 Jamming I
+7E1 Jamming II
+7E2 Jamming III
+7E3 Jamming IV
+7E4 Jamming V
+7E5 Jamming VI
+7E6 Jamming VII
+7E7 Jamming VIII
+7E8 Jamming IX
+7E9 Jamming X
+7EA Jamming XI
+7EB Jamming XII
+7EC Jamming XIII
+7ED Jamming XIV
+7EE Jamming XV
+7EF Jamming XVI
+7F0 Jamming XVII
+7F1 Jamming XVIII
+7F2 Jamming XIX
+7F3 Jamming XX
+7F4 AppendLost.ATK-UP I
+7F5 AppendLost.ATK-UP II
+7F6 AppendLost.ATK-UP III
+7F7 AppendLost.ATK-UP IV
+7F8 AppendLost.ATK-UP V
+7F9 AppendLost.ATK-UP VI
+7FA AppendLost.ATK-UP VII
+7FB AppendLost.ATK-UP VIII
+7FC AppendLost.ATK-UP IX
+7FD AppendLost.ATK-UP X
+7FE AppendLost.ATK-UP XI
+7FF AppendLost.ATK-UP XII
+800 AppendLost.ATK-UP XIII
+801 AppendLost.ATK-UP XIV
+802 AppendLost.ATK-UP XV
+803 AppendLost.ATK-UP XVI
+804 AppendLost.ATK-UP XVII
+805 AppendLost.ATK-UP XVIII
+806 AppendLost.ATK-UP XIX
+807 AppendLost.ATK-UP XX
+808 AppendLost.EVA-UP I
+809 AppendLost.EVA-UP II
+80A AppendLost.EVA-UP III
+80B AppendLost.EVA-UP IV
+80C AppendLost.EVA-UP V
+80D AppendLost.EVA-UP VI
+80E AppendLost.EVA-UP VII
+80F AppendLost.EVA-UP VIII
+810 AppendLost.EVA-UP IX
+811 AppendLost.EVA-UP X
+812 AppendLost.EVA-UP XI
+813 AppendLost.EVA-UP XII
+814 AppendLost.EVA-UP XIII
+815 AppendLost.EVA-UP XIV
+816 AppendLost.EVA-UP XV
+817 AppendLost.EVA-UP XVI
+818 AppendLost.EVA-UP XVII
+819 AppendLost.EVA-UP XVIII
+81A AppendLost.EVA-UP XIX
+81B AppendLost.EVA-UP XX
+81C AppendLost.GP I
+81D AppendLost.GP II
+81E AppendLost.GP III
+81F AppendLost.GP IV
+820 AppendLost.GP V
+821 AppendLost.GP VI
+822 AppendLost.GP VII
+823 AppendLost.GP VIII
+824 AppendLost.GP IX
+825 AppendLost.GP X
+826 AppendLost.GP XI
+827 AppendLost.GP XII
+828 AppendLost.GP XIII
+829 AppendLost.GP XIV
+82A AppendLost.GP XV
+82B AppendLost.GP XVI
+82C AppendLost.GP XVII
+82D AppendLost.GP XVIII
+82E AppendLost.GP XIX
+82F AppendLost.GP XX
+830 Reflect ADD-PHYS
+831 Reflect ADD-BEAM
+832 Reflect ADD-ETHER
+833 Reflect ADD-THERM
+834 Reflect ADD-ELEC
+835 Reflect ADD-GRAV
+836 Reflect DAMAGE-UP I
+837 Reflect DAMAGE-UP II
+838 Reflect DAMAGE-UP III
+839 Reflect DAMAGE-UP IV
+83A Reflect DAMAGE-UP V
+83B Reflect DAMAGE-UP VI
+83C Reflect DAMAGE-UP VII
+83D Reflect DAMAGE-UP VIII
+83E Reflect DAMAGE-UP IX
+83F Reflect DAMAGE-UP X
+840 Reflect DAMAGE-UP XI
+841 Reflect DAMAGE-UP XII
+842 Reflect DAMAGE-UP XIII
+843 Reflect DAMAGE-UP XIV
+844 Reflect DAMAGE-UP XV
+845 Reflect DAMAGE-UP XVI
+846 Reflect DAMAGE-UP XVII
+847 Reflect DAMAGE-UP XVIII
+848 Reflect DAMAGE-UP XIX
+849 Reflect DAMAGE-UP XX
+84A Reflect.NEG-PHYS I
+84B Reflect.NEG-PHYS II
+84C Reflect.NEG-PHYS III
+84D Reflect.NEG-PHYS IV
+84E Reflect.NEG-PHYS V
+84F Reflect.NEG-PHYS VI
+850 Reflect.NEG-PHYS VII
+851 Reflect.NEG-PHYS VIII
+852 Reflect.NEG-PHYS IX
+853 Reflect.NEG-PHYS X
+854 Reflect.NEG-PHYS XI
+855 Reflect.NEG-PHYS XII
+856 Reflect.NEG-PHYS XIII
+857 Reflect.NEG-PHYS XIV
+858 Reflect.NEG-PHYS XV
+859 Reflect.NEG-PHYS XVI
+85A Reflect.NEG-PHYS XVII
+85B Reflect.NEG-PHYS XVIII
+85C Reflect.NEG-PHYS XIX
+85D Reflect.NEG-PHYS XX
+85E Reflect.NEG-BEAM I
+85F Reflect.NEG-BEAM II
+860 Reflect.NEG-BEAM III
+861 Reflect.NEG-BEAM IV
+862 Reflect.NEG-BEAM V
+863 Reflect.NEG-BEAM VI
+864 Reflect.NEG-BEAM VII
+865 Reflect.NEG-BEAM VIII
+866 Reflect.NEG-BEAM IX
+867 Reflect.NEG-BEAM X
+868 Reflect.NEG-BEAM XI
+869 Reflect.NEG-BEAM XII
+86A Reflect.NEG-BEAM XIII
+86B Reflect.NEG-BEAM XIV
+86C Reflect.NEG-BEAM XV
+86D Reflect.NEG-BEAM XVI
+86E Reflect.NEG-BEAM XVII
+86F Reflect.NEG-BEAM XVIII
+870 Reflect.NEG-BEAM XIX
+871 Reflect.NEG-BEAM XX
+872 Reflect.NEG-ETHER I
+873 Reflect.NEG-ETHER II
+874 Reflect.NEG-ETHER III
+875 Reflect.NEG-ETHER IV
+876 Reflect.NEG-ETHER V
+877 Reflect.NEG-ETHER VI
+878 Reflect.NEG-ETHER VII
+879 Reflect.NEG-ETHER VIII
+87A Reflect.NEG-ETHER IX
+87B Reflect.NEG-ETHER X
+87C Reflect.NEG-ETHER XI
+87D Reflect.NEG-ETHER XII
+87E Reflect.NEG-ETHER XIII
+87F Reflect.NEG-ETHER XIV
+880 Reflect.NEG-ETHER XV
+881 Reflect.NEG-ETHER XVI
+882 Reflect.NEG-ETHER XVII
+883 Reflect.NEG-ETHER XVIII
+884 Reflect.NEG-ETHER XIX
+885 Reflect.NEG-ETHER XX
+886 Reflect.NEG-THERM I
+887 Reflect.NEG-THERM II
+888 Reflect.NEG-THERM III
+889 Reflect.NEG-THERM IV
+88A Reflect.NEG-THERM V
+88B Reflect.NEG-THERM VI
+88C Reflect.NEG-THERM VII
+88D Reflect.NEG-THERM VIII
+88E Reflect.NEG-THERM IX
+88F Reflect.NEG-THERM X
+890 Reflect.NEG-THERM XI
+891 Reflect.NEG-THERM XII
+892 Reflect.NEG-THERM XIII
+893 Reflect.NEG-THERM XIV
+894 Reflect.NEG-THERM XV
+895 Reflect.NEG-THERM XVI
+896 Reflect.NEG-THERM XVII
+897 Reflect.NEG-THERM XVIII
+898 Reflect.NEG-THERM XIX
+899 Reflect.NEG-THERM XX
+89A Reflect.NEG-ELEC I
+89B Reflect.NEG-ELEC II
+89C Reflect.NEG-ELEC III
+89D Reflect.NEG-ELEC IV
+89E Reflect.NEG-ELEC V
+89F Reflect.NEG-ELEC VI
+8A0 Reflect.NEG-ELEC VII
+8A1 Reflect.NEG-ELEC VIII
+8A2 Reflect.NEG-ELEC IX
+8A3 Reflect.NEG-ELEC X
+8A4 Reflect.NEG-ELEC XI
+8A5 Reflect.NEG-ELEC XII
+8A6 Reflect.NEG-ELEC XIII
+8A7 Reflect.NEG-ELEC XIV
+8A8 Reflect.NEG-ELEC XV
+8A9 Reflect.NEG-ELEC XVI
+8AA Reflect.NEG-ELEC XVII
+8AB Reflect.NEG-ELEC XVIII
+8AC Reflect.NEG-ELEC XIX
+8AD Reflect.NEG-ELEC XX
+8AE Reflect.NEG-GRAV I
+8AF Reflect.NEG-GRAV II
+8B0 Reflect.NEG-GRAV III
+8B1 Reflect.NEG-GRAV IV
+8B2 Reflect.NEG-GRAV V
+8B3 Reflect.NEG-GRAV VI
+8B4 Reflect.NEG-GRAV VII
+8B5 Reflect.NEG-GRAV VIII
+8B6 Reflect.NEG-GRAV IX
+8B7 Reflect.NEG-GRAV X
+8B8 Reflect.NEG-GRAV XI
+8B9 Reflect.NEG-GRAV XII
+8BA Reflect.NEG-GRAV XIII
+8BB Reflect.NEG-GRAV XIV
+8BC Reflect.NEG-GRAV XV
+8BD Reflect.NEG-GRAV XVI
+8BE Reflect.NEG-GRAV XVII
+8BF Reflect.NEG-GRAV XVIII
+8C0 Reflect.NEG-GRAV XIX
+8C1 Reflect.NEG-GRAV XX
+8C2 Overdrive.FRAME-HP I
+8C3 Overdrive.FRAME-HP II
+8C4 Overdrive.FRAME-HP III
+8C5 Overdrive.FRAME-HP IV
+8C6 Overdrive.FRAME-HP V
+8C7 Overdrive.FRAME-HP VI
+8C8 Overdrive.FRAME-HP VII
+8C9 Overdrive.FRAME-HP VIII
+8CA Overdrive.FRAME-HP IX
+8CB Overdrive.FRAME-HP X
+8CC Overdrive.FRAME-HP XI
+8CD Overdrive.FRAME-HP XII
+8CE Overdrive.FRAME-HP XIII
+8CF Overdrive.FRAME-HP XIV
+8D0 Overdrive.FRAME-HP XV
+8D1 Overdrive.FRAME-HP XVI
+8D2 Overdrive.FRAME-HP XVII
+8D3 Overdrive.FRAME-HP XVIII
+8D4 Overdrive.FRAME-HP XIX
+8D5 Overdrive.FRAME-HP XX
+8D6 Overdrive.APPEND-HP I
+8D7 Overdrive.APPEND-HP II
+8D8 Overdrive.APPEND-HP III
+8D9 Overdrive.APPEND-HP IV
+8DA Overdrive.APPEND-HP V
+8DB Overdrive.APPEND-HP VI
+8DC Overdrive.APPEND-HP VII
+8DD Overdrive.APPEND-HP VIII
+8DE Overdrive.APPEND-HP IX
+8DF Overdrive.APPEND-HP X
+8E0 Overdrive.APPEND-HP XI
+8E1 Overdrive.APPEND-HP XII
+8E2 Overdrive.APPEND-HP XIII
+8E3 Overdrive.APPEND-HP XIV
+8E4 Overdrive.APPEND-HP XV
+8E5 Overdrive.APPEND-HP XVI
+8E6 Overdrive.APPEND-HP XVII
+8E7 Overdrive.APPEND-HP XVIII
+8E8 Overdrive.APPEND-HP XIX
+8E9 Overdrive.APPEND-HP XX
+8EA Overdrive.EXTEND I
+8EB Overdrive.EXTEND II
+8EC Overdrive.EXTEND III
+8ED Overdrive.EXTEND IV
+8EE Overdrive.EXTEND V
+8EF Overdrive.EXTEND VI
+8F0 Overdrive.EXTEND VII
+8F1 Overdrive.EXTEND VIII
+8F2 Overdrive.EXTEND IX
+8F3 Overdrive.EXTEND X
+8F4 Overdrive.EXTEND XI
+8F5 Overdrive.EXTEND XII
+8F6 Overdrive.EXTEND XIII
+8F7 Overdrive.EXTEND XIV
+8F8 Overdrive.EXTEND XV
+8F9 Overdrive.EXTEND XVI
+8FA Overdrive.EXTEND XVII
+8FB Overdrive.EXTEND XVIII
+8FC Overdrive.EXTEND XIX
+8FD Overdrive.EXTEND XX
+8FE Arts.GP I
+8FF Arts.GP II
+900 Arts.GP III
+901 Arts.GP IV
+902 Arts.GP V
+903 Arts.GP VI
+904 Arts.GP VII
+905 Arts.GP VIII
+906 Arts.GP IX
+907 Arts.GP X
+908 Arts.GP XI
+909 Arts.GP XII
+90A Arts.GP XIII
+90B Arts.GP XIV
+90C Arts.GP XV
+90D Arts.GP XVI
+90E Arts.GP XVII
+90F Arts.GP XVIII
+910 Arts.GP XIX
+911 Arts.GP XX
+912 TimeEx.TAUNT I
+913 TimeEx.TAUNT II
+914 TimeEx.TAUNT III
+915 TimeEx.TAUNT IV
+916 TimeEx.TAUNT V
+917 TimeEx.TAUNT VI
+918 TimeEx.TAUNT VII
+919 TimeEx.TAUNT VIII
+91A TimeEx.TAUNT IX
+91B TimeEx.TAUNT X
+91C TimeEx.TAUNT XI
+91D TimeEx.TAUNT XII
+91E TimeEx.TAUNT XIII
+91F TimeEx.TAUNT XIV
+920 TimeEx.TAUNT XV
+921 TimeEx.TAUNT XVI
+922 TimeEx.TAUNT XVII
+923 TimeEx.TAUNT XVIII
+924 TimeEx.TAUNT XIX
+925 TimeEx.TAUNT XX
+926 TimeEx.CONTROL I
+927 TimeEx.CONTROL II
+928 TimeEx.CONTROL III
+929 TimeEx.CONTROL IV
+92A TimeEx.CONTROL V
+92B TimeEx.CONTROL VI
+92C TimeEx.CONTROL VII
+92D TimeEx.CONTROL VIII
+92E TimeEx.CONTROL IX
+92F TimeEx.CONTROL X
+930 TimeEx.CONTROL XI
+931 TimeEx.CONTROL XII
+932 TimeEx.CONTROL XIII
+933 TimeEx.CONTROL XIV
+934 TimeEx.CONTROL XV
+935 TimeEx.CONTROL XVI
+936 TimeEx.CONTROL XVII
+937 TimeEx.CONTROL XVIII
+938 TimeEx.CONTROL XIX
+939 TimeEx.CONTROL XX
+93A TimeEx.SLEEP I
+93B TimeEx.SLEEP II
+93C TimeEx.SLEEP III
+93D TimeEx.SLEEP IV
+93E TimeEx.SLEEP V
+93F TimeEx.SLEEP VI
+940 TimeEx.SLEEP VII
+941 TimeEx.SLEEP VIII
+942 TimeEx.SLEEP IX
+943 TimeEx.SLEEP X
+944 TimeEx.SLEEP XI
+945 TimeEx.SLEEP XII
+946 TimeEx.SLEEP XIII
+947 TimeEx.SLEEP XIV
+948 TimeEx.SLEEP XV
+949 TimeEx.SLEEP XVI
+94A TimeEx.SLEEP XVII
+94B TimeEx.SLEEP XVIII
+94C TimeEx.SLEEP XIX
+94D TimeEx.SLEEP XX
+94E TimeEx.VIRUS I
+94F TimeEx.VIRUS II
+950 TimeEx.VIRUS III
+951 TimeEx.VIRUS IV
+952 TimeEx.VIRUS V
+953 TimeEx.VIRUS VI
+954 TimeEx.VIRUS VII
+955 TimeEx.VIRUS VIII
+956 TimeEx.VIRUS IX
+957 TimeEx.VIRUS X
+958 TimeEx.VIRUS XI
+959 TimeEx.VIRUS XII
+95A TimeEx.VIRUS XIII
+95B TimeEx.VIRUS XIV
+95C TimeEx.VIRUS XV
+95D TimeEx.VIRUS XVI
+95E TimeEx.VIRUS XVII
+95F TimeEx.VIRUS XVIII
+960 TimeEx.VIRUS XIX
+961 TimeEx.VIRUS XX
+962 TimeEx.BLACKOUT I
+963 TimeEx.BLACKOUT II
+964 TimeEx.BLACKOUT III
+965 TimeEx.BLACKOUT IV
+966 TimeEx.BLACKOUT V
+967 TimeEx.BLACKOUT VI
+968 TimeEx.BLACKOUT VII
+969 TimeEx.BLACKOUT VIII
+96A TimeEx.BLACKOUT IX
+96B TimeEx.BLACKOUT X
+96C TimeEx.BLACKOUT XI
+96D TimeEx.BLACKOUT XII
+96E TimeEx.BLACKOUT XIII
+96F TimeEx.BLACKOUT XIV
+970 TimeEx.BLACKOUT XV
+971 TimeEx.BLACKOUT XVI
+972 TimeEx.BLACKOUT XVII
+973 TimeEx.BLACKOUT XVIII
+974 TimeEx.BLACKOUT XIX
+975 TimeEx.BLACKOUT XX
+976 TimeEx.FATIGUE I
+977 TimeEx.FATIGUE II
+978 TimeEx.FATIGUE III
+979 TimeEx.FATIGUE IV
+97A TimeEx.FATIGUE V
+97B TimeEx.FATIGUE VI
+97C TimeEx.FATIGUE VII
+97D TimeEx.FATIGUE VIII
+97E TimeEx.FATIGUE IX
+97F TimeEx.FATIGUE X
+980 TimeEx.FATIGUE XI
+981 TimeEx.FATIGUE XII
+982 TimeEx.FATIGUE XIII
+983 TimeEx.FATIGUE XIV
+984 TimeEx.FATIGUE XV
+985 TimeEx.FATIGUE XVI
+986 TimeEx.FATIGUE XVII
+987 TimeEx.FATIGUE XVIII
+988 TimeEx.FATIGUE XIX
+989 TimeEx.FATIGUE XX
+98A TimeEx.SLOW-ARTS I
+98B TimeEx.SLOW-ARTS II
+98C TimeEx.SLOW-ARTS III
+98D TimeEx.SLOW-ARTS IV
+98E TimeEx.SLOW-ARTS V
+98F TimeEx.SLOW-ARTS VI
+990 TimeEx.SLOW-ARTS VII
+991 TimeEx.SLOW-ARTS VIII
+992 TimeEx.SLOW-ARTS IX
+993 TimeEx.SLOW-ARTS X
+994 TimeEx.SLOW-ARTS XI
+995 TimeEx.SLOW-ARTS XII
+996 TimeEx.SLOW-ARTS XIII
+997 TimeEx.SLOW-ARTS XIV
+998 TimeEx.SLOW-ARTS XV
+999 TimeEx.SLOW-ARTS XVI
+99A TimeEx.SLOW-ARTS XVII
+99B TimeEx.SLOW-ARTS XVIII
+99C TimeEx.SLOW-ARTS XIX
+99D TimeEx.SLOW-ARTS XX
+99E TimeEx.DEBUFF-DOWN I
+99F TimeEx.DEBUFF-DOWN II
+9A0 TimeEx.DEBUFF-DOWN III
+9A1 TimeEx.DEBUFF-DOWN IV
+9A2 TimeEx.DEBUFF-DOWN V
+9A3 TimeEx.DEBUFF-DOWN VI
+9A4 TimeEx.DEBUFF-DOWN VII
+9A5 TimeEx.DEBUFF-DOWN VIII
+9A6 TimeEx.DEBUFF-DOWN IX
+9A7 TimeEx.DEBUFF-DOWN X
+9A8 TimeEx.DEBUFF-DOWN XI
+9A9 TimeEx.DEBUFF-DOWN XII
+9AA TimeEx.DEBUFF-DOWN XIII
+9AB TimeEx.DEBUFF-DOWN XIV
+9AC TimeEx.DEBUFF-DOWN XV
+9AD TimeEx.DEBUFF-DOWN XVI
+9AE TimeEx.DEBUFF-DOWN XVII
+9AF TimeEx.DEBUFF-DOWN XVIII
+9B0 TimeEx.DEBUFF-DOWN XIX
+9B1 TimeEx.DEBUFF-DOWN XX
+9B2 TimeEx.RECOV-DOWN I
+9B3 TimeEx.RECOV-DOWN II
+9B4 TimeEx.RECOV-DOWN III
+9B5 TimeEx.RECOV-DOWN IV
+9B6 TimeEx.RECOV-DOWN V
+9B7 TimeEx.RECOV-DOWN VI
+9B8 TimeEx.RECOV-DOWN VII
+9B9 TimeEx.RECOV-DOWN VIII
+9BA TimeEx.RECOV-DOWN IX
+9BB TimeEx.RECOV-DOWN X
+9BC TimeEx.RECOV-DOWN XI
+9BD TimeEx.RECOV-DOWN XII
+9BE TimeEx.RECOV-DOWN XIII
+9BF TimeEx.RECOV-DOWN XIV
+9C0 TimeEx.RECOV-DOWN XV
+9C1 TimeEx.RECOV-DOWN XVI
+9C2 TimeEx.RECOV-DOWN XVII
+9C3 TimeEx.RECOV-DOWN XVIII
+9C4 TimeEx.RECOV-DOWN XIX
+9C5 TimeEx.RECOV-DOWN XX
+9C6 TimeEx.BLAZE I
+9C7 TimeEx.BLAZE II
+9C8 TimeEx.BLAZE III
+9C9 TimeEx.BLAZE IV
+9CA TimeEx.BLAZE V
+9CB TimeEx.BLAZE VI
+9CC TimeEx.BLAZE VII
+9CD TimeEx.BLAZE VIII
+9CE TimeEx.BLAZE IX
+9CF TimeEx.BLAZE X
+9D0 TimeEx.BLAZE XI
+9D1 TimeEx.BLAZE XII
+9D2 TimeEx.BLAZE XIII
+9D3 TimeEx.BLAZE XIV
+9D4 TimeEx.BLAZE XV
+9D5 TimeEx.BLAZE XVI
+9D6 TimeEx.BLAZE XVII
+9D7 TimeEx.BLAZE XVIII
+9D8 TimeEx.BLAZE XIX
+9D9 TimeEx.BLAZE XX
+9DA TimeEx.SHOCK I
+9DB TimeEx.SHOCK II
+9DC TimeEx.SHOCK III
+9DD TimeEx.SHOCK IV
+9DE TimeEx.SHOCK V
+9DF TimeEx.SHOCK VI
+9E0 TimeEx.SHOCK VII
+9E1 TimeEx.SHOCK VIII
+9E2 TimeEx.SHOCK IX
+9E3 TimeEx.SHOCK X
+9E4 TimeEx.SHOCK XI
+9E5 TimeEx.SHOCK XII
+9E6 TimeEx.SHOCK XIII
+9E7 TimeEx.SHOCK XIV
+9E8 TimeEx.SHOCK XV
+9E9 TimeEx.SHOCK XVI
+9EA TimeEx.SHOCK XVII
+9EB TimeEx.SHOCK XVIII
+9EC TimeEx.SHOCK XIX
+9ED TimeEx.SHOCK XX
+9EE TimeEx.PHYS-DOWN I
+9EF TimeEx.PHYS-DOWN II
+9F0 TimeEx.PHYS-DOWN III
+9F1 TimeEx.PHYS-DOWN IV
+9F2 TimeEx.PHYS-DOWN V
+9F3 TimeEx.PHYS-DOWN VI
+9F4 TimeEx.PHYS-DOWN VII
+9F5 TimeEx.PHYS-DOWN VIII
+9F6 TimeEx.PHYS-DOWN IX
+9F7 TimeEx.PHYS-DOWN X
+9F8 TimeEx.PHYS-DOWN XI
+9F9 TimeEx.PHYS-DOWN XII
+9FA TimeEx.PHYS-DOWN XIII
+9FB TimeEx.PHYS-DOWN XIV
+9FC TimeEx.PHYS-DOWN XV
+9FD TimeEx.PHYS-DOWN XVI
+9FE TimeEx.PHYS-DOWN XVII
+9FF TimeEx.PHYS-DOWN XVIII
+A00 TimeEx.PHYS-DOWN XIX
+A01 TimeEx.PHYS-DOWN XX
+A02 TimeEx.BEAM-DOWN I
+A03 TimeEx.BEAM-DOWN II
+A04 TimeEx.BEAM-DOWN III
+A05 TimeEx.BEAM-DOWN IV
+A06 TimeEx.BEAM-DOWN V
+A07 TimeEx.BEAM-DOWN VI
+A08 TimeEx.BEAM-DOWN VII
+A09 TimeEx.BEAM-DOWN VIII
+A0A TimeEx.BEAM-DOWN IX
+A0B TimeEx.BEAM-DOWN X
+A0C TimeEx.BEAM-DOWN XI
+A0D TimeEx.BEAM-DOWN XII
+A0E TimeEx.BEAM-DOWN XIII
+A0F TimeEx.BEAM-DOWN XIV
+A10 TimeEx.BEAM-DOWN XV
+A11 TimeEx.BEAM-DOWN XVI
+A12 TimeEx.BEAM-DOWN XVII
+A13 TimeEx.BEAM-DOWN XVIII
+A14 TimeEx.BEAM-DOWN XIX
+A15 TimeEx.BEAM-DOWN XX
+A16 TimeEx.ETHER-DOWN I
+A17 TimeEx.ETHER-DOWN II
+A18 TimeEx.ETHER-DOWN III
+A19 TimeEx.ETHER-DOWN IV
+A1A TimeEx.ETHER-DOWN V
+A1B TimeEx.ETHER-DOWN VI
+A1C TimeEx.ETHER-DOWN VII
+A1D TimeEx.ETHER-DOWN VIII
+A1E TimeEx.ETHER-DOWN IX
+A1F TimeEx.ETHER-DOWN X
+A20 TimeEx.ETHER-DOWN XI
+A21 TimeEx.ETHER-DOWN XII
+A22 TimeEx.ETHER-DOWN XIII
+A23 TimeEx.ETHER-DOWN XIV
+A24 TimeEx.ETHER-DOWN XV
+A25 TimeEx.ETHER-DOWN XVI
+A26 TimeEx.ETHER-DOWN XVII
+A27 TimeEx.ETHER-DOWN XVIII
+A28 TimeEx.ETHER-DOWN XIX
+A29 TimeEx.ETHER-DOWN XX
+A2A TimeEx.THERM-DOWN I
+A2B TimeEx.THERM-DOWN II
+A2C TimeEx.THERM-DOWN III
+A2D TimeEx.THERM-DOWN IV
+A2E TimeEx.THERM-DOWN V
+A2F TimeEx.THERM-DOWN VI
+A30 TimeEx.THERM-DOWN VII
+A31 TimeEx.THERM-DOWN VIII
+A32 TimeEx.THERM-DOWN IX
+A33 TimeEx.THERM-DOWN X
+A34 TimeEx.THERM-DOWN XI
+A35 TimeEx.THERM-DOWN XII
+A36 TimeEx.THERM-DOWN XIII
+A37 TimeEx.THERM-DOWN XIV
+A38 TimeEx.THERM-DOWN XV
+A39 TimeEx.THERM-DOWN XVI
+A3A TimeEx.THERM-DOWN XVII
+A3B TimeEx.THERM-DOWN XVIII
+A3C TimeEx.THERM-DOWN XIX
+A3D TimeEx.THERM-DOWN XX
+A3E TimeEx.ELEC-DOWN I
+A3F TimeEx.ELEC-DOWN II
+A40 TimeEx.ELEC-DOWN III
+A41 TimeEx.ELEC-DOWN IV
+A42 TimeEx.ELEC-DOWN V
+A43 TimeEx.ELEC-DOWN VI
+A44 TimeEx.ELEC-DOWN VII
+A45 TimeEx.ELEC-DOWN VIII
+A46 TimeEx.ELEC-DOWN IX
+A47 TimeEx.ELEC-DOWN X
+A48 TimeEx.ELEC-DOWN XI
+A49 TimeEx.ELEC-DOWN XII
+A4A TimeEx.ELEC-DOWN XIII
+A4B TimeEx.ELEC-DOWN XIV
+A4C TimeEx.ELEC-DOWN XV
+A4D TimeEx.ELEC-DOWN XVI
+A4E TimeEx.ELEC-DOWN XVII
+A4F TimeEx.ELEC-DOWN XVIII
+A50 TimeEx.ELEC-DOWN XIX
+A51 TimeEx.ELEC-DOWN XX
+A52 TimeEx.GRAV-DOWN I
+# A66-A79 ITM_SKL_DL_FST_TP01_ - 20
+A53 TimeEx.GRAV-DOWN II
+A54 TimeEx.GRAV-DOWN III
+A55 TimeEx.GRAV-DOWN IV
+A56 TimeEx.GRAV-DOWN V
+A57 TimeEx.GRAV-DOWN VI
+A58 TimeEx.GRAV-DOWN VII
+A59 TimeEx.GRAV-DOWN VIII
+A5A TimeEx.GRAV-DOWN IX
+A5B TimeEx.GRAV-DOWN X
+A5C TimeEx.GRAV-DOWN XI
+A5D TimeEx.GRAV-DOWN XII
+A5E TimeEx.GRAV-DOWN XIII
+A5F TimeEx.GRAV-DOWN XIV
+A60 TimeEx.GRAV-DOWN XV
+A61 TimeEx.GRAV-DOWN XVI
+A62 TimeEx.GRAV-DOWN XVII
+A63 TimeEx.GRAV-DOWN XVIII
+A64 TimeEx.GRAV-DOWN XIX
+A65 TimeEx.GRAV-DOWN XX
+A7A Draw.OPENING-DMG I
+# A8E-A96 ITM_SKLO_DL_FST_CRTC0
+# A97-AA0 ITM_SKLO_DL_FST_CRTC1
+# AA1 ITM_SKLO_DL_FST_CRTC2
+# AA2-AB5 ITM_SKL_DL_FST_FDEX01_name - 20
+# AB6-AC9 ITM_SKL_DL_FST_SDEX01_name - 20
+# ACA-ADD ITM_SKL_DL_FST_EVA01_name - 20
+# ADE-AF1 ITM_SKL_DL_FST_FPOW01_name - 20
+# AF2-B06 ITM_SKL_DL_FST_SPOW01_name - 20
+# B07-B19 ITM_SKL_DL_FST_MIND01_name - 20
+# ...

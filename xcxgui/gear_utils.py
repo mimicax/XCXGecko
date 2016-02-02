@@ -5,9 +5,14 @@ import traceback
 def parse_gear_db(db_txt):
   db_lines = db_txt.split('\n')
   db = dict()
-  db[0] = '[NO SKILL]'
+  db['ground'] = dict()
+  db['skell'] = dict()
+  db['ground'][0] = '[NO SKILL]'
+  db['skell'][0] = '[NO SKILL]'
 
   line_count = 0
+  is_ground = False
+  is_skell = True
   try:
     for line in db_lines:
       line_count += 1
@@ -15,6 +20,14 @@ def parse_gear_db(db_txt):
       line = line.strip()
       if len(line) <= 0:  # Skip empty lines
         continue
+
+      elif line[:3] == '###':
+        is_ground = False
+        is_skell = False
+        if line[4:] == 'GROUND GEAR SKILL ID':
+          is_ground = True
+        elif line[4:] == 'SKELL GEAR SKILL ID':
+          is_skell = True
 
       elif line[0] == '#':  # Skip commented lines
         continue
@@ -28,20 +41,12 @@ def parse_gear_db(db_txt):
           raise ValueError('ID_VAL out of range')
         name = tokens[1]
 
-        # Interpolate for incrementable skill IDs
-        if len(name) > 2 and name[-2:] == ' I':
-          base_name = name[:-2]
-          base_id = id_val
-          for incr in xrange(20):
-            id_val = base_id + incr
-            name = base_name + ' %02d' % (incr + 1)
-            if id_val in db:
-              raise ValueError('duplicate entry for ID=%03X' % (id_val))
-            db[id_val] = name
-        else:
-          if id_val in db:
-            raise ValueError('duplicate entry for ID=%03X' % (id_val))
-          db[id_val] = name
+        if id_val in db:
+          raise ValueError('duplicate entry for ID=%03X' % id_val)
+        if is_ground:
+          db['ground'][id_val] = name
+        elif is_skell:
+          db['skell'][id_val] = name
 
   except (ValueError, SyntaxError), e:
     raise SyntaxError('Failed to parse Gear ID DB on line %d: %s' % (line_count, str(e)))
