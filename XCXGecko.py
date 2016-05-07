@@ -16,16 +16,12 @@ from gui.CustomCodesWidget import CustomCodesWidget
 from gui.GeckoMainWindow import GeckoMainWindow
 from gui.RawCodesWidget import RawCodesWidget
 from gui.gecko_utils import parse_codes
-from xcxgui.ItemIDWidget import ItemIDWidget
 from xcxgui.XCXWidget import XCXWidget
+from xcxgui.GearModWidget import GearModWidget
+from xcxgui.ItemIDWidget import ItemIDWidget
 from xcxgui.xcx_utils import XCXDataStore
 from xcxgui.xcx_utils import parse_item_db
 from xcxgui.gear_utils import parse_gear_db
-
-try:
-  from xcxgui.GearModWidget import GearModWidget
-except ImportError:
-  pass
 
 
 class XCXGeckoMainWindow(GeckoMainWindow):
@@ -140,21 +136,18 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.scr_xcx.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
     has_gear_mod = False
-    try:
-      self.wdg_gear_mod = GearModWidget(self.d, self)
-      self.wdg_gear_mod.read_block.connect(self.read_block)
-      self.block_read.connect(self.wdg_gear_mod.block_read)
-      self.wdg_gear_mod.poke_block.connect(self.poke_block)
-      self.wdg_gear_mod.log.connect(self.log)
-      self.scr_gear_mod = QScrollArea(self)
-      self.scr_gear_mod.setWidget(self.wdg_gear_mod)
-      self.scr_gear_mod.setWidgetResizable(True)
-      self.scr_gear_mod.setMinimumWidth(self.wdg_gear_mod.minimumWidth())
-      self.scr_gear_mod.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-      self.scr_gear_mod.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-      has_gear_mod = True
-    except NameError, e:
-      has_gear_mod = False
+    self.wdg_gear_mod = GearModWidget(self.d, self)
+    self.wdg_gear_mod.read_block.connect(self.read_block)
+    self.block_read.connect(self.wdg_gear_mod.block_read)
+    self.wdg_gear_mod.poke_block.connect(self.poke_block)
+    self.wdg_gear_mod.log.connect(self.log)
+    self.scr_gear_mod = QScrollArea(self)
+    self.scr_gear_mod.setWidget(self.wdg_gear_mod)
+    self.scr_gear_mod.setWidgetResizable(True)
+    self.scr_gear_mod.setMinimumWidth(self.wdg_gear_mod.minimumWidth())
+    self.scr_gear_mod.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+    self.scr_gear_mod.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+    has_gear_mod = True
 
     self.wdg_raw_codes = RawCodesWidget(self.d, self)
     self.wdg_raw_codes.read_code.connect(self.read_code)

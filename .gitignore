@@ -63,6 +63,5 @@ target/
 build/
 dist/
 
-# Custom code
-xcxgui/GearEntriesFrame.py
-xcxgui/GearModWidget.py
+# Temp files
+codes/temp_codes.txt
