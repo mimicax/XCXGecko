@@ -6,10 +6,12 @@ import webbrowser
 import traceback
 
 from PyQt4.QtCore import Qt
+from PyQt4.QtCore import QString
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QAction
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QIcon
+from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QScrollArea
 
 from gui.CustomCodesWidget import CustomCodesWidget
@@ -193,9 +195,17 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.act_bugs = QAction(QIcon('img/flaticon/error2.png'), 'Open Github bugs page', self)
     self.act_bugs.triggered.connect(self.onBugsURL)
 
-    self.tbr_links = self.addToolBar('Links')
-    self.tbr_links.addAction(self.act_home)
-    self.tbr_links.addAction(self.act_bugs)
+    self.btn_pygecko_mode = QPushButton('Payload: ?', self)
+    if self.d.config['loadiine_v4_pygecko']:
+      self.btn_pygecko_mode.setText('Payload: LoadiineV4+pyGecko')
+    else:
+      self.btn_pygecko_mode.setText('Payload: regular pyGecko')
+    self.btn_pygecko_mode.clicked.connect(self.onChangePyGeckoMode)
+
+    self.tbr_xcx = self.addToolBar('Links')
+    self.tbr_xcx.addAction(self.act_home)
+    self.tbr_xcx.addAction(self.act_bugs)
+    self.tbr_xcx.addWidget(self.btn_pygecko_mode)
 
   @pyqtSlot()
   def onHomeURL(self):
@@ -204,6 +214,14 @@ class XCXGeckoMainWindow(GeckoMainWindow):
   @pyqtSlot()
   def onBugsURL(self):
     webbrowser.open('https://github.com/mimicax/XCXGecko/issues')
+
+  @pyqtSlot()
+  def onChangePyGeckoMode(self):
+    self.d.config['loadiine_v4_pygecko'] = not self.d.config['loadiine_v4_pygecko']
+    if self.d.config['loadiine_v4_pygecko']:
+      self.btn_pygecko_mode.setText('Payload: LoadiineV4+pyGecko')
+    else:
+      self.btn_pygecko_mode.setText('Payload: regular pyGecko')
 
 
 if __name__ == '__main__':

@@ -42,6 +42,7 @@ class GearModWidget(QWidget):
     <li>do not reduce augment count before removing augment</li>
     <li>setting invalid raw data will cause game to crash to title screen</li>
     <li>do not set combined skill level beyond 20 (XX), and only set +0 for non-leveled skills</li>
+    <li>Read about gear format: <b>bit.ly/1rAxrLy</b></li>
     </ul>''')
 
     for class_label in GearModWidget.GEAR_CLASS_NAMES:
