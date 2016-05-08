@@ -2,11 +2,11 @@
 Trainer for XCX using [pyGecko](https://github.com/wiiudev/pyGecko).
 
 * This tool requires kernel exploit and pyGecko to use; it's your responsibility to find out how to run these on your Wii U firmware version
-* *Do not ask if XCXGecko works on firmware 5.X.X*; if pyGecko works, then XCXGecko should connect properly
+* **Do not ask if XCXGecko works on firmware 5.X.X**; if pyGecko works, then XCXGecko should connect properly
 * Use at your own risk
 * All codes tested on v1.0.1E and v1.0.1U, and has also been confirmed to support v1.0.2E and v1.0.2U
 * To use with v1.0.1(J) / v1.0.2(J), modify code_db in config.ini
-* To use with OnionKnight's LoadiineV4+pyGecko combined payload, click 'Payload: ...' toolbar button to set proper mode
+* To use with OnionKnight's LoadiineV4+pyGecko combined payload, click 'Payload: ...' toolbar button to toggle
 
 ## Features
 
@@ -14,7 +14,7 @@ Trainer for XCX using [pyGecko](https://github.com/wiiudev/pyGecko).
 * Modify character name, level, rank, BP, affinity
 * Modify character geometry (height, chest, ...)
 * Modify amount of item (materials, probes, ...)
-* Modify attributes for weapon, armor, skell gear, ... *(NEW)*
+* Modify attributes gears (weapon, armor, skell equip, ...) **(NEW)**
 * [Change/Add items](#change-and-add-items)
 * [Quickly create custom codes (e.g. max items for crafting)](#custom-codes)
 
