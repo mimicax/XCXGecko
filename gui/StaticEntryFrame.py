@@ -189,6 +189,9 @@ class StaticEntryFrame(QFrame):
       if parse_failed:
         try:
           val_str = val_str[:-1].decode('utf-8')
+        except UnicodeDecodeError, e:
+          self.log.emit('Could not decode ASCII content', 'red')
+          val_str = ''
       self.display_mode = StaticEntryFrame.DISPLAY_MODES.ASCII
     elif self.code.is_float:
       val_str = str(struct.unpack('>f', self.cur_bytes)[0])
