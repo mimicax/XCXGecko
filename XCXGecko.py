@@ -11,8 +11,10 @@ from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QAction
 from PyQt4.QtGui import QApplication
 from PyQt4.QtGui import QIcon
+from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QScrollArea
+from PyQt4.QtGui import QSplashScreen
 
 from gui.CustomCodesWidget import CustomCodesWidget
 from gui.GeckoMainWindow import GeckoMainWindow
@@ -204,5 +206,12 @@ class XCXGeckoMainWindow(GeckoMainWindow):
 
 if __name__ == '__main__':
   app = QApplication(sys.argv)
+
+  logo = QPixmap('img/logo.png').scaledToWidth(200)
+  splash = QSplashScreen(logo)
+  splash.showMessage('XCXGecko: Loading GUI...')
+  splash.show()
+
   gui = XCXGeckoMainWindow()
+  splash.finish(gui)
   sys.exit(app.exec_())
