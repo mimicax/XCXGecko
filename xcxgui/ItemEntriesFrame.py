@@ -137,8 +137,9 @@ class ItemEntriesFrame(QFrame):
     cur_val = self.slots_cache[self.cur_slot_idx][3]
     (type_val, id_val, amount) = parse_item_word(cur_val)
     if type_val != self.type_val and type_val != 0:
-      self.log.emit('Coding error: val(%s)=%08X, type (%02X) != expected (%02X)' %
-                    (self.cur_addr_str, cur_val, type_val, self.type_val), 'red')
+      cur_addr = self.slots_cache[self.cur_slot_idx][1] + self.code_offset
+      self.log.emit('Cache error: val(0x%08X)=%08X, type (%02X) != expected (%02X)' %
+                    (cur_addr, cur_val, type_val, self.type_val), 'red')
       return
 
     # Update UI
