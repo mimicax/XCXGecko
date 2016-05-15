@@ -10,7 +10,9 @@ from PyQt4.QtCore import Qt
 from PyQt4.QtCore import pyqtSignal
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import QAction
+from PyQt4.QtGui import QComboBox
 from PyQt4.QtGui import QIcon
+from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QLineEdit
 from PyQt4.QtGui import QMainWindow
 from PyQt4.QtGui import QScrollArea
@@ -32,6 +34,7 @@ class GeckoMainWindow(QMainWindow):
   read_block = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
   poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
+  set_code_offset = pyqtSignal(int) # signed_offset
 
   log = pyqtSignal(str, str) # msg, color
 
@@ -76,15 +79,6 @@ class GeckoMainWindow(QMainWindow):
       self.d.codes = parse_codes(code_db_txt)
       init_msgs.append('Code DB: ' + code_db_path)
 
-      if self.d.config['loadiine_v4_pygecko']:
-        num_codes_adjusted = 0
-        for k, cs in self.d.codes.iteritems():
-          for c in cs.c:
-            # Do not bother fixing addr_txt
-            c.addr_base -= 20480
-            num_codes_adjusted += 1
-        init_msgs.append('Adjusted %d codes for Loadiine v4 + pyGecko' % num_codes_adjusted)
-
     except BaseException, e:
       init_errors.append(str(e))
       self.d.codes = {}
@@ -126,10 +120,32 @@ class GeckoMainWindow(QMainWindow):
     self.act_disc.setShortcut('Ctrl-D')
     self.act_disc.triggered.connect(self.onDisc)
 
+    self.lbl_code_offset = QLabel('Offset:', self)
+
+    self.cmb_code_offset = QComboBox(self)
+    self.cmb_code_offset.setToolTip('offset for code addresses, depending on WiiU firmware / pyGecko type / game region')
+    self.cmb_code_offset.setEditable(True)
+    self.cmb_code_offset.addItems(['0 (default)',
+                                   '-20480 (-0x5000: 5.3.2 LoadiineV4+pyGecko)',
+    if self.d.config['code_offset'] == 0:
+      self.cmb_code_offset.setCurrentIndex(0)
+    elif self.d.config['code_offset'] == -20480:
+      self.cmb_code_offset.setCurrentIndex(1)
+    elif self.d.config['code_offset'] == 45056:
+      self.cmb_code_offset.setCurrentIndex(2)
+    elif self.d.config['code_offset'] == 53248:
+      self.cmb_code_offset.setCurrentIndex(3)
+    else:
+      self.cmb_code_offset.addItem('%d (config.ini)' % self.d.config['code_offset'])
+      self.cmb_code_offset.setCurrentIndex(4)
+    self.cmb_code_offset.currentIndexChanged.connect(self.onNewCodeOffset)
+
     self.tbr_conn = self.addToolBar('Wii U Connection')
     self.tbr_conn.addWidget(self.txt_ip)
     self.tbr_conn.addAction(self.act_conn)
     self.tbr_conn.addAction(self.act_disc)
+    self.tbr_conn.addWidget(self.lbl_code_offset)
+    self.tbr_conn.addWidget(self.cmb_code_offset)
 
   def initTabbedWidgets(self):
     self.wdg_raw_codes = RawCodesWidget(self.d, self)
@@ -199,8 +215,23 @@ class GeckoMainWindow(QMainWindow):
     self.conn = None
     self.d.connected = False
 
+  @pyqtSlot()
+  def onNewCodeOffset(self):
+    txt = self.cmb_code_offset.currentText()
+    idx_parenthesis = txt.indexOf('(')
+    if idx_parenthesis >= 0:
+      txt = txt[:idx_parenthesis]
+    try:
+      new_code_offset = int(float(txt.trimmed()))
+      self.d.config['code_offset'] = new_code_offset
+      self.set_code_offset.emit(new_code_offset)
+    except ValueError:
+      self.log.emit('Failed to parse integer code offset: %s' % txt, 'red')
+      self.cmb_code_offset.setCurrentIndex(0)
+
   @pyqtSlot(str, int)
   def onReadCode(self, code_set_label, code_id):
+    code_offset = self.d.config['code_offset']
     cs_label = str(code_set_label)
     try:
       if self.conn is None:
@@ -223,12 +254,12 @@ class GeckoMainWindow(QMainWindow):
       # Read pointer base
       if code.is_ptr:
         if self.d.config['verbose_read']:
-          self.log.emit('READ %08X %d' % (code.addr_base, 4), 'blue')
-        ptr_val = self.conn.readmem(code.addr_base, 4)
+          self.log.emit('READ %08X %d' % (code.addr_base + code_offset, 4), 'blue')
+        ptr_val = self.conn.readmem(code.addr_base + code_offset, 4)
         ptr_val = struct.unpack('>I', ptr_val)[0]
         addr_base = ptr_val + code.ptr_offset
       else: # not code.is_ptr
-        addr_base = code.addr_base
+        addr_base = code.addr_base + code_offset
 
       # Read memory addresses
       read_num_bytes = int(math.ceil(float(code.bit_rshift + code.num_bytes*8)/8))
@@ -287,6 +318,7 @@ class GeckoMainWindow(QMainWindow):
 
   @pyqtSlot(str, int, QByteArray)
   def onPokeCode(self, code_set_label, code_id, new_qbytes):
+    code_offset = 0
     cs_label = str(code_set_label)
     new_bytes = bytes(new_qbytes)
     try:
@@ -297,8 +329,10 @@ class GeckoMainWindow(QMainWindow):
       cs = None
       if self.d.codes is not None and cs_label in self.d.codes:
         cs = self.d.codes[cs_label]
+        code_offset = self.d.config['code_offset']
       elif self.d.custom_codes is not None and cs_label in self.d.custom_codes:
         cs = self.d.custom_codes[cs_label]
+        code_offset = 0 # assume user's custom code already accounts for their particular payload offset
       else:
         return
 
@@ -315,12 +349,12 @@ class GeckoMainWindow(QMainWindow):
       # Read pointer base
       if code.is_ptr:
         if self.d.config['verbose_read']:
-          self.log.emit('READ %08X %d' % (code.addr_base, 4), 'blue')
-        ptr_val = self.conn.readmem(code.addr_base, 4)
+          self.log.emit('READ %08X %d' % (code.addr_base + code_offset, 4), 'blue')
+        ptr_val = self.conn.readmem(code.addr_base + code_offset, 4)
         ptr_val = struct.unpack('>I', ptr_val)[0]
         addr_base = ptr_val + code.ptr_offset
       else: # not code.is_ptr
-        addr_base = code.addr_base
+        addr_base = code.addr_base + code_offset
 
       # Handle ASCII code separately
       if code.is_ascii:

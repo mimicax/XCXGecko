@@ -29,6 +29,7 @@ class ItemEntriesFrame(QFrame):
   def __init__(self, type_val, addr_start, addr_end, label, id2name, idx2id, names, parent=None):
     super(ItemEntriesFrame, self).__init__(parent)
     self.type_val = type_val
+    self.code_offset = 0
     self.addr_start = addr_start
     self.addr_end = addr_end
     self.max_num_slots = (addr_end - addr_start)/3/4 + 1
@@ -60,7 +61,6 @@ class ItemEntriesFrame(QFrame):
     self.btn_read.clicked.connect(self.onReadSlot)
 
     self.cmb_slots = QComboBox(self)
-    self.cmb_slots.setToolTip('')
     self.cmb_slots.setStyleSheet('background-color: white')
     self.cmb_slots.currentIndexChanged[int].connect(self.onChangeSlot)
     self.cmb_slots.setDisabled(True)
@@ -151,6 +151,10 @@ class ItemEntriesFrame(QFrame):
   def setAlternateBGColor(self):
     self.setStyleSheet('ItemEntriesFrame { background-color:rgb(248,248,248) }')
 
+  @pyqtSlot(int)
+  def onSetCodeOffset(self, signed_offset):
+    self.code_offset = signed_offset
+
   @pyqtSlot()
   def onRename(self):
     id_txt = str(self.txt_id.text())
@@ -162,12 +166,12 @@ class ItemEntriesFrame(QFrame):
 
   @pyqtSlot()
   def onReadSlots(self):
-    self.read_block.emit(self.addr_start, self.max_num_slots*4*3)
+    self.read_block.emit(self.addr_start + self.code_offset, self.max_num_slots*4*3)
 
   @pyqtSlot(int, int, QByteArray)
   def onBlockRead(self, addr_start, num_bytes, raw_bytes):
     # Determine whether block has cache or single slot
-    if addr_start == self.addr_start and num_bytes == self.max_num_slots*4*3:
+    if (addr_start == (self.addr_start + self.code_offset)) and (num_bytes == self.max_num_slots*4*3):
       self.onCacheRead(addr_start, raw_bytes)
     elif num_bytes == 4: # Assume read slot
       # Ignore if no cache
@@ -190,11 +194,11 @@ class ItemEntriesFrame(QFrame):
         continue
       elif type_val != self.type_val:
         self.log.emit('val(%08X)=%08X, type_val(%02X) unexpected(%02X)' %
-                      (addr_start+byte_offset, cur_slot_val, type_val, self.type_val),
+                      (addr_start+self.code_offset+byte_offset, cur_slot_val, type_val, self.type_val),
                       'red')
         continue
       else:
-        addr_val = addr_start + byte_offset
+        addr_val = addr_start + byte_offset # do not add code_offset since it may change later
         addr_hex = '%08X' % addr_val
         slot_number = slot_i+1
         self.slots_cache.append((addr_hex, addr_val, slot_number, cur_slot_val))
@@ -213,21 +217,21 @@ class ItemEntriesFrame(QFrame):
     self.updateUI()
 
   def onSlotRead(self, addr_word, raw_bytes):
-    addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
-    if addr_word == addr_cur_slot:
+    addr_cur_slot = self.slots_cache[self.cur_slot_idx][1] # slots_cache does not account for code_offset
+    if addr_word == addr_cur_slot + self.code_offset:
       cur_cache = self.slots_cache[self.cur_slot_idx]
       new_val = struct.unpack('>I', str(raw_bytes))[0]
       new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], new_val)
       self.slots_cache[self.cur_slot_idx] = new_cache
       self.updateUI()
     else: # Update cached value of other slots
-      addr_first_slot = self.slots_cache[0][1]
-      addr_last_slot = self.slots_cache[-1][1]
+      addr_first_slot = self.slots_cache[0][1] + self.code_offset
+      addr_last_slot = self.slots_cache[-1][1] + self.code_offset
       if (addr_first_slot <= addr_word <= addr_last_slot) and \
          ((addr_word - addr_first_slot) % 12 == 0):
         for slot_i in xrange(len(self.slots_cache)):
           addr_cur_slot = self.slots_cache[slot_i][1]
-          if addr_word == addr_cur_slot:
+          if addr_word == (addr_cur_slot + self.code_offset):
             cur_cache = self.slots_cache[slot_i]
             new_val = struct.unpack('>I', str(raw_bytes))[0]
             new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], new_val)
@@ -271,7 +275,6 @@ class ItemEntriesFrame(QFrame):
     # Update slot idx and read value from memory
     self.cur_slot_idx = new_slot_idx
     cur_addr_hex = self.slots_cache[self.cur_slot_idx][0]
-    self.cmb_slots.setToolTip(cur_addr_hex)
     self.cmb_names.lineEdit().setText(ItemEntriesFrame.MISSING_ITEM_NAME)
     self.cmb_names.setDisabled(True)
     self.txt_id.setText('')
@@ -301,7 +304,7 @@ class ItemEntriesFrame(QFrame):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         raise ValueError('must cache slots before reading')
-      addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
+      addr_cur_slot = self.slots_cache[self.cur_slot_idx][1] + self.code_offset
       self.read_block.emit(addr_cur_slot, 4)
     except ValueError, e:
       cur_slot_num = self.slots_cache[self.cur_slot_idx][2]
@@ -317,7 +320,7 @@ class ItemEntriesFrame(QFrame):
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         raise ValueError('must cache slots before poking')
 
-      addr_cur_slot = self.slots_cache[self.cur_slot_idx][1]
+      addr_cur_slot = self.slots_cache[self.cur_slot_idx][1] + self.code_offset
       cur_val = self.slots_cache[self.cur_slot_idx][3]
       (type_val, id_val, cur_amount) = parse_item_word(cur_val)
       if self.type_val == 0 or cur_amount == 0:

@@ -27,6 +27,7 @@ class GearEntriesFrame(QFrame):
 
   def __init__(self, addr_start, addr_end, class_label, skill2id, id2skill, parent=None):
     super(GearEntriesFrame, self).__init__(parent)
+    self.code_offset = 0
     self.addr_start = addr_start
     self.addr_end = addr_end
     self.max_num_slots = (addr_end - addr_start) / 6 / 4 + 1
@@ -50,7 +51,6 @@ class GearEntriesFrame(QFrame):
     self.btn_read_slots.clicked.connect(self.onReadSlots)
 
     self.cmb_slots = QComboBox(self)
-    self.cmb_slots.setToolTip('')
     self.cmb_slots.setStyleSheet('background-color: white')
     self.cmb_slots.currentIndexChanged[str].connect(self.onChangeSlot)
     self.cmb_slots.setDisabled(True)
@@ -241,14 +241,18 @@ class GearEntriesFrame(QFrame):
   def setAlternateBGColor(self):
     self.setStyleSheet('GearEntriesFrame { background-color:rgb(248,248,248) }')
 
+  @pyqtSlot(int)
+  def onSetCodeOffset(self, signed_offset):
+    self.code_offset = signed_offset
+
   @pyqtSlot()
   def onReadSlots(self):
-    self.read_block.emit(self.addr_start, self.max_num_slots * 4 * 6)
+    self.read_block.emit(self.addr_start + self.code_offset, self.max_num_slots * 4 * 6)
 
   @pyqtSlot(int, int, QByteArray)
   def onBlockRead(self, addr_start, num_bytes, raw_bytes):
     # Determine whether block has cache or single slot
-    if addr_start == self.addr_start and num_bytes == self.max_num_slots * 4 * 6:
+    if (addr_start == (self.addr_start + self.code_offset)) and (num_bytes == self.max_num_slots * 4 * 6):
       self.onCacheRead(raw_bytes)
     elif num_bytes == 4 * 6:  # Assume read slot
       # Ignore if no cache
@@ -316,7 +320,7 @@ class GearEntriesFrame(QFrame):
     self.updateUI()
 
   def onSlotRead(self, addr_word, raw_bytes):
-    addr_cur_slot = self.addr_start + self.cur_slot_idx * 4 * 6
+    addr_cur_slot = self.addr_start + self.code_offset + self.cur_slot_idx * 4 * 6
     if addr_word == addr_cur_slot:
       self.slots_cache[self.cur_slot_idx] = raw_bytes
       if is_gear_empty(raw_bytes):
@@ -325,8 +329,8 @@ class GearEntriesFrame(QFrame):
         self.cur_slot_bytes = raw_bytes
         self.updateUI()
     else:  # Update cached value of other slots
-      addr_first_slot = self.addr_start
-      addr_last_slot = self.addr_end
+      addr_first_slot = self.addr_start + self.code_offset
+      addr_last_slot = self.addr_end + self.code_offset
       if (addr_first_slot <= addr_word <= addr_last_slot) and \
          ((addr_word - addr_first_slot) % 4 * 6 == 0):
         slot_i = (addr_word - addr_first_slot) / 4 / 6
@@ -367,7 +371,6 @@ class GearEntriesFrame(QFrame):
     # Update slot idx and read value from memory
     self.cur_slot_idx = new_slot_idx
     cur_addr_hex = self.addr_start + self.cur_slot_idx * 4 * 6
-    self.cmb_slots.setToolTip('%08X' % cur_addr_hex)
     self.cmb_skills_a.setDisabled(True)
     self.cmb_incr_a.setDisabled(True)
     self.cmb_skills_b.setDisabled(True)
@@ -526,7 +529,7 @@ class GearEntriesFrame(QFrame):
     try:
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         raise ValueError('must cache slots before reading')
-      addr_cur_slot = self.addr_start + self.cur_slot_idx * 4 * 6
+      addr_cur_slot = self.addr_start + self.code_offset + self.cur_slot_idx * 4 * 6
       self.read_block.emit(addr_cur_slot, 4 * 6)
     except ValueError, e:
       self.log.emit('READ %s Slot %03d failed: %s' % (self.class_label, self.cur_slot_idx + 1, str(e)), 'red')
@@ -540,7 +543,7 @@ class GearEntriesFrame(QFrame):
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)) or self.cur_slot_bytes is None:
         raise ValueError('must cache slots before poking')
 
-      addr_cur_slot = self.addr_start + self.cur_slot_idx * 4 * 6
+      addr_cur_slot = self.addr_start + self.code_offset + self.cur_slot_idx * 4 * 6
       if is_gear_empty(self.cur_slot_bytes):
         raise ValueError('cannot poke empty gear to slot')
 

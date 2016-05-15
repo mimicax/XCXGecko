@@ -11,6 +11,7 @@ class DataStore(object):
 
   def parseCfg(self, path):
     items = [('General', 'wiiu_ip', 'wiiu_ip'),
+             ('General', 'code_offset', 'code_offset'),
              ('Databases', 'code_db', 'code_db'),
              ('Databases', 'local_code_db', 'local_code_db'),
              ('Verbosity', 'read', 'verbose_read'),
@@ -26,6 +27,7 @@ class DataStore(object):
     except BaseException, e:
       traceback.print_exc()
       raise SyntaxError('Failed to parse %s: %s' % (path, str(e)))
+    config['code_offset'] = int(float(config['code_offset']))
     config['verbose_read'] = (config['verbose_read'] == 'True')
     config['verbose_poke'] = (config['verbose_poke'] == 'True')
     config['verbose_poke_str'] = (config['verbose_poke_str'] == 'True')

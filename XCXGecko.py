@@ -66,15 +66,6 @@ class XCXGeckoMainWindow(GeckoMainWindow):
       self.d.codes = parse_codes(code_db_txt)
       init_msgs.append('Code DB: ' + code_db_path)
 
-      if self.d.config['loadiine_v4_pygecko']:
-        num_codes_adjusted = 0
-        for k, cs in self.d.codes.iteritems():
-          for c in cs.c:
-            # Do not bother fixing addr_txt
-            c.addr_base -= 20480
-            num_codes_adjusted += 1
-        init_msgs.append('Adjusted %d codes for Loadiine v4 + pyGecko' % num_codes_adjusted)
-
       item_db_path = self.d.config['item_id_db']
       if item_db_path.find('http') == 0:
         try:
@@ -129,6 +120,7 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.wdg_xcx.read_block.connect(self.read_block)
     self.block_read.connect(self.wdg_xcx.block_read)
     self.wdg_xcx.poke_block.connect(self.poke_block)
+    self.set_code_offset.connect(self.wdg_xcx.set_code_offset)
     self.wdg_xcx.log.connect(self.log)
     self.scr_xcx = QScrollArea(self)
     self.scr_xcx.setWidget(self.wdg_xcx)
@@ -142,6 +134,7 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.wdg_gear_mod.read_block.connect(self.read_block)
     self.block_read.connect(self.wdg_gear_mod.block_read)
     self.wdg_gear_mod.poke_block.connect(self.poke_block)
+    self.set_code_offset.connect(self.wdg_gear_mod.set_code_offset)
     self.wdg_gear_mod.log.connect(self.log)
     self.scr_gear_mod = QScrollArea(self)
     self.scr_gear_mod.setWidget(self.wdg_gear_mod)
@@ -195,17 +188,10 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.act_bugs = QAction(QIcon('img/flaticon/error2.png'), 'Open Github bugs page', self)
     self.act_bugs.triggered.connect(self.onBugsURL)
 
-    self.btn_pygecko_mode = QPushButton('Payload: ?', self)
-    if self.d.config['loadiine_v4_pygecko']:
-      self.btn_pygecko_mode.setText('Payload: LoadiineV4+pyGecko')
-    else:
-      self.btn_pygecko_mode.setText('Payload: regular pyGecko')
-    self.btn_pygecko_mode.clicked.connect(self.onChangePyGeckoMode)
-
     self.tbr_xcx = self.addToolBar('Links')
     self.tbr_xcx.addAction(self.act_home)
     self.tbr_xcx.addAction(self.act_bugs)
-    self.tbr_xcx.addWidget(self.btn_pygecko_mode)
+
 
   @pyqtSlot()
   def onHomeURL(self):
@@ -214,14 +200,6 @@ class XCXGeckoMainWindow(GeckoMainWindow):
   @pyqtSlot()
   def onBugsURL(self):
     webbrowser.open('https://github.com/mimicax/XCXGecko/issues')
-
-  @pyqtSlot()
-  def onChangePyGeckoMode(self):
-    self.d.config['loadiine_v4_pygecko'] = not self.d.config['loadiine_v4_pygecko']
-    if self.d.config['loadiine_v4_pygecko']:
-      self.btn_pygecko_mode.setText('Payload: LoadiineV4+pyGecko')
-    else:
-      self.btn_pygecko_mode.setText('Payload: regular pyGecko')
 
 
 if __name__ == '__main__':

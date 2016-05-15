@@ -32,6 +32,7 @@ class XCXWidget(QWidget):
   read_block = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
   poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
+  set_code_offset = pyqtSignal(int) # signed_offset
 
   log = pyqtSignal(str, str) # msg, color
 
@@ -163,6 +164,7 @@ class XCXWidget(QWidget):
         entry.read_block.connect(self.read_block)
         self.block_read.connect(entry.onBlockRead)
         entry.poke_block.connect(self.poke_block)
+        self.set_code_offset.connect(entry.onSetCodeOffset)
         entry.log.connect(self.log)
 
     self.setStyleSheet('XCXWidget { background-color: white; }')

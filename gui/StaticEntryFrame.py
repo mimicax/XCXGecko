@@ -38,8 +38,6 @@ class StaticEntryFrame(QFrame):
     if label is None:
       label = self.code.label
     self.lbl_label = QLabel(label, self)
-    if self.code is not None:
-      self.lbl_label.setToolTip(self.code.addr_txt)
 
     self.val_newval = ValueComboBox([], 4, self)
     self.val_newval.setToolTip('New value')
@@ -121,12 +119,10 @@ class StaticEntryFrame(QFrame):
     self.val_newval.updateValues(dft_values, num_bytes)
 
     if self.code is None:
-      self.lbl_label.setToolTip('Code not available')
       self.btn_curval.setDisabled(True)
       self.val_newval.setDisabled(True)
       self.btn_poke.setDisabled(True)
     else:
-      self.lbl_label.setToolTip(self.code.addr_txt)
       self.btn_curval.setDisabled(False)
       self.val_newval.setDisabled(False)
       self.btn_poke.setDisabled(False)
@@ -185,10 +181,14 @@ class StaticEntryFrame(QFrame):
       eos_idx = val_str.find('\00')
       if eos_idx >= 0:
         val_str = val_str[:eos_idx]
+      parse_failed = False
       try:
         val_str = val_str.decode('utf-8')
       except UnicodeDecodeError, e:
-        val_str = val_str[:-1].decode('utf-8')
+        parse_failed = True # hack to prevent try inside catch
+      if parse_failed:
+        try:
+          val_str = val_str[:-1].decode('utf-8')
       self.display_mode = StaticEntryFrame.DISPLAY_MODES.ASCII
     elif self.code.is_float:
       val_str = str(struct.unpack('>f', self.cur_bytes)[0])
