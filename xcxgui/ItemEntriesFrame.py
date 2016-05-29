@@ -170,12 +170,17 @@ class ItemEntriesFrame(QFrame):
     self.read_block.emit(self.addr_start + self.code_offset, self.max_num_slots*4*3)
 
   @pyqtSlot(int, int, QByteArray)
+  def onBlockRead(self, addr_start_w_code_offset, num_bytes, raw_bytes):
     # Determine whether block has cache or single slot
+    if (addr_start_w_code_offset == (self.addr_start + self.code_offset)) and (num_bytes == self.max_num_slots*4*3):
+      self.onCacheRead(addr_start_w_code_offset, raw_bytes)
     elif num_bytes == 4: # Assume read slot
       # Ignore if no cache
       if not (0 <= self.cur_slot_idx < len(self.slots_cache)):
         return
+      self.onSlotRead(addr_start_w_code_offset, raw_bytes)
 
+  def onCacheRead(self, addr_start_w_code_offset, raw_bytes):
     slot_bytes = str(raw_bytes)
     self.slots_cache = []
     slots_txt = []
@@ -190,9 +195,11 @@ class ItemEntriesFrame(QFrame):
         continue
       elif type_val != self.type_val:
         self.log.emit('val(%08X)=%08X, type_val(%02X) unexpected(%02X)' %
+                      (addr_start_w_code_offset + byte_offset, cur_slot_val, type_val, self.type_val),
                       'red')
         continue
       else:
+        addr_val = addr_start_w_code_offset + byte_offset - self.code_offset # remove code_offset since it may change later
         addr_hex = '%08X' % addr_val
         slot_number = slot_i+1
         self.slots_cache.append((addr_hex, addr_val, slot_number, cur_slot_val))
@@ -210,7 +217,9 @@ class ItemEntriesFrame(QFrame):
       self.cur_slot_idx = 0
     self.updateUI()
 
+  def onSlotRead(self, addr_word_w_code_offset, raw_bytes):
     addr_cur_slot = self.slots_cache[self.cur_slot_idx][1] + self.code_offset
+    if addr_word_w_code_offset == addr_cur_slot:
       cur_cache = self.slots_cache[self.cur_slot_idx]
       new_val = struct.unpack('>I', str(raw_bytes))[0]
       new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], new_val)
@@ -219,8 +228,11 @@ class ItemEntriesFrame(QFrame):
     else: # Update cached value of other slots
       addr_first_slot = self.slots_cache[0][1] + self.code_offset
       addr_last_slot = self.slots_cache[-1][1] + self.code_offset
+      if (addr_first_slot <= addr_word_w_code_offset <= addr_last_slot) and \
+         ((addr_word_w_code_offset - addr_first_slot) % 12 == 0):
         for slot_i in xrange(len(self.slots_cache)):
           addr_cur_slot = self.slots_cache[slot_i][1] + self.code_offset
+          if addr_word_w_code_offset == addr_cur_slot:
             cur_cache = self.slots_cache[slot_i]
             new_val = struct.unpack('>I', str(raw_bytes))[0]
             new_cache = (cur_cache[0], cur_cache[1], cur_cache[2], new_val)
