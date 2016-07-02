@@ -127,8 +127,8 @@ class GeckoMainWindow(QMainWindow):
     self.cmb_code_offset.setEditable(True)
     self.cmb_code_offset.addItems(['0 (default)',
                                    '-20480 (-0x5000: 5.3.2 LoadiineV4+pyGecko)',
-                                   '45056 (+0xB000: 5.5.X Loadiine US)',
-                                   '53248 (+0xD000: 5.5.X Loadiine EU/JP)'])
+                                   '45056 (+0xB000: 5.5.X US / Loadiine GX2 0.3)',
+                                   '53248 (+0xD000: 5.5.X EU/JP)'])
     if self.d.config['code_offset'] == 0:
       self.cmb_code_offset.setCurrentIndex(0)
     elif self.d.config['code_offset'] == -20480:
