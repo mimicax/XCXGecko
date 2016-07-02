@@ -1,0 +1,163 @@
+Money
+49AF05A8 05F5E0FF
+
+Itsuki HP
+49AE720A 270F
+
+Itsuki Max HP
+49AE720E 270F
+
+Itsuki EP
+49AE7212 270F
+
+Itsuki Max EP
+49AE7216 270F
+
+Itsuki Exp
+49AE7260 0013BD20
+
+Tsubasa HP
+49AE756A 270F
+
+Tsubasa Max HP
+49AE756E 270F
+
+Tsubasa EP
+49AE7572 270F
+
+Tsubasa Max EP
+49AE7576 270F
+
+Tsubasa Exp
+49AE75C0 0013BD20
+
+Touma HP
+49AE78CA 270F
+
+Touma Max HP
+49AE78CE 270F
+
+Touma EP
+49AE78D2 270F
+
+Touma Max EP
+49AE78D6 270F
+
+Touma Exp
+49AE7920 0013BD20
+
+Kiria HP
+49AE7C2A 270F
+
+Kiria Max HP
+49AE7C2E 270F
+
+Kiria EP
+49AE7C32 270F
+
+Kiria Max EP
+49AE7C36 270F
+
+Kiria Exp
+49AE7C80 0013BD20
+
+
+# Items - Consumables
+Medicine
+49AF05AE 005A
+
+Soft Drink
+49AF05D2 005A
+
+Life Stone
+49AF05B0 0028
+
+Bead
+49AF05B2 0014
+
+First-Aid Kit
+49AF05B4 0028
+
+Bead Chain
+49AF05B8 0005
+
+Dis-Poison
+49AF05BA 005A
+
+Hand Axe
+49AF05EC 0014
+
+Dart
+49AF05EE 0014
+
+Poison Arrow
+49AF05FC 0014
+
+Treasure Key
+49AF0670 0028
+
+Chakra Drop
+49AF05C8 0028
+
+Dekunda Stone
+49AF060C 0014
+
+Rakukaja Stone
+49AF0610 0005
+
+Spd Incense
+49AF0632 0028
+
+Teleport Stone
+49AF0666 0014
+
+Kiddie Candy
+49AF066A 005A
+
+Smoke Machine
+49AF0658 0014
+
+# Items - Performa
+1-Star Prestige
+49AF0ACE 0063
+
+2-Star Prestige
+49AF0AD0 0063
+
+Nickewise Force
+49AF07B6 0063
+
+Dancer's Aura
+49AF0B58 0001
+
+Determined Energy
+49AF0B28 0001
+
+Wings of Song
+49AF0C36 0001
+
+Sonorous Baritone
+49AF0A2E 0001
+
+Distant Dream
+49AF0A30 0001
+
+Contagious Smile
+49AF0B4C 0001
+
+Waste Not
+49AF0B74 0001
+
+Lightseeker
+49AF0BAC 0001
+
+Destroyer's Aura
+49AF0BA8 0001
+
+Thirst for Meaning
+49AF0BA0 0001
+
+Destroyer's Gift
+49AF0BBA 0001
+
+# Items - Key Items
