@@ -1,4 +1,5 @@
 import traceback
+import ConfigParser
 
 
 class DataStore(object):
@@ -270,3 +271,39 @@ def parse_custom_codes(cs, codes_txt):
   except BaseException, e:
     traceback.print_exc()
     raise SyntaxError('Failed to parse line %d: %s' % (line_count, str(e)))
+
+
+def parse_dec_or_hex(s): # return (dec_val, is_hex) if success, else None
+  s = str(s).strip()
+  if len(s) == 0:
+    return None
+
+  is_hex = False
+  is_neg = False
+  if len(s) > 1 and (s[0] == '+' or s[0] == '-'):
+    is_neg = (s[0] == '-')
+    s = s[1:]
+
+  try:
+    if len(s) > 2 and s[:2] == '0x':
+      is_hex = True
+      dec_val = int(s[2:], 16)
+    else:
+      dec_val = int(s)
+    if is_neg:
+      dec_val *= -1
+  except ValueError:
+    return None
+
+  return dec_val, is_hex
+
+
+def to_signed_hex_str(v, num_bytes=None):
+  sign_char = '+'
+  if v < 0:
+    sign_char = '-'
+  if num_bytes is None:
+    return '%s0x%X' % (sign_char, abs(v))
+  else:
+    fmt = '%s0x%%0%dX' % (sign_char, num_bytes)
+    return fmt % abs(v)

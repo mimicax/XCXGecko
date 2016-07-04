@@ -14,7 +14,7 @@ from PyQt4.QtGui import QPalette
 class ValueComboBox(QComboBox):
   log = pyqtSignal(str, str)
 
-  def __init__(self, dft_values=None, val_bytes=1, parent=None):
+  def __init__(self, dft_values=[], val_bytes=1, parent=None):
     super(ValueComboBox, self).__init__(parent)
     self.val_bytes = val_bytes
     self.val_cap = pow(256, self.val_bytes)

@@ -19,6 +19,7 @@ from PyQt4.QtGui import QSplashScreen
 from gui.CustomCodesWidget import CustomCodesWidget
 from gui.GeckoMainWindow import GeckoMainWindow
 from gui.RawCodesWidget import RawCodesWidget
+from gui.ScanOffsetWidget import ScanOffsetWidget
 from gui.gecko_utils import parse_codes
 from xcxgui.XCXWidget import XCXWidget
 from xcxgui.GearModWidget import GearModWidget
@@ -114,6 +115,18 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.setWindowIcon(QIcon('img/logo.ico'))
 
   def initTabbedWidgets(self): # overload parent fn
+    self.wdg_offset = ScanOffsetWidget(self.d, 'Funds Modifier', self)
+    self.wdg_offset.read_block.connect(self.read_block)
+    self.wdg_offset.add_code_offset.connect(self.add_code_offset)
+    self.block_read.connect(self.wdg_offset.onBlockRead)
+    self.wdg_offset.log.connect(self.log, Qt.DirectConnection)
+    self.scr_offset = QScrollArea(self)
+    self.scr_offset.setWidget(self.wdg_offset)
+    self.scr_offset.setWidgetResizable(True)
+    self.scr_offset.setMinimumWidth(self.wdg_offset.minimumWidth())
+    self.scr_offset.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+    self.scr_offset.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
     # wdg_xcx must be initialized before wdg_raw_codes, so that cs.hidden can be updated
     self.wdg_xcx = XCXWidget(self.d, self)
     self.wdg_xcx.read_code.connect(self.read_code)
@@ -168,18 +181,19 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
     self.scr_custom.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
 
-    self.wdg_item_id = ItemIDWidget()
-    self.wdg_item_id.read_block.connect(self.read_block)
-    self.block_read.connect(self.wdg_item_id.onBlockRead)
-    self.wdg_item_id.poke_block.connect(self.poke_block)
-    self.wdg_item_id.log.connect(self.log)
+    # self.wdg_item_id = ItemIDWidget()
+    # self.wdg_item_id.read_block.connect(self.read_block)
+    # self.block_read.connect(self.wdg_item_id.onBlockRead)
+    # self.wdg_item_id.poke_block.connect(self.poke_block)
+    # self.wdg_item_id.log.connect(self.log)
 
     self.wdg_tabs.addTab(self.scr_xcx, 'XCX')
     if has_gear_mod:
       self.wdg_tabs.addTab(self.scr_gear_mod, 'Gear Mod')
     self.wdg_tabs.addTab(self.scr_raw_codes, 'Other Codes')
     self.wdg_tabs.addTab(self.scr_custom, 'Custom Codes')
-    self.wdg_tabs.addTab(self.wdg_item_id, 'Item ID')
+    self.wdg_tabs.addTab(self.scr_offset, 'Global Address Offset')
+    # self.wdg_tabs.addTab(self.wdg_item_id, 'Item ID')
 
   def initToolbars(self):
     GeckoMainWindow.initToolbars(self)
@@ -190,9 +204,9 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.act_bugs = QAction(QIcon('img/flaticon/error2.png'), 'Open Github bugs page', self)
     self.act_bugs.triggered.connect(self.onBugsURL)
 
-    self.tbr_xcx = self.addToolBar('Links')
-    self.tbr_xcx.addAction(self.act_home)
-    self.tbr_xcx.addAction(self.act_bugs)
+    self.tbr_links = self.addToolBar('Links')
+    self.tbr_links.addAction(self.act_home)
+    self.tbr_links.addAction(self.act_bugs)
 
 
   @pyqtSlot()
