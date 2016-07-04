@@ -34,7 +34,9 @@ class GeckoMainWindow(QMainWindow):
   read_block = pyqtSignal(int, int) # start_addr, num_bytes
   block_read = pyqtSignal(int, int, QByteArray) # start_addr, num_bytes, raw_bytes
   poke_block = pyqtSignal(int, QByteArray, bool) # start_addr, raw_bytes, is_ascii
+
   set_code_offset = pyqtSignal(int) # signed_offset
+  add_code_offset = pyqtSignal(str) # signed_offset_str
 
   log = pyqtSignal(str, str) # msg, color
 
@@ -90,7 +92,7 @@ class GeckoMainWindow(QMainWindow):
 
     # Setup status window
     self.wdg_status = StatusWidget(self)
-    self.log.connect(self.wdg_status.onLog)
+    self.log.connect(self.wdg_status.onLog, Qt.DirectConnection)
     self.addDockWidget(Qt.BottomDockWidgetArea, self.wdg_status)
     self.wdg_status.setAllowedAreas(Qt.TopDockWidgetArea | Qt.BottomDockWidgetArea)
 
@@ -102,6 +104,7 @@ class GeckoMainWindow(QMainWindow):
     self.poke_code.connect(self.onPokeCode)
     self.read_block.connect(self.onReadBlock)
     self.poke_block.connect(self.onPokeBlock)
+    self.add_code_offset.connect(self.onAddCodeOffset)
 
   def initToolbars(self):
     # Create toolbars
@@ -140,7 +143,7 @@ class GeckoMainWindow(QMainWindow):
     else:
       self.cmb_code_offset.addItem('%d (config.ini)' % self.d.config['code_offset'])
       self.cmb_code_offset.setCurrentIndex(4)
-    self.cmb_code_offset.currentIndexChanged.connect(self.onNewCodeOffset)
+    self.cmb_code_offset.currentIndexChanged.connect(self.onSetCodeOffset)
 
     self.tbr_conn = self.addToolBar('Wii U Connection')
     self.tbr_conn.addWidget(self.txt_ip)
@@ -217,8 +220,13 @@ class GeckoMainWindow(QMainWindow):
     self.conn = None
     self.d.connected = False
 
+  @pyqtSlot(str)
+  def onAddCodeOffset(self, new_offset_txt):
+    self.cmb_code_offset.addItem(new_offset_txt)
+    self.cmb_code_offset.setCurrentIndex(self.cmb_code_offset.count()-1)
+
   @pyqtSlot()
-  def onNewCodeOffset(self):
+  def onSetCodeOffset(self):
     txt = self.cmb_code_offset.currentText()
     idx_parenthesis = txt.indexOf('(')
     if idx_parenthesis >= 0:
@@ -384,8 +392,11 @@ class GeckoMainWindow(QMainWindow):
 
       # Poke 1/2 words
       if len(new_bytes) <= 4:
-        new_bytes += '\00' * (4 - len(new_bytes))
-        new_word = struct.unpack('>I', new_bytes)[0]
+        if self.d.config['verbose_read']:
+          self.log.emit('READ %08X %d' % (addr_base + code_offset, 4), 'blue')
+        new_word = self.conn.readmem(addr_base + code_offset, 4)
+        new_word = new_bytes + new_word[len(new_bytes):]
+        new_word = struct.unpack('>I', new_word)[0]
         if self.d.config['verbose_poke']:
           self.log.emit('POKE %08X %08X' % (addr_base + word_offset, new_word), 'blue')
         self.conn.pokemem(addr_base, new_word)
