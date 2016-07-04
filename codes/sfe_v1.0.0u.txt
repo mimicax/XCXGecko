@@ -1,163 +1,227 @@
 Money
-49AF05A8 05F5E0FF
+49AEF468 05F5E0FF
+# OFFSET: -0001140
 
-Itsuki HP
-49AE720A 270F
+
+Itsuki HP:
+49AE60C8 0000270F
+# = -0x58
 
 Itsuki Max HP
-49AE720E 270F
+49AE60CC 0000270F
+# = -0x54
 
-Itsuki EP
-49AE7212 270F
+#Itsuki EP
+49AE60D0 0000270F
+# = -0x50
 
-Itsuki Max EP
-49AE7216 270F
+#Itsuki Max EP
+49AE60D4 0000270F
+# = -0x4C
+
+Itsuki Stage Rank Exp
+49AE611C 0500
 
 Itsuki Exp
-49AE7260 0013BD20
+49AE6120 0013BD20
 
-Tsubasa HP
-49AE756A 270F
 
-Tsubasa Max HP
-49AE756E 270F
-
-Tsubasa EP
-49AE7572 270F
-
-Tsubasa Max EP
-49AE7576 270F
 
 Tsubasa Exp
-49AE75C0 0013BD20
+49AE6480 0013BD20
+#=+360
 
-Touma HP
-49AE78CA 270F
-
-Touma Max HP
-49AE78CE 270F
-
-Touma EP
-49AE78D2 270F
-
-Touma Max EP
-49AE78D6 270F
+Tsubasa Stage Rank Exp
+49AE647C 0500
+#=-2
+#(0462=Stage 9+)
 
 Touma Exp
-49AE7920 0013BD20
+49AE67E0 0013BD20
+#=+360*2
 
-Kiria HP
-49AE7C2A 270F
-
-Kiria Max HP
-49AE7C2E 270F
-
-Kiria EP
-49AE7C32 270F
-
-Kiria Max EP
-49AE7C36 270F
+Touma Stage Rank Exp
+49AE67DE 0500
+#=-2
 
 Kiria Exp
-49AE7C80 0013BD20
+49AE6B40 0013BD20
+#=+360*3
+
+Kiria Stage Rank Exp
+49AE6B3E 0500
+#=-2
+
+Eleonora Exp
+49AE6EA0 0013BD20
+#=+360*4
+
+Eleonora Stage Rank Exp
+49AE6E9E 0500
+#=-2
+
 
 
 # Items - Consumables
-Medicine
-49AF05AE 005A
+#Medicine
+#49AF05AE 005A
 
-Soft Drink
-49AF05D2 005A
+#Soft Drink
+#49AF05D2 005A
 
-Life Stone
-49AF05B0 0028
+#Life Stone
+#49AF05B0 0028
 
-Bead
-49AF05B2 0014
+#Bead
+#49AF05B2 0014
 
-First-Aid Kit
-49AF05B4 0028
+#First-Aid Kit
+#49AF05B4 0028
 
-Bead Chain
-49AF05B8 0005
+#Bead Chain
+#49AF05B8 0005
 
-Dis-Poison
-49AF05BA 005A
+#Dis-Poison
+#49AF05BA 005A
 
-Hand Axe
-49AF05EC 0014
+#Hand Axe
+#49AF05EC 0014
 
-Dart
-49AF05EE 0014
+#Dart
+#49AF05EE 0014
 
-Poison Arrow
-49AF05FC 0014
+#Poison Arrow
+#49AF05FC 0014
 
-Treasure Key
-49AF0670 0028
+#Treasure Key
+#49AF0670 0028
 
-Chakra Drop
-49AF05C8 0028
+#Chakra Drop
+#49AF05C8 0028
 
-Dekunda Stone
-49AF060C 0014
+#Dekunda Stone
+#49AF060C 0014
 
-Rakukaja Stone
-49AF0610 0005
+#Rakukaja Stone
+#49AF0610 0005
+
+#Teleport Stone
+#49AF0666 0014
+
+#Kiddie Candy
+#49AF066A 005A
+
+#Smoke Machine
+#49AF0658 0014
+
+Mag Incense
+49AEF4F0 0028
 
 Spd Incense
-49AF0632 0028
+49AEF4F2 0028
 
-Teleport Stone
-49AF0666 0014
+Def Incense
+49AEF4F4 0028
 
-Kiddie Candy
-49AF066A 005A
+Res Incense
+49AEF4F6 0028
 
-Smoke Machine
-49AF0658 0014
+Lck Incense
+49AEF4F8 0028
 
 # Items - Performa
 1-Star Prestige
-49AF0ACE 0063
+49AEF98E 0063
 
 2-Star Prestige
-49AF0AD0 0063
+49AEF990 0063
 
-Nickewise Force
-49AF07B6 0063
+3-Star Prestige
+49AEF992 0063
 
-Dancer's Aura
-49AF0B58 0001
+4-Star Prestige
+49AEF994 0063
 
-Determined Energy
-49AF0B28 0001
+#Nickewise Force
+#49AF07B6 0063
+
+#Dancer's Aura
+#49AF0B58 0001
+
+#Determined Energy
+#49AF0B28 0001
 
 Wings of Song
 49AF0C36 0001
 
-Sonorous Baritone
-49AF0A2E 0001
+#Sonorous Baritone
+#49AF0A2E 0001
 
-Distant Dream
-49AF0A30 0001
+#Distant Dream
+#49AF0A30 0001
 
-Contagious Smile
-49AF0B4C 0001
+#Contagious Smile
+#49AF0B4C 0001
 
-Waste Not
-49AF0B74 0001
+#Waste Not
+#49AF0B74 0001
 
-Lightseeker
-49AF0BAC 0001
+#Lightseeker
+#49AF0BAC 0001
 
-Destroyer's Aura
-49AF0BA8 0001
+#Destroyer's Aura
+#49AF0BA8 0001
 
-Thirst for Meaning
-49AF0BA0 0001
+#Thirst for Meaning
+#49AF0BA0 0001
 
-Destroyer's Gift
-49AF0BBA 0001
+#Destroyer's Gift
+#49AF0BBA 0001
+
+Macca Converter
+49AEF674 0063
+
+Hellish Doll
+49AEF7E2 0063
+
+
 
 # Items - Key Items
+
+
+
+# Costumes
+# WARNING: sometimes, a newly-added costume will have a blank preview photo; seems like other fields in memory are edited alongside when costume is purchased in-game normally
+
+#Touma - Lesson Mode
+#49AEFFB2 0001
+
+#Touma - School Life
+#49AEFFB4 0001
+
+#Touma - Casual Days
+#49AEFFB6 0001
+
+#Touma - Urban Wild
+#49AEFFB8 0001
+
+#Touma - Bull Genome
+#49AEFFBA 0001
+
+#Touma - Bull Genome N.H.
+#49AEFFBC 0001
+
+#Touma - Gaia Street
+#49AEFFBE 0001
+
+#Kiria - Dominant Queen
+#49AEFFD4 0001
+
+#Kiria - Excellence
+#49AEFFD6 0001
+
+#Kiria - Labyrinth Rock
+#49AEFFD8 0001
+
+#Kiria - Purfect Cat
+#49AEFFDA 0001
