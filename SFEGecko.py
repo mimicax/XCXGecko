@@ -63,8 +63,6 @@ class SFEGeckoMainWindow(GeckoMainWindow):
       self.d.codes = parse_codes(code_db_txt)
       init_msgs.append('Code DB: ' + code_db_path)
 
-      print self.d.codes['1-Star Prestige']
-
     except BaseException, e:
       init_errors.append(str(e))
       self.d.codes = {}
@@ -78,10 +76,10 @@ class SFEGeckoMainWindow(GeckoMainWindow):
     # Setup window
     self.setGeometry(200, 200, 620, 700)
     self.setWindowTitle('#FEGecko')
-    self.setWindowIcon(QIcon('img/logo.ico'))
+    self.setWindowIcon(QIcon('img/sfe_logo.ico'))
 
   def initTabbedWidgets(self): # overload parent fn
-    self.wdg_offset = ScanOffsetWidget(self.d, 'Money', self)
+    self.wdg_offset = ScanOffsetWidget(self.d, 'Yen', self)
     self.wdg_offset.read_block.connect(self.read_block)
     self.wdg_offset.add_code_offset.connect(self.add_code_offset)
     self.block_read.connect(self.wdg_offset.onBlockRead)
