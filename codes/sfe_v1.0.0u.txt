@@ -1,9 +1,9 @@
 # Generic
 Yen [MiMiC]
 49AEF468 05F5E0FF
-# OFFSET: -0001140
 
-#SCAN RANGE: 49A00000 - 49C00000
+Melmark [MiMiC]
+49AEFC6C 03E7
 
 
 
@@ -26,7 +26,7 @@ Itsuki Str [MiMiC]
 Itsuki Mag [MiMiC]
 49AE60E8 03E7
 
-Itsuki Ski [MiMiC]
+Itsuki Skl [MiMiC]
 49AE60EA 03E7
 
 Itsuki Spd [MiMiC]
@@ -39,12 +39,12 @@ Itsuki Res [MiMiC]
 49AE60F0 03E7
 
 Itsuki Lck [MiMiC]
-49AE60F2 03E7
+49AE60F2 0005
 
 Itsuki Resistance Sword [MiMiC]
 49AE60F4 0009
 
-Itsuki Resistance Spear [MiMiC]
+Itsuki Resistance Lance [MiMiC]
 49AE60F6 0009
 
 Itsuki Resistance Axe [MiMiC]
@@ -59,7 +59,7 @@ Itsuki Resistance Fire [MiMiC]
 Itsuki Resistance Ice [MiMiC]
 49AE60FE 0009
 
-Itsuki Resistance Lightning [MiMiC]
+Itsuki Resistance Elec [MiMiC]
 49AE6100 0009
 
 Itsuki Resistance Force [MiMiC]
@@ -68,7 +68,7 @@ Itsuki Resistance Force [MiMiC]
 Itsuki Resistance Light [MiMiC]
 49AE6104 0009
 
-Itsuki Resistance Dark [MiMiC]
+Itsuki Resistance Body [MiMiC]
 49AE6106 0009
 
 Itsuki Stage Rank Exp [MiMiC]
@@ -97,7 +97,7 @@ Tsubasa Str [MiMiC]
 Tsubasa Mag [MiMiC]
 49AE6448 03E7
 
-Tsubasa Ski [MiMiC]
+Tsubasa Skl [MiMiC]
 49AE644A 03E7
 
 Tsubasa Spd [MiMiC]
@@ -110,12 +110,12 @@ Tsubasa Res [MiMiC]
 49AE6450 03E7
 
 Tsubasa Lck [MiMiC]
-49AE6452 03E7
+49AE6452 0005
 
 Tsubasa Resistance Sword [MiMiC]
 49AE6454 0009
 
-Tsubasa Resistance Spear [MiMiC]
+Tsubasa Resistance Lance [MiMiC]
 49AE6456 0009
 
 Tsubasa Resistance Axe [MiMiC]
@@ -130,7 +130,7 @@ Tsubasa Resistance Fire [MiMiC]
 Tsubasa Resistance Ice [MiMiC]
 49AE645E 0009
 
-Tsubasa Resistance Lightning [MiMiC]
+Tsubasa Resistance Elec [MiMiC]
 49AE6460 0009
 
 Tsubasa Resistance Force [MiMiC]
@@ -139,7 +139,7 @@ Tsubasa Resistance Force [MiMiC]
 Tsubasa Resistance Light [MiMiC]
 49AE6464 0009
 
-Tsubasa Resistance Dark [MiMiC]
+Tsubasa Resistance Body [MiMiC]
 49AE6466 0009
 
 Tsubasa Stage Rank Exp [MiMiC]
@@ -168,7 +168,7 @@ Touma Str [MiMiC]
 Touma Mag [MiMiC]
 49AE67A8 03E7
 
-Touma Ski [MiMiC]
+Touma Skl [MiMiC]
 49AE67AA 03E7
 
 Touma Spd [MiMiC]
@@ -181,12 +181,12 @@ Touma Res [MiMiC]
 49AE67B0 03E7
 
 Touma Lck [MiMiC]
-49AE67B2 03E7
+49AE67B2 0005
 
 Touma Resistance Sword [MiMiC]
 49AE67B4 0009
 
-Touma Resistance Spear [MiMiC]
+Touma Resistance Lance [MiMiC]
 49AE67B6 0009
 
 Touma Resistance Axe [MiMiC]
@@ -201,7 +201,7 @@ Touma Resistance Fire [MiMiC]
 Touma Resistance Ice [MiMiC]
 49AE67BE 0009
 
-Touma Resistance Lightning [MiMiC]
+Touma Resistance Elec [MiMiC]
 49AE67C0 0009
 
 Touma Resistance Force [MiMiC]
@@ -210,7 +210,7 @@ Touma Resistance Force [MiMiC]
 Touma Resistance Light [MiMiC]
 49AE67C4 0009
 
-Touma Resistance Dark [MiMiC]
+Touma Resistance Body [MiMiC]
 49AE67C6 0009
 
 Touma Stage Rank Exp [MiMiC]
@@ -239,7 +239,7 @@ Kiria Str [MiMiC]
 Kiria Mag [MiMiC]
 49AE6B08 03E7
 
-Kiria Ski [MiMiC]
+Kiria Skl [MiMiC]
 49AE6B0A 03E7
 
 Kiria Spd [MiMiC]
@@ -252,12 +252,12 @@ Kiria Res [MiMiC]
 49AE6B10 03E7
 
 Kiria Lck [MiMiC]
-49AE6B12 03E7
+49AE6B12 0005
 
 Kiria Resistance Sword [MiMiC]
 49AE6B14 0009
 
-Kiria Resistance Spear [MiMiC]
+Kiria Resistance Lance [MiMiC]
 49AE6B16 0009
 
 Kiria Resistance Axe [MiMiC]
@@ -272,7 +272,7 @@ Kiria Resistance Fire [MiMiC]
 Kiria Resistance Ice [MiMiC]
 49AE6B1E 0009
 
-Kiria Resistance Lightning [MiMiC]
+Kiria Resistance Elec [MiMiC]
 49AE6B20 0009
 
 Kiria Resistance Force [MiMiC]
@@ -281,7 +281,7 @@ Kiria Resistance Force [MiMiC]
 Kiria Resistance Light [MiMiC]
 49AE6B24 0009
 
-Kiria Resistance Dark [MiMiC]
+Kiria Resistance Body [MiMiC]
 49AE6B26 0009
 
 Kiria Stage Rank Exp [MiMiC]
@@ -310,7 +310,7 @@ Eleonora Str [MiMiC]
 Eleonora Mag [MiMiC]
 49AE6E68 03E7
 
-Eleonora Ski [MiMiC]
+Eleonora Skl [MiMiC]
 49AE6E6A 03E7
 
 Eleonora Spd [MiMiC]
@@ -323,12 +323,12 @@ Eleonora Res [MiMiC]
 49AE6E70 03E7
 
 Eleonora Lck [MiMiC]
-49AE6E72 03E7
+49AE6E72 0005
 
 Eleonora Resistance Sword [MiMiC]
 49AE6E74 0009
 
-Eleonora Resistance Spear [MiMiC]
+Eleonora Resistance Lance [MiMiC]
 49AE6E76 0009
 
 Eleonora Resistance Axe [MiMiC]
@@ -343,7 +343,7 @@ Eleonora Resistance Fire [MiMiC]
 Eleonora Resistance Ice [MiMiC]
 49AE6E7E 0009
 
-Eleonora Resistance Lightning [MiMiC]
+Eleonora Resistance Elec [MiMiC]
 49AE6E80 0009
 
 Eleonora Resistance Force [MiMiC]
@@ -352,7 +352,7 @@ Eleonora Resistance Force [MiMiC]
 Eleonora Resistance Light [MiMiC]
 49AE6E84 0009
 
-Eleonora Resistance Dark [MiMiC]
+Eleonora Resistance Body [MiMiC]
 49AE6E86 0009
 
 Eleonora Stage Rank Exp [MiMiC]
@@ -381,7 +381,7 @@ Mamori Str [MiMiC]
 Mamori Mag [MiMiC]
 49AE71C8 03E7
 
-Mamori Ski [MiMiC]
+Mamori Skl [MiMiC]
 49AE71CA 03E7
 
 Mamori Spd [MiMiC]
@@ -394,12 +394,12 @@ Mamori Res [MiMiC]
 49AE71D0 03E7
 
 Mamori Lck [MiMiC]
-49AE71D2 03E7
+49AE71D2 0005
 
 Mamori Resistance Sword [MiMiC]
 49AE71D4 0009
 
-Mamori Resistance Spear [MiMiC]
+Mamori Resistance Lance [MiMiC]
 49AE71D6 0009
 
 Mamori Resistance Axe [MiMiC]
@@ -414,7 +414,7 @@ Mamori Resistance Fire [MiMiC]
 Mamori Resistance Ice [MiMiC]
 49AE71DE 0009
 
-Mamori Resistance Lightning [MiMiC]
+Mamori Resistance Elec [MiMiC]
 49AE71E0 0009
 
 Mamori Resistance Force [MiMiC]
@@ -423,7 +423,7 @@ Mamori Resistance Force [MiMiC]
 Mamori Resistance Light [MiMiC]
 49AE71E4 0009
 
-Mamori Resistance Dark [MiMiC]
+Mamori Resistance Body [MiMiC]
 49AE71E6 0009
 
 Mamori Stage Rank Exp [MiMiC]
@@ -432,6 +432,76 @@ Mamori Stage Rank Exp [MiMiC]
 Mamori Exp [MiMiC]
 49AE7200 0013BD20
 
+
+
+Yashiro HP [MiMiC]
+49AE7508 0000270F
+
+Yashiro Max HP [MiMiC]
+49AE750C 0000270F
+
+Yashiro EP [MiMiC]
+49AE7510 0000270F
+
+Yashiro Max EP [MiMiC]
+49AE7514 0000270F
+
+Yashiro Str [MiMiC]
+49AE7526 03E7
+
+Yashiro Mag [MiMiC]
+49AE7528 03E7
+
+Yashiro Skl [MiMiC]
+49AE752A 03E7
+
+Yashiro Spd [MiMiC]
+49AE752C 03E7
+
+Yashiro Def [MiMiC]
+49AE752E 03E7
+
+Yashiro Res [MiMiC]
+49AE7530 03E7
+
+Yashiro Lck [MiMiC]
+49AE7532 0005
+
+Yashiro Resistance Sword [MiMiC]
+49AE7534 0009
+
+Yashiro Resistance Lance [MiMiC]
+49AE7536 0009
+
+Yashiro Resistance Axe [MiMiC]
+49AE7538 0009
+
+Yashiro Resistance Bow [MiMiC]
+49AE753A 0009
+
+Yashiro Resistance Fire [MiMiC]
+49AE753C 0009
+
+Yashiro Resistance Ice [MiMiC]
+49AE753E 0009
+
+Yashiro Resistance Elec [MiMiC]
+49AE7540 0009
+
+Yashiro Resistance Force [MiMiC]
+49AE7542 0009
+
+Yashiro Resistance Light [MiMiC]
+49AE7544 0009
+
+Yashiro Resistance Body [MiMiC]
+49AE7546 0009
+
+Yashiro Stage Rank Exp [MiMiC]
+49AE755C 00000500
+
+Yashiro Exp [MiMiC]
+49AE7560 0013BD20
 
 
 
@@ -490,7 +560,7 @@ Mamori Exp [MiMiC]
 Str Incense
 49AEF4EC 0028
 
-Ski Incense
+Skl Incense
 49AEF4EE 0028
 
 Mag Incense
@@ -520,6 +590,12 @@ Lck Incense
 
 4-Star Prestige
 49AEF994 0063
+
+5-Star Prestige
+49AEF996 0063
+
+6-Star Prestige
+49AEF998 0063
 
 #Nickewise Force
 #49AF07B6 0063
@@ -566,6 +642,31 @@ Hellish Doll
 Yomotsu Force
 49AEF688 0063
 
+Knight Force
+49AEF6F6 0063
+
+Bloodwing Force
+49AEF6F0 0063
+
+Knight Force R.
+49AEF6F8 0063
+
+Hirudinean Force
+49AEF6A8 0063
+
+S. Master Force
+49AEF6C2 0063
+
+Whitewing Force
+49AEF6F2 0063
+
+Master Seal
+49AEF964 0063
+
+Alabaster Quill
+49AEF8B6 0063
+
+
 
 # Items - Key Items
 
@@ -606,3 +707,9 @@ Yomotsu Force
 
 #Kiria - Purfect Cat
 #49AEFFDA 0001
+
+
+# Side Quests
+Side Quest - Eleonora - Regan Killed
+49B0316E 06
+# Finish a fight to trigger cutscene
