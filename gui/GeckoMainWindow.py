@@ -344,7 +344,7 @@ class GeckoMainWindow(QMainWindow):
         code_offset = self.d.config['code_offset']
       elif self.d.custom_codes is not None and cs_label in self.d.custom_codes:
         cs = self.d.custom_codes[cs_label]
-        code_offset = 0 # assume user's custom code already accounts for their particular payload offset
+        # code_offset = 0 # assume user's custom code already accounts for their particular payload offset
       else:
         return
 
@@ -380,9 +380,12 @@ class GeckoMainWindow(QMainWindow):
         return
 
       # Prepare word-aligned data
+      # TODO: test if bit-shifted code still work in XCX
       word_offset = code.bit_rshift / 32
       lshift_bits = code.bit_rshift % 32
       if lshift_bits != 0: # read 2-word block into long, then bit-mask new bytes
+        if self.d.config['verbose_read']:
+          self.log.emit('READ %08X %d' % (addr_base + word_offset, 8), 'blue')
         old_long_bytes = self.conn.readmem(addr_base + word_offset, 8)
         old_long_val = struct.unpack('>Q', old_long_bytes)[0]
         lshift_mask = 64 - lshift_bits - code.num_bytes*8
@@ -395,21 +398,21 @@ class GeckoMainWindow(QMainWindow):
       # Poke 1/2 words
       if len(new_bytes) <= 4:
         if self.d.config['verbose_read']:
-          self.log.emit('READ %08X %d' % (addr_base + code_offset, 4), 'blue')
-        new_word = self.conn.readmem(addr_base + code_offset, 4)
+          self.log.emit('READ %08X %d' % (addr_base, 4), 'blue')
+        new_word = self.conn.readmem(addr_base, 4)
         new_word = new_bytes + new_word[len(new_bytes):]
         new_word = struct.unpack('>I', new_word)[0]
         if self.d.config['verbose_poke']:
-          self.log.emit('POKE %08X %08X' % (addr_base + word_offset, new_word), 'blue')
+          self.log.emit('POKE %08X %08X' % (addr_base, new_word), 'blue')
         self.conn.pokemem(addr_base, new_word)
       elif len(new_bytes) <= 8:
         new_bytes += '\00' * (8 - len(new_bytes))
         new_words = struct.unpack('>II', new_bytes)
         if self.d.config['verbose_poke']:
-          self.log.emit('POKE %08X %08X' % (addr_base + word_offset, new_words[0]), 'blue')
+          self.log.emit('POKE %08X %08X' % (addr_base, new_words[0]), 'blue')
         self.conn.pokemem(addr_base, new_words[0])
         if self.d.config['verbose_poke']:
-          self.log.emit('POKE %08X %08X' % (addr_base + word_offset + 4, new_words[1]), 'blue')
+          self.log.emit('POKE %08X %08X' % (addr_base+4, new_words[1]), 'blue')
         self.conn.pokemem(addr_base+4, new_words[1])
       else:
         raise NotImplementedError('no support for >8-byte code')
