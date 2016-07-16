@@ -10,13 +10,13 @@ wiiu_addr = '192.168.0.133'
 addr_first_slot = 0x1C3BB0DC # see codes/xcx_v1.0.1e.txt for Slot 001 of Material, Rare Resources, ...
 addr_last_slot = 0x1C3BD650 # ... same as above
 new_amount = 99
-item_type_val = 0x68 # see codes/item_id_v1.0.1e.txt for the appropriate 1-byte Type ID
+item_type_val = 0x68 # see codes/xcx_item_id_v1.0.1e.txt for the appropriate 1-byte Type ID
 slot_num_bytes = 12 # do not change
 
 if new_amount <= 0 or new_amount > 99:
   raise ValueError('new_amount must be in [1, 99] range')
 
-with open('../codes/item_id_v1.0.1e.txt', 'r') as f:
+with open('../codes/xcx_item_id_v1.0.1e.txt', 'r') as f:
   (item_db, item_db_lines, item_types) = parse_item_db(f.read())
 
 print '> Connecting to Wii U...'

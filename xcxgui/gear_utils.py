@@ -66,7 +66,7 @@ def parse_gear_db(db_txt):
 #  p: 10-bit placement index (incl upper 2 bits of 3rd byte)
 #  q: 6-bit unknown; only seen 0b000000
 #  a-c: gear/skell skill ID 1-3: yyyi
-#     y: 12-bit (packed); skill type + base lvl (if applicable); see codes/gear_id_v1.0.1e.txt
+#     y: 12-bit (packed); skill type + base lvl (if applicable); see codes/xcx_gear_id_v1.0.1e.txt
 #     i: 4-bit skill level incr (+0 to +15)
 #  1-3: slot 1-3: 0xFFFF = no slot, 0x0000 = empty slot, other values = possibly augment slot ID
 #

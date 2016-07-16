@@ -31,7 +31,7 @@ def find_data_files(source, target, patterns):
 
 setup(windows=[{"script": "SFEGecko.py",
                 "icon_resources": [(0, "img/sfe_logo.ico")]}],
-      data_files=find_data_files('', '', ['sfe_config.ini', 'codes/*', 'img/*', 'img/flaticon/*']),
+      data_files=find_data_files('', '', ['sfe_config.ini', 'codes/sfe_*', 'img/*', 'img/flaticon/*']),
       options={"py2exe": {
         "includes": ["sip"],
         "dll_excludes": ["MSVCP90.dll"]}}, requires=['PyQt4'])
