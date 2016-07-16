@@ -59,7 +59,7 @@ class ScanOffsetWidget(QWidget):
       else:
         ok = True
     except KeyError, err:
-      self.layout.addWidget(QLabel('Initialization Failed: could not find %s in codes' % key))
+      self.layout.addWidget(QLabel('Initialization Failed: could not find %s in codes' % code_name))
 
     # Populate GUI
     if ok:
@@ -203,7 +203,7 @@ class ScanOffsetWidget(QWidget):
       # Parse range min and max
       scan_min = parse_dec_or_hex(self.txt_range_min.text())
       if scan_min is None:
-        self.log.emit('Failed to parse Scan From address', 'red')
+        self.log.emit('Failed to parse Scan From address (format: 0xABCDEF01)', 'red')
         return
       scan_min = scan_min[0]
       if scan_min < 0x10000000:
@@ -214,7 +214,7 @@ class ScanOffsetWidget(QWidget):
         return
       scan_max = parse_dec_or_hex(self.txt_range_max.text())
       if scan_max is None:
-        self.log.emit('Failed to parse Scan To address', 'red')
+        self.log.emit('Failed to parse Scan To address (format: 0xABCDEF01)', 'red')
         return
       scan_max = scan_max[0]
       if scan_max + self.code.num_bytes >= 0x50000000:
@@ -225,6 +225,9 @@ class ScanOffsetWidget(QWidget):
         return
       self.scan_addr_start = scan_min
       self.scan_num_bytes = scan_max - scan_min + self.code.num_bytes
+      if self.scan_num_bytes > 0x100000: # heuristically-chosen threshold
+        self.log.emit('Scan range (%d bytes) will take too long for pyGecko; specify smaller address range or use Gecko.NET instead' % self.scan_num_bytes, 'red')
+        return
 
     elif len(self.cand_addrs) == 0: # No more candidates left
       self.log.emit('No more candidate addresses remaining; press Reset instead', 'red')
@@ -234,7 +237,7 @@ class ScanOffsetWidget(QWidget):
       self.scan_addr_start = self.cand_addrs[0]
       self.scan_num_bytes = self.cand_addrs[-1] - self.cand_addrs[0] + self.code.num_bytes
 
-    self.log.emit('Reading %d bytes from 0x%08X... (this may take a very long time)' % (self.scan_num_bytes, self.scan_addr_start), 'green')
+    self.log.emit('Reading %d bytes from 0x%08X... (GUI will appear non responsive/crashed until done)' % (self.scan_num_bytes, self.scan_addr_start), 'green')
     QTimer.singleShot(10, lambda: self.read_block.emit(self.scan_addr_start, self.scan_num_bytes))
 
 

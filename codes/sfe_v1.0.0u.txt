@@ -1,506 +1,506 @@
 # Generic
-Yen [MiMiC]
+Yen
 49AEF468 05F5E0FF
 
-Melmark [MiMiC]
+Melmark
 49AEFC6C 03E7
 
 
 
 # Characters
-Itsuki HP [MiMiC]
+Itsuki HP
 49AE60C8 0000270F
 
-Itsuki Max HP [MiMiC]
+Itsuki Max HP
 49AE60CC 0000270F
 
-Itsuki EP [MiMiC]
+Itsuki EP
 49AE60D0 0000270F
 
-Itsuki Max EP [MiMiC]
+Itsuki Max EP
 49AE60D4 0000270F
 
-Itsuki Str [MiMiC]
+Itsuki Str
 49AE60E6 03E7
 
-Itsuki Mag [MiMiC]
+Itsuki Mag
 49AE60E8 03E7
 
-Itsuki Skl [MiMiC]
+Itsuki Skl
 49AE60EA 03E7
 
-Itsuki Spd [MiMiC]
+Itsuki Spd
 49AE60EC 03E7
 
-Itsuki Def [MiMiC]
+Itsuki Def
 49AE60EE 03E7
 
-Itsuki Res [MiMiC]
+Itsuki Res
 49AE60F0 03E7
 
-Itsuki Lck [MiMiC]
+Itsuki Lck
 49AE60F2 0005
 
-Itsuki Resistance Sword [MiMiC]
+Itsuki Resistance Sword
 49AE60F4 0009
 
-Itsuki Resistance Lance [MiMiC]
+Itsuki Resistance Lance
 49AE60F6 0009
 
-Itsuki Resistance Axe [MiMiC]
+Itsuki Resistance Axe
 49AE60F8 0009
 
-Itsuki Resistance Bow [MiMiC]
+Itsuki Resistance Bow
 49AE60FA 0009
 
-Itsuki Resistance Fire [MiMiC]
+Itsuki Resistance Fire
 49AE60FC 0009
 
-Itsuki Resistance Ice [MiMiC]
+Itsuki Resistance Ice
 49AE60FE 0009
 
-Itsuki Resistance Elec [MiMiC]
+Itsuki Resistance Elec
 49AE6100 0009
 
-Itsuki Resistance Force [MiMiC]
+Itsuki Resistance Force
 49AE6102 0009
 
-Itsuki Resistance Light [MiMiC]
+Itsuki Resistance Light
 49AE6104 0009
 
-Itsuki Resistance Body [MiMiC]
+Itsuki Resistance Body
 49AE6106 0009
 
-Itsuki Stage Rank Exp [MiMiC]
+Itsuki Stage Rank Exp
 49AE611C 00000500
 
-Itsuki Exp [MiMiC]
+Itsuki Exp
 49AE6120 0013BD20
 
 
 
-Tsubasa HP [MiMiC]
+Tsubasa HP
 49AE6428 0000270F
 
-Tsubasa Max HP [MiMiC]
+Tsubasa Max HP
 49AE642C 0000270F
 
-Tsubasa EP [MiMiC]
+Tsubasa EP
 49AE6430 0000270F
 
-Tsubasa Max EP [MiMiC]
+Tsubasa Max EP
 49AE6434 0000270F
 
-Tsubasa Str [MiMiC]
+Tsubasa Str
 49AE6446 03E7
 
-Tsubasa Mag [MiMiC]
+Tsubasa Mag
 49AE6448 03E7
 
-Tsubasa Skl [MiMiC]
+Tsubasa Skl
 49AE644A 03E7
 
-Tsubasa Spd [MiMiC]
+Tsubasa Spd
 49AE644C 03E7
 
-Tsubasa Def [MiMiC]
+Tsubasa Def
 49AE644E 03E7
 
-Tsubasa Res [MiMiC]
+Tsubasa Res
 49AE6450 03E7
 
-Tsubasa Lck [MiMiC]
+Tsubasa Lck
 49AE6452 0005
 
-Tsubasa Resistance Sword [MiMiC]
+Tsubasa Resistance Sword
 49AE6454 0009
 
-Tsubasa Resistance Lance [MiMiC]
+Tsubasa Resistance Lance
 49AE6456 0009
 
-Tsubasa Resistance Axe [MiMiC]
+Tsubasa Resistance Axe
 49AE6458 0009
 
-Tsubasa Resistance Bow [MiMiC]
+Tsubasa Resistance Bow
 49AE645A 0009
 
-Tsubasa Resistance Fire [MiMiC]
+Tsubasa Resistance Fire
 49AE645C 0009
 
-Tsubasa Resistance Ice [MiMiC]
+Tsubasa Resistance Ice
 49AE645E 0009
 
-Tsubasa Resistance Elec [MiMiC]
+Tsubasa Resistance Elec
 49AE6460 0009
 
-Tsubasa Resistance Force [MiMiC]
+Tsubasa Resistance Force
 49AE6462 0009
 
-Tsubasa Resistance Light [MiMiC]
+Tsubasa Resistance Light
 49AE6464 0009
 
-Tsubasa Resistance Body [MiMiC]
+Tsubasa Resistance Body
 49AE6466 0009
 
-Tsubasa Stage Rank Exp [MiMiC]
+Tsubasa Stage Rank Exp
 49AE647C 00000500
 
-Tsubasa Exp [MiMiC]
+Tsubasa Exp
 49AE6480 0013BD20
 
 
 
-Touma HP [MiMiC]
+Touma HP
 49AE6788 0000270F
 
-Touma Max HP [MiMiC]
+Touma Max HP
 49AE678C 0000270F
 
-Touma EP [MiMiC]
+Touma EP
 49AE6790 0000270F
 
-Touma Max EP [MiMiC]
+Touma Max EP
 49AE6794 0000270F
 
-Touma Str [MiMiC]
+Touma Str
 49AE67A6 03E7
 
-Touma Mag [MiMiC]
+Touma Mag
 49AE67A8 03E7
 
-Touma Skl [MiMiC]
+Touma Skl
 49AE67AA 03E7
 
-Touma Spd [MiMiC]
+Touma Spd
 49AE67AC 03E7
 
-Touma Def [MiMiC]
+Touma Def
 49AE67AE 03E7
 
-Touma Res [MiMiC]
+Touma Res
 49AE67B0 03E7
 
-Touma Lck [MiMiC]
+Touma Lck
 49AE67B2 0005
 
-Touma Resistance Sword [MiMiC]
+Touma Resistance Sword
 49AE67B4 0009
 
-Touma Resistance Lance [MiMiC]
+Touma Resistance Lance
 49AE67B6 0009
 
-Touma Resistance Axe [MiMiC]
+Touma Resistance Axe
 49AE67B8 0009
 
-Touma Resistance Bow [MiMiC]
+Touma Resistance Bow
 49AE67BA 0009
 
-Touma Resistance Fire [MiMiC]
+Touma Resistance Fire
 49AE67BC 0009
 
-Touma Resistance Ice [MiMiC]
+Touma Resistance Ice
 49AE67BE 0009
 
-Touma Resistance Elec [MiMiC]
+Touma Resistance Elec
 49AE67C0 0009
 
-Touma Resistance Force [MiMiC]
+Touma Resistance Force
 49AE67C2 0009
 
-Touma Resistance Light [MiMiC]
+Touma Resistance Light
 49AE67C4 0009
 
-Touma Resistance Body [MiMiC]
+Touma Resistance Body
 49AE67C6 0009
 
-Touma Stage Rank Exp [MiMiC]
+Touma Stage Rank Exp
 49AE67DC 00000500
 
-Touma Exp [MiMiC]
+Touma Exp
 49AE67E0 0013BD20
 
 
 
-Kiria HP [MiMiC]
+Kiria HP
 49AE6AE8 0000270F
 
-Kiria Max HP [MiMiC]
+Kiria Max HP
 49AE6AEC 0000270F
 
-Kiria EP [MiMiC]
+Kiria EP
 49AE6AF0 0000270F
 
-Kiria Max EP [MiMiC]
+Kiria Max EP
 49AE6AF4 0000270F
 
-Kiria Str [MiMiC]
+Kiria Str
 49AE6B06 03E7
 
-Kiria Mag [MiMiC]
+Kiria Mag
 49AE6B08 03E7
 
-Kiria Skl [MiMiC]
+Kiria Skl
 49AE6B0A 03E7
 
-Kiria Spd [MiMiC]
+Kiria Spd
 49AE6B0C 03E7
 
-Kiria Def [MiMiC]
+Kiria Def
 49AE6B0E 03E7
 
-Kiria Res [MiMiC]
+Kiria Res
 49AE6B10 03E7
 
-Kiria Lck [MiMiC]
+Kiria Lck
 49AE6B12 0005
 
-Kiria Resistance Sword [MiMiC]
+Kiria Resistance Sword
 49AE6B14 0009
 
-Kiria Resistance Lance [MiMiC]
+Kiria Resistance Lance
 49AE6B16 0009
 
-Kiria Resistance Axe [MiMiC]
+Kiria Resistance Axe
 49AE6B18 0009
 
-Kiria Resistance Bow [MiMiC]
+Kiria Resistance Bow
 49AE6B1A 0009
 
-Kiria Resistance Fire [MiMiC]
+Kiria Resistance Fire
 49AE6B1C 0009
 
-Kiria Resistance Ice [MiMiC]
+Kiria Resistance Ice
 49AE6B1E 0009
 
-Kiria Resistance Elec [MiMiC]
+Kiria Resistance Elec
 49AE6B20 0009
 
-Kiria Resistance Force [MiMiC]
+Kiria Resistance Force
 49AE6B22 0009
 
-Kiria Resistance Light [MiMiC]
+Kiria Resistance Light
 49AE6B24 0009
 
-Kiria Resistance Body [MiMiC]
+Kiria Resistance Body
 49AE6B26 0009
 
-Kiria Stage Rank Exp [MiMiC]
+Kiria Stage Rank Exp
 49AE6B3C 00000500
 
-Kiria Exp [MiMiC]
+Kiria Exp
 49AE6B40 0013BD20
 
 
 
-Eleonora HP [MiMiC]
+Eleonora HP
 49AE6E48 0000270F
 
-Eleonora Max HP [MiMiC]
+Eleonora Max HP
 49AE6E4C 0000270F
 
-Eleonora EP [MiMiC]
+Eleonora EP
 49AE6E50 0000270F
 
-Eleonora Max EP [MiMiC]
+Eleonora Max EP
 49AE6E54 0000270F
 
-Eleonora Str [MiMiC]
+Eleonora Str
 49AE6E66 03E7
 
-Eleonora Mag [MiMiC]
+Eleonora Mag
 49AE6E68 03E7
 
-Eleonora Skl [MiMiC]
+Eleonora Skl
 49AE6E6A 03E7
 
-Eleonora Spd [MiMiC]
+Eleonora Spd
 49AE6E6C 03E7
 
-Eleonora Def [MiMiC]
+Eleonora Def
 49AE6E6E 03E7
 
-Eleonora Res [MiMiC]
+Eleonora Res
 49AE6E70 03E7
 
-Eleonora Lck [MiMiC]
+Eleonora Lck
 49AE6E72 0005
 
-Eleonora Resistance Sword [MiMiC]
+Eleonora Resistance Sword
 49AE6E74 0009
 
-Eleonora Resistance Lance [MiMiC]
+Eleonora Resistance Lance
 49AE6E76 0009
 
-Eleonora Resistance Axe [MiMiC]
+Eleonora Resistance Axe
 49AE6E78 0009
 
-Eleonora Resistance Bow [MiMiC]
+Eleonora Resistance Bow
 49AE6E7A 0009
 
-Eleonora Resistance Fire [MiMiC]
+Eleonora Resistance Fire
 49AE6E7C 0009
 
-Eleonora Resistance Ice [MiMiC]
+Eleonora Resistance Ice
 49AE6E7E 0009
 
-Eleonora Resistance Elec [MiMiC]
+Eleonora Resistance Elec
 49AE6E80 0009
 
-Eleonora Resistance Force [MiMiC]
+Eleonora Resistance Force
 49AE6E82 0009
 
-Eleonora Resistance Light [MiMiC]
+Eleonora Resistance Light
 49AE6E84 0009
 
-Eleonora Resistance Body [MiMiC]
+Eleonora Resistance Body
 49AE6E86 0009
 
-Eleonora Stage Rank Exp [MiMiC]
+Eleonora Stage Rank Exp
 49AE6E9C 00000500
 
-Eleonora Exp [MiMiC]
+Eleonora Exp
 49AE6EA0 0013BD20
 
 
 
-Mamori HP [MiMiC]
+Mamori HP
 49AE71A8 0000270F
 
-Mamori Max HP [MiMiC]
+Mamori Max HP
 49AE71AC 0000270F
 
-Mamori EP [MiMiC]
+Mamori EP
 49AE71B0 0000270F
 
-Mamori Max EP [MiMiC]
+Mamori Max EP
 49AE71B4 0000270F
 
-Mamori Str [MiMiC]
+Mamori Str
 49AE71C6 03E7
 
-Mamori Mag [MiMiC]
+Mamori Mag
 49AE71C8 03E7
 
-Mamori Skl [MiMiC]
+Mamori Skl
 49AE71CA 03E7
 
-Mamori Spd [MiMiC]
+Mamori Spd
 49AE71CC 03E7
 
-Mamori Def [MiMiC]
+Mamori Def
 49AE71CE 03E7
 
-Mamori Res [MiMiC]
+Mamori Res
 49AE71D0 03E7
 
-Mamori Lck [MiMiC]
+Mamori Lck
 49AE71D2 0005
 
-Mamori Resistance Sword [MiMiC]
+Mamori Resistance Sword
 49AE71D4 0009
 
-Mamori Resistance Lance [MiMiC]
+Mamori Resistance Lance
 49AE71D6 0009
 
-Mamori Resistance Axe [MiMiC]
+Mamori Resistance Axe
 49AE71D8 0009
 
-Mamori Resistance Bow [MiMiC]
+Mamori Resistance Bow
 49AE71DA 0009
 
-Mamori Resistance Fire [MiMiC]
+Mamori Resistance Fire
 49AE71DC 0009
 
-Mamori Resistance Ice [MiMiC]
+Mamori Resistance Ice
 49AE71DE 0009
 
-Mamori Resistance Elec [MiMiC]
+Mamori Resistance Elec
 49AE71E0 0009
 
-Mamori Resistance Force [MiMiC]
+Mamori Resistance Force
 49AE71E2 0009
 
-Mamori Resistance Light [MiMiC]
+Mamori Resistance Light
 49AE71E4 0009
 
-Mamori Resistance Body [MiMiC]
+Mamori Resistance Body
 49AE71E6 0009
 
-Mamori Stage Rank Exp [MiMiC]
+Mamori Stage Rank Exp
 49AE71FC 00000500
 
-Mamori Exp [MiMiC]
+Mamori Exp
 49AE7200 0013BD20
 
 
 
-Yashiro HP [MiMiC]
+Yashiro HP
 49AE7508 0000270F
 
-Yashiro Max HP [MiMiC]
+Yashiro Max HP
 49AE750C 0000270F
 
-Yashiro EP [MiMiC]
+Yashiro EP
 49AE7510 0000270F
 
-Yashiro Max EP [MiMiC]
+Yashiro Max EP
 49AE7514 0000270F
 
-Yashiro Str [MiMiC]
+Yashiro Str
 49AE7526 03E7
 
-Yashiro Mag [MiMiC]
+Yashiro Mag
 49AE7528 03E7
 
-Yashiro Skl [MiMiC]
+Yashiro Skl
 49AE752A 03E7
 
-Yashiro Spd [MiMiC]
+Yashiro Spd
 49AE752C 03E7
 
-Yashiro Def [MiMiC]
+Yashiro Def
 49AE752E 03E7
 
-Yashiro Res [MiMiC]
+Yashiro Res
 49AE7530 03E7
 
-Yashiro Lck [MiMiC]
+Yashiro Lck
 49AE7532 0005
 
-Yashiro Resistance Sword [MiMiC]
+Yashiro Resistance Sword
 49AE7534 0009
 
-Yashiro Resistance Lance [MiMiC]
+Yashiro Resistance Lance
 49AE7536 0009
 
-Yashiro Resistance Axe [MiMiC]
+Yashiro Resistance Axe
 49AE7538 0009
 
-Yashiro Resistance Bow [MiMiC]
+Yashiro Resistance Bow
 49AE753A 0009
 
-Yashiro Resistance Fire [MiMiC]
+Yashiro Resistance Fire
 49AE753C 0009
 
-Yashiro Resistance Ice [MiMiC]
+Yashiro Resistance Ice
 49AE753E 0009
 
-Yashiro Resistance Elec [MiMiC]
+Yashiro Resistance Elec
 49AE7540 0009
 
-Yashiro Resistance Force [MiMiC]
+Yashiro Resistance Force
 49AE7542 0009
 
-Yashiro Resistance Light [MiMiC]
+Yashiro Resistance Light
 49AE7544 0009
 
-Yashiro Resistance Body [MiMiC]
+Yashiro Resistance Body
 49AE7546 0009
 
-Yashiro Stage Rank Exp [MiMiC]
+Yashiro Stage Rank Exp
 49AE755C 00000500
 
-Yashiro Exp [MiMiC]
+Yashiro Exp
 49AE7560 0013BD20
 
 
@@ -665,6 +665,18 @@ Master Seal
 
 Alabaster Quill
 49AEF8B6 0063
+
+Sorcerer Force
+49AEF6D2 0063
+
+Sniper Force
+49AEF6E2 0063
+
+Raijin Force
+49AEF6A2 0063
+
+Slattern Force
+49AEF694 0063
 
 
 

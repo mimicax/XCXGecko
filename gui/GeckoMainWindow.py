@@ -23,6 +23,7 @@ from gui.RawCodesWidget import RawCodesWidget
 from gui.StatusWidget import StatusWidget
 from gui.gecko_utils import DataStore
 from gui.gecko_utils import parse_codes
+from gui.gecko_utils import parse_offset_str
 from pygecko.tcpgecko import TCPGecko
 
 
@@ -43,16 +44,17 @@ class GeckoMainWindow(QMainWindow):
   def __init__(self):
     super(GeckoMainWindow, self).__init__()
     self.conn = None
+    self.init_msgs = []
+    self.init_errors = []
     self.initInterface()
 
   def initInterface(self): # Facilitate inheritance
-    (init_msgs, init_errors) = self.initData()
-
+    self.initData()
     self.initUI()
 
-    for init_error in init_errors:
+    for init_error in self.init_errors:
       self.log.emit(init_error, 'red')
-    for init_msg in init_msgs:
+    for init_msg in self.init_msgs:
       self.log.emit(init_msg, 'black')
 
     self.show()
@@ -60,8 +62,6 @@ class GeckoMainWindow(QMainWindow):
   def initData(self):
     self.d = DataStore()
 
-    init_msgs = []
-    init_errors = []
     try:
       self.d.parseCfg('config.ini')
       self.d.ip = self.d.config['wiiu_ip']
@@ -79,13 +79,11 @@ class GeckoMainWindow(QMainWindow):
         with open(self.d.config['code_db']) as f:
           code_db_txt = f.read()
       self.d.codes = parse_codes(code_db_txt)
-      init_msgs.append('Code DB: ' + code_db_path)
+      self.init_msgs.append('Code DB: ' + code_db_path)
 
     except BaseException, e:
-      init_errors.append(str(e))
+      self.init_errors.append(str(e))
       self.d.codes = {}
-
-    return init_msgs, init_errors
 
   def initUI(self):
     self.initToolbars()
@@ -128,29 +126,33 @@ class GeckoMainWindow(QMainWindow):
     self.cmb_code_offset = QComboBox(self)
     self.cmb_code_offset.setToolTip('offset for code addresses, depending on WiiU firmware / pyGecko type / game region')
     self.cmb_code_offset.setEditable(True)
-    self.cmb_code_offset.addItems(['0 (default)',
-                                   '-20480 (-0x5000: 5.3.2 LoadiineV4+pyGecko)',
-                                   '45056 (+0xB000: 5.5.X US / Loadiine GX2 0.3)',
-                                   '53248 (+0xD000: 5.5.X EU/JP)'])
-    if self.d.config['code_offset'] == 0:
-      self.cmb_code_offset.setCurrentIndex(0)
-    elif self.d.config['code_offset'] == -20480:
-      self.cmb_code_offset.setCurrentIndex(1)
-    elif self.d.config['code_offset'] == 45056:
-      self.cmb_code_offset.setCurrentIndex(2)
-    elif self.d.config['code_offset'] == 53248:
-      self.cmb_code_offset.setCurrentIndex(3)
-    else:
+    self.populateCodeOffsets()
+    found_offset = False
+    for idx in xrange(self.cmb_code_offset.count()):
+      txt = self.cmb_code_offset.itemText(idx)
+      try:
+        cand_offset = parse_offset_str(txt)
+        if self.d.config['code_offset'] == cand_offset:
+          self.cmb_code_offset.setCurrentIndex(idx)
+          found_offset = True
+          break
+      except ValueError:
+        self.init_errors.append('Failed to parse integer for Offset Dropbown Entry %d: %s' % (idx+1, txt))
+    if not found_offset:
       self.cmb_code_offset.addItem('%d (config.ini)' % self.d.config['code_offset'])
-      self.cmb_code_offset.setCurrentIndex(4)
+      self.cmb_code_offset.setCurrentIndex(self.cmb_code_offset.count()-1)
+
     self.cmb_code_offset.currentIndexChanged.connect(self.onSetCodeOffset)
+
+    self.tbr_offset = self.addToolBar('Global Code Offset')
+    self.tbr_offset.addWidget(self.lbl_code_offset)
+    self.tbr_offset.addWidget(self.cmb_code_offset)
+    self.addToolBarBreak()
 
     self.tbr_conn = self.addToolBar('Wii U Connection')
     self.tbr_conn.addWidget(self.txt_ip)
     self.tbr_conn.addAction(self.act_conn)
     self.tbr_conn.addAction(self.act_disc)
-    self.tbr_conn.addWidget(self.lbl_code_offset)
-    self.tbr_conn.addWidget(self.cmb_code_offset)
 
   def initTabbedWidgets(self):
     self.wdg_raw_codes = RawCodesWidget(self.d, self)
@@ -220,6 +222,9 @@ class GeckoMainWindow(QMainWindow):
     self.conn = None
     self.d.connected = False
 
+  def populateCodeOffsets(self):
+    self.cmb_code_offset.addItems(['0 (default)'])
+
   @pyqtSlot(str)
   def onAddCodeOffset(self, new_offset_txt):
     self.cmb_code_offset.addItem(new_offset_txt)
@@ -228,11 +233,8 @@ class GeckoMainWindow(QMainWindow):
   @pyqtSlot()
   def onSetCodeOffset(self):
     txt = self.cmb_code_offset.currentText()
-    idx_parenthesis = txt.indexOf('(')
-    if idx_parenthesis >= 0:
-      txt = txt[:idx_parenthesis]
     try:
-      new_code_offset = int(float(txt.trimmed()))
+      new_code_offset = parse_offset_str(txt)
       self.d.config['code_offset'] = new_code_offset
       self.set_code_offset.emit(new_code_offset)
     except ValueError:

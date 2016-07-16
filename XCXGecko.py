@@ -36,20 +36,11 @@ class XCXGeckoMainWindow(GeckoMainWindow):
   def initInterface(self):
     self.d = XCXDataStore()
 
-    (init_msgs, init_errors) = self.initData()
-
-    self.initUI()
-
-    for init_error in init_errors:
-      self.log.emit(init_error, 'red')
-    for init_msg in init_msgs:
-      self.log.emit(init_msg, 'black')
+    GeckoMainWindow.initInterface(self)
 
     self.show()
 
   def initData(self): # override parent fn
-    init_msgs = []
-    init_errors = []
     try:
       self.d.parseCfg('config.ini')
       self.d.ip = self.d.config['wiiu_ip']
@@ -59,7 +50,7 @@ class XCXGeckoMainWindow(GeckoMainWindow):
         try:
           code_db_txt = urllib2.urlopen(code_db_path).read()
         except IOError, e:
-          init_errors.append('Failed to load %s: %s' % (code_db_path, str(e)))
+          self.init_errors.append('Failed to load %s: %s' % (code_db_path, str(e)))
           code_db_path = self.d.config['local_code_db']
           with open(code_db_path) as f:
             code_db_txt = f.read()
@@ -67,14 +58,14 @@ class XCXGeckoMainWindow(GeckoMainWindow):
         with open(self.d.config['code_db']) as f:
           code_db_txt = f.read()
       self.d.codes = parse_codes(code_db_txt)
-      init_msgs.append('Code DB: ' + code_db_path)
+      self.init_msgs.append('Code DB: ' + code_db_path)
 
       item_db_path = self.d.config['item_id_db']
       if item_db_path.find('http') == 0:
         try:
           item_id_db_txt = urllib2.urlopen(item_db_path).read()
         except IOError, e:
-          init_errors.append('Failed to load %s: %s' % (item_db_path, str(e)))
+          self.init_errors.append('Failed to load %s: %s' % (item_db_path, str(e)))
           item_db_path = self.d.config['local_item_id_db']
           with open(item_db_path) as f:
             item_id_db_txt = f.read()
@@ -82,14 +73,14 @@ class XCXGeckoMainWindow(GeckoMainWindow):
         with open(item_db_path) as f:
           item_id_db_txt = f.read()
       (self.d.item_ids, self.d.item_lines, self.d.item_types) = parse_item_db(item_id_db_txt)
-      init_msgs.append('Item ID DB: ' + item_db_path)
+      self.init_msgs.append('Item ID DB: ' + item_db_path)
 
       gear_db_path = self.d.config['gear_id_db']
       if gear_db_path.find('http') == 0:
         try:
           gear_id_db_txt = urllib2.urlopen(gear_db_path).read()
         except IOError, e:
-          init_errors.append('Failed to load %s: %s' % (gear_db_path, str(e)))
+          self.init_errors.append('Failed to load %s: %s' % (gear_db_path, str(e)))
           gear_db_path = self.d.config['local_gear_id_db']
           with open(gear_db_path) as f:
             gear_id_db_txt = f.read()
@@ -97,14 +88,12 @@ class XCXGeckoMainWindow(GeckoMainWindow):
         with open(gear_db_path) as f:
           gear_id_db_txt = f.read()
       self.d.gear_ids = parse_gear_db(gear_id_db_txt)
-      init_msgs.append('Gear ID DB: ' + gear_db_path)
+      self.init_msgs.append('Gear ID DB: ' + gear_db_path)
 
     except BaseException, e:
-      init_errors.append(str(e))
+      self.init_errors.append(str(e))
       self.d.codes = {}
       self.d.item_ids = []
-
-    return init_msgs, init_errors
 
   def initUI(self):
     GeckoMainWindow.initUI(self)
@@ -163,6 +152,7 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.wdg_raw_codes.read_code.connect(self.read_code)
     self.code_read.connect(self.wdg_raw_codes.code_read)
     self.wdg_raw_codes.poke_code.connect(self.poke_code)
+    #self.set_code_offset.connect(self.wdg_raw_codes.set_code_offset) # no need since codes issued by label rather than addr
     self.wdg_raw_codes.log.connect(self.log)
     self.scr_raw_codes = QScrollArea(self)
     self.scr_raw_codes.setWidget(self.wdg_raw_codes)
@@ -208,6 +198,11 @@ class XCXGeckoMainWindow(GeckoMainWindow):
     self.tbr_links.addAction(self.act_home)
     self.tbr_links.addAction(self.act_bugs)
 
+  def populateCodeOffsets(self):
+    self.cmb_code_offset.addItems(['0 (default)',
+                                   '-20480 (-0x5000: 5.3.2 LoadiineV4+pyGecko)',
+                                   '45056 (+0xB000: Loadiine GX2 0.3 / 5.5.X US)',
+                                   '53248 (+0xD000: 5.5.X EU/JP)'])
 
   @pyqtSlot()
   def onHomeURL(self):

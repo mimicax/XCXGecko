@@ -307,3 +307,11 @@ def to_signed_hex_str(v, num_bytes=None):
   else:
     fmt = '%s0x%%0%dX' % (sign_char, num_bytes)
     return fmt % abs(v)
+
+
+def parse_offset_str(txt):
+  txt = str(txt) # convert from QString ifneedbe
+  idx_parenthesis = txt.find('(')
+  if idx_parenthesis >= 0:
+    txt = txt[:idx_parenthesis]
+  return int(float(txt.strip())) # may raise ValueError
