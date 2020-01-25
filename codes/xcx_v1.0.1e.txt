@@ -25,6 +25,17 @@ Elma Appearance: True Form (SPOILERS) [MiMiC]
 1C38E55C 01
 1C392260 000C002A
 
+Skells have no flight module
+1C3C18E8 C534
+
+Skells have flight module
+1C3C18E8 C535
+
+Allowed to buy Skells
+1c3c15f0 0e40
+
+Blossom Dance have/max
+1C38E9CC 05
 
 
 Protagonist Name [MiMiC]
@@ -621,9 +632,9 @@ Important Items: Slot 500 [MiMiC]
 
 # ===== Gear codes: partially decoded =====
 # Ground/Skill Gear Format: wwwwxxxx yyyyyyyy zzzzpppq aaaabbbb cccc1111 22223333
-#  w: 2-byte unknown; includes gear ID (with embedded maker + specs)
-#  x: 2-byte unknown; ranged wep=0xC008/0xC009, melee wep=0xE008/0xE009
-#  y: 4-byte unknown; possibly indicates item purchase / found locations; only seen \0 in last 6 bits
+#  w: 2-byte gear ID (ID increments by 8. Anything that doesn't increment by 8 is either worn or advanced gear) [sleepingkirby]
+#  x: 2-byte gear/weapon slot; ranged wep=0xC008/0xC009, melee wep=0xE008/0xE009. 0x##08/09 depends on type of gear but ultimately doesn't matter. When equipped, game will auto correct. See "xcx notes" for examples [sleepingkirby]
+#  y: 4-byte unknown; possibly indicates item purchase / found locations; only seen \0 in last 6 bits. [sleepingkirby] When gear is equipped, the ID changes and these 4-bytes are not saved.
 #  z: 2-byte unknown; only seen 0x0000
 #  p: 10-bit placement index (incl upper 2 bits of 3rd byte)
 #  q: 6-bit unknown; only seen 0b000000
