@@ -817,8 +817,25 @@ Ex.
 value in memory: 00fbe0b8
 value you want to write: 99, 0x63
 
+[item id, 12 bits][item type, 8 bits][amount, 8 bits]
+then bit shift to the left by 3
+68 253 Scorching Giant Cells
+68 254 Alluring Laphid Extract
+68 255 Blinding Laphid Extract
+68 256 Laphid Jaw Meat
+
+using alluring laphid extract
+2546863, bit shift left by 3
+12a343318
+
 step 1) 0x63 << 3 = 0x318
 step 2) 00fbe000
 step 3) 00fbe318
 How many Salvage ticket 99
-1C3C0798 00FBE318 
+1C3C0798 00FBE318 (1f7c63)
+
+frame Patch
+1C3C07A4 0093E010 (127c02)
+
+blade medals
+1C3D42D0 0000000f
