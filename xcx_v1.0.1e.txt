@@ -31,9 +31,6 @@ Skells have no flight module
 Skells have flight module
 1C3C18E8 C535
 
-Allowed to buy Skells
-1c3c15f0 0e40
-
 Blossom Dance have/max
 1C38E9CC 05
 
