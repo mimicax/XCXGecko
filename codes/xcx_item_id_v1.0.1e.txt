@@ -5,7 +5,11 @@
 68 006 Gold Ingot
 68 007 Golden Cedar
 68 056 Gold Sylooth Brace
+68 09E Golden Simius Mane
 68 0AB Cloudy Gerrid Soup
+68 0F8 Red Brandy
+68 0FB Blue Progen Wing
+68 108 Golden Armor
 68 10A Black Steel Heavy Armor
 68 109 Eerie Lightning Tentacle
 68 10B Laser Light
@@ -62,7 +66,7 @@
 68 13E Rugged Skin
 68 13F Sturdy Drakebone
 68 140 Libertas Glyph
-68 141 Creore Glyph
+68 141 Creare Glyph
 68 142 Tempus Glyph
 68 143 Dialek Glyph
 68 144 Spathi Glyph
@@ -131,7 +135,7 @@
 68 183 Warrior Race's Seal
 68 184 Obsidian Fragment
 68 185 Fossilized Bone
-68 186 Noble Yggrolith Scale
+68 186 Noble Yggralith Scale
 68 187 Telethia Stem Cell
 68 188 Reinforced Thruster
 68 189 Advanced Thruster
@@ -170,7 +174,7 @@
 68 1AA Ocher Stabilizer
 68 1AB White Stabilizer
 68 1AC Red Milsaadi Hood
-68 1AD Bue Milsaadi Hood
+68 1AD Blue Milsaadi Hood
 68 1AE Gray Shell
 68 1AF Sticky Scirpo Silk
 68 1B0 Silver Petramand Silk
@@ -249,7 +253,7 @@
 68 1F9 Supple Tail
 68 1FA Muscled Simius Bulge
 68 1FB Red Simius Mane
-68 1FC Green Simius Mane
+68 1FC Golden Simius Mane
 68 1FD Silver Cantor Tooth
 68 1FE Golden Cantor Tooth
 68 1FF Luminescent Tail
@@ -335,10 +339,10 @@
 68 24F Blue Sylooth Brace
 68 250 White Sylooth Brace
 68 251 Black Sylooth Brace
-68 252 Gularthion Flint
+68 252 Gularthian Flint
 68 253 Scorching Giant Cells
-68 254 Alluring Laphid Extract
-68 255 Blinding Laphid Extract
+68 254 Alluring Lophid Extract
+68 255 Blinding Lophid Extract
 68 256 Laphid Jaw Meat
 68 257 Spiked Tail Fin
 68 258 Strong Purgovent Extract
@@ -386,11 +390,11 @@
 68 282 Black Filiavent Tentacle
 68 283 Silver Vita Core
 68 284 Rexoskell Sucker
-68 285 Vosara War Medal
+68 285 Varsara War Medal
 68 286 Deva Caladar's Red Ear
 68 287 Crude Neilhail Mask
 68 288 Goetia's Black Heel
-68 289 Dagahn's Adamant Bond
+68 289 Dagahn's Adamant Band
 68 28A Ryyz's Silver Piercings
 68 28B Imperial Sphinx Fang
 68 28C Yggralith Recovery Horn
@@ -491,7 +495,7 @@
 68 2EB Oc-serv Southern Crest
 68 2EC Oc-serv Western Crest
 68 2ED Oc-serv Eastern Crest
-68 2EE Golden Yggralith Heart
+68 2EE Golden Yggdralith Heart
 68 2EF Telethia Ring
 # 2F0-2F2, 300, 3FF crashes
 
@@ -506,7 +510,7 @@
 64 008 Infernium
 64 009 Boiled-Egg Ore
 64 00A Marine Rutile
-64 00B Downstone
+64 00B Dawnstone
 64 00C Cimmerian Cinnabar
 64 00D Ouroboros Crystal
 64 00E Parhelion Platinum
@@ -843,6 +847,7 @@
 6C 12B Savage Sketch
 6C 12C Book of Death and Rebirth
 # 12D+ are debug or bugged
+6C 17D Octopus Board
 
 ### 74 Important Items
 74 001 Conner's Comm Device
@@ -892,7 +897,7 @@
 74 053 Gorkwa
 74 054 Run'tonam's Right Arm
 74 057 Traylan's Gorkwa
-74 05A White Whale Parts
+74 05A White Whale Parts (We Were Soldiers)
 74 05E Ian's ID Card
 74 05F Nalu's Present
 74 060 Dadapon's Sunglasses
