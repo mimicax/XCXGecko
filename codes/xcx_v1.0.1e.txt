@@ -37,6 +37,17 @@ Allowed to buy Skells
 Blossom Dance have/max
 1C38E9CC 05
 
+blade medals
+1C3D42D0 00000063
+
+field skill (mechanical)
+1C3D7038 05
+
+field skill (archaeological)
+1C3D7039 05
+
+field skill (biological)
+1C3D703A 05
 
 Protagonist Name [MiMiC]
 1C38E5C8 ASCII(20)
