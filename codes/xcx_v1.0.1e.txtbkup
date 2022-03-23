@@ -1,0 +1,687 @@
+Funds Modifier [danmc]
+1C39AD90 05F5E0FF
+
+Miranium Modifier [danmc]
+1C39AD94 000F423F
+
+Reward Tickets Modifier [danmc]
+1C39AD98 0000270F
+
+Reward Tickets Cap Modifier [MiMiC]
+[0x1C38E164]+516 000F423F
+
+Blade Lv Exp [danmc]
+1C3C76E4 0007A120
+
+
+
+Elma Appearance: Normal Form [MiMiC]
+1C38E1D0 00
+1C38E55C 00
+1C392260 000B0028
+
+Elma Appearance: True Form (SPOILERS) [MiMiC]
+1C38E1D0 01
+1C38E55C 01
+1C392260 000C002A
+
+Skells have no flight module
+1C3C18E8 C534
+
+Skells have flight module
+1C3C18E8 C535
+
+Blossom Dance have/max
+1C38E9CC 05
+
+
+Protagonist Name [MiMiC]
+1C38E5C8 ASCII(20)
+# Other possible addresses:
+# 1C38B624: display only
+# 1C38E584: right before current addr, not sure why
+# 1C59E0A4: not sure why here
+
+Protagonist Lv Exp [danmc]
+1C38E644 000F423F
+
+Protagonist Rank Exp [danmc]
+1C38E6F4 7FFF
+
+Protagonist BP [danmc]
+1C38E93C 0000270F
+
+Protagonist Height (float) [Ailuros27]
+1C38E630 3F8020C4
+
+Protagonist Chest Depth (float) [Ailuros27]
+1C38E634 3F8020C4
+
+Protagonist Chest Height (float) [Ailuros27]
+1C38E638 3F8020C4
+
+Protagonist Chest Width (float) [Ailuros27]
+1C38E63C 3F8020C4
+
+
+
+Nagi Name [MiMiC]
+1C38EB44 ASCII(10)
+
+Nagi Lv Exp [danmc]
+1C38EBC0 000F423F
+
+Nagi Rank Exp [danmc]
+1C38EC70 7FFF
+
+Nagi BP [danmc]
+1C38EEB8 0000270F
+
+Nagi Affinity [MiMiC]
+1C38F0BE 32
+
+Nagi Height (float) [Intropy]
+1C38EBAC 3F8020C4
+
+Nagi Chest Depth (float) [Intropy]
+1C38EBB0 3F8020C4
+
+Nagi Chest Height (float) [Intropy]
+1C38EBB4 3F8020C4
+
+Nagi Chest Width (float) [Intropy]
+1C38EBB8 3F8020C4
+
+
+
+L Name [MiMiC]
+1C38F0C0 ASCII(10)
+
+L Lv Exp [MiMiC]
+1C38F13C 000F423F
+
+L Rank Exp [MiMiC]
+1C38F1EC 7FFF
+
+L BP [MiMiC]
+1C38F434 0000270F
+
+L Affinity [MiMiC]
+1C38F63A 32
+
+L Height (float) [Intropy]
+1C38F128 3F8020C4
+
+L Chest Depth (float) [Intropy]
+1C38F12C 3F8020C4
+
+L Chest Height (float) [Intropy]
+1C38F130 3F8020C4
+
+L Chest Width (float) [Intropy]
+1C38F134 3F8020C4
+
+
+
+Lao Name [MiMiC]
+1C38F63C ASCII(10)
+
+Lao Lv Exp [danmc]
+1C38F6B8 000F423F
+
+Lao Rank Exp [danmc]
+1C38F768 7FFF
+
+Lao BP [danmc]
+1C38F9B0 0000270F
+
+Lao Affinity [MiMiC]
+1C38FBB6 32
+
+Lao Height (float) [Intropy]
+1C38F6A4 3F8020C4
+
+Lao Chest Depth (float) [Intropy]
+1C38F6A8 3F8020C4
+
+Lao Chest Height (float) [Intropy]
+1C38F6AC 3F8020C4
+
+Lao Chest Width (float) [Intropy]
+1C38F6B0 3F8020C4
+
+
+
+H.B. Name [MiMiC]
+1C38FBB8 ASCII(10)
+
+H.B. Lv Exp [danmc]
+1C38FC34 000F423F
+
+H.B. Rank Exp [danmc]
+1C38FCE4 7FFF
+
+H.B. BP [danmc]
+1C38FF2C 0000270F
+
+H.B. Affinity [MiMiC]
+1C390132 32
+
+H.B. Height (float) [Intropy]
+1C38FC20 3F8020C4
+
+H.B. Chest Depth (float) [Intropy]
+1C38FC24 3F8020C4
+
+H.B. Chest Height (float) [Intropy]
+1C38FC28 3F8020C4
+
+H.B. Chest Width (float) [Intropy]
+1C38FC2C 3F8020C4
+
+
+
+Gwin Name [MiMiC]
+1C390134 ASCII(10)
+
+Gwin Lv Exp [danmc]
+1C3901B0 000F423F
+
+Gwin Rank Exp [danmc]
+1C390260 7FFF
+
+Gwin BP [danmc]
+1C3904A8 0000270F
+
+Gwin Affinity [MiMiC]
+1C3906AE 32
+
+Gwin Height (float) [Intropy]
+1C39019C 3F8020C4
+
+Gwin Chest Depth (float) [Intropy]
+1C3901A0 3F8020C4
+
+Gwin Chest Height (float) [Intropy]
+1C3901A4 3F8020C4
+
+Gwin Chest Width (float) [Intropy]
+1C3901A8 3F8020C4
+
+
+
+Fyre Name [MiMiC]
+1C3906B0 ASCII(10)
+
+Fyre Lv Exp [MiMiC]
+1C39072C 000F423F
+
+Fyre Rank Exp [MiMiC]
+1C3907DC 7FFF
+
+Fyre BP [MiMiC]
+1C390A24 0000270F
+
+Fyre Affinity [MiMiC]
+1C390C2A 32
+
+Fyre Height (float) [Intropy]
+1C390718 3F8020C4
+
+Fyre Chest Depth (float) [Intropy]
+1C39071C 3F8020C4
+
+Fyre Chest Height (float) [Intropy]
+1C390720 3F8020C4
+
+Fyre Chest Width (float) [Intropy]
+1C390724 3F8020C4
+
+
+
+Doug Name [MiMiC]
+1C390C2C ASCII(10)
+
+Doug Lv Exp [danmc]
+1C390CA8 000F423F
+
+Doug Rank Exp [danmc]
+1C390D58 7FFF
+
+Doug BP [danmc]
+1C390FA0 0000270F
+
+Doug Affinity [MiMiC]
+1C3911A6 32
+
+Doug Height (float) [Intropy]
+1C390C94 3F8020C4
+
+Doug Chest Depth (float) [Intropy]
+1C390C98 3F8020C4
+
+Doug Chest Height (float) [Intropy]
+1C390C9C 3F8020C4
+
+Doug Chest Width (float) [Intropy]
+1C390CA0 3F8020C4
+
+
+
+Yelv Name [MiMiC]
+1C3911A8 ASCII(10)
+
+Yelv Lv Exp [danmc]
+1C391224 000F423F
+
+Yelv Rank Exp [danmc]
+1C3912D4 7FFF
+
+Yelv BP [danmc]
+1C39151C 0000270F
+
+Yelv Affinity [MiMiC]
+1C391722 32
+
+Yelv Height (float) [Intropy]
+1C391210 3F8020C4
+
+Yelv Chest Depth (float) [Intropy]
+1C391214 3F8020C4
+
+Yelv Chest Height (float) [Intropy]
+1C391218 3F8020C4
+
+Yelv Chest Width (float) [Intropy]
+1C39121C 3F8020C4
+
+
+
+Boze Name [MiMiC]
+1C391724 ASCII(10)
+
+Boze Lv Exp [MiMiC]
+1C3917A0 000F423F
+
+Boze Rank Exp [MiMiC]
+1C391850 7FFF
+
+Boze BP [MiMiC]
+1C391A98 0000270F
+
+Boze Affinity [MiMiC]
+1C391C9E 32
+
+Boze Height (float) [Intropy]
+1C39178C 3F8020C4
+
+Boze Chest Depth (float) [Intropy]
+1C391790 3F8020C4
+
+Boze Chest Height (float) [Intropy]
+1C391794 3F8020C4
+
+Boze Chest Width (float) [Intropy]
+1C391798 3F8020C4
+
+
+
+Phog Name [MiMiC]
+1C391CA0 ASCII(10)
+
+Phog Lv Exp [MiMiC]
+1C391D1C 000F423F
+
+Phog Rank Exp [MiMiC]
+1C391DCC 7FFF
+
+Phog BP [MiMiC]
+1C392014 0000270F
+
+Phog Affinity [MiMiC]
+1C39221A 32
+
+Phog Height (float) [Intropy]
+1C391D08 3F8020C4
+
+Phog Chest Depth (float) [Intropy]
+1C391D0C 3F8020C4
+
+Phog Chest Height (float) [Intropy]
+1C391D10 3F8020C4
+
+Phog Chest Width (float) [Intropy]
+1C391D14 3F8020C4
+
+
+
+Elma Name [MiMiC]
+1C39221C ASCII(10)
+
+Elma Lv Exp [danmc]
+1C392298 000F423F
+
+Elma Rank Exp [danmc]
+1C392348 7FFF
+
+Elma BP [danmc]
+1C392590 0000270F
+
+Elma Affinity [MiMiC]
+1C392796 32
+
+Elma Height (float) [Intropy]
+1C392284 3F8020C4
+
+Elma Chest Depth (float) [Intropy]
+1C392288 3F8020C4
+
+Elma Chest Height (float) [Intropy]
+1C39228C 3F8020C4
+
+Elma Chest Width (float) [Intropy]
+1C392290 3F8020C4
+
+
+
+Lin Name [MiMiC]
+1C392798 ASCII(10)
+
+Lin Lv Exp [danmc]
+1C392814 000F423F
+
+Lin Rank Exp [danmc]
+1C3928C4 7FFF
+
+Lin BP [danmc]
+1C392B0C 0000270F
+
+Lin Affinity [MiMiC]
+1C392D12 32
+
+Lin Height (float) [Intropy]
+1C392800 3F8020C4
+
+Lin Chest Depth (float) [Intropy]
+1C392804 3F8020C4
+
+Lin Chest Height (float) [Intropy]
+1C392808 3F8020C4
+
+Lin Chest Width (float) [Intropy]
+1C39280C 3F8020C4
+
+
+
+Celica Name [MiMiC]
+1C392D14 ASCII(10)
+
+Celica Lv Exp [danmc]
+1C392D90 000F423F
+
+Celica Rank Exp [danmc]
+1C392E40 7FFF
+
+Celica BP [danmc]
+1C393088 0000270F
+
+Celica Affinity [MiMiC]
+1C39328E 32
+
+Celica Height (float) [Intropy]
+1C392D7C 3F8020C4
+
+Celica Chest Depth (float) [Intropy]
+1C392D80 3F8020C4
+
+Celica Chest Height (float) [Intropy]
+1C392D84 3F8020C4
+
+Celica Chest Width (float) [Intropy]
+1C392D88 3F8020C4
+
+
+
+Irina Name [MiMiC]
+1C393290 ASCII(10)
+
+Irina Lv Exp [danmc]
+1C39330C 000F423F
+
+Irina Rank Exp [danmc]
+1C3933BC 7FFF
+
+Irina BP [danmc]
+1C393604 0000270F
+
+Irina Affinity [MiMiC]
+1C39380A 32
+
+Irina Height (float) [Intropy]
+1C3932F8 3F8020C4
+
+Irina Chest Depth (float) [Intropy]
+1C3932FC 3F8020C4
+
+Irina Chest Height (float) [Intropy]
+1C393300 3F8020C4
+
+Irina Chest Width (float) [Intropy]
+1C393304 3F8020C4
+
+
+
+Murderess Name [MiMiC]
+1C39380C ASCII(10)
+
+Murderess Lv Exp [MiMiC]
+1C393888 000F423F
+
+Murderess Rank Exp [MiMiC]
+1C393938 7FFF
+
+Murderess BP [MiMiC]
+1C393B80 0000270F
+
+Murderess Affinity [MiMiC]
+1C393D86 32
+
+Murderess Height (float) [Intropy]
+1C393874 3F8020C4
+
+Murderess Chest Depth (float) [Intropy]
+1C393878 3F8020C4
+
+Murderess Chest Height (float) [Intropy]
+1C39387C 3F8020C4
+
+Murderess Chest Width (float) [Intropy]
+1C393880 3F8020C4
+
+
+
+Alexa Name [MiMiC]
+1C393D88 ASCII(10)
+
+Alexa Lv Exp [MiMiC]
+1C393E04 000F423F
+
+Alexa Rank Exp [MiMiC]
+1C393EB4 7FFF
+
+Alexa BP [MiMiC]
+1C3940FC 0000270F
+
+Alexa Affinity [MiMiC]
+1C394302 32
+
+Alexa Height (float) [Intropy]
+1C393DF0 3F8020C4
+
+Alexa Chest Depth (float) [Intropy]
+1C393DF4 3F8020C4
+
+Alexa Chest Height (float) [Intropy]
+1C393DF8 3F8020C4
+
+Alexa Chest Width (float) [Intropy]
+1C393DFC 3F8020C4
+
+
+
+Hope Name [MiMiC]
+1C394304 ASCII(10)
+
+Hope Lv Exp [MiMiC]
+1C394380 000F423F
+
+Hope Rank Exp [MiMiC]
+1C394430 7FFF
+
+Hope BP [MiMiC]
+1C394678 0000270F
+
+Hope Affinity [MiMiC]
+1C39487E 32
+
+Hope Height (float) [Intropy]
+1C39436C 3F8020C4
+
+Hope Chest Depth (float) [Intropy]
+1C394370 3F8020C4
+
+Hope Chest Height (float) [Intropy]
+1C394374 3F8020C4
+
+Hope Chest Width (float) [Intropy]
+1C394378 3F8020C4
+
+
+
+Mia Name [MiMiC]
+1C394880 ASCII(10)
+
+Mia Lv Exp [MiMiC]
+1C3948FC 000F423F
+
+Mia Rank Exp [MiMiC]
+1C3949AC 7FFF
+
+Mia BP [MiMiC]
+1C394BF4 0000270F
+
+Mia Affinity [MiMiC]
+1C394DFA 32
+
+Mia Height (float) [Intropy]
+1C3948E8 3F8020C4
+
+Mia Chest Depth (float) [Intropy]
+1C3948EC 3F8020C4
+
+Mia Chest Height (float) [Intropy]
+1C3948F0 3F8020C4
+
+Mia Chest Width (float) [Intropy]
+1C3948F4 3F8020C4
+
+
+
+Materials: Slot 001 [MiMiC]
+1C3BB0DC 63 >>21
+
+Materials: Slot 800 [MiMiC]
+1C3BD650 63 >>21
+
+
+
+Precious Resources: Slot 001 [MiMiC]
+1C3C0540 63 >>21
+
+Precious Resources: Slot 100 [MiMiC]
+1C3C09E4 63 >>21
+
+
+
+Data Probes: Slot 001 [MiMiC]
+1C3BD65C 63 >>21
+
+Data Probes: Slot 100 [MiMiC]
+1C3BDB00 63 >>21
+
+
+
+Collectibles: Slot 001 [MiMiC]
+1C3BDB0C 63 >>21
+
+Collectibles: Slot 300 [MiMiC]
+1C3BE910 63 >>21
+
+
+
+Important Items: Slot 001 [MiMiC]
+1C3BE91C 63 >>21
+
+Important Items: Slot 500 [MiMiC]
+1C3C0080 63 >>21
+
+
+
+# ===== Gear codes: partially decoded =====
+# Ground/Skill Gear Format: wwwwxxxx yyyyyyyy zzzzpppq aaaabbbb cccc1111 22223333
+#  w: 2-byte gear ID (ID increments by 8. Anything that doesn't increment by 8 is either worn or advanced gear) [sleepingkirby]
+#  x: 2-byte gear/weapon slot; ranged wep=0xC008/0xC009, melee wep=0xE008/0xE009. 0x##08/09 depends on type of gear but ultimately doesn't matter. When equipped, game will auto correct. See "xcx notes" for examples [sleepingkirby]
+#  y: 4-byte unknown; possibly indicates item purchase / found locations; only seen \0 in last 6 bits. [sleepingkirby] When gear is equipped, the ID changes and these 4-bytes are not saved.
+#  z: 2-byte unknown; only seen 0x0000
+#  p: 10-bit placement index (incl upper 2 bits of 3rd byte)
+#  q: 6-bit unknown; only seen 0b000000
+#  a-c: gear/skell skill ID 1-3: yyyi
+#     y: 12-bit (packed); skill type + base lvl (if applicable); see codes/gear_id_v1.0.1e.txt
+#     i: 4-bit skill level incr (+0 to +15)
+#  1-3: slot 1-3: 0xFFFF = no slot, 0x0000 = empty slot, other values = possibly augment slot ID
+#
+# Potential Up XX, Potential Boost XX, Treasure Sensor XX
+# 0A001400 DE000000 00000000
+#
+# Melee Attack Up XX, Melee Accuracy Up XX, Melee Attack Boost XX
+# 07801180 03C00000 00000000
+
+Ranged Weapons: Slot 001 [MiMiC]
+1C3AC6B8 XXXXXXXX
+
+Ranged Weapons: Slot 999 [MiMiC]
+1C3B2448 XXXXXXXX
+
+Melee Weapons: Slot 001 [MiMiC]
+1C3B2460 XXXXXXXX
+
+Melee Weapons: Slot 999 [MiMiC]
+1C3B81F0 XXXXXXXX
+
+Armor: Slot 001 [MiMiC]
+1C3A6910 XXXXXXXX
+
+Armor: Slot 999 [MiMiC]
+1C3AC6A0 XXXXXXXX
+
+Skell Weapons: Slot 001 [MiMiC]
+1C3A0B68 XXXXXXXX
+
+Skell Weapons: Slot 999 [MiMiC]
+1C3A68F8 XXXXXXXX
+
+Skell Armor: Slot 001 [MiMiC]
+1C39ADC0 XXXXXXXX
+
+Skell Armor: Slot 999 [MiMiC]
+1C3A0B50 XXXXXXXX
+
+# Augment Format: XXXXXXXX XXXXXXXX XXXXXXXX
+
+DO_NOT_POKE Augments: Slot 001 [MiMiC]
+1C3B8208 XXXXXXXX
+
+DO_NOT_POKE Augments: Slot 999 [MiMiC]
+1C3BB0D0 XXXXXXXX
+
+# ===== Gear codes: END =====
