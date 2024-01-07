@@ -1010,7 +1010,7 @@ Which AM's open (1=open, 2=seen)
 
 Yardley's mimesome pod
 1C3C2AB8	01560000	015A0000	00040000
-1C3C2ABA 08 (add to value)
+1C3C2AB9 08 (add to value)
 
 Overdrive on
 1c3c17a0 00000010 00000018 (add 08 on 1c3c17a3)
